@@ -127,6 +127,10 @@
     {
       "key": "opus47",
       "file": "janitor/modules/correction-layer-opus-4.7.md"
+    },
+    {
+      "key": "memory",
+      "file": "janitor/modules/chat-memory-module.md"
     }
   ]
 }

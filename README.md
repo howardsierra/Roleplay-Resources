@@ -30,6 +30,8 @@ Setting prompts for [Janitor.AI](https://janitorai.com). Pick the one your bot l
 | [⚔️ **ASOIAF**](janitor/asoiaf.md) | Westeros | Westerosi vocabulary, ravens and decrees, and a Tension line in the status bar |
 | [🎀 **Regency**](janitor/regency.md) | The ton | Forms of address, scandal sheets, and a Reputation tracker |
 
+**Companion:** [Chat Memory module](janitor/modules/chat-memory-module.md). Paste it into the chat's **Chat Memory**. It sets up the guided-novel format and OOC notes in parentheses, and holds the **Intensity dial** the status bar reports (`[INTENSITY: SIMMER | STANDARD | FILTHY | DEPRAVED | TENDER]`, stackable with `+`). It also has an optional block that keeps a diabetic character's Dexcom CGM portrayed accurately; delete it if your character doesn't need it.
+
 **Add-on:** [Opus 4.7 correction layer](janitor/modules/correction-layer-opus-4.7.md). Paste it under any setting when you're running Opus 4.7. It pulls the model back from an elevated literary register to the close, raw voice these prompts are written for.
 
 Every prompt runs in **Impersonate mode** by default, so the model writes your character too. Type `[MANUAL: ON]` to take the pen back and `[MANUAL: OFF]` to hand it over again.
