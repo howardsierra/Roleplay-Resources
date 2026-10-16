@@ -4,243 +4,749 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Roleplay Resources</title>
-<meta name="description" content="SillyTavern extensions, presets, and regex bundles by Sierra.">
+<meta name="description" content="SillyTavern presets, regex bundles, and extensions by Sierra. Four hostesses, ten crew members, one stage.">
+<meta property="og:title" content="Roleplay Resources by Sierra">
+<meta property="og:description" content="SillyTavern presets, regex bundles, and extensions. Four hostesses, ten crew members, one stage.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#3a0a16">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎭</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500..800;1,6..96,500..700&family=Cormorant+Garamond:ital,wght@0,500;1,500;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
+  /* ---------- tokens ---------- */
   :root {
-    --bg: #faf6f3;
-    --surface: #ffffff;
-    --ink: #2a1f24;
-    --muted: #6e5f66;
-    --line: #eadfe0;
-    --accent: #9b2c48;
-    --accent-soft: #f6e4e8;
-    --chip: #f3ecee;
-    --shadow: 0 1px 2px rgba(60, 20, 35, .05), 0 6px 20px rgba(60, 20, 35, .06);
+    --page: #f7f0e6;          /* playbill paper */
+    --page-2: #efe4d4;
+    --ink: #2b1a1d;
+    --muted: #6f5a57;
+    --line: #dccbb4;
+    --card: #fffaf2;
+    --accent: #8f1d33;        /* velvet */
+    --gold: #b8862e;
+    --focus: #c2410c;
+    --shadow: 0 1px 2px rgba(60, 25, 20, .06), 0 10px 30px -10px rgba(60, 25, 20, .22);
+    --display: "Bodoni Moda", "Didot", Georgia, serif;
+    --script: "Cormorant Garamond", Georgia, serif;
+    --body: Inter, system-ui, -apple-system, sans-serif;
   }
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
-      --bg: #151013;
-      --surface: #1e171b;
-      --ink: #f1e8eb;
-      --muted: #a8979e;
-      --line: #33282d;
-      --accent: #e8829b;
-      --accent-soft: #3a222b;
-      --chip: #2a2025;
-      --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 6px 20px rgba(0, 0, 0, .25);
+      --page: #120b0e;
+      --page-2: #1a1014;
+      --ink: #f3e9e0;
+      --muted: #b4a199;
+      --line: #3a2a2c;
+      --card: #1e1418;
+      --accent: #e8798f;
+      --gold: #e2b65c;
+      --focus: #fb923c;
+      --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 12px 32px -12px rgba(0, 0, 0, .7);
     }
   }
   :root[data-theme="dark"] {
-    --bg: #151013;
-    --surface: #1e171b;
-    --ink: #f1e8eb;
-    --muted: #a8979e;
-    --line: #33282d;
-    --accent: #e8829b;
-    --accent-soft: #3a222b;
-    --chip: #2a2025;
-    --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 6px 20px rgba(0, 0, 0, .25);
+    --page: #120b0e;
+    --page-2: #1a1014;
+    --ink: #f3e9e0;
+    --muted: #b4a199;
+    --line: #3a2a2c;
+    --card: #1e1418;
+    --accent: #e8798f;
+    --gold: #e2b65c;
+    --focus: #fb923c;
+    --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 12px 32px -12px rgba(0, 0, 0, .7);
   }
 
+  /* ---------- base ---------- */
   * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
   body {
     margin: 0;
-    background: var(--bg);
+    background: var(--page);
     color: var(--ink);
-    font: 15px/1.6 Inter, system-ui, sans-serif;
+    font: 16px/1.6 var(--body);
+    -webkit-font-smoothing: antialiased;
   }
-  a { color: var(--accent); }
-  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 16px; }
+  a { color: inherit; }
+  :focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; border-radius: 6px; }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 16px; }
+  .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
 
-  header { padding: 64px 0 32px; text-align: center; }
-  header h1 {
-    font: 600 clamp(2.4rem, 7vw, 3.6rem)/1.05 "Cormorant Garamond", serif;
-    margin: 0 0 12px;
-    letter-spacing: -.01em;
+  /* ---------- hero: the curtain ---------- */
+  .stage {
+    position: relative;
+    min-height: min(88vh, 760px);
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    color: #fbefd9;
+    text-align: center;
+    padding: 96px 16px 72px;
+    background:
+      radial-gradient(ellipse 55% 60% at 50% 42%, rgba(255, 226, 170, .28), transparent 70%),
+      radial-gradient(ellipse 120% 80% at 50% 120%, rgba(0, 0, 0, .65), transparent 60%),
+      repeating-linear-gradient(90deg, #4a0c19 0 6px, #6e1426 22px, #8a1c31 34px, #6e1426 46px, #4a0c19 62px);
   }
-  header p { color: var(--muted); margin: 0 auto; max-width: 560px; }
-  .jump { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin-top: 24px; }
-  .jump a, .btn {
-    display: inline-flex; align-items: center; gap: 6px;
-    padding: 8px 14px; border-radius: 999px;
-    border: 1px solid var(--line); background: var(--surface);
-    color: var(--ink); text-decoration: none; font-weight: 500; font-size: 14px;
+  /* scalloped valance along the top */
+  .stage::before {
+    content: "";
+    position: absolute; inset: 0 0 auto 0; height: 70px; z-index: 3;
+    background:
+      radial-gradient(circle at 50% 0, #a32740 0 34px, #5c0f1f 36px, transparent 37px) 0 0 / 72px 70px repeat-x,
+      linear-gradient(#5c0f1f, #5c0f1f) 0 0 / 100% 28px no-repeat;
+    filter: drop-shadow(0 6px 8px rgba(0, 0, 0, .45));
   }
-  .jump a:hover, .btn:hover { border-color: var(--accent); color: var(--accent); }
-  .btn.primary { background: var(--accent); border-color: var(--accent); color: var(--bg); }
-  .btn.primary:hover { color: var(--bg); opacity: .9; }
+  /* gold fringe beneath the valance */
+  .stage::after {
+    content: "";
+    position: absolute; left: 0; right: 0; top: 64px; height: 8px; z-index: 3;
+    background: repeating-linear-gradient(90deg, #e6b85c 0 2px, transparent 2px 6px);
+    opacity: .7;
+  }
+  .drape {
+    position: absolute; top: 0; bottom: 0; width: 52%; z-index: 2;
+    background:
+      linear-gradient(90deg, rgba(0, 0, 0, .35), transparent 30%, rgba(0, 0, 0, .25)),
+      repeating-linear-gradient(90deg, #3d0914 0 8px, #741628 26px, #9b2239 40px, #741628 54px, #3d0914 72px);
+    box-shadow: 0 0 40px rgba(0, 0, 0, .6);
+    animation: open 2.2s cubic-bezier(.7, 0, .2, 1) .25s both;
+  }
+  .drape.left  { left: 0;  --to: -86%; border-radius: 0 0 60% 0 / 0 0 12% 0; }
+  .drape.right { right: 0; --to: 86%;  border-radius: 0 0 0 60% / 0 0 0 12%; }
+  @keyframes open { from { transform: translateX(0); } to { transform: translateX(var(--to)); } }
 
-  section { padding: 32px 0; }
-  h2 {
-    font: 600 2rem/1.1 "Cormorant Garamond", serif;
-    margin: 0 0 4px;
+  .marquee {
+    position: relative; z-index: 1;
+    max-width: 760px;
   }
-  .lede { color: var(--muted); margin: 0 0 20px; }
-  h3.group {
-    font-size: 12px; text-transform: uppercase; letter-spacing: .08em;
-    color: var(--muted); margin: 24px 0 10px; font-weight: 600;
+  .kicker {
+    font: 600 12px/1 var(--body);
+    letter-spacing: .32em; text-transform: uppercase;
+    color: #f0cf8a;
+    margin: 0 0 18px;
+  }
+  .stage h1 {
+    font: 700 clamp(2.8rem, 10vw, 6.2rem)/.95 var(--display);
+    font-optical-sizing: auto;
+    margin: 0;
+    letter-spacing: -.02em;
+    background: linear-gradient(180deg, #fff6d8 0%, #f2cf7d 45%, #c08a2e 80%, #f6dc98 100%);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+    filter: drop-shadow(0 3px 0 rgba(60, 10, 20, .55)) drop-shadow(0 0 30px rgba(255, 210, 130, .25));
+  }
+  .stage h1 em { font-style: italic; font-weight: 600; }
+  .tagline {
+    font: italic 500 clamp(1.15rem, 3vw, 1.5rem)/1.4 var(--script);
+    color: #f6e3c2;
+    margin: 18px auto 0; max-width: 540px;
+  }
+  /* bulb row */
+  .bulbs {
+    display: flex; justify-content: center; gap: 14px; margin: 28px 0 30px;
+  }
+  .bulbs i {
+    width: 9px; height: 9px; border-radius: 50%;
+    background: #ffe7a8;
+    box-shadow: 0 0 6px 2px rgba(255, 214, 120, .8), 0 0 16px 4px rgba(255, 190, 80, .35);
+    animation: twinkle 2.4s ease-in-out infinite;
+  }
+  .bulbs i:nth-child(even) { animation-delay: 1.2s; }
+  @keyframes twinkle { 0%, 100% { opacity: 1; } 50% { opacity: .35; } }
+
+  .cta { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    min-height: 44px; padding: 10px 20px; border-radius: 999px;
+    font: 600 14px/1 var(--body); letter-spacing: .02em;
+    text-decoration: none; cursor: pointer; border: 1px solid transparent;
+    transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+  }
+  .btn:hover { transform: translateY(-1px); }
+  .btn.gold {
+    background: linear-gradient(180deg, #f8dc95, #d9a443);
+    color: #3a0a16; box-shadow: 0 6px 20px -6px rgba(240, 190, 90, .7);
+  }
+  .btn.ghost { border-color: rgba(246, 227, 194, .5); color: #fbefd9; background: rgba(0, 0, 0, .15); }
+  .btn.ghost:hover { background: rgba(0, 0, 0, .3); }
+
+  .billing {
+    position: relative; z-index: 1;
+    display: flex; justify-content: center; flex-wrap: wrap; gap: 8px 28px;
+    margin-top: 40px; font: 500 13px var(--body); color: #f0d9b5;
+    letter-spacing: .12em; text-transform: uppercase;
+  }
+  .billing b { font: 700 1.6rem/1 var(--display); color: #fff1cf; letter-spacing: 0; display: block; margin-bottom: 4px; }
+
+  /* ---------- section headings ---------- */
+  section { padding: 88px 0 24px; }
+  .head { text-align: center; margin-bottom: 44px; }
+  .head .act {
+    font: 600 12px/1 var(--body); letter-spacing: .32em; text-transform: uppercase;
+    color: var(--gold);
+  }
+  .head h2 {
+    font: 700 clamp(2.2rem, 6vw, 3.4rem)/1.05 var(--display);
+    margin: 12px 0 10px; letter-spacing: -.01em;
+  }
+  .head p { margin: 0 auto; max-width: 560px; color: var(--muted); }
+  .flourish {
+    display: flex; align-items: center; justify-content: center; gap: 12px;
+    color: var(--gold); margin-top: 18px;
+  }
+  .flourish::before, .flourish::after {
+    content: ""; height: 1px; width: 70px;
+    background: linear-gradient(90deg, transparent, currentColor);
+  }
+  .flourish::after { transform: scaleX(-1); }
+
+  /* ---------- presets: the company ---------- */
+  .company { display: grid; gap: 24px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 480px), 1fr)); }
+  .bill {
+    --bg: #fff; --fg: #222; --soft: #666; --acc: #c00; --chip: rgba(0, 0, 0, .06); --rule: rgba(0, 0, 0, .12);
+    position: relative; overflow: hidden;
+    border-radius: 22px; padding: 30px 28px 28px;
+    background: var(--bg); color: var(--fg);
+    box-shadow: var(--shadow);
+    display: flex; flex-direction: column; gap: 18px;
+    transition: transform .25s ease, box-shadow .25s ease;
+  }
+  .bill:hover { transform: translateY(-4px); box-shadow: 0 2px 4px rgba(0, 0, 0, .08), 0 24px 48px -16px rgba(0, 0, 0, .4); }
+  .bill > * { position: relative; }
+  .bill .pattern { position: absolute; inset: 0; pointer-events: none; }
+
+  .bill-top { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+  .now { font: 600 11px/1 var(--body); letter-spacing: .28em; text-transform: uppercase; color: var(--acc); }
+  .ver { font: 600 12px/1 var(--body); padding: 6px 10px; border-radius: 999px; background: var(--chip); color: var(--soft); }
+
+  .title-row { display: flex; gap: 16px; align-items: center; }
+  .seal {
+    flex: none; width: 64px; height: 64px; border-radius: 50%;
+    display: grid; place-items: center; font-size: 30px;
+    background: var(--chip); box-shadow: inset 0 0 0 1px var(--rule);
+  }
+  .bill h3 { margin: 0; font: 700 clamp(1.8rem, 5vw, 2.3rem)/1 var(--display); letter-spacing: -.01em; }
+  .starring { margin: 6px 0 0; font: 500 14px/1.3 var(--body); color: var(--soft); }
+  .starring strong { color: var(--acc); font-weight: 600; }
+
+  .bill blockquote {
+    margin: 0; padding: 2px 0 2px 16px;
+    border-left: 2px solid var(--acc);
+    font: italic 500 1.2rem/1.45 var(--script); color: var(--fg);
+  }
+  .bill ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 8px; font-size: 14.5px; color: var(--soft); }
+  .bill li { display: flex; gap: 10px; }
+  .bill li::before { content: "✦"; color: var(--acc); font-size: 11px; line-height: 2.1; flex: none; }
+
+  .stats { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+  .stats div { padding: 12px 4px; text-align: center; }
+  .stats div + div { border-left: 1px solid var(--rule); }
+  .stats b { display: block; font: 700 1.5rem/1.1 var(--display); color: var(--fg); }
+  .stats span { font: 500 11px/1 var(--body); letter-spacing: .14em; text-transform: uppercase; color: var(--soft); }
+
+  .bill .actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: auto; }
+  .bill .btn.solid { background: var(--acc); color: var(--on-acc, #fff); }
+  .bill .btn.solid:hover { box-shadow: 0 8px 20px -8px var(--acc); }
+  .bill .btn.line { border-color: var(--rule); color: var(--fg); background: transparent; }
+  .bill .btn.line:hover { border-color: var(--acc); color: var(--acc); }
+
+  /* each show gets its own production design */
+  .rosie {
+    --bg: linear-gradient(160deg, #fff4f6 0%, #ffe1e8 100%); --fg: #4d1426; --soft: #8a4a5c;
+    --acc: #b8234f; --chip: rgba(201, 42, 90, .1); --rule: rgba(201, 42, 90, .2);
+  }
+  .rosie .pattern {
+    background:
+      radial-gradient(circle at 88% 12%, rgba(255, 150, 180, .45), transparent 40%),
+      radial-gradient(rgba(201, 42, 90, .12) 1.2px, transparent 1.6px) 0 0 / 18px 18px;
+  }
+  .vigil {
+    --bg: linear-gradient(165deg, #1b1222 0%, #2a1530 60%, #170d18 100%); --fg: #f1e6d6; --soft: #bba99c;
+    --acc: #e2b05a; --on-acc: #1b1222; --chip: rgba(226, 176, 90, .12); --rule: rgba(226, 176, 90, .25);
+  }
+  .vigil .pattern {
+    background:
+      radial-gradient(circle at 84% 14%, rgba(255, 190, 100, .3), transparent 32%),
+      radial-gradient(circle at 10% 100%, rgba(150, 40, 80, .35), transparent 45%);
+  }
+  .lovesick {
+    --bg: linear-gradient(160deg, #fff0f6 0%, #ffd6e8 100%); --fg: #4a0f30; --soft: #8c4468;
+    --acc: #c81d68; --chip: rgba(232, 40, 122, .1); --rule: rgba(232, 40, 122, .22);
+  }
+  .lovesick .pattern {
+    opacity: .5;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='44' height='44' viewBox='0 0 44 44'%3E%3Cpath d='M22 30s-8-5-8-10a4 4 0 0 1 8-1 4 4 0 0 1 8 1c0 5-8 10-8 10z' fill='none' stroke='%23e8287a' stroke-opacity='.35' stroke-width='1.2'/%3E%3C/svg%3E") 0 0 / 44px 44px;
+    -webkit-mask: linear-gradient(200deg, #000, transparent 60%); mask: linear-gradient(200deg, #000, transparent 60%);
+  }
+  .callboard {
+    --bg: linear-gradient(165deg, #1c1b19 0%, #252320 100%); --fg: #f3ecdc; --soft: #b5ab98;
+    --acc: #f4c430; --on-acc: #1c1b19; --chip: rgba(244, 196, 48, .12); --rule: rgba(243, 236, 220, .14);
+  }
+  .callboard .pattern {
+    background:
+      linear-gradient(rgba(255, 255, 255, .03) 1px, transparent 1px) 0 0 / 100% 28px,
+      radial-gradient(circle at 90% 10%, rgba(244, 196, 48, .14), transparent 35%);
+  }
+  /* spike tape across the corner */
+  .callboard::after {
+    content: "CUE"; position: absolute; top: 18px; right: -34px; width: 140px;
+    transform: rotate(35deg); text-align: center;
+    font: 700 10px/22px var(--body); letter-spacing: .3em; color: #1c1b19;
+    background: repeating-linear-gradient(90deg, #f4c430 0 12px, #e0b020 12px 14px);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .4);
+  }
+  .callboard .bill-top { padding-right: 52px; }
+
+  /* ---------- extensions: the crew ---------- */
+  .filters { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; margin: -12px 0 32px; }
+  .filters button {
+    font: 500 14px var(--body); color: var(--muted); cursor: pointer;
+    min-height: 40px; padding: 8px 16px; border-radius: 999px;
+    background: transparent; border: 1px solid var(--line);
+    transition: .15s;
+  }
+  .filters button:hover { color: var(--ink); border-color: var(--gold); }
+  .filters button[aria-pressed="true"] { background: var(--ink); color: var(--page); border-color: var(--ink); }
+
+  .crew { display: grid; gap: 18px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr)); }
+  .stub {
+    position: relative;
+    background: var(--card); border: 1px solid var(--line); border-radius: 16px;
+    box-shadow: var(--shadow);
+    display: flex; flex-direction: column;
+    transition: transform .2s ease, border-color .2s ease;
+  }
+  .stub:hover { transform: translateY(-3px); border-color: var(--gold); }
+  .stub[hidden] { display: none; }
+  /* ticket notches */
+  .stub::before, .stub::after {
+    content: ""; position: absolute; top: 58px; width: 18px; height: 18px; border-radius: 50%;
+    background: var(--page); border: 1px solid var(--line);
+  }
+  .stub::before { left: -10px; clip-path: inset(0 0 0 50%); }
+  .stub::after { right: -10px; clip-path: inset(0 50% 0 0); }
+  .stub-head {
+    height: 67px; padding: 0 20px;
+    display: flex; align-items: center; justify-content: space-between; gap: 12px;
+    border-bottom: 2px dashed var(--line);
+  }
+  .role { font: 600 11px/1.3 var(--body); letter-spacing: .2em; text-transform: uppercase; color: var(--gold); }
+  .stub .ver { background: var(--page-2); color: var(--muted); }
+  .stub-body { padding: 18px 20px 20px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+  .stub h3 { margin: 0; font: 700 1.45rem/1.1 var(--display); display: flex; align-items: center; gap: 10px; }
+  .stub h3 span { font-size: 1.2rem; }
+  .stub p { margin: 0; font-size: 14.5px; color: var(--muted); flex: 1; }
+  .stub .actions { display: flex; gap: 8px; margin-top: 8px; }
+  .stub .btn { min-height: 40px; padding: 8px 14px; font-size: 13px; }
+  .stub .btn.copy { background: var(--ink); color: var(--page); flex: 1; }
+  .stub .btn.copy.done { background: var(--accent); }
+  .stub .btn.line { border-color: var(--line); color: var(--ink); background: transparent; }
+  .stub .btn.line:hover { border-color: var(--gold); }
+
+  /* ---------- install: three acts ---------- */
+  .acts { display: grid; gap: 18px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); counter-reset: act; }
+  .acts article {
+    background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 26px 24px;
+    box-shadow: var(--shadow);
+  }
+  .numeral { font: italic 600 2.6rem/1 var(--display); color: var(--accent); }
+  .acts h3 { margin: 10px 0 8px; font: 700 1.3rem/1.2 var(--display); }
+  .acts p { margin: 0; color: var(--muted); font-size: 14.5px; }
+  .acts strong { color: var(--ink); font-weight: 600; }
+  kbd {
+    font: 500 12.5px var(--body); padding: 1px 7px; border-radius: 5px;
+    background: var(--page-2); border: 1px solid var(--line); color: var(--ink); white-space: nowrap;
   }
 
-  .grid { display: grid; gap: 14px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); }
-  .card {
-    background: var(--surface); border: 1px solid var(--line); border-radius: 14px;
-    padding: 18px; box-shadow: var(--shadow);
-    display: flex; flex-direction: column; gap: 10px;
+  /* ---------- curtain call ---------- */
+  footer {
+    margin-top: 96px; padding: 56px 16px 64px; text-align: center; color: #f0dcc0;
+    background:
+      radial-gradient(ellipse 60% 100% at 50% 0, rgba(255, 210, 140, .16), transparent 70%),
+      repeating-linear-gradient(90deg, #3d0914 0 8px, #5e1222 26px, #74182b 40px, #5e1222 54px, #3d0914 72px);
   }
-  .card h4 { margin: 0; font-size: 16px; display: flex; justify-content: space-between; gap: 8px; align-items: baseline; }
-  .card p { margin: 0; color: var(--muted); font-size: 14px; flex: 1; }
-  .ver { font-size: 12px; font-weight: 500; color: var(--muted); white-space: nowrap; }
-  .actions { display: flex; gap: 8px; flex-wrap: wrap; }
-  .copy { cursor: pointer; font-family: inherit; }
+  footer .bow { font: italic 600 clamp(1.8rem, 5vw, 2.6rem)/1.1 var(--display); color: #fbe6b5; margin: 0 0 8px; }
+  footer p { margin: 6px 0; font-size: 14px; }
+  footer a { color: #fbe6b5; text-underline-offset: 3px; }
 
-  .preset { gap: 12px; }
-  .preset .title { font: 600 1.6rem/1.1 "Cormorant Garamond", serif; margin: 0; }
-  .host { font-size: 13px; color: var(--accent); font-weight: 500; }
-  .chips { display: flex; gap: 6px; flex-wrap: wrap; }
-  .chip { background: var(--chip); border-radius: 6px; padding: 2px 8px; font-size: 12px; color: var(--muted); }
-  .preset .ver { font: 500 12px Inter, system-ui, sans-serif; vertical-align: middle; margin-left: 4px; }
-  .presets { grid-template-columns: repeat(auto-fill, minmax(min(100%, 440px), 1fr)); }
+  /* ---------- reveal on scroll ---------- */
+  .reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s ease, transform .7s ease; }
+  .reveal.in { opacity: 1; transform: none; }
 
-  .steps { background: var(--accent-soft); border-radius: 14px; padding: 18px 20px; }
-  .steps ol { margin: 8px 0 0; padding-left: 20px; }
-  .steps li { margin: 4px 0; }
-  code { background: var(--chip); padding: 1px 6px; border-radius: 4px; font-size: 13px; }
-
-  footer { padding: 40px 0 56px; color: var(--muted); font-size: 13px; text-align: center; }
-  .toast {
-    position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%) translateY(20px);
-    background: var(--ink); color: var(--bg); padding: 8px 16px; border-radius: 999px;
-    font-size: 14px; opacity: 0; transition: .2s; pointer-events: none;
+  @media (max-width: 560px) {
+    .stage { padding-top: 110px; }
+    .drape.left { --to: -92%; }
+    .drape.right { --to: 92%; }
+    .bill { padding: 24px 20px 22px; }
+    .seal { width: 54px; height: 54px; font-size: 26px; }
+    .billing { gap: 8px 20px; }
   }
-  .toast.show { opacity: 1; transform: translateX(-50%); }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .drape { animation: none; transform: translateX(var(--to)); }
+    .bulbs i { animation: none; }
+    .reveal { opacity: 1; transform: none; transition: none; }
+    .bill, .stub, .btn { transition: none; }
+  }
 </style>
 </head>
 <body>
-<div class="wrap">
-  <header>
-    <h1>Roleplay Resources</h1>
-    <p>SillyTavern extensions, Chat Completion presets, and regex bundles by Sierra.</p>
-    <nav class="jump">
-      <a href="#presets">🎭 Presets</a>
-      <a href="#extensions">🧩 Extensions</a>
-      <a href="https://github.com/howardsierra/Roleplay-Resources">GitHub repo ↗</a>
-    </nav>
-  </header>
 
-  <section id="presets">
-    <h2>Presets</h2>
-    <p class="lede">Tuned for Claude. Each one has a hostess who narrates the world and, if you let her, comments on it.</p>
-    <div class="grid presets" id="preset-grid"></div>
-    <div class="steps" style="margin-top:18px">
-      <strong>Installing a preset</strong>
-      <ol>
-        <li>Download the preset <code>.json</code>.</li>
-        <li>In SillyTavern, open <strong>AI Response Configuration</strong>, set the API to Chat Completion, and click <strong>Import preset</strong>.</li>
-        <li>Regex scripts are bundled inside each preset. If your version doesn't offer to import them, download the regex bundle and use <strong>Extensions → Regex → Import</strong>.</li>
-        <li>Open the preset's <strong>Read Me</strong> prompt at the top of the list for the quick start.</li>
-      </ol>
+<header class="stage">
+  <div class="drape left" aria-hidden="true"></div>
+  <div class="drape right" aria-hidden="true"></div>
+  <div class="marquee">
+    <p class="kicker">Sierra presents</p>
+    <h1>Roleplay <em>Resources</em></h1>
+    <div class="bulbs" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    <p class="tagline">Presets, regex, and extensions for SillyTavern. Four hostesses, a backstage crew, and a story that’s yours to steer.</p>
+    <div class="cta" style="margin-top:30px">
+      <a class="btn gold" href="#company">See the company</a>
+      <a class="btn ghost" href="#crew">Meet the crew</a>
+    </div>
+    <div class="billing">
+      <div><b>4</b>presets</div>
+      <div><b>152</b>regex scripts</div>
+      <div><b>10</b>extensions</div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section id="company">
+    <div class="wrap">
+      <div class="head reveal">
+        <div class="act">Act I</div>
+        <h2>The Company</h2>
+        <p>Chat Completion presets tuned for Claude. Each one has a hostess who narrates the world, plays everyone but you, and comments if you let her.</p>
+        <div class="flourish" aria-hidden="true">✦</div>
+      </div>
+
+      <div class="company">
+        <article class="bill rosie reveal">
+          <div class="pattern" aria-hidden="true"></div>
+          <div class="bill-top"><span class="now">Now playing</span><span class="ver">v2.7</span></div>
+          <div class="title-row">
+            <div class="seal" aria-hidden="true">🌹</div>
+            <div>
+              <h3>Rosie Full Bloom</h3>
+              <p class="starring">Starring <strong>Rosie</strong>, a fangirly creative-writing mascot</p>
+            </div>
+          </div>
+          <blockquote>“Rosie is kind to the user, but she does not baby the story.”</blockquote>
+          <ul>
+            <li>A living world with autonomous NPCs, romance tracking, and protected user agency</li>
+            <li>Nine Prose Wardrobe styles, from Lush Romance to Dark Velvet to Raw &amp; Close</li>
+            <li>Info boards, status reports, and HEX- and SELARU-style affinity panels</li>
+          </ul>
+          <div class="stats">
+            <div><b>140</b><span>prompts</span></div>
+            <div><b>34</b><span>regex</span></div>
+            <div><b>128k</b><span>context</span></div>
+          </div>
+          <div class="actions">
+            <a class="btn solid" href="presets/Rosie_Full_Bloom_v2.7.json" download>Download preset</a>
+            <a class="btn line" href="regex/Rosie_regex_bundle.json" download>Regex bundle</a>
+          </div>
+        </article>
+
+        <article class="bill vigil reveal">
+          <div class="pattern" aria-hidden="true"></div>
+          <div class="bill-top"><span class="now">Now playing</span><span class="ver">v3.2.2</span></div>
+          <div class="title-row">
+            <div class="seal" aria-hidden="true">🥀</div>
+            <div>
+              <h3>The Velvet Vigil</h3>
+              <p class="starring">Starring <strong>Vesper</strong>, a night-archivist</p>
+            </div>
+          </div>
+          <blockquote>“She curates your story from behind the page.”</blockquote>
+          <ul>
+            <li>Commentary modes and moods: Morbid, Warm, Gamemaster, Devilish</li>
+            <li>Voice and genre picks, a Gun Rack for setup and payoff, and a difficulty dial</li>
+            <li>Diegetic HTML panels, plus a token-light Loom Mode drawn by regex</li>
+          </ul>
+          <div class="stats">
+            <div><b>107</b><span>prompts</span></div>
+            <div><b>8</b><span>regex</span></div>
+            <div><b>45k</b><span>context</span></div>
+          </div>
+          <div class="actions">
+            <a class="btn solid" href="presets/The_Velvet_Vigil_v3.2.2.json" download>Download preset</a>
+            <a class="btn line" href="regex/Velvet_Vigil_regex_bundle.json" download>Regex bundle</a>
+          </div>
+        </article>
+
+        <article class="bill lovesick reveal">
+          <div class="pattern" aria-hidden="true"></div>
+          <div class="bill-top"><span class="now">Now playing</span><span class="ver">v1.4.1</span></div>
+          <div class="title-row">
+            <div class="seal" aria-hidden="true">💌</div>
+            <div>
+              <h3>LOVESICK</h3>
+              <p class="starring">Starring <strong>Juno</strong>, a romance editor with a matchmaker’s god complex</p>
+            </div>
+          </div>
+          <blockquote>“Lives for yearning done properly, and has zero patience for lazy prose.”</blockquote>
+          <ul>
+            <li>Pick up to two tropes, from Slow Burn to Fake Dating to Grumpy / Sunshine</li>
+            <li>A heat dial (Fade, Warm, Explicit) and Margin Notes, her readable CoT</li>
+            <li>Screenlife visuals: texts, the group chat, chapter cards, the Delulu Meter</li>
+          </ul>
+          <div class="stats">
+            <div><b>78</b><span>prompts</span></div>
+            <div><b>12</b><span>regex</span></div>
+            <div><b>45k</b><span>context</span></div>
+          </div>
+          <div class="actions">
+            <a class="btn solid" href="presets/LOVESICK_v1.4.1.json" download>Download preset</a>
+            <a class="btn line" href="regex/LOVESICK_regex_bundle.json" download>Regex bundle</a>
+          </div>
+        </article>
+
+        <article class="bill callboard reveal">
+          <div class="pattern" aria-hidden="true"></div>
+          <div class="bill-top"><span class="now">Now playing</span><span class="ver">v1.3.0</span></div>
+          <div class="title-row">
+            <div class="seal" aria-hidden="true">📋</div>
+            <div>
+              <h3>CALLBOARD</h3>
+              <p class="starring">Starring <strong>Xavi</strong>, your stage manager</p>
+            </div>
+          </div>
+          <blockquote>“Pick-one bands are labeled. Two wings lit at once will fight.”</blockquote>
+          <ul>
+            <li>Setting wings: Modern, College AU, Y2K, Westeros, Medieval, Regency, Fantasy</li>
+            <li>Trackers, model correction layers, and Impersonate or Story Mode</li>
+            <li>Chat panels for Twitch, Discord, X, Reddit, AIM, MySpace, and the tabloids</li>
+          </ul>
+          <div class="stats">
+            <div><b>139</b><span>prompts</span></div>
+            <div><b>98</b><span>regex</span></div>
+            <div><b>100k</b><span>context</span></div>
+          </div>
+          <div class="actions">
+            <a class="btn solid" href="presets/CALLBOARD_v1.3.0.json" download>Download preset</a>
+            <a class="btn line" href="regex/CALLBOARD_regex_bundle.json" download>Regex bundle</a>
+          </div>
+        </article>
+      </div>
     </div>
   </section>
 
-  <section id="extensions">
-    <h2>Extensions</h2>
-    <p class="lede">Install with <strong>Extensions → Install extension</strong> and paste the repo URL. The copy button puts it on your clipboard.</p>
-    <div id="ext-groups"></div>
+  <section id="crew">
+    <div class="wrap">
+      <div class="head reveal">
+        <div class="act">Act II</div>
+        <h2>The Crew</h2>
+        <p>Extensions that work backstage. Install any of them from <kbd>Extensions</kbd> → <kbd>Install extension</kbd> by pasting the repo URL.</p>
+        <div class="flourish" aria-hidden="true">✦</div>
+      </div>
+
+      <div class="filters" role="group" aria-label="Filter extensions">
+        <button type="button" aria-pressed="true" data-filter="all">All crew</button>
+        <button type="button" aria-pressed="false" data-filter="writing">Writing &amp; roleplay</button>
+        <button type="button" aria-pressed="false" data-filter="tools">Prompt &amp; preset tools</button>
+        <button type="button" aria-pressed="false" data-filter="ui">Interface</button>
+      </div>
+
+      <div class="crew">
+        <article class="stub reveal" data-cat="writing">
+          <div class="stub-head"><span class="role">Keeps the dossiers</span><span class="ver">v0.8.0</span></div>
+          <div class="stub-body">
+            <h3><span aria-hidden="true">🗂️</span>Offstage</h3>
+            <p>A private dossier per character, with an inbox of details the model noticed. Nothing sticks until you approve it, and every fact records where it came from.</p>
+            <div class="actions">
+              <button class="btn copy" data-url="https://github.com/howardsierra/SillyTavern-Offstage">Copy install URL</button>
+              <a class="btn line" href="https://github.com/howardsierra/SillyTavern-Offstage">GitHub ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="stub reveal" data-cat="writing">
+          <div class="stub-head"><span class="role">Costumes your persona</span><span class="ver">v1.1.0</span></div>
+          <div class="stub-body">
+            <h3><span aria-hidden="true">👗</span>Wardrobe</h3>
+            <p>Per-chat persona lore. Keep a library of backstory pieces and toggle which ones are true in this chat, without ever editing the persona.</p>
+            <div class="actions">
+              <button class="btn copy" data-url="https://github.com/howardsierra/SillyTavern-Wardrobe">Copy install URL</button>
+              <a class="btn line" href="https://github.com/howardsierra/SillyTavern-Wardrobe">GitHub ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="stub reveal" data-cat="writing">
+          <div class="stub-head"><span class="role">The prompter</span><span class="ver">v0.6.1</span></div>
+          <div class="stub-body">
+            <h3><span aria-hidden="true">🪶</span>Guided Gens SI</h3>
+            <p>Four in-character buttons: Impersonate, Respond, Swipe, and Correct. Steer the next message from your input box while each speaker keeps their voice.</p>
+            <div class="actions">
+              <button class="btn copy" data-url="https://github.com/howardsierra/guidedgens-si">Copy install URL</button>
+              <a class="btn line" href="https://github.com/howardsierra/guidedgens-si">GitHub ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="stub reveal" data-cat="writing">
+          <div class="stub-head"><span class="role">Translates above the stage</span><span class="ver">v0.3.0</span></div>
+          <div class="stub-body">
+            <h3><span aria-hidden="true">🈯</span>Surtitle</h3>
+            <p>English surtitles under foreign-language lines, from Japanese to Old Norse runes, while the original stays exactly as written.</p>
+            <div class="actions">
+              <button class="btn copy" data-url="https://github.com/howardsierra/SillyTavern-surtitle">Copy install URL</button>
+              <a class="btn line" href="https://github.com/howardsierra/SillyTavern-surtitle">GitHub ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="stub reveal" data-cat="writing">
+          <div class="stub-head"><span class="role">Props master</span><span class="ver">v1.0.0</span></div>
+          <div class="stub-body">
+            <h3><span aria-hidden="true">🔗</span>LoreLink</h3>
+            <p>Pairs global lorebooks with specific characters, so your fantasy worldbook stops firing in your modern-day chats.</p>
+            <div class="actions">
+              <button class="btn copy" data-url="https://github.com/howardsierra/LoreLink">Copy install URL</button>
+              <a class="btn line" href="https://github.com/howardsierra/LoreLink">GitHub ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="stub reveal" data-cat="tools">
+          <div class="stub-head"><span class="role">The prompt book</span><span class="ver">v1.6.0</span></div>
+          <div class="stub-body">
+            <h3><span aria-hidden="true">📚</span>Preset Organizer</h3>
+            <p>Collapsible sections, search, and bulk toggles for the prompt manager, plus a grid-style Preset Navigator for every API.</p>
+            <div class="actions">
+              <button class="btn copy" data-url="https://github.com/howardsierra/preset-manager">Copy install URL</button>
+              <a class="btn line" href="https://github.com/howardsierra/preset-manager">GitHub ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="stub reveal" data-cat="tools">
+          <div class="stub-head"><span class="role">The cue sheet</span><span class="ver">v1.0.0</span></div>
+          <div class="stub-body">
+            <h3><span aria-hidden="true">☑️</span>Prompt Checkboxes</h3>
+            <p>Swaps the prompt manager’s toggle icon for a real checkbox. It changes the UI only; nothing else behaves differently.</p>
+            <div class="actions">
+              <button class="btn copy" data-url="https://github.com/howardsierra/prompt-checkboxes">Copy install URL</button>
+              <a class="btn line" href="https://github.com/howardsierra/prompt-checkboxes">GitHub ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="stub reveal" data-cat="tools">
+          <div class="stub-head"><span class="role">The lighting desk</span><span class="ver">v1.0.0</span></div>
+          <div class="stub-body">
+            <h3><span aria-hidden="true">🔍</span>Context Lens</h3>
+            <p>See what’s lit in your context window: a fill donut, a token breakdown, the lorebook entries that fired, and where truncation cut off.</p>
+            <div class="actions">
+              <button class="btn copy" data-url="https://github.com/howardsierra/contextlens">Copy install URL</button>
+              <a class="btn line" href="https://github.com/howardsierra/contextlens">GitHub ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="stub reveal" data-cat="ui">
+          <div class="stub-head"><span class="role">Calls for another take</span><span class="ver">v1.0.0</span></div>
+          <div class="stub-body">
+            <h3><span aria-hidden="true">🔁</span>Encore</h3>
+            <p>A floating, draggable regenerate button. Tap to reroll; hold for swipe, continue, or stop. Made for mobile.</p>
+            <div class="actions">
+              <button class="btn copy" data-url="https://github.com/howardsierra/SillyTavern-Encore">Copy install URL</button>
+              <a class="btn line" href="https://github.com/howardsierra/SillyTavern-Encore">GitHub ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="stub reveal" data-cat="ui">
+          <div class="stub-head"><span class="role">Front of house</span><span class="ver">v1.0.0</span></div>
+          <div class="stub-body">
+            <h3><span aria-hidden="true">🗃️</span>Extension Organizer</h3>
+            <p>Search, pin, sort, and categorize the drawers in the Extensions panel, so finding one stops being a scavenger hunt.</p>
+            <div class="actions">
+              <button class="btn copy" data-url="https://github.com/howardsierra/ExtensionOrganizer">Copy install URL</button>
+              <a class="btn line" href="https://github.com/howardsierra/ExtensionOrganizer">GitHub ↗</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
   </section>
 
-  <footer>Made with care by <a href="https://github.com/howardsierra">@howardsierra</a></footer>
-</div>
-<div class="toast" id="toast">Copied!</div>
+  <section id="install">
+    <div class="wrap">
+      <div class="head reveal">
+        <div class="act">Act III</div>
+        <h2>Taking Your Seat</h2>
+        <p>Getting a preset onstage takes three steps.</p>
+        <div class="flourish" aria-hidden="true">✦</div>
+      </div>
+      <div class="acts">
+        <article class="reveal">
+          <div class="numeral">I.</div>
+          <h3>Import the preset</h3>
+          <p>Open <strong>AI Response Configuration</strong>, set the API to Chat Completion, and click <kbd>Import preset</kbd>.</p>
+        </article>
+        <article class="reveal">
+          <div class="numeral">II.</div>
+          <h3>Bring the regex</h3>
+          <p>Every preset carries its own regex scripts. If SillyTavern doesn’t offer to import them, use the bundle: <kbd>Extensions</kbd> → <kbd>Regex</kbd> → <kbd>Import</kbd>.</p>
+        </article>
+        <article class="reveal">
+          <div class="numeral">III.</div>
+          <h3>Read the program</h3>
+          <p>Open the <strong>Read Me</strong> prompt at the top of the list. It’s never sent to the model, and it walks you through which toggles to pick.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p class="bow">Curtain call</p>
+  <p>Written, directed, and coded by <a href="https://github.com/howardsierra">@howardsierra</a></p>
+  <p><a href="https://github.com/howardsierra/Roleplay-Resources">View the repository on GitHub</a></p>
+</footer>
 
 <script>
-  const presets = [
-    {
-      name: "🌹 Rosie Full Bloom", ver: "v2.7", host: "Rosie, a fangirly creative-writing mascot",
-      desc: "A living world that protects your agency. Romance, dark romance, horror, mystery, cozy, and all the rest, with Prose Wardrobe styles, Writer's Room genre lenses, info boards, and status reports.",
-      chips: ["140 prompts", "34 regex", "Code Runner visuals"],
-      file: "presets/Rosie_Full_Bloom_v2.7.json", regex: "regex/Rosie_regex_bundle.json"
-    },
-    {
-      name: "🥀 The Velvet Vigil", ver: "v3.2.2", host: "Vesper, a night-archivist",
-      desc: "Gothic and literary storytelling. Commentary modes and moods, voice and genre picks, story systems like the Gun Rack and a difficulty dial, diegetic HTML panels, and token-light Loom Mode.",
-      chips: ["107 prompts", "8 regex", "Loom Mode"],
-      file: "presets/The_Velvet_Vigil_v3.2.2.json", regex: "regex/Velvet_Vigil_regex_bundle.json"
-    },
-    {
-      name: "💌 LOVESICK", ver: "v1.4.1", host: "Juno, a romance editor with a matchmaker's god complex",
-      desc: "Modern-day romance and heat. Pick up to two tropes, set the heat dial, and turn on Screenlife: texts, the group chat, the delulu meter, and chapter cards. Juno also takes the desk as a general assistant.",
-      chips: ["78 prompts", "12 regex", "Signal Mode"],
-      file: "presets/LOVESICK_v1.4.1.json", regex: "regex/LOVESICK_regex_bundle.json"
-    },
-    {
-      name: "📋 CALLBOARD", ver: "v1.3.0", host: "Xavi, your stage manager",
-      desc: "Modular setting wings (Modern, College AU, Y2K, Westeros, Regency, Fantasy), trackers, model correction layers, and chat panels for Twitch, Discord, X, Reddit, and the tabloids.",
-      chips: ["139 prompts", "98 regex", "Impersonate mode"],
-      file: "presets/CALLBOARD_v1.3.0.json", regex: "regex/CALLBOARD_regex_bundle.json"
-    }
-  ];
-
-  const gh = "https://github.com/howardsierra/";
-  const extensions = {
-    "Writing & roleplay": [
-      ["Offstage", "SillyTavern-Offstage", "0.8.0", "A private dossier per character, with an inbox of model-noticed details you approve before they stick. Every fact records where it came from."],
-      ["Wardrobe", "SillyTavern-Wardrobe", "1.1.0", "Per-chat persona lore. Toggle which backstory pieces are true in this chat without ever editing the persona."],
-      ["Guided Gens SI", "guidedgens-si", "0.6.1", "Four in-character buttons, Impersonate, Respond, Swipe, and Correct, that steer the next message while keeping each speaker's voice."],
-      ["Surtitle", "SillyTavern-surtitle", "0.3.0", "English surtitles under foreign-language lines, from Japanese to Old Norse runes, without replacing the original."],
-      ["LoreLink", "LoreLink", "1.0.0", "Pair global lorebooks with specific characters, so your fantasy worldbook stops firing in modern-day chats."]
-    ],
-    "Prompt & preset tools": [
-      ["Preset Organizer", "preset-manager", "1.6.0", "Collapsible sections, search, and bulk toggles for the prompt manager, plus a grid-style Preset Navigator."],
-      ["Prompt Checkboxes", "prompt-checkboxes", "1.0.0", "Swaps the prompt manager's toggle icon for a real checkbox. UI only; nothing else changes."],
-      ["Context Lens", "contextlens", "1.0.0", "A context-window dashboard: fill donut, token breakdown, the lorebook entries that fired, and where truncation cut off."]
-    ],
-    "Interface": [
-      ["Encore", "SillyTavern-Encore", "1.0.0", "A floating, draggable regenerate button. Tap to reroll; hold for swipe, continue, or stop."],
-      ["Extension Organizer", "ExtensionOrganizer", "1.0.0", "Search, pin, sort, and categorize the drawers in the Extensions panel."]
-    ]
-  };
-
-  const esc = s => s.replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
-
-  document.getElementById("preset-grid").innerHTML = presets.map(p => `
-    <article class="card preset">
-      <div>
-        <h3 class="title">${esc(p.name)} <span class="ver">${p.ver}</span></h3>
-        <div class="host">Hosted by ${esc(p.host)}</div>
-      </div>
-      <p>${esc(p.desc)}</p>
-      <div class="chips">${p.chips.map(c => `<span class="chip">${esc(c)}</span>`).join("")}</div>
-      <div class="actions">
-        <a class="btn primary" href="${p.file}" download>Download preset</a>
-        <a class="btn" href="${p.regex}" download>Regex bundle</a>
-      </div>
-    </article>`).join("");
-
-  document.getElementById("ext-groups").innerHTML = Object.entries(extensions).map(([group, list]) => `
-    <h3 class="group">${esc(group)}</h3>
-    <div class="grid">${list.map(([name, repo, ver, desc]) => `
-      <article class="card">
-        <h4>${esc(name)} <span class="ver">v${ver}</span></h4>
-        <p>${esc(desc)}</p>
-        <div class="actions">
-          <button class="btn copy" data-url="${gh + repo}">Copy install URL</button>
-          <a class="btn" href="${gh + repo}">GitHub ↗</a>
-        </div>
-      </article>`).join("")}
-    </div>`).join("");
-
-  const toast = document.getElementById("toast");
-  document.addEventListener("click", async e => {
+  // Copy install URLs
+  document.addEventListener("click", async (e) => {
     const b = e.target.closest(".copy");
     if (!b) return;
-    try { await navigator.clipboard.writeText(b.dataset.url); toast.textContent = "Copied!"; }
-    catch { toast.textContent = b.dataset.url; }
-    toast.classList.add("show");
-    setTimeout(() => toast.classList.remove("show"), 1600);
+    const label = b.textContent;
+    try {
+      await navigator.clipboard.writeText(b.dataset.url);
+      b.textContent = "Copied ✓";
+    } catch {
+      window.prompt("Copy this URL:", b.dataset.url);
+      return;
+    }
+    b.classList.add("done");
+    setTimeout(() => { b.textContent = label; b.classList.remove("done"); }, 1600);
   });
+
+  // Crew filters
+  const filterButtons = document.querySelectorAll(".filters button");
+  filterButtons.forEach((btn) => btn.addEventListener("click", () => {
+    filterButtons.forEach((b) => b.setAttribute("aria-pressed", String(b === btn)));
+    const f = btn.dataset.filter;
+    document.querySelectorAll(".stub").forEach((s) => {
+      s.hidden = f !== "all" && s.dataset.cat !== f;
+    });
+  }));
+
+  // Reveal on scroll
+  const items = document.querySelectorAll(".reveal");
+  if ("IntersectionObserver" in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((en) => {
+        if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); }
+      });
+    }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
+    items.forEach((el) => io.observe(el));
+  } else {
+    items.forEach((el) => el.classList.add("in"));
+  }
 </script>
 </body>
 </html>
