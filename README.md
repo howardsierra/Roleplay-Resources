@@ -6,6 +6,18 @@ SillyTavern extensions, Chat Completion presets, and regex bundles by **Sierra**
 
 ---
 
+## ✦ Reverie: my own frontend
+
+[**Reverie**](https://github.com/howardsierra/roleplay-frontend-personal) is a self-hosted roleplay frontend that looks good on phones and computers and needs very little setup.
+
+- **Phone-first.** Works in a phone browser and installs to your home screen.
+- **Compatible with what you already have.** SillyTavern character cards, chat-completion presets (including the ones below), themes, lorebooks, regex scripts, chats, and third-party extensions, plus Lumiverse "Loom" presets.
+- **Live replies.** HTML, CSS, JavaScript, and Python blocks run inside messages as sandboxed mini-apps.
+- **Image generation.** Pollinations, NovelAI, ComfyUI, OpenAI, Gemini, and more, with inline `<pic>` tags the model can write.
+- **No database or build step.** Runs on Node.js 20+ and stores everything as plain files in one `data/` folder. Deploy it on Railway or run it locally ([how to run it](https://github.com/howardsierra/roleplay-frontend-personal#run-it)).
+
+---
+
 ## 🧩 Extensions
 
 Install any of these from SillyTavern: **Extensions → Install extension →** paste the repo URL.

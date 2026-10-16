@@ -342,6 +342,111 @@
   .stub .btn.line { border-color: var(--line); color: var(--ink); background: transparent; }
   .stub .btn.line:hover { border-color: var(--gold); }
 
+  /* ---------- the house: Reverie ---------- */
+  .house {
+    position: relative; overflow: hidden; isolation: isolate;
+    border-radius: 28px; padding: clamp(28px, 5vw, 56px);
+    background: #0c0b1d; color: #ece9ff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .2), 0 30px 60px -20px rgba(20, 10, 60, .6);
+    display: grid; gap: 40px; align-items: center;
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr);
+  }
+  .aurora { position: absolute; inset: -20%; z-index: -1; filter: blur(60px); opacity: .75; }
+  .aurora i { position: absolute; border-radius: 50%; animation: drift 18s ease-in-out infinite alternate; }
+  .aurora i:nth-child(1) { width: 55%; height: 55%; left: 0; top: 5%; background: #5b3cc4; }
+  .aurora i:nth-child(2) { width: 45%; height: 50%; right: 5%; top: 0; background: #1f8a9e; animation-delay: -6s; }
+  .aurora i:nth-child(3) { width: 50%; height: 45%; left: 30%; bottom: 0; background: #b0397a; animation-delay: -12s; }
+  @keyframes drift {
+    from { transform: translate(0, 0) scale(1); }
+    to { transform: translate(8%, 6%) scale(1.15); }
+  }
+  .house::after {
+    content: ""; position: absolute; inset: 0; z-index: -1;
+    background: radial-gradient(rgba(255, 255, 255, .5) .8px, transparent 1.2px) 0 0 / 34px 34px;
+    -webkit-mask: radial-gradient(ellipse at 30% 20%, #000, transparent 70%); mask: radial-gradient(ellipse at 30% 20%, #000, transparent 70%);
+    opacity: .35;
+  }
+  .house .now { color: #b9a8ff; }
+  .house h3 {
+    margin: 14px 0 6px; font: 700 clamp(2.6rem, 8vw, 4.2rem)/1 var(--display); letter-spacing: -.02em;
+    background: linear-gradient(120deg, #ffffff 10%, #c9bbff 50%, #8fe3f0 90%);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .house .lead { font: italic 500 clamp(1.15rem, 2.6vw, 1.4rem)/1.45 var(--script); color: #d8d2f5; margin: 0 0 22px; max-width: 520px; }
+  .perks { list-style: none; margin: 0 0 28px; padding: 0; display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); }
+  .perks li {
+    display: flex; gap: 12px; align-items: flex-start;
+    padding: 12px 14px; border-radius: 14px;
+    background: rgba(255, 255, 255, .06); border: 1px solid rgba(255, 255, 255, .1);
+    font-size: 14px; line-height: 1.45; color: #cfc9ec;
+    -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+  }
+  .perks li span { font-size: 18px; line-height: 1.2; flex: none; }
+  .perks b { display: block; color: #fff; font-weight: 600; margin-bottom: 2px; }
+  .house .actions { display: flex; gap: 10px; flex-wrap: wrap; }
+  .btn.lilac { background: #ece9ff; color: #1a1440; }
+  .btn.lilac:hover { box-shadow: 0 8px 24px -8px rgba(185, 168, 255, .9); }
+  .btn.glass { border-color: rgba(236, 233, 255, .3); color: #ece9ff; background: rgba(255, 255, 255, .06); }
+  .btn.glass:hover { background: rgba(255, 255, 255, .12); }
+  .fine { margin: 16px 0 0; font-size: 12.5px; color: #9f98c4; }
+
+  /* phone mockup */
+  .phone {
+    justify-self: center; width: min(100%, 290px); aspect-ratio: 9 / 18.5;
+    border-radius: 42px; padding: 10px;
+    background: linear-gradient(160deg, #2a2745, #12101f);
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, .12), 0 30px 60px -10px rgba(0, 0, 0, .7), inset 0 0 0 1px rgba(255, 255, 255, .05);
+    transform: rotate(3deg);
+  }
+  .screen {
+    height: 100%; border-radius: 33px; overflow: hidden; position: relative;
+    display: flex; flex-direction: column;
+    background:
+      radial-gradient(ellipse 80% 40% at 50% 0, rgba(255, 170, 90, .35), transparent 70%),
+      linear-gradient(180deg, #1b1428, #120e1c);
+    font-size: 11.5px; line-height: 1.5;
+  }
+  .screen-top {
+    display: flex; align-items: center; gap: 8px;
+    padding: 30px 14px 10px; border-bottom: 1px solid rgba(255, 255, 255, .08);
+  }
+  .screen-top .av {
+    width: 28px; height: 28px; border-radius: 50%; flex: none;
+    background: radial-gradient(circle at 35% 30%, #f5c88a, #9b3b5a 70%);
+  }
+  .screen-top b { display: block; color: #fff; font-size: 12.5px; }
+  .screen-top small { color: #f2b97a; font-size: 10px; }
+  .msgs { flex: 1; padding: 12px; display: flex; flex-direction: column; gap: 10px; overflow: hidden; }
+  .msg { padding: 9px 11px; border-radius: 14px; max-width: 88%; }
+  .msg.them { background: rgba(255, 255, 255, .08); color: #e8e2f5; border-top-left-radius: 4px; font-family: var(--script); font-size: 13px; line-height: 1.35; }
+  .msg.them i { color: #c7bde0; }
+  .msg.you { align-self: flex-end; background: #6d4fd8; color: #fff; border-top-right-radius: 4px; }
+  .mini {
+    border-radius: 12px; padding: 9px 11px; border: 1px solid rgba(242, 185, 122, .35);
+    background: rgba(242, 185, 122, .08); color: #f6dcb8; font-size: 10.5px;
+  }
+  .mini .bar { height: 5px; border-radius: 9px; background: rgba(255, 255, 255, .12); margin-top: 6px; overflow: hidden; }
+  .mini .bar i { display: block; height: 100%; width: 68%; background: linear-gradient(90deg, #f2b97a, #e8798f); }
+  .swipe { display: flex; justify-content: center; gap: 5px; color: #8c84ad; font-size: 10px; }
+  .composer {
+    margin: 0 10px 12px; padding: 9px 12px; border-radius: 999px;
+    background: rgba(255, 255, 255, .07); color: #8c84ad;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .composer span:last-child {
+    width: 22px; height: 22px; border-radius: 50%; background: #6d4fd8; color: #fff;
+    display: grid; place-items: center; font-size: 11px;
+  }
+
+  @media (max-width: 860px) {
+    .house { grid-template-columns: 1fr; }
+    .phone { transform: none; width: min(100%, 240px); }
+  }
+  @media (max-width: 560px) {
+    .perks { gap: 8px; }
+    .perks li { padding: 10px 12px; font-size: 13.5px; }
+  }
+
   /* ---------- install: three acts ---------- */
   .acts { display: grid; gap: 18px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); counter-reset: act; }
   .acts article {
@@ -378,12 +483,12 @@
     .drape.right { --to: 92%; }
     .bill { padding: 24px 20px 22px; }
     .seal { width: 54px; height: 54px; font-size: 26px; }
-    .billing { gap: 8px 20px; }
+    .billing { display: grid; grid-template-columns: 1fr 1fr; gap: 18px 12px; }
   }
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
     .drape { animation: none; transform: translateX(var(--to)); }
-    .bulbs i { animation: none; }
+    .bulbs i, .aurora i { animation: none; }
     .reveal { opacity: 1; transform: none; transition: none; }
     .bill, .stub, .btn { transition: none; }
   }
@@ -398,15 +503,17 @@
     <p class="kicker">Sierra presents</p>
     <h1>Roleplay <em>Resources</em></h1>
     <div class="bulbs" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-    <p class="tagline">Presets, regex, and extensions for SillyTavern. Four hostesses, a backstage crew, and a story that’s yours to steer.</p>
+    <p class="tagline">Presets, extensions, and a frontend of my own. Four hostesses, a backstage crew, a house to play in, and a story that’s yours to steer.</p>
     <div class="cta" style="margin-top:30px">
       <a class="btn gold" href="#company">See the company</a>
       <a class="btn ghost" href="#crew">Meet the crew</a>
+      <a class="btn ghost" href="#house">Tour the house</a>
     </div>
     <div class="billing">
       <div><b>4</b>presets</div>
       <div><b>152</b>regex scripts</div>
       <div><b>10</b>extensions</div>
+      <div><b>1</b>frontend</div>
     </div>
   </div>
 </header>
@@ -673,10 +780,63 @@
     </div>
   </section>
 
-  <section id="install">
+  <section id="house">
     <div class="wrap">
       <div class="head reveal">
         <div class="act">Act III</div>
+        <h2>The House</h2>
+        <p>Every show needs a theatre. This is the one I built.</p>
+        <div class="flourish" aria-hidden="true">✦</div>
+      </div>
+
+      <article class="house reveal">
+        <div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
+        <div>
+          <div class="bill-top" style="justify-content:flex-start;gap:12px">
+            <span class="now">Opening night</span>
+            <span class="ver" style="background:rgba(255,255,255,.1);color:#cfc9ec">v0.1.0</span>
+          </div>
+          <h3>✦ Reverie</h3>
+          <p class="lead">A self-hosted roleplay frontend that looks good on phones and computers and needs very little setup.</p>
+          <ul class="perks">
+            <li><span aria-hidden="true">📱</span><div><b>Phone-first</b>Works in a phone browser and installs to your home screen.</div></li>
+            <li><span aria-hidden="true">🎭</span><div><b>Brings your stuff</b>SillyTavern cards, presets, themes, lorebooks, regex, and extensions, plus Lumiverse Loom presets.</div></li>
+            <li><span aria-hidden="true">✨</span><div><b>Live replies</b>HTML, CSS, JavaScript, and Python run inside messages as sandboxed mini-apps.</div></li>
+            <li><span aria-hidden="true">🕯️</span><div><b>Scene lighting</b>Candlelight, moonlight, storms, and snow that follow the story.</div></li>
+            <li><span aria-hidden="true">🎨</span><div><b>Image generation</b>Pollinations, NovelAI, ComfyUI, and more, with inline <code style="font-size:12px">&lt;pic&gt;</code> tags the model can write.</div></li>
+            <li><span aria-hidden="true">🗃️</span><div><b>No database</b>Runs on Node.js and keeps everything as plain files in one folder.</div></li>
+          </ul>
+          <div class="actions">
+            <a class="btn lilac" href="https://github.com/howardsierra/roleplay-frontend-personal">View on GitHub ↗</a>
+            <a class="btn glass" href="https://github.com/howardsierra/roleplay-frontend-personal#run-it">How to run it</a>
+          </div>
+          <p class="fine">Run it on Railway to use it anywhere, or locally with Node.js 20+. Licensed AGPL-3.0.</p>
+        </div>
+
+        <div class="phone" aria-hidden="true">
+          <div class="screen">
+            <div class="screen-top">
+              <div class="av"></div>
+              <div><b>Vesper</b><small>🕯️ candlelight</small></div>
+            </div>
+            <div class="msgs">
+              <div class="msg them"><i>The archive smells of wax and old paper. She doesn’t look up from the ledger.</i> “You’re late. The story started without you.”</div>
+              <div class="msg you">Then catch me up.</div>
+              <div class="mini">🎀 Ribbon Ledger · trust<div class="bar"><i></i></div></div>
+              <div class="msg them"><i>A thin smile.</i> “Sit. Some chapters are better heard by candlelight.”</div>
+              <div class="swipe">‹ 2 / 3 ›</div>
+            </div>
+            <div class="composer"><span>Write your reply…</span><span>➤</span></div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="install">
+    <div class="wrap">
+      <div class="head reveal">
+        <div class="act">Program notes</div>
         <h2>Taking Your Seat</h2>
         <p>Getting a preset onstage takes three steps.</p>
         <div class="flourish" aria-hidden="true">✦</div>
