@@ -517,6 +517,47 @@
   .btn.glass:hover { background: rgba(255, 255, 255, .12); }
   .fine { margin: 16px 0 0; font-size: 12.5px; color: #9f98c4; }
 
+  /* agents band */
+  .agents { grid-column: 1 / -1; border-top: 1px solid rgba(255, 255, 255, .12); padding-top: 32px; }
+  .agents-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px; margin-bottom: 6px; }
+  .agents-head h4 { margin: 0; font: 700 clamp(1.6rem, 4vw, 2.1rem)/1.1 var(--display); color: #fff; }
+  .badge-new {
+    font: 700 10.5px/1 var(--body); letter-spacing: .22em; text-transform: uppercase;
+    padding: 6px 10px; border-radius: 999px; color: #1a1440;
+    background: linear-gradient(90deg, #c9bbff, #8fe3f0);
+  }
+  .agents > p { margin: 0 0 20px; color: #cfc9ec; font-size: 15px; max-width: 680px; }
+  .agent-grid { display: grid; gap: 12px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 230px), 1fr)); list-style: none; margin: 0; padding: 0; }
+  .agent-grid li {
+    padding: 14px 16px; border-radius: 16px;
+    background: rgba(255, 255, 255, .06); border: 1px solid rgba(255, 255, 255, .1);
+    -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+    font-size: 13.5px; line-height: 1.45; color: #cfc9ec;
+    transition: transform .2s ease, border-color .2s ease;
+  }
+  .agent-grid li:hover { transform: translateY(-2px); border-color: rgba(201, 187, 255, .45); }
+  .agent-grid .ico { font-size: 20px; display: block; margin-bottom: 6px; }
+  .agent-grid b { display: block; color: #fff; font-size: 14.5px; margin-bottom: 3px; }
+  .also { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+  .also span {
+    font-size: 13px; color: #e6e1ff; padding: 8px 12px; border-radius: 12px;
+    background: rgba(143, 227, 240, .08); border: 1px solid rgba(143, 227, 240, .22);
+  }
+  .also b { color: #fff; font-weight: 600; }
+  .crewline { margin: 20px 0 0; font-size: 13.5px; color: #b9b2dc; }
+  .crewline a { color: #e6e1ff; text-underline-offset: 3px; }
+  .screen-top .agents-chip {
+    margin-left: auto; font-size: 9.5px; color: #1a1440; font-weight: 700;
+    padding: 4px 7px; border-radius: 999px; background: linear-gradient(90deg, #c9bbff, #8fe3f0);
+  }
+  .choices { display: flex; flex-direction: column; gap: 5px; }
+  .choices span {
+    align-self: flex-start; font-size: 10.5px; color: #e6e1ff; padding: 5px 9px; border-radius: 10px;
+    background: rgba(201, 187, 255, .1); border: 1px solid rgba(201, 187, 255, .3);
+  }
+  .composer span:first-child { flex: 1; }
+  .composer .push { font-size: 12px; margin-right: 8px; }
+
   /* phone mockup */
   .phone {
     justify-self: center; width: min(100%, 290px); aspect-ratio: 9 / 18.5;
@@ -570,6 +611,9 @@
     .phone { transform: none; width: min(100%, 240px); }
   }
   @media (max-width: 560px) {
+    .agent-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
+    .agent-grid li { padding: 11px 12px; font-size: 12.5px; }
+    .agent-grid b { font-size: 13.5px; }
     .perks { gap: 8px; }
     .perks li { padding: 10px 12px; font-size: 13.5px; }
   }
@@ -1073,17 +1117,17 @@
           <p class="lead">A self-hosted roleplay frontend that looks good on phones and computers and needs very little setup.</p>
           <ul class="perks">
             <li><span aria-hidden="true">📱</span><div><b>Phone-first</b>Works in a phone browser and installs to your home screen.</div></li>
-            <li><span aria-hidden="true">🎭</span><div><b>Brings your stuff</b>SillyTavern cards, presets, themes, lorebooks, regex, and extensions, plus Lumiverse Loom presets.</div></li>
+            <li><span aria-hidden="true">🎭</span><div><b>Brings your stuff</b>SillyTavern cards, presets, themes, lorebooks, regex, and extensions, plus Lumiverse Loom presets and extensions.</div></li>
             <li><span aria-hidden="true">✨</span><div><b>Live replies</b>HTML, CSS, JavaScript, and Python run inside messages as sandboxed mini-apps.</div></li>
-            <li><span aria-hidden="true">🕯️</span><div><b>Scene lighting</b>Candlelight, moonlight, storms, and snow that follow the story.</div></li>
-            <li><span aria-hidden="true">🎨</span><div><b>Image generation</b>Pollinations, NovelAI, ComfyUI, and more, with inline <code style="font-size:12px">&lt;pic&gt;</code> tags the model can write.</div></li>
-            <li><span aria-hidden="true">🗃️</span><div><b>No database</b>Runs on Node.js and keeps everything as plain files in one folder.</div></li>
+            <li><span aria-hidden="true">🕯️</span><div><b>Story tools</b>Scene lighting that follows the story, and “Previously on…” recaps when you come back.</div></li>
+            <li><span aria-hidden="true">🧑‍🚀</span><div><b>Personas, built in</b>The Persona Manager and Avatar Banner extensions, ported in and reading your existing data.</div></li>
+            <li><span aria-hidden="true">💾</span><div><b>Backups</b>One-file backups of everything, plus snapshots you can merge or restore.</div></li>
           </ul>
           <div class="actions">
             <a class="btn lilac" href="https://github.com/howardsierra/roleplay-frontend-personal">View on GitHub ↗</a>
             <a class="btn glass" href="https://github.com/howardsierra/roleplay-frontend-personal#run-it">How to run it</a>
           </div>
-          <p class="fine">Run it on Railway to use it anywhere, or locally with Node.js 20+. Licensed AGPL-3.0.</p>
+          <p class="fine">Run it on Railway to use it anywhere, on your computer, with Docker, or right on an Android phone with Termux. Node.js 20+, no database, AGPL-3.0.</p>
         </div>
 
         <div class="phone" aria-hidden="true">
@@ -1091,16 +1135,39 @@
             <div class="screen-top">
               <div class="av"></div>
               <div><b>Vesper</b><small>🕯️ candlelight</small></div>
+              <span class="agents-chip">✦ 3 agents</span>
             </div>
             <div class="msgs">
               <div class="msg them"><i>The archive smells of wax and old paper. She doesn’t look up from the ledger.</i> “You’re late. The story started without you.”</div>
               <div class="msg you">Then catch me up.</div>
               <div class="mini">🎀 Ribbon Ledger · trust<div class="bar"><i></i></div></div>
               <div class="msg them"><i>A thin smile.</i> “Sit. Some chapters are better heard by candlelight.”</div>
+              <div class="choices"><span>› Ask what she’s hiding</span><span>› Sit by the candle</span><span>✎ Something else…</span></div>
               <div class="swipe">‹ 2 / 3 ›</div>
             </div>
-            <div class="composer"><span>Write your reply…</span><span>➤</span></div>
+            <div class="composer"><span>Write your reply…</span><span class="push">🧭</span><span>➤</span></div>
           </div>
+        </div>
+
+        <div class="agents">
+          <div class="agents-head"><h4>The agents</h4><span class="badge-new">New</span></div>
+          <p>Small helper AIs that work around your replies. Switch them on per story, and optionally give them their own cheaper model.</p>
+          <ul class="agent-grid">
+            <li><span class="ico" aria-hidden="true">🧭</span><b>Narrative Director</b>A “Push story” button that advances your threads or throws in a random event.</li>
+            <li><span class="ico" aria-hidden="true">🗝️</span><b>Secret Plot</b>Keeps a hidden long-term arc and quietly steers toward it. Peek at it and edit it any time.</li>
+            <li><span class="ico" aria-hidden="true">🪶</span><b>Prose Guardian</b>Polishes each reply to remove banned words, clichés, and repetition. The original stays in the edit history.</li>
+            <li><span class="ico" aria-hidden="true">🧵</span><b>Continuity Checker</b>Lists slips with names, clothes, injuries, or time as a checklist. Apply the fixes you tick.</li>
+            <li><span class="ico" aria-hidden="true">🗺️</span><b>Trackers</b>World, characters, quests, inventory, and relationships. Edit anything, or lock it so the AI can’t.</li>
+            <li><span class="ico" aria-hidden="true">🔀</span><b>Choices</b>Tappable “what you do next” options under the newest reply.</li>
+            <li><span class="ico" aria-hidden="true">📚</span><b>Lorebook Keeper</b>Suggests lore entries for new people, places, and facts, and adds the ones you approve.</li>
+            <li><span class="ico" aria-hidden="true">📣</span><b>Echo Chamber</b>A pretend live audience in a floating feed: AO3 readers, Twitter, hype squad, or harbingers of doom.</li>
+          </ul>
+          <div class="also">
+            <span><b>Regenerate with a note:</b> “shorter,” “she wouldn’t forgive him that fast”</span>
+            <span><b>Branch &amp; send:</b> edit an earlier message and get a fresh reply on a new branch</span>
+            <span><b>Preset options:</b> <code style="font-size:12px">{{var::name}}</code> sliders, dropdowns, and switches</span>
+          </div>
+          <p class="crewline">Your crew comes along: <a href="#crew">Offstage, Wardrobe, Surtitle, Context Lens, and Extension Organizer</a> are tested working, and Preset Organizer and Prompt Checkboxes are built right in.</p>
         </div>
       </article>
     </div>

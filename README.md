@@ -11,10 +11,23 @@ SillyTavern extensions, Chat Completion presets, and regex bundles by **Sierra**
 [**Reverie**](https://github.com/howardsierra/roleplay-frontend-personal) is a self-hosted roleplay frontend that looks good on phones and computers and needs very little setup.
 
 - **Phone-first.** Works in a phone browser and installs to your home screen.
-- **Compatible with what you already have.** SillyTavern character cards, chat-completion presets (including the ones below), themes, lorebooks, regex scripts, chats, and third-party extensions, plus Lumiverse "Loom" presets.
+- **Compatible with what you already have.** SillyTavern character cards, chat-completion presets (including the ones below), themes, lorebooks, regex scripts, chats, and third-party extensions, plus Lumiverse "Loom" presets and extensions. Offstage, Wardrobe, Surtitle, Context Lens, and Extension Organizer are tested working, and Preset Organizer and Prompt Checkboxes are built in.
+- **Agents (new).** Helper AIs that run around your replies, switched on per story, optionally on their own cheaper model:
+  - **Narrative Director:** a 🧭 *Push story* button that advances the threads or adds a random event
+  - **Secret Plot:** a hidden long-term arc it quietly steers toward, which you can peek at and edit
+  - **Prose Guardian:** removes banned words, clichés, and repetition from each reply
+  - **Continuity Checker:** lists slips as a checklist of fixes
+  - **Trackers:** editable, lockable world, character, quest, inventory, and relationship state
+  - **Choices:** tappable "what you do next" options
+  - **Lorebook Keeper:** suggests lore entries for you to approve
+  - **Echo Chamber:** a pretend live audience in a floating feed
+- **Regenerate with a note, Branch & send, and preset options.** Tell a regeneration what to change, edit an earlier message onto a new branch, and expose `{{var::name}}` prompt variables as sliders, dropdowns, and switches.
 - **Live replies.** HTML, CSS, JavaScript, and Python blocks run inside messages as sandboxed mini-apps.
+- **Story tools.** Scene lighting that follows the story, and "Previously on…" recaps when you come back.
+- **Built-in Persona Manager and Avatar Banner,** ported from the SillyTavern extensions and reading their saved data.
+- **Backups.** One-file backups of everything, plus snapshots to merge or restore.
 - **Image generation.** Pollinations, NovelAI, ComfyUI, OpenAI, Gemini, and more, with inline `<pic>` tags the model can write.
-- **No database or build step.** Runs on Node.js 20+ and stores everything as plain files in one `data/` folder. Deploy it on Railway or run it locally ([how to run it](https://github.com/howardsierra/roleplay-frontend-personal#run-it)).
+- **No database or build step.** Runs on Node.js 20+ and stores everything as plain files. Deploy it on Railway, with Docker, on your computer, or on an Android phone with Termux ([how to run it](https://github.com/howardsierra/roleplay-frontend-personal#run-it)).
 
 ---
 
