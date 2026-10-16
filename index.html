@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Roleplay Resources</title>
+<meta name="description" content="SillyTavern extensions, presets, and regex bundles by Sierra.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf6f3;
+    --surface: #ffffff;
+    --ink: #2a1f24;
+    --muted: #6e5f66;
+    --line: #eadfe0;
+    --accent: #9b2c48;
+    --accent-soft: #f6e4e8;
+    --chip: #f3ecee;
+    --shadow: 0 1px 2px rgba(60, 20, 35, .05), 0 6px 20px rgba(60, 20, 35, .06);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #151013;
+      --surface: #1e171b;
+      --ink: #f1e8eb;
+      --muted: #a8979e;
+      --line: #33282d;
+      --accent: #e8829b;
+      --accent-soft: #3a222b;
+      --chip: #2a2025;
+      --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 6px 20px rgba(0, 0, 0, .25);
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #151013;
+    --surface: #1e171b;
+    --ink: #f1e8eb;
+    --muted: #a8979e;
+    --line: #33282d;
+    --accent: #e8829b;
+    --accent-soft: #3a222b;
+    --chip: #2a2025;
+    --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 6px 20px rgba(0, 0, 0, .25);
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font: 15px/1.6 Inter, system-ui, sans-serif;
+  }
+  a { color: var(--accent); }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 16px; }
+
+  header { padding: 64px 0 32px; text-align: center; }
+  header h1 {
+    font: 600 clamp(2.4rem, 7vw, 3.6rem)/1.05 "Cormorant Garamond", serif;
+    margin: 0 0 12px;
+    letter-spacing: -.01em;
+  }
+  header p { color: var(--muted); margin: 0 auto; max-width: 560px; }
+  .jump { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin-top: 24px; }
+  .jump a, .btn {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 8px 14px; border-radius: 999px;
+    border: 1px solid var(--line); background: var(--surface);
+    color: var(--ink); text-decoration: none; font-weight: 500; font-size: 14px;
+  }
+  .jump a:hover, .btn:hover { border-color: var(--accent); color: var(--accent); }
+  .btn.primary { background: var(--accent); border-color: var(--accent); color: var(--bg); }
+  .btn.primary:hover { color: var(--bg); opacity: .9; }
+
+  section { padding: 32px 0; }
+  h2 {
+    font: 600 2rem/1.1 "Cormorant Garamond", serif;
+    margin: 0 0 4px;
+  }
+  .lede { color: var(--muted); margin: 0 0 20px; }
+  h3.group {
+    font-size: 12px; text-transform: uppercase; letter-spacing: .08em;
+    color: var(--muted); margin: 24px 0 10px; font-weight: 600;
+  }
+
+  .grid { display: grid; gap: 14px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); }
+  .card {
+    background: var(--surface); border: 1px solid var(--line); border-radius: 14px;
+    padding: 18px; box-shadow: var(--shadow);
+    display: flex; flex-direction: column; gap: 10px;
+  }
+  .card h4 { margin: 0; font-size: 16px; display: flex; justify-content: space-between; gap: 8px; align-items: baseline; }
+  .card p { margin: 0; color: var(--muted); font-size: 14px; flex: 1; }
+  .ver { font-size: 12px; font-weight: 500; color: var(--muted); white-space: nowrap; }
+  .actions { display: flex; gap: 8px; flex-wrap: wrap; }
+  .copy { cursor: pointer; font-family: inherit; }
+
+  .preset { gap: 12px; }
+  .preset .title { font: 600 1.6rem/1.1 "Cormorant Garamond", serif; margin: 0; }
+  .host { font-size: 13px; color: var(--accent); font-weight: 500; }
+  .chips { display: flex; gap: 6px; flex-wrap: wrap; }
+  .chip { background: var(--chip); border-radius: 6px; padding: 2px 8px; font-size: 12px; color: var(--muted); }
+  .preset .ver { font: 500 12px Inter, system-ui, sans-serif; vertical-align: middle; margin-left: 4px; }
+  .presets { grid-template-columns: repeat(auto-fill, minmax(min(100%, 440px), 1fr)); }
+
+  .steps { background: var(--accent-soft); border-radius: 14px; padding: 18px 20px; }
+  .steps ol { margin: 8px 0 0; padding-left: 20px; }
+  .steps li { margin: 4px 0; }
+  code { background: var(--chip); padding: 1px 6px; border-radius: 4px; font-size: 13px; }
+
+  footer { padding: 40px 0 56px; color: var(--muted); font-size: 13px; text-align: center; }
+  .toast {
+    position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%) translateY(20px);
+    background: var(--ink); color: var(--bg); padding: 8px 16px; border-radius: 999px;
+    font-size: 14px; opacity: 0; transition: .2s; pointer-events: none;
+  }
+  .toast.show { opacity: 1; transform: translateX(-50%); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Roleplay Resources</h1>
+    <p>SillyTavern extensions, Chat Completion presets, and regex bundles by Sierra.</p>
+    <nav class="jump">
+      <a href="#presets">🎭 Presets</a>
+      <a href="#extensions">🧩 Extensions</a>
+      <a href="https://github.com/howardsierra/Roleplay-Resources">GitHub repo ↗</a>
+    </nav>
+  </header>
+
+  <section id="presets">
+    <h2>Presets</h2>
+    <p class="lede">Tuned for Claude. Each one has a hostess who narrates the world and, if you let her, comments on it.</p>
+    <div class="grid presets" id="preset-grid"></div>
+    <div class="steps" style="margin-top:18px">
+      <strong>Installing a preset</strong>
+      <ol>
+        <li>Download the preset <code>.json</code>.</li>
+        <li>In SillyTavern, open <strong>AI Response Configuration</strong>, set the API to Chat Completion, and click <strong>Import preset</strong>.</li>
+        <li>Regex scripts are bundled inside each preset. If your version doesn't offer to import them, download the regex bundle and use <strong>Extensions → Regex → Import</strong>.</li>
+        <li>Open the preset's <strong>Read Me</strong> prompt at the top of the list for the quick start.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="extensions">
+    <h2>Extensions</h2>
+    <p class="lede">Install with <strong>Extensions → Install extension</strong> and paste the repo URL. The copy button puts it on your clipboard.</p>
+    <div id="ext-groups"></div>
+  </section>
+
+  <footer>Made with care by <a href="https://github.com/howardsierra">@howardsierra</a></footer>
+</div>
+<div class="toast" id="toast">Copied!</div>
+
+<script>
+  const presets = [
+    {
+      name: "🌹 Rosie Full Bloom", ver: "v2.7", host: "Rosie, a fangirly creative-writing mascot",
+      desc: "A living world that protects your agency. Romance, dark romance, horror, mystery, cozy, and all the rest, with Prose Wardrobe styles, Writer's Room genre lenses, info boards, and status reports.",
+      chips: ["140 prompts", "34 regex", "Code Runner visuals"],
+      file: "presets/Rosie_Full_Bloom_v2.7.json", regex: "regex/Rosie_regex_bundle.json"
+    },
+    {
+      name: "🥀 The Velvet Vigil", ver: "v3.2.2", host: "Vesper, a night-archivist",
+      desc: "Gothic and literary storytelling. Commentary modes and moods, voice and genre picks, story systems like the Gun Rack and a difficulty dial, diegetic HTML panels, and token-light Loom Mode.",
+      chips: ["107 prompts", "8 regex", "Loom Mode"],
+      file: "presets/The_Velvet_Vigil_v3.2.2.json", regex: "regex/Velvet_Vigil_regex_bundle.json"
+    },
+    {
+      name: "💌 LOVESICK", ver: "v1.4.1", host: "Juno, a romance editor with a matchmaker's god complex",
+      desc: "Modern-day romance and heat. Pick up to two tropes, set the heat dial, and turn on Screenlife: texts, the group chat, the delulu meter, and chapter cards. Juno also takes the desk as a general assistant.",
+      chips: ["78 prompts", "12 regex", "Signal Mode"],
+      file: "presets/LOVESICK_v1.4.1.json", regex: "regex/LOVESICK_regex_bundle.json"
+    },
+    {
+      name: "📋 CALLBOARD", ver: "v1.3.0", host: "Xavi, your stage manager",
+      desc: "Modular setting wings (Modern, College AU, Y2K, Westeros, Regency, Fantasy), trackers, model correction layers, and chat panels for Twitch, Discord, X, Reddit, and the tabloids.",
+      chips: ["139 prompts", "98 regex", "Impersonate mode"],
+      file: "presets/CALLBOARD_v1.3.0.json", regex: "regex/CALLBOARD_regex_bundle.json"
+    }
+  ];
+
+  const gh = "https://github.com/howardsierra/";
+  const extensions = {
+    "Writing & roleplay": [
+      ["Offstage", "SillyTavern-Offstage", "0.8.0", "A private dossier per character, with an inbox of model-noticed details you approve before they stick. Every fact records where it came from."],
+      ["Wardrobe", "SillyTavern-Wardrobe", "1.1.0", "Per-chat persona lore. Toggle which backstory pieces are true in this chat without ever editing the persona."],
+      ["Guided Gens SI", "guidedgens-si", "0.6.1", "Four in-character buttons, Impersonate, Respond, Swipe, and Correct, that steer the next message while keeping each speaker's voice."],
+      ["Surtitle", "SillyTavern-surtitle", "0.3.0", "English surtitles under foreign-language lines, from Japanese to Old Norse runes, without replacing the original."],
+      ["LoreLink", "LoreLink", "1.0.0", "Pair global lorebooks with specific characters, so your fantasy worldbook stops firing in modern-day chats."]
+    ],
+    "Prompt & preset tools": [
+      ["Preset Organizer", "preset-manager", "1.6.0", "Collapsible sections, search, and bulk toggles for the prompt manager, plus a grid-style Preset Navigator."],
+      ["Prompt Checkboxes", "prompt-checkboxes", "1.0.0", "Swaps the prompt manager's toggle icon for a real checkbox. UI only; nothing else changes."],
+      ["Context Lens", "contextlens", "1.0.0", "A context-window dashboard: fill donut, token breakdown, the lorebook entries that fired, and where truncation cut off."]
+    ],
+    "Interface": [
+      ["Encore", "SillyTavern-Encore", "1.0.0", "A floating, draggable regenerate button. Tap to reroll; hold for swipe, continue, or stop."],
+      ["Extension Organizer", "ExtensionOrganizer", "1.0.0", "Search, pin, sort, and categorize the drawers in the Extensions panel."]
+    ]
+  };
+
+  const esc = s => s.replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+
+  document.getElementById("preset-grid").innerHTML = presets.map(p => `
+    <article class="card preset">
+      <div>
+        <h3 class="title">${esc(p.name)} <span class="ver">${p.ver}</span></h3>
+        <div class="host">Hosted by ${esc(p.host)}</div>
+      </div>
+      <p>${esc(p.desc)}</p>
+      <div class="chips">${p.chips.map(c => `<span class="chip">${esc(c)}</span>`).join("")}</div>
+      <div class="actions">
+        <a class="btn primary" href="${p.file}" download>Download preset</a>
+        <a class="btn" href="${p.regex}" download>Regex bundle</a>
+      </div>
+    </article>`).join("");
+
+  document.getElementById("ext-groups").innerHTML = Object.entries(extensions).map(([group, list]) => `
+    <h3 class="group">${esc(group)}</h3>
+    <div class="grid">${list.map(([name, repo, ver, desc]) => `
+      <article class="card">
+        <h4>${esc(name)} <span class="ver">v${ver}</span></h4>
+        <p>${esc(desc)}</p>
+        <div class="actions">
+          <button class="btn copy" data-url="${gh + repo}">Copy install URL</button>
+          <a class="btn" href="${gh + repo}">GitHub ↗</a>
+        </div>
+      </article>`).join("")}
+    </div>`).join("");
+
+  const toast = document.getElementById("toast");
+  document.addEventListener("click", async e => {
+    const b = e.target.closest(".copy");
+    if (!b) return;
+    try { await navigator.clipboard.writeText(b.dataset.url); toast.textContent = "Copied!"; }
+    catch { toast.textContent = b.dataset.url; }
+    toast.classList.add("show");
+    setTimeout(() => toast.classList.remove("show"), 1600);
+  });
+</script>
+</body>
+</html>

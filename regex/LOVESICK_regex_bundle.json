@@ -1,0 +1,206 @@
+[
+    {
+        "id": "89db8515-a939-4d68-9795-8eeae659767b",
+        "scriptName": "LS - Delulu Delta Chip",
+        "findRegex": "/\\[([+\\-−]\\d+)\\s*(Feelings|Heat|Honesty):\\s*([^\\]]+)\\]/g",
+        "replaceString": "<span style='display:inline-block; margin:0 0.15rem; padding:0.05rem 0.5rem; border:1px solid rgba(224,64,90,0.5); border-radius:1rem; font-size:0.78rem; background:rgba(224,64,90,0.12); color:#ffe9e2;'><b style='color:#ff5c8a;'>$1 $2</b> · $3</span>",
+        "trimStrings": [],
+        "placement": [
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "b0ff01aa-28d3-43cb-bac3-9ba046d5d11d",
+        "scriptName": "LS - Margin Notes (think)",
+        "findRegex": "/<think>([\\s\\S]*?)<\\/think>/g",
+        "replaceString": "<details open style='margin:0 0 0.9rem 0;'><summary style='cursor:pointer; font-size:0.78rem; font-weight:700; letter-spacing:0.12em; text-transform:lowercase; color:#ff5c8a;'>🖊️ juno's margin notes</summary><div style='margin-top:0.35rem; padding:0.55rem 0.85rem; border:1px dashed rgba(255,92,138,0.45); border-radius:0.7rem; background:rgba(255,92,138,0.07); font-size:0.8rem; line-height:1.55; white-space:pre-line; opacity:0.9; font-family:ui-monospace, \"SF Mono\", Menlo, Consolas, monospace;'>$1</div></details>",
+        "trimStrings": [],
+        "placement": [
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "eddbac8d-37c0-440a-a620-560557b56dbe",
+        "scriptName": "LS - Group Chat Name",
+        "findRegex": "/<gcname>([\\s\\S]*?)<\\/gcname>/g",
+        "replaceString": "<div style='margin:0.6rem 0 0.15rem 0; text-align:center; font-size:0.78rem; letter-spacing:0.14em; text-transform:uppercase; color:#e0405a; font-weight:bold;'>💬 $1</div>",
+        "trimStrings": [],
+        "placement": [
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "27c59ebf-bb97-4b73-8ed5-4b9ab3251009",
+        "scriptName": "LS - The Receipts",
+        "findRegex": "/<receipts>\\s*([\\s\\S]*?)\\s*♦\\s*([\\s\\S]*?)\\s*♦\\s*([\\s\\S]*?)\\s*♦\\s*([\\s\\S]*?)\\s*<\\/receipts>/g",
+        "replaceString": "<div style='margin-top:0.7rem; border:1px solid #e0405a59; border-radius:0.8rem; overflow:hidden; font-size:0.82rem; background:#e0405a0d;'><div style='padding:0.42rem 0.9rem; background:linear-gradient(90deg, rgba(224,64,90,0.24), rgba(255,92,138,0.1)); color:#ff5c8a; font-weight:bold; letter-spacing:0.14em; font-size:0.76rem;'>🧾 the receipts</div><div style='display:flex; border-top:1px solid #e0405a2e; align-items:stretch;'><div style='flex:0 0 7.6em; padding:0.34rem 0.7rem; color:#ff5c8a; font-weight:600; background:#e0405a14; border-right:1px solid #e0405a2e; white-space:nowrap;'>⏰ when</div><div style='flex:1; padding:0.34rem 0.7rem; line-height:1.45; min-width:0;'>$1</div></div><div style='display:flex; border-top:1px solid #e0405a2e; align-items:stretch;'><div style='flex:0 0 7.6em; padding:0.34rem 0.7rem; color:#ff5c8a; font-weight:600; background:#e0405a14; border-right:1px solid #e0405a2e; white-space:nowrap;'>📍 where</div><div style='flex:1; padding:0.34rem 0.7rem; line-height:1.45; min-width:0;'>$2</div></div><div style='display:flex; border-top:1px solid #e0405a2e; align-items:stretch;'><div style='flex:0 0 7.6em; padding:0.34rem 0.7rem; color:#ff5c8a; font-weight:600; background:#e0405a14; border-right:1px solid #e0405a2e; white-space:nowrap;'>👥 present</div><div style='flex:1; padding:0.34rem 0.7rem; line-height:1.45; min-width:0;'>$3</div></div><div style='display:flex; border-top:1px solid #e0405a2e; align-items:stretch;'><div style='flex:0 0 7.6em; padding:0.34rem 0.7rem; color:#ff5c8a; font-weight:600; background:#e0405a14; border-right:1px solid #e0405a2e; white-space:nowrap;'>🧶 threads</div><div style='flex:1; padding:0.34rem 0.7rem; line-height:1.45; min-width:0;'>$4</div></div></div>",
+        "trimStrings": [],
+        "placement": [
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "ff9c669f-6667-4e8e-9b84-1f151853f380",
+        "scriptName": "LS - The Pinboard",
+        "findRegex": "/<pinboard>\\s*([\\s\\S]*?)\\s*♦\\s*([\\s\\S]*?)\\s*♦\\s*([\\s\\S]*?)\\s*♦\\s*([\\s\\S]*?)\\s*♦\\s*([\\s\\S]*?)\\s*♦\\s*([\\s\\S]*?)\\s*♦\\s*([\\s\\S]*?)\\s*<\\/pinboard>/g",
+        "replaceString": "<div style='margin-top:0.7rem; border:1px solid #e0405a59; border-radius:0.8rem; overflow:hidden; font-size:0.82rem; background:#e0405a0d;'><div style='padding:0.42rem 0.9rem; background:linear-gradient(90deg, rgba(224,64,90,0.24), rgba(255,92,138,0.1)); color:#ff5c8a; font-weight:bold; letter-spacing:0.14em; font-size:0.76rem;'>📌 the pinboard</div><div style='display:flex; border-top:1px solid #e0405a2e; align-items:stretch;'><div style='flex:0 0 7.6em; padding:0.34rem 0.7rem; color:#ff5c8a; font-weight:600; background:#e0405a14; border-right:1px solid #e0405a2e; white-space:nowrap;'>📅 when</div><div style='flex:1; padding:0.34rem 0.7rem; line-height:1.45; min-width:0;'>$1</div></div><div style='display:flex; border-top:1px solid #e0405a2e; align-items:stretch;'><div style='flex:0 0 7.6em; padding:0.34rem 0.7rem; color:#ff5c8a; font-weight:600; background:#e0405a14; border-right:1px solid #e0405a2e; white-space:nowrap;'>📍 where</div><div style='flex:1; padding:0.34rem 0.7rem; line-height:1.45; min-width:0;'>$2</div></div><div style='display:flex; border-top:1px solid #e0405a2e; align-items:stretch;'><div style='flex:0 0 7.6em; padding:0.34rem 0.7rem; color:#ff5c8a; font-weight:600; background:#e0405a14; border-right:1px solid #e0405a2e; white-space:nowrap;'>👥 the room</div><div style='flex:1; padding:0.34rem 0.7rem; line-height:1.45; min-width:0;'>$3</div></div><div style='display:flex; border-top:1px solid #e0405a2e; align-items:stretch;'><div style='flex:0 0 7.6em; padding:0.34rem 0.7rem; color:#ff5c8a; font-weight:600; background:#e0405a14; border-right:1px solid #e0405a2e; white-space:nowrap;'>👗 fit check</div><div style='flex:1; padding:0.34rem 0.7rem; line-height:1.45; min-width:0;'>$4</div></div><div style='display:flex; border-top:1px solid #e0405a2e; align-items:stretch;'><div style='flex:0 0 7.6em; padding:0.34rem 0.7rem; color:#ff5c8a; font-weight:600; background:#e0405a14; border-right:1px solid #e0405a2e; white-space:nowrap;'>🌡️ the vibe</div><div style='flex:1; padding:0.34rem 0.7rem; line-height:1.45; min-width:0;'>$5</div></div><div style='display:flex; border-top:1px solid #e0405a2e; align-items:stretch;'><div style='flex:0 0 7.6em; padding:0.34rem 0.7rem; color:#ff5c8a; font-weight:600; background:#e0405a14; border-right:1px solid #e0405a2e; white-space:nowrap;'>🧶 threads</div><div style='flex:1; padding:0.34rem 0.7rem; line-height:1.45; min-width:0;'>$6</div></div><div style='display:flex; border-top:1px solid #e0405a2e; align-items:stretch;'><div style='flex:0 0 7.6em; padding:0.34rem 0.7rem; color:#ff5c8a; font-weight:600; background:#e0405a14; border-right:1px solid #e0405a2e; white-space:nowrap;'>📆 up next</div><div style='flex:1; padding:0.34rem 0.7rem; line-height:1.45; min-width:0;'>$7</div></div></div>",
+        "trimStrings": [],
+        "placement": [
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "716e9c17-27c7-4bb1-a27a-cbeff7a074b1",
+        "scriptName": "LS - Needle Drop",
+        "findRegex": "/<track>([\\s\\S]*?)<\\/track>/g",
+        "replaceString": "<div style='margin-top:0.5rem; font-size:0.8rem; opacity:0.78;'><span style='color:#ff5c8a;'>♪</span> now playing — <i>$1</i></div>",
+        "trimStrings": [],
+        "placement": [
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "571a00f1-0a29-408a-99bf-3ba4132ee763",
+        "scriptName": "LS - Juno Comment",
+        "findRegex": "/<juno>([\\s\\S]*?)<\\/juno>/g",
+        "replaceString": "<div style='margin:0.9rem 0 0.2rem 0; padding:0.6rem 0.9rem; border-left:3px solid #e0405a; background:linear-gradient(135deg, rgba(224,64,90,0.16), rgba(255,92,138,0.09)); border-radius:0 0.6rem 0.6rem 0; font-size:0.92rem; line-height:1.45;'><div style='letter-spacing:0.14em; color:#e0405a; font-weight:bold; font-size:0.78rem; margin-bottom:0.25rem;'>♡ juno</div><div style='font-style:italic; opacity:0.92;'>$1</div></div>",
+        "trimStrings": [],
+        "placement": [
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "2fe0236f-0760-4660-8bfb-b8308b17d261",
+        "scriptName": "LS - What They Didnt Say",
+        "findRegex": "/<unsaid>([\\s\\S]*?)<\\/unsaid>/g",
+        "replaceString": "<details style='margin-top:0.55rem;'><summary style='cursor:pointer; font-size:0.8rem; font-weight:700; letter-spacing:0.12em; text-transform:lowercase; color:#ff5c8a; opacity:0.85;'>🤫 what they didn't say</summary><div style='margin-top:0.35rem; padding:0.5rem 0.85rem; border-radius:0.15rem 0.9rem 0.9rem 0.9rem; background:rgba(255,92,138,0.1); border:1px solid rgba(255,92,138,0.3); font-size:0.84rem; line-height:1.5; font-style:italic;'>$1</div></details>",
+        "trimStrings": [],
+        "placement": [
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "046f4a62-1ee2-4dd6-8b0d-e3e198562165",
+        "scriptName": "LS - Delulu Meter",
+        "findRegex": "/<delulu>\\s*([^♦<]+?)\\s*♦\\s*Feelings\\s*(\\d{1,3})\\s*([A-Za-z ]+?)\\s*♦\\s*Heat\\s*(\\d{1,3})\\s*([A-Za-z ]+?)\\s*♦\\s*Honesty\\s*(\\d{1,3})\\s*([A-Za-z ]+?)\\s*<\\/delulu>/g",
+        "replaceString": "<div style='margin-top:0.7rem; border:1px solid rgba(224,64,90,0.35); border-radius:0.8rem; overflow:hidden; font-size:0.82rem; background:rgba(224,64,90,0.05);'><div style='padding:0.42rem 0.9rem; background:linear-gradient(90deg, rgba(224,64,90,0.24), rgba(255,92,138,0.1)); color:#ff5c8a; font-weight:bold; letter-spacing:0.14em; font-size:0.76rem;'>❤️‍🔥 the delulu meter · $1</div><div style='display:flex; align-items:center; gap:0.6rem; padding:0.32rem 0.9rem; '><span style='flex:0 0 5.4em; font-weight:600; text-transform:lowercase; letter-spacing:0.05em; color:#ff5c8a;'>feelings</span><span style='flex:1; height:7px; background:rgba(255,233,226,0.13); border-radius:4px; overflow:hidden; box-shadow:inset 0 1px 2px rgba(0,0,0,0.35);'><span style='display:block; height:100%; width:$2%; border-radius:4px; background:linear-gradient(90deg,#ff5c8a,#e0405a);'></span></span><span style='flex:0 0 2.1em; text-align:right; font-variant-numeric:tabular-nums; opacity:0.85;'>$2</span><span style='flex:0 0 5.6em; text-align:right; font-size:0.74rem; letter-spacing:0.04em; opacity:0.75; text-transform:lowercase;'>$3</span></div><div style='display:flex; align-items:center; gap:0.6rem; padding:0.32rem 0.9rem; border-top:1px solid rgba(224,64,90,0.18);'><span style='flex:0 0 5.4em; font-weight:600; text-transform:lowercase; letter-spacing:0.05em; color:#ff5c8a;'>heat</span><span style='flex:1; height:7px; background:rgba(255,233,226,0.13); border-radius:4px; overflow:hidden; box-shadow:inset 0 1px 2px rgba(0,0,0,0.35);'><span style='display:block; height:100%; width:$4%; border-radius:4px; background:linear-gradient(90deg,#ff7a5c,#e0405a);'></span></span><span style='flex:0 0 2.1em; text-align:right; font-variant-numeric:tabular-nums; opacity:0.85;'>$4</span><span style='flex:0 0 5.6em; text-align:right; font-size:0.74rem; letter-spacing:0.04em; opacity:0.75; text-transform:lowercase;'>$5</span></div><div style='display:flex; align-items:center; gap:0.6rem; padding:0.32rem 0.9rem; border-top:1px solid rgba(224,64,90,0.18);'><span style='flex:0 0 5.4em; font-weight:600; text-transform:lowercase; letter-spacing:0.05em; color:#ff5c8a;'>honesty</span><span style='flex:1; height:7px; background:rgba(255,233,226,0.13); border-radius:4px; overflow:hidden; box-shadow:inset 0 1px 2px rgba(0,0,0,0.35);'><span style='display:block; height:100%; width:$6%; border-radius:4px; background:linear-gradient(90deg,#b04a9e,#ff5c8a);'></span></span><span style='flex:0 0 2.1em; text-align:right; font-variant-numeric:tabular-nums; opacity:0.85;'>$6</span><span style='flex:0 0 5.6em; text-align:right; font-size:0.74rem; letter-spacing:0.04em; opacity:0.75; text-transform:lowercase;'>$7</span></div></div>",
+        "trimStrings": [],
+        "placement": [
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "dff6cc7c-ec6b-4f70-9f99-6de5548551a7",
+        "scriptName": "LS - Chapter Card",
+        "findRegex": "/<chapter>\\s*([^♦<]+?)\\s*♦\\s*([\\s\\S]*?)<\\/chapter>/g",
+        "replaceString": "<div style='text-align:center; margin:1.4rem 0 1.8rem 0;'><div style='font-size:1.22rem; font-weight:bold; font-style:italic; letter-spacing:0.04em; color:#e0405a;'>$1</div><div style='width:5.5rem; height:1px; margin:0.5rem auto; background:linear-gradient(90deg, transparent, #ff5c8a, transparent);'></div><div style='font-size:0.88rem; font-style:italic; opacity:0.78; white-space:pre-line;'>$2</div></div>",
+        "trimStrings": [],
+        "placement": [
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "3cc2996f-9ecf-4479-b548-cee0b36a970e",
+        "scriptName": "LS - The Firsts",
+        "findRegex": "/<firsts>([\\s\\S]*?)<\\/firsts>/g",
+        "replaceString": "<details style='margin-top:0.55rem;'><summary style='cursor:pointer; font-size:0.8rem; font-weight:700; letter-spacing:0.12em; text-transform:lowercase; color:#e0405a;'>💌 the firsts</summary><div style='margin-top:0.35rem; border:1px solid rgba(224,64,90,0.3); border-radius:0.7rem; padding:0.5rem 0.85rem; font-size:0.82rem; line-height:1.7; background:rgba(224,64,90,0.05); white-space:pre-line;'>$1</div></details>",
+        "trimStrings": [],
+        "placement": [
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "74014f12-2a4e-4b8b-ab3e-1aa99114954c",
+        "scriptName": "LS - Group Chat Message",
+        "findRegex": "/<gc handle=\"([^\"]+)\">([\\s\\S]*?)<\\/gc>/g",
+        "replaceString": "<div style='margin:0.25rem 0 0 0.4rem; padding:0.38rem 0.7rem; border-radius:0.15rem 0.8rem 0.8rem 0.8rem; background:rgba(255,92,138,0.12); border:1px solid rgba(255,92,138,0.28); font-size:0.84rem; max-width:85%;'><span style='font-weight:bold; color:#ff5c8a;'>$1</span><br><span style='opacity:0.92;'>$2</span></div>",
+        "trimStrings": [],
+        "placement": [
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    }
+]

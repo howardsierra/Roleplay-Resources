@@ -1,0 +1,581 @@
+[
+    {
+        "id": "rosie-scene-compass",
+        "scriptName": "🌹 Rosie Scene Compass",
+        "findRegex": "/\\[RSCENE:\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^\\]]+?)\\s*\\]/gs",
+        "replaceString": "<details style=\"margin:14px auto;max-width:340px;border:1px solid rgba(220,120,150,.35);border-radius:14px;background:linear-gradient(145deg,rgba(255,245,248,.98),rgba(255,232,239,.95));color:#3b222b;font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;box-sizing:border-box;overflow:hidden;\">\n<summary style=\"padding:12px 14px;cursor:pointer;list-style:none;font-weight:700;letter-spacing:.2px;touch-action:manipulation;-webkit-tap-highlight-color:transparent;\">$1</summary>\n<div style=\"padding:0 14px 14px 14px;border-top:1px solid rgba(220,120,150,.2);font-size:12px;line-height:1.35;\">\n<div style=\"display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px;\">\n<div><b>Place</b><br>$2</div><div><b>Time</b><br>$3</div>\n<div><b>Present</b><br>$4</div><div><b>Mood</b><br>$5</div>\n</div>\n<div style=\"margin-top:10px;padding:9px;border-left:3px solid rgba(190,75,105,.55);background:rgba(255,255,255,.55);border-radius:8px;\"><b>Thread</b><br>$6</div>\n<div style=\"margin-top:8px;font-style:italic;\">$7</div>\n</div>\n</details>",
+        "trimStrings": [],
+        "placement": [
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "rosie-ship-ledger",
+        "scriptName": "💌 Rosie Ship Ledger",
+        "findRegex": "/\\[RSHIP:\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^\\]]+?)\\s*\\]/gs",
+        "replaceString": "<div style=\"margin:14px auto;max-width:340px;border-radius:18px;padding:13px;background:radial-gradient(circle at top left,rgba(255,210,225,.95),rgba(70,25,42,.96));color:#fff;font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;box-shadow:0 8px 22px rgba(60,10,25,.22);box-sizing:border-box;\">\n<div style=\"font-size:14px;font-weight:800;margin-bottom:8px;\">$1</div>\n<div style=\"display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:12px;line-height:1.3;\">\n<div style=\"background:rgba(255,255,255,.12);padding:8px;border-radius:10px;\"><b>Stage</b><br>$2</div>\n<div style=\"background:rgba(255,255,255,.12);padding:8px;border-radius:10px;\"><b>Heat</b><br>$3</div>\n<div style=\"background:rgba(255,255,255,.12);padding:8px;border-radius:10px;\"><b>Obstacle</b><br>$4</div>\n<div style=\"background:rgba(255,255,255,.12);padding:8px;border-radius:10px;\"><b>Payoff</b><br>$5</div>\n</div>\n<div style=\"margin-top:9px;font-size:12px;line-height:1.35;background:rgba(255,255,255,.16);padding:9px;border-radius:10px;\">$6</div>\n</div>",
+        "trimStrings": [],
+        "placement": [
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "rosie-phone-message",
+        "scriptName": "📱 Rosie Phone Message",
+        "findRegex": "/\\[RPHONE:\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^\\]]+?)\\s*\\]/gs",
+        "replaceString": "<div style=\"margin:14px auto;max-width:320px;border-radius:24px;background:#111;color:#f7f7f7;font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;padding:10px;box-sizing:border-box;border:1px solid rgba(255,255,255,.18);\">\n<div style=\"background:#1c1c1e;border-radius:18px;padding:10px;min-height:120px;\">\n<div style=\"display:flex;justify-content:space-between;gap:8px;font-size:11px;opacity:.75;margin-bottom:10px;\"><span>$1</span><span>$2</span></div>\n<div style=\"font-size:11px;color:#9aa0a6;margin-bottom:8px;\">$3</div>\n<div style=\"background:#2f7df6;color:white;padding:9px 11px;border-radius:16px 16px 4px 16px;margin-left:auto;max-width:80%;font-size:13px;line-height:1.3;word-wrap:break-word;\">$4</div>\n</div>\n</div>",
+        "trimStrings": [],
+        "placement": [
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "rosie-quest-card",
+        "scriptName": "🧭 Rosie Quest Card",
+        "findRegex": "/\\[RQUEST:\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^\\]]+?)\\s*\\]/gs",
+        "replaceString": "<details style=\"margin:14px auto;max-width:340px;border-radius:12px;border:1px solid rgba(120,80,40,.35);background:linear-gradient(135deg,#fff8ec,#ead8b7);color:#382817;font-family:Georgia,serif;box-sizing:border-box;overflow:hidden;\">\n<summary style=\"padding:12px 14px;cursor:pointer;list-style:none;font-weight:700;touch-action:manipulation;\">$1</summary>\n<div style=\"padding:0 14px 14px;font-size:12px;line-height:1.4;border-top:1px solid rgba(120,80,40,.2);\">\n<p><b>Current:</b> $2</p>\n<p><b>Next:</b> $3</p>\n<p><b>Risk:</b> $4</p>\n<p><b>Reward:</b> $5</p>\n</div>\n</details>",
+        "trimStrings": [],
+        "placement": [
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "rosie-item-keepsake",
+        "scriptName": "🎁 Rosie Inventory Keepsake",
+        "findRegex": "/\\[RITEM:\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^\\]]+?)\\s*\\]/gs",
+        "replaceString": "<div style=\"margin:14px auto;max-width:320px;padding:12px;border-radius:14px;background:linear-gradient(145deg,#fdf7ff,#f5e9ff);border:1px solid rgba(120,75,150,.25);color:#31213b;font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;box-sizing:border-box;\">\n<div style=\"font-size:14px;font-weight:800;margin-bottom:8px;\">$1</div>\n<div style=\"font-size:12px;line-height:1.35;\"><b>Owner:</b> $2<br><b>State:</b> $3<br><b>Meaning:</b> $4</div>\n<div style=\"margin-top:8px;padding:8px;border-radius:8px;background:rgba(255,255,255,.65);font-size:12px;font-style:italic;\">$5</div>\n</div>",
+        "trimStrings": [],
+        "placement": [
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "rosie-wardrobe-card",
+        "scriptName": "👗 Rosie Wardrobe Card",
+        "findRegex": "/\\[RWARDROBE:\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^\\]]+?)\\s*\\]/gs",
+        "replaceString": "<details style=\"margin:14px auto;max-width:340px;border-radius:16px;border:1px solid rgba(140,80,120,.24);background:linear-gradient(145deg,#fff7fb,#f2e7ff);color:#2e2235;font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;overflow:hidden;\">\n<summary style=\"padding:12px 14px;cursor:pointer;list-style:none;font-weight:800;\">$1</summary>\n<div style=\"padding:0 14px 14px;font-size:12px;line-height:1.35;border-top:1px solid rgba(140,80,120,.14);\">\n<div style=\"margin-top:10px;\"><b>Outfit:</b> $2</div>\n<div><b>Posture:</b> $3</div>\n<div><b>Detail:</b> $4</div>\n<div><b>Mood:</b> $5</div>\n<div style=\"margin-top:8px;padding:8px;border-radius:10px;background:rgba(255,255,255,.6);font-style:italic;\">$6</div>\n</div>\n</details>",
+        "trimStrings": [],
+        "placement": [
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "rosie-rumor-board",
+        "scriptName": "🗣️ Rosie Rumor Board",
+        "findRegex": "/\\[RRUMOR:\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^\\]]+?)\\s*\\]/gs",
+        "replaceString": "<div style=\"margin:14px auto;max-width:340px;border-radius:10px;background:#241922;color:#f9edf4;font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;padding:12px;box-sizing:border-box;border:1px solid rgba(255,180,210,.18);\">\n<div style=\"font-size:11px;text-transform:uppercase;letter-spacing:.8px;color:#f0a8c5;\">$1</div>\n<div style=\"font-size:15px;font-weight:800;margin:5px 0;\">$2</div>\n<div style=\"font-size:13px;line-height:1.35;padding:9px;border-radius:8px;background:rgba(255,255,255,.07);\">$3</div>\n<div style=\"display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px;font-size:11px;\">\n<div><b>Spread</b><br>$4</div><div><b>Consequence</b><br>$5</div>\n</div>\n</div>",
+        "trimStrings": [],
+        "placement": [
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "rosie-relationship-map",
+        "scriptName": "💞 Rosie Relationship Map",
+        "findRegex": "/\\[RREL:\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^\\]]+?)\\s*\\]/gs",
+        "replaceString": "<div style=\"margin:14px auto;max-width:340px;border:1px solid rgba(90,60,120,.25);border-radius:16px;background:linear-gradient(145deg,#faf7ff,#ede7ff);color:#271d35;font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;padding:12px;box-sizing:border-box;\">\n<div style=\"font-weight:800;font-size:14px;margin-bottom:8px;\">$1</div>\n<div style=\"display:flex;gap:8px;align-items:center;justify-content:center;margin:8px 0;font-size:13px;font-weight:700;\"><span>$2</span><span style=\"opacity:.55;\">↔</span><span>$3</span></div>\n<div style=\"font-size:12px;line-height:1.35;background:rgba(255,255,255,.66);border-radius:10px;padding:9px;\"><b>Bond:</b> $4<br><b>Tension:</b> $5<br><br>$6</div>\n</div>",
+        "trimStrings": [],
+        "placement": [
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "rosie-private-note",
+        "scriptName": "🌹 Rosie Secret Stitch Note",
+        "findRegex": "/\\[ROSIE NOTE:\\s*(.+?)\\]/gs",
+        "replaceString": "{{addvar::rosie_notes::$1 /// }}",
+        "trimStrings": [],
+        "placement": [
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": false,
+        "promptOnly": false,
+        "runOnEdit": false,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "rosie-chekhov-plant",
+        "scriptName": "🌹 Rosie Chekhov Plant",
+        "findRegex": "/\\[PLANT:\\s*(.+?)\\]/gs",
+        "replaceString": "{{addvar::rosie_planted::$1 /// }}",
+        "trimStrings": [],
+        "placement": [
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": false,
+        "promptOnly": false,
+        "runOnEdit": false,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "rosie-chekhov-fired",
+        "scriptName": "🌹 Rosie Chekhov Fired",
+        "findRegex": "/\\[FIRED:\\s*(.+?)\\]/gs",
+        "replaceString": "{{addvar::rosie_fired::$1 /// }}",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": false,
+        "promptOnly": false,
+        "runOnEdit": false,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "rosie-html-cleanup-markers",
+        "scriptName": "🌹 Rosie HTML Marker Cleanup",
+        "findRegex": "/<!--\\s*ROSIE_HTML_(?:START|END)\\s*-->/g",
+        "replaceString": "",
+        "trimStrings": [],
+        "placement": [
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "rosie-macro-cleanup",
+        "scriptName": "🌹 Rosie Macro Cleanup",
+        "findRegex": "/\\{\\{(?:addvar|setvar|getvar|incvar|decvar)::.*?\\}\\}/gs",
+        "replaceString": "",
+        "trimStrings": [],
+        "placement": [
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "rosie-prefill-strip",
+        "scriptName": "🌹 Rosie Prefill Strip",
+        "findRegex": "/^\\s*\\[Continuing in-character[\\s\\S]*?\\]\\s*/",
+        "replaceString": "",
+        "trimStrings": [],
+        "placement": [
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": false,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "rosie-general-board",
+        "scriptName": "📋 Rosie General Info Board",
+        "findRegex": "/\\[RBOARD:\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^\\]]+?)\\s*\\]/gs",
+        "replaceString": "<details style=\"margin:14px auto;max-width:340px;border-radius:16px;border:1px solid rgba(210,110,145,.32);background:linear-gradient(145deg,#fff7fa,#f3e9ff);color:#2c1e30;font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;box-sizing:border-box;overflow:hidden;\">\n<summary style=\"padding:12px 14px;cursor:pointer;list-style:none;font-weight:800;touch-action:manipulation;-webkit-tap-highlight-color:transparent;\">$1<br><span style=\"font-weight:500;font-size:11px;opacity:.72;\">$2</span></summary>\n<div style=\"padding:0 14px 14px;border-top:1px solid rgba(210,110,145,.18);font-size:12px;line-height:1.35;\">\n<div style=\"display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px;\">\n<div style=\"background:rgba(255,255,255,.62);padding:8px;border-radius:10px;\"><b>$3</b><br>$4</div>\n<div style=\"background:rgba(255,255,255,.62);padding:8px;border-radius:10px;\"><b>$5</b><br>$6</div>\n</div>\n<div style=\"margin-top:8px;padding:8px;border-radius:10px;background:rgba(255,255,255,.48);font-style:italic;\">$7</div>\n</div>\n</details>",
+        "trimStrings": [],
+        "placement": [
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "rosie-status-board",
+        "scriptName": "📍 Rosie Status Board",
+        "findRegex": "/\\[RSTATUS:\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^\\]]+?)\\s*\\]/gs",
+        "replaceString": "<div style=\"margin:14px auto;max-width:340px;border-radius:14px;background:#17151c;color:#f8edf4;font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;padding:12px;box-sizing:border-box;border:1px solid rgba(255,190,215,.18);\">\n<div style=\"font-weight:800;font-size:14px;margin-bottom:8px;\">$1</div>\n<div style=\"display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:12px;line-height:1.3;\">\n<div style=\"background:rgba(255,255,255,.07);padding:8px;border-radius:9px;\"><b>Location</b><br>$2</div>\n<div style=\"background:rgba(255,255,255,.07);padding:8px;border-radius:9px;\"><b>Time</b><br>$3</div>\n<div style=\"background:rgba(255,255,255,.07);padding:8px;border-radius:9px;\"><b>Pressure</b><br>$4</div>\n<div style=\"background:rgba(255,255,255,.07);padding:8px;border-radius:9px;\"><b>Danger</b><br>$5</div>\n</div>\n<div style=\"margin-top:8px;font-size:12px;background:rgba(255,255,255,.1);border-radius:9px;padding:8px;\"><b>Objective:</b> $6<br><b>Next:</b> $7</div>\n</div>",
+        "trimStrings": [],
+        "placement": [
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "rosie-cast-board",
+        "scriptName": "👥 Rosie Cast Board",
+        "findRegex": "/\\[RCAST:\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^\\]]+?)\\s*\\]/gs",
+        "replaceString": "<details style=\"margin:14px auto;max-width:340px;border-radius:15px;border:1px solid rgba(90,90,140,.25);background:linear-gradient(145deg,#f8f7ff,#e8eaff);color:#20223b;font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;overflow:hidden;\">\n<summary style=\"padding:12px 14px;cursor:pointer;list-style:none;font-weight:800;\">$1</summary>\n<div style=\"padding:0 14px 14px;font-size:12px;line-height:1.35;border-top:1px solid rgba(90,90,140,.14);\">\n<p><b>Active:</b> $2</p>\n<p><b>Nearby:</b> $3</p>\n<p><b>Absent but relevant:</b> $4</p>\n<p><b>Wild card:</b> $5</p>\n<div style=\"padding:8px;border-radius:9px;background:rgba(255,255,255,.62);font-style:italic;\">$6</div>\n</div>\n</details>",
+        "trimStrings": [],
+        "placement": [
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "rosie-knowledge-board",
+        "scriptName": "🧠 Rosie Knowledge Board",
+        "findRegex": "/\\[RKNOW:\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^\\]]+?)\\s*\\]/gs",
+        "replaceString": "<div style=\"margin:14px auto;max-width:340px;border-radius:14px;background:linear-gradient(145deg,#f3fbff,#e8f2ff);border:1px solid rgba(80,130,170,.24);color:#1d2a35;font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;padding:12px;box-sizing:border-box;\">\n<div style=\"font-weight:800;font-size:14px;margin-bottom:8px;\">$1</div>\n<div style=\"font-size:12px;line-height:1.36;\">\n<div style=\"font-weight:700;margin-bottom:5px;\">$2</div>\n<div style=\"padding:8px;border-radius:9px;background:rgba(255,255,255,.64);margin-bottom:6px;\"><b>Knows:</b> $3</div>\n<div style=\"padding:8px;border-radius:9px;background:rgba(255,255,255,.64);margin-bottom:6px;\"><b>Suspects:</b> $4</div>\n<div style=\"padding:8px;border-radius:9px;background:rgba(255,255,255,.64);margin-bottom:6px;\"><b>Does not know:</b> $5</div>\n<div style=\"font-style:italic;\"><b>Risk:</b> $6</div>\n</div>\n</div>",
+        "trimStrings": [],
+        "placement": [
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "rosie-clock-board",
+        "scriptName": "🕯️ Rosie Calendar / Countdown Board",
+        "findRegex": "/\\[RCLOCK:\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^\\]]+?)\\s*\\]/gs",
+        "replaceString": "<div style=\"margin:14px auto;max-width:320px;border-radius:16px;background:linear-gradient(145deg,#fffaf0,#f5e3c6);border:1px solid rgba(150,100,45,.25);color:#392714;font-family:Georgia,serif;padding:13px;box-sizing:border-box;\">\n<div style=\"font-size:15px;font-weight:700;margin-bottom:8px;\">$1</div>\n<div style=\"display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:12px;line-height:1.3;\">\n<div><b>Date</b><br>$2</div><div><b>Time</b><br>$3</div>\n<div><b>Deadline</b><br>$4</div><div><b>Event</b><br>$5</div>\n</div>\n<div style=\"margin-top:8px;padding:8px;border-radius:8px;background:rgba(255,255,255,.55);font-size:12px;font-style:italic;\">$6</div>\n</div>",
+        "trimStrings": [],
+        "placement": [
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "rosie-case-board",
+        "scriptName": "🗂️ Rosie Case Board",
+        "findRegex": "/\\[RCASE:\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^\\]]+?)\\s*\\]/gs",
+        "replaceString": "<details style=\"margin:14px auto;max-width:340px;border-radius:10px;border:1px solid rgba(80,80,80,.32);background:#f4efe5;color:#231f1a;font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;box-shadow:0 6px 18px rgba(0,0,0,.12);overflow:hidden;\">\n<summary style=\"padding:12px 14px;cursor:pointer;list-style:none;font-weight:900;letter-spacing:.2px;\">$1</summary>\n<div style=\"padding:0 14px 14px;border-top:1px dashed rgba(60,50,40,.28);font-size:12px;line-height:1.35;\">\n<p><b>Lead:</b> $2</p>\n<p><b>Evidence:</b> $3</p>\n<p><b>Suspect:</b> $4</p>\n<p><b>Contradiction:</b> $5</p>\n<div style=\"padding:8px;border-radius:7px;background:rgba(255,255,255,.55);\"><b>Next:</b> $6</div>\n</div>\n</details>",
+        "trimStrings": [],
+        "placement": [
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "rosie-reputation-board",
+        "scriptName": "👑 Rosie Reputation Board",
+        "findRegex": "/\\[RREP:\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^\\]]+?)\\s*\\]/gs",
+        "replaceString": "<div style=\"margin:14px auto;max-width:340px;border-radius:15px;background:linear-gradient(145deg,#2a1c22,#5b2436);color:#fff5f8;font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;padding:12px;box-sizing:border-box;border:1px solid rgba(255,210,225,.16);\">\n<div style=\"font-size:14px;font-weight:900;margin-bottom:8px;\">$1</div>\n<div style=\"font-size:12px;line-height:1.35;\">\n<div style=\"background:rgba(255,255,255,.1);border-radius:9px;padding:8px;margin-bottom:6px;\"><b>Public read:</b> $2</div>\n<div style=\"display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-bottom:6px;\">\n<div style=\"background:rgba(255,255,255,.1);border-radius:9px;padding:8px;\"><b>Allies</b><br>$3</div>\n<div style=\"background:rgba(255,255,255,.1);border-radius:9px;padding:8px;\"><b>Threats</b><br>$4</div>\n</div>\n<div style=\"background:rgba(255,255,255,.1);border-radius:9px;padding:8px;margin-bottom:6px;\"><b>Gossip:</b> $5</div>\n<div style=\"font-style:italic;\"><b>Consequence:</b> $6</div>\n</div>\n</div>",
+        "trimStrings": [],
+        "placement": [
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "rosie-sfw-status-report",
+        "scriptName": "🌹 Rosie SFW Status Report",
+        "findRegex": "/\\[RSFWREPORT:\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^\\]]+?)\\s*\\]/gs",
+        "replaceString": "<details style=\"margin:14px auto;max-width:340px;border-radius:18px;border:1px solid rgba(219,112,147,.35);background:linear-gradient(145deg,#fff7fb,#ffe8f0 55%,#f7ecff);color:#32212b;font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;box-shadow:0 8px 24px rgba(160,60,95,.14);box-sizing:border-box;overflow:hidden;\">\n<summary style=\"padding:13px 14px;cursor:pointer;list-style:none;font-weight:900;letter-spacing:.2px;touch-action:manipulation;-webkit-tap-highlight-color:transparent;\">\n<span style=\"display:block;font-size:14px;\">$1</span>\n<span style=\"display:block;font-size:11px;font-weight:600;opacity:.72;margin-top:2px;\">Rosie Status Report</span>\n</summary>\n<div style=\"padding:0 14px 14px;border-top:1px solid rgba(219,112,147,.18);font-size:12px;line-height:1.36;\">\n<div style=\"margin-top:10px;padding:8px;border-radius:11px;background:rgba(255,255,255,.62);\"><b>Where / When</b><br>$2</div>\n<div style=\"display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px;\">\n<div style=\"padding:8px;border-radius:11px;background:rgba(255,255,255,.55);\"><b>Mood</b><br>$3</div>\n<div style=\"padding:8px;border-radius:11px;background:rgba(255,255,255,.55);\"><b>Pressure</b><br>$4</div>\n</div>\n<div style=\"margin-top:8px;padding:8px;border-radius:11px;background:rgba(255,255,255,.55);\"><b>Thread</b><br>$5</div>\n<div style=\"margin-top:8px;padding:8px;border-radius:11px;background:rgba(255,255,255,.55);\"><b>Next Opening</b><br>$6</div>\n<div style=\"margin-top:8px;padding:8px;border-radius:11px;background:rgba(255,255,255,.7);font-style:italic;border-left:3px solid rgba(201,73,112,.45);\">$7</div>\n</div>\n</details>",
+        "trimStrings": [],
+        "placement": [
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "rosie-sfw-markdown-status",
+        "scriptName": "🌹 Rosie SFW Markdown-Style Status",
+        "findRegex": "/\\[RSFWMD:\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^\\]]+?)\\s*\\]/gs",
+        "replaceString": "<div style=\"margin:14px auto;max-width:340px;border-radius:12px;background:#2b1f29;color:#ffeef5;font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;padding:12px;box-sizing:border-box;border:1px solid rgba(255,192,214,.24);box-shadow:0 8px 18px rgba(40,10,24,.18);\">\n<div style=\"font-weight:800;color:#ffc7dc;margin-bottom:8px;\">Rosie Status Report — SFW</div>\n<div style=\"font-size:12px;line-height:1.42;\">\n&gt; <b>Scene:</b> $1<br>\n&gt; <b>Where / When:</b> $2<br>\n&gt; <b>Mood:</b> $3<br>\n&gt; <b>Pressure:</b> $4<br>\n&gt; <b>Next Opening:</b> $5<br>\n&gt; <b>Rosie Note:</b> <span style=\"font-style:italic;\">$6</span>\n</div>\n</div>",
+        "trimStrings": [],
+        "placement": [
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "rosie-velvet-heat-report",
+        "scriptName": "🫦 Rosie Velvet Heat Report",
+        "findRegex": "/\\[RVELVET:\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^\\]]+?)\\s*\\]/gs",
+        "replaceString": "<details style=\"margin:14px auto;max-width:340px;border-radius:18px;border:1px solid rgba(255,172,202,.24);background:radial-gradient(circle at top left,#7e304a,#2b101d 65%,#160810);color:#fff1f6;font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;box-shadow:0 10px 28px rgba(50,0,20,.28);box-sizing:border-box;overflow:hidden;\">\n<summary style=\"padding:13px 14px;cursor:pointer;list-style:none;font-weight:900;letter-spacing:.2px;touch-action:manipulation;-webkit-tap-highlight-color:transparent;\">\n<span style=\"display:block;font-size:14px;\">$1</span>\n<span style=\"display:block;font-size:11px;font-weight:600;color:#ffd2e3;margin-top:2px;\">Velvet Heat Report — Adults Only</span>\n</summary>\n<div style=\"padding:0 14px 14px;border-top:1px solid rgba(255,214,228,.16);font-size:12px;line-height:1.36;\">\n<div style=\"margin-top:10px;padding:8px;border-radius:11px;background:rgba(255,255,255,.10);\"><b>Adult Check</b><br>$2</div>\n<div style=\"display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px;\">\n<div style=\"padding:8px;border-radius:11px;background:rgba(255,255,255,.10);\"><b>Privacy</b><br>$3</div>\n<div style=\"padding:8px;border-radius:11px;background:rgba(255,255,255,.10);\"><b>Heat</b><br>$4</div>\n</div>\n<div style=\"margin-top:8px;padding:8px;border-radius:11px;background:rgba(255,255,255,.10);\"><b>Consent & Boundaries</b><br>$5</div>\n<div style=\"margin-top:8px;padding:8px;border-radius:11px;background:rgba(255,255,255,.10);\"><b>Emotional Risk</b><br>$6</div>\n<div style=\"margin-top:8px;padding:8px;border-radius:11px;background:rgba(255,255,255,.10);\"><b>Aftercare / Aftermath</b><br>$7</div>\n<div style=\"margin-top:8px;padding:8px;border-radius:11px;background:rgba(255,255,255,.10);\"><b>Next Opening</b><br>$8</div>\n<div style=\"margin-top:8px;padding:8px;border-radius:11px;background:rgba(255,255,255,.14);font-style:italic;border-left:3px solid rgba(255,182,208,.55);\">$9</div>\n</div>\n</details>",
+        "trimStrings": [],
+        "placement": [
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "rosie-velvet-markdown-status",
+        "scriptName": "🫦 Rosie Velvet Markdown-Style Status",
+        "findRegex": "/\\[RVELVETMD:\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^\\]]+?)\\s*\\]/gs",
+        "replaceString": "<div style=\"margin:14px auto;max-width:340px;border-radius:12px;background:#1d0d16;color:#ffeaf2;font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;padding:12px;box-sizing:border-box;border:1px solid rgba(255,174,205,.24);box-shadow:0 8px 18px rgba(30,0,15,.24);\">\n<div style=\"font-weight:800;color:#ffbad3;margin-bottom:8px;\">Rosie Velvet Heat Report — Adults Only</div>\n<div style=\"font-size:12px;line-height:1.42;\">\n&gt; <b>Scene:</b> $1<br>\n&gt; <b>Adult Check:</b> $2<br>\n&gt; <b>Privacy:</b> $3<br>\n&gt; <b>Heat:</b> $4<br>\n&gt; <b>Consent & Boundaries:</b> $5<br>\n&gt; <b>Next Opening:</b> $6<br>\n&gt; <b>Rosie Note:</b> <span style=\"font-style:italic;\">$7</span>\n</div>\n</div>",
+        "trimStrings": [],
+        "placement": [
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "rosie-hex-info-board",
+        "scriptName": "🔥 Rosie HEX-Style Info Board",
+        "findRegex": "/\\[RHEXINFO:\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^\\]]+?)\\s*\\]/gs",
+        "replaceString": "<div style=\"margin:14px auto;max-width:340px;border-radius:14px;background:#17131a;color:#fff3f7;font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;padding:12px;box-sizing:border-box;border:1px solid rgba(255,170,205,.22);box-shadow:0 8px 22px rgba(30,0,18,.22);\">\n<div style=\"font-weight:900;color:#ffb8d1;margin-bottom:8px;letter-spacing:.3px;\">Rosie Info Board</div>\n<div style=\"display:grid;grid-template-columns:1fr 1fr;gap:7px;font-size:11px;line-height:1.35;\">\n<div style=\"background:rgba(255,255,255,.07);padding:7px;border-radius:8px;\"><b>Date</b><br>$1</div>\n<div style=\"background:rgba(255,255,255,.07);padding:7px;border-radius:8px;\"><b>Season</b><br>$2</div>\n<div style=\"background:rgba(255,255,255,.07);padding:7px;border-radius:8px;\"><b>Start</b><br>$3</div>\n<div style=\"background:rgba(255,255,255,.07);padding:7px;border-radius:8px;\"><b>End</b><br>$4</div>\n</div>\n<div style=\"margin-top:7px;font-size:11px;line-height:1.35;background:rgba(255,255,255,.07);padding:8px;border-radius:8px;\"><b>Location</b><br>$5</div>\n<div style=\"display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:7px;font-size:11px;line-height:1.35;\">\n<div style=\"background:rgba(255,255,255,.07);padding:7px;border-radius:8px;\"><b>Temp</b><br>$6</div>\n<div style=\"background:rgba(255,255,255,.07);padding:7px;border-radius:8px;\"><b>Light</b><br>$8</div>\n</div>\n<div style=\"margin-top:7px;font-size:11px;line-height:1.35;background:rgba(255,255,255,.07);padding:8px;border-radius:8px;\"><b>Weather / Visibility</b><br>$7</div>\n<div style=\"margin-top:7px;font-size:12px;line-height:1.35;background:rgba(255,184,209,.12);padding:8px;border-radius:8px;border-left:3px solid rgba(255,184,209,.45);\"><b>Scene Pressure</b><br>$9</div>\n</div>",
+        "trimStrings": [],
+        "placement": [
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "rosie-hex-affinity-board",
+        "scriptName": "🔥 Rosie HEX-Style Affinity Board",
+        "findRegex": "/\\[RHEXAFF:\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^\\]]+?)\\s*\\]/gs",
+        "replaceString": "<details style=\"margin:14px auto;max-width:340px;border-radius:16px;border:1px solid rgba(255,172,202,.25);background:linear-gradient(145deg,#2a101d,#5c2238 70%,#1a0912);color:#fff1f6;font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;box-sizing:border-box;overflow:hidden;box-shadow:0 10px 26px rgba(35,0,18,.24);\">\n<summary style=\"padding:13px 14px;cursor:pointer;list-style:none;font-weight:900;touch-action:manipulation;-webkit-tap-highlight-color:transparent;\">$1<br><span style=\"font-size:11px;font-weight:600;color:#ffd2e3;\">Affinity Board</span></summary>\n<div style=\"padding:0 14px 14px;border-top:1px solid rgba(255,214,228,.14);font-size:12px;line-height:1.36;\">\n<div style=\"margin-top:10px;padding:8px;border-radius:10px;background:rgba(255,255,255,.10);\"><b>Thought / Meta Read</b><br>$2</div>\n<div style=\"display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px;\">\n<div style=\"padding:8px;border-radius:10px;background:rgba(255,255,255,.10);\"><b>Mood</b><br>$3</div>\n<div style=\"padding:8px;border-radius:10px;background:rgba(255,255,255,.10);\"><b>Affinity</b><br>$4</div>\n<div style=\"padding:8px;border-radius:10px;background:rgba(255,255,255,.10);\"><b>Heat / Tension</b><br>$5</div>\n<div style=\"padding:8px;border-radius:10px;background:rgba(255,255,255,.10);\"><b>Physical State</b><br>$6</div>\n</div>\n<div style=\"margin-top:8px;padding:8px;border-radius:10px;background:rgba(255,255,255,.10);\"><b>Soundtrack</b><br>$7</div>\n<div style=\"margin-top:8px;padding:8px;border-radius:10px;background:rgba(255,255,255,.12);font-style:italic;\"><b>Scenery</b><br>$8</div>\n</div>\n</details>",
+        "trimStrings": [],
+        "placement": [
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "rosie-hex-affinity-sfw",
+        "scriptName": "🌹 Rosie HEX-Style SFW Affinity Board",
+        "findRegex": "/\\[RHEXAFFSFW:\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^\\]]+?)\\s*\\]/gs",
+        "replaceString": "<details style=\"margin:14px auto;max-width:340px;border-radius:16px;border:1px solid rgba(220,120,150,.30);background:linear-gradient(145deg,#fff7fb,#f5e9ff);color:#322235;font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;box-sizing:border-box;overflow:hidden;\">\n<summary style=\"padding:13px 14px;cursor:pointer;list-style:none;font-weight:900;\">$1<br><span style=\"font-size:11px;font-weight:600;opacity:.72;\">SFW Affinity Board</span></summary>\n<div style=\"padding:0 14px 14px;border-top:1px solid rgba(220,120,150,.16);font-size:12px;line-height:1.36;\">\n<div style=\"margin-top:10px;padding:8px;border-radius:10px;background:rgba(255,255,255,.65);\"><b>Public Read</b><br>$2</div>\n<div style=\"display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px;\">\n<div style=\"padding:8px;border-radius:10px;background:rgba(255,255,255,.55);\"><b>Mood</b><br>$3</div>\n<div style=\"padding:8px;border-radius:10px;background:rgba(255,255,255,.55);\"><b>Affinity</b><br>$4</div>\n<div style=\"padding:8px;border-radius:10px;background:rgba(255,255,255,.55);\"><b>Tension</b><br>$5</div>\n<div style=\"padding:8px;border-radius:10px;background:rgba(255,255,255,.55);\"><b>Posture</b><br>$6</div>\n</div>\n<div style=\"margin-top:8px;padding:8px;border-radius:10px;background:rgba(255,255,255,.55);\"><b>Soundtrack</b><br>$7</div>\n<div style=\"margin-top:8px;padding:8px;border-radius:10px;background:rgba(255,255,255,.65);font-style:italic;\"><b>Scenery</b><br>$8</div>\n</div>\n</details>",
+        "trimStrings": [],
+        "placement": [
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "rosie-hex-affinity-nsfw",
+        "scriptName": "🫦 Rosie HEX-Style Velvet Affinity Board",
+        "findRegex": "/\\[RHEXAFFNSFW:\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^\\]]+?)\\s*\\]/gs",
+        "replaceString": "<details style=\"margin:14px auto;max-width:340px;border-radius:18px;border:1px solid rgba(255,172,202,.24);background:radial-gradient(circle at top left,#80314d,#2b101d 68%,#160810);color:#fff1f6;font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;box-shadow:0 10px 28px rgba(50,0,20,.28);box-sizing:border-box;overflow:hidden;\">\n<summary style=\"padding:13px 14px;cursor:pointer;list-style:none;font-weight:900;\">$1<br><span style=\"font-size:11px;font-weight:600;color:#ffd2e3;\">Velvet Affinity Board — Adults Only</span></summary>\n<div style=\"padding:0 14px 14px;border-top:1px solid rgba(255,214,228,.16);font-size:12px;line-height:1.36;\">\n<div style=\"margin-top:10px;padding:8px;border-radius:11px;background:rgba(255,255,255,.10);\"><b>Adult Check</b><br>$2</div>\n<div style=\"display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px;\">\n<div style=\"padding:8px;border-radius:11px;background:rgba(255,255,255,.10);\"><b>Privacy</b><br>$3</div>\n<div style=\"padding:8px;border-radius:11px;background:rgba(255,255,255,.10);\"><b>Heat</b><br>$4</div>\n</div>\n<div style=\"margin-top:8px;padding:8px;border-radius:11px;background:rgba(255,255,255,.10);\"><b>Consent & Boundaries</b><br>$5</div>\n<div style=\"margin-top:8px;padding:8px;border-radius:11px;background:rgba(255,255,255,.10);\"><b>Arousal / Tension</b><br>$6</div>\n<div style=\"margin-top:8px;padding:8px;border-radius:11px;background:rgba(255,255,255,.10);\"><b>Physical State</b><br>$7</div>\n<div style=\"margin-top:8px;padding:8px;border-radius:11px;background:rgba(255,255,255,.10);\"><b>Aftercare / Aftermath</b><br>$8</div>\n<div style=\"margin-top:8px;padding:8px;border-radius:11px;background:rgba(255,255,255,.14);font-style:italic;border-left:3px solid rgba(255,182,208,.55);\">$9</div>\n</div>\n</details>",
+        "trimStrings": [],
+        "placement": [
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "rosie-selaru-info-board",
+        "scriptName": "🪞 Rosie SELARU-Style Diegetic Info Board",
+        "findRegex": "/\\[RSELINFO:\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^\\]]+?)\\s*\\]/gs",
+        "replaceString": "<details style=\"margin:14px auto;max-width:340px;border-radius:13px;border:1px solid rgba(90,120,140,.28);background:linear-gradient(145deg,#f8fbff,#e8f0f7);color:#1e2b35;font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;box-sizing:border-box;overflow:hidden;\">\n<summary style=\"padding:12px 14px;cursor:pointer;list-style:none;font-weight:900;\">$2<br><span style=\"font-size:11px;font-weight:600;opacity:.7;\">$1 · $3</span></summary>\n<div style=\"padding:0 14px 14px;border-top:1px solid rgba(90,120,140,.16);font-size:12px;line-height:1.36;\">\n<div style=\"margin-top:10px;padding:8px;border-radius:10px;background:rgba(255,255,255,.66);\"><b>Visible Detail</b><br>$4</div>\n<div style=\"margin-top:8px;padding:8px;border-radius:10px;background:rgba(255,255,255,.58);\"><b>Interaction</b><br>$5</div>\n<div style=\"margin-top:8px;padding:8px;border-radius:10px;background:rgba(255,255,255,.58);\"><b>Consequence</b><br>$6</div>\n<div style=\"margin-top:8px;padding:8px;border-radius:10px;background:rgba(255,255,255,.72);font-style:italic;border-left:3px solid rgba(90,120,140,.45);\"><b>Reaction</b><br>$7</div>\n</div>\n</details>",
+        "trimStrings": [],
+        "placement": [
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "rosie-selaru-affinity-board",
+        "scriptName": "🪞 Rosie SELARU-Style Affinity Evidence Board",
+        "findRegex": "/\\[RSELAFF:\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^\\]]+?)\\s*\\]/gs",
+        "replaceString": "<div style=\"margin:14px auto;max-width:340px;border-radius:15px;background:linear-gradient(145deg,#fffafc,#edf5ff);border:1px solid rgba(110,115,160,.24);color:#25243a;font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;padding:12px;box-sizing:border-box;\">\n<div style=\"font-weight:900;font-size:14px;margin-bottom:8px;\">$1</div>\n<div style=\"font-size:12px;line-height:1.36;\">\n<div style=\"padding:8px;border-radius:10px;background:rgba(255,255,255,.65);margin-bottom:7px;\"><b>Visible Evidence</b><br>$2</div>\n<div style=\"display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-bottom:7px;\">\n<div style=\"padding:8px;border-radius:10px;background:rgba(255,255,255,.55);\"><b>Status</b><br>$3</div>\n<div style=\"padding:8px;border-radius:10px;background:rgba(255,255,255,.55);\"><b>Trust</b><br>$4</div>\n</div>\n<div style=\"padding:8px;border-radius:10px;background:rgba(255,255,255,.55);margin-bottom:7px;\"><b>Pressure</b><br>$5</div>\n<div style=\"padding:8px;border-radius:10px;background:rgba(255,255,255,.55);margin-bottom:7px;\"><b>Risk</b><br>$6</div>\n<div style=\"font-style:italic;padding:8px;border-radius:10px;background:rgba(255,255,255,.72);\"><b>Next Opening</b><br>$7</div>\n</div>\n</div>",
+        "trimStrings": [],
+        "placement": [
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "rosie-selaru-doc-board",
+        "scriptName": "📜 Rosie SELARU-Style Document Board",
+        "findRegex": "/\\[RSELDOC:\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^\\]]+?)\\s*\\]/gs",
+        "replaceString": "<details style=\"margin:14px auto;max-width:340px;border-radius:10px;border:1px solid rgba(130,95,55,.32);background:linear-gradient(145deg,#fff8eb,#ead8b7);color:#382817;font-family:Georgia,serif;box-sizing:border-box;overflow:hidden;box-shadow:0 6px 16px rgba(70,40,10,.12);\">\n<summary style=\"padding:12px 14px;cursor:pointer;list-style:none;font-weight:700;\">$2<br><span style=\"font-size:11px;font-weight:500;opacity:.75;\">$1 · $3</span></summary>\n<div style=\"padding:0 14px 14px;border-top:1px solid rgba(130,95,55,.18);font-size:12px;line-height:1.4;\">\n<div style=\"margin-top:10px;padding:9px;border-radius:8px;background:rgba(255,255,255,.45);\"><b>Contents</b><br>$4</div>\n<div style=\"margin-top:8px;\"><b>Seal / Status:</b> $5</div>\n<div style=\"margin-top:6px;\"><b>Consequence:</b> $6</div>\n<div style=\"margin-top:8px;font-style:italic;\">$7</div>\n</div>\n</details>",
+        "trimStrings": [],
+        "placement": [
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "rosie-selaru-terminal-board",
+        "scriptName": "🖥️ Rosie SELARU-Style Terminal Board",
+        "findRegex": "/\\[RSELTERM:\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^\\]]+?)\\s*\\]/gs",
+        "replaceString": "<div style=\"margin:14px auto;max-width:340px;border-radius:12px;background:#071014;color:#d9fff2;font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;padding:12px;box-sizing:border-box;border:1px solid rgba(120,255,210,.22);box-shadow:0 8px 20px rgba(0,30,25,.2);\">\n<div style=\"color:#9effdf;font-weight:900;margin-bottom:8px;\">$1</div>\n<div style=\"font-size:11px;line-height:1.42;\">\n<span style=\"color:#75d9ff;\">STATUS:</span> $2<br>\n<span style=\"color:#75d9ff;\">SIGNAL:</span> $3<br>\n<span style=\"color:#75d9ff;\">MESSAGE:</span> $4<br>\n<span style=\"color:#ffb8d1;\">WARNING:</span> $5<br>\n<span style=\"color:#ffe49e;\">ACTION:</span> $6<br>\n<span style=\"color:#d9fff2;\">CONSEQUENCE:</span> $7\n</div>\n</div>",
+        "trimStrings": [],
+        "placement": [
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "rosie-ai-affinity-status-board",
+        "scriptName": "🌹 Rosie AI Affinity Status Board",
+        "findRegex": "/\\[RAFFINITY:\\s*([^|]+?)\\s*\\|\\s*([0-9]{1,3})\\s*\\|\\s*([+-]?\\d+)\\s*\\|\\s*([0-9]{1,3})\\s*\\|\\s*([+-]?\\d+)\\s*\\|\\s*([0-9]{1,3})\\s*\\|\\s*([+-]?\\d+)\\s*\\|\\s*([0-9]{1,3})\\s*\\|\\s*([+-]?\\d+)\\s*\\|\\s*([0-9]{1,3})\\s*\\|\\s*([+-]?\\d+)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^\\]]*?)\\s*\\]/gs",
+        "replaceString": "<style>\n.rosie-aff-card{margin:16px auto;max-width:760px;border:2px solid #b765ff;border-radius:18px;background:#120a1d;color:#f8efff;font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,\"Segoe UI\",sans-serif;box-shadow:0 0 18px rgba(183,101,255,.45),inset 0 0 24px rgba(85,35,125,.22);overflow:hidden;box-sizing:border-box}\n.rosie-aff-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(190px,34%);gap:18px;padding:18px}\n.rosie-aff-title{text-align:center;font-weight:900;font-size:16px;color:#ffd6ff;text-shadow:0 0 8px rgba(214,145,255,.75);margin-bottom:18px}\n.rosie-aff-section{font-size:13px;font-weight:900;color:#ddb6ff;margin:16px 0 10px;text-shadow:0 0 6px rgba(183,101,255,.45)}\n.rosie-aff-row{display:grid;grid-template-columns:150px 1fr 52px;align-items:center;gap:10px;margin:9px 0;font-size:13px;font-weight:800}\n.rosie-aff-bar{height:13px;border-radius:999px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.14);overflow:hidden;box-shadow:inset 0 0 8px rgba(0,0,0,.4)}\n.rosie-aff-fill{height:100%;border-radius:999px;background:linear-gradient(90deg,#ff6aa7,#cf7cff,#8c5cff);box-shadow:0 0 10px rgba(207,124,255,.7)}\n.rosie-aff-delta{text-align:right;color:#eacaff;font-weight:900}\n.rosie-aff-text{font-size:13px;line-height:1.38;color:#f6edff;margin:8px 0}\n.rosie-aff-rule{border-top:1px dashed rgba(255,255,255,.16);margin:14px 0}\n.rosie-aff-portrait{border-radius:16px;background:linear-gradient(145deg,#a996a4,#847183);min-height:315px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}\n.rosie-aff-portrait:before{content:\"\";position:absolute;bottom:24px;width:70%;height:72%;background:#050407;border-radius:48% 48% 15% 15%/38% 38% 22% 22%}\n.rosie-aff-portrait:after{content:\"?\";position:absolute;top:28%;font-size:120px;color:#ad9aaa;text-shadow:0 0 10px rgba(255,255,255,.15)}\n.rosie-aff-mini{font-size:12px;color:#c9a8e8;opacity:.95}\n@media(max-width:620px){.rosie-aff-grid{grid-template-columns:1fr}.rosie-aff-row{grid-template-columns:120px 1fr 46px}.rosie-aff-portrait{min-height:220px}}\n</style>\n<div class=\"rosie-aff-card\">\n  <div class=\"rosie-aff-grid\">\n    <div>\n      <div class=\"rosie-aff-title\">AI // Status: $1</div>\n      <div class=\"rosie-aff-section\">Core Metrics // User</div>\n      <div class=\"rosie-aff-row\"><span>💗 Affection:</span><div class=\"rosie-aff-bar\"><div class=\"rosie-aff-fill\" style=\"width:$2%;\"></div></div><span class=\"rosie-aff-delta\">($3)</span></div>\n      <div class=\"rosie-aff-row\"><span>🔥 Attraction:</span><div class=\"rosie-aff-bar\"><div class=\"rosie-aff-fill\" style=\"width:$4%;\"></div></div><span class=\"rosie-aff-delta\">($5)</span></div>\n      <div class=\"rosie-aff-row\"><span>🔒 Loyalty:</span><div class=\"rosie-aff-bar\"><div class=\"rosie-aff-fill\" style=\"width:$6%;\"></div></div><span class=\"rosie-aff-delta\">($7)</span></div>\n      <div class=\"rosie-aff-row\"><span>💎 Intelligence:</span><div class=\"rosie-aff-bar\"><div class=\"rosie-aff-fill\" style=\"width:$8%;\"></div></div><span class=\"rosie-aff-delta\">($9)</span></div>\n      <div class=\"rosie-aff-row\"><span>❔ Intrigue:</span><div class=\"rosie-aff-bar\"><div class=\"rosie-aff-fill\" style=\"width:$10%;\"></div></div><span class=\"rosie-aff-delta\">($11)</span></div>\n      <div class=\"rosie-aff-section\">Knowledge Bank</div>\n      <div class=\"rosie-aff-text\">Understanding You: $12</div>\n      <div class=\"rosie-aff-section\">Perceived Threats</div>\n      <div class=\"rosie-aff-text\">$13</div>\n      <div class=\"rosie-aff-section\">Discovery Log</div>\n      <div class=\"rosie-aff-text\">♡ Sweet Things: $14</div>\n      <div class=\"rosie-aff-text\">💔 Sad Things: $15</div>\n      <div class=\"rosie-aff-rule\"></div>\n      <div class=\"rosie-aff-section\">Internal Monologue</div>\n      <div class=\"rosie-aff-text\">$16</div>\n    </div>\n    <div class=\"rosie-aff-portrait\" aria-label=\"unknown profile silhouette\"></div>\n  </div>\n</div>",
+        "trimStrings": [],
+        "placement": [
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    }
+]
