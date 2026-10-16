@@ -1,0 +1,132 @@
+{
+  "presets": [
+    {
+      "key": "rosie",
+      "prefix": "Rosie_Full_Bloom",
+      "bundle": "Rosie_regex_bundle.json",
+      "title": "🌹 Rosie Full Bloom",
+      "host": "Rosie, a fangirly creative-writing mascot",
+      "bestFor": "Everything: romance, dark romance, horror, mystery, cozy. Prose Wardrobe styles, Writer's Room lenses, info boards and status reports.",
+      "persona": {
+        "name": "Rosie",
+        "avatar": "🌹",
+        "user": "Cal",
+        "char": "Juniper"
+      }
+    },
+    {
+      "key": "vigil",
+      "prefix": "The_Velvet_Vigil",
+      "bundle": "Velvet_Vigil_regex_bundle.json",
+      "title": "🥀 The Velvet Vigil",
+      "host": "Vesper, a night-archivist",
+      "bestFor": "Gothic and literary storytelling. Voice and genre picks, story systems, diegetic HTML visuals, and Loom Mode.",
+      "persona": {
+        "name": "Vesper",
+        "avatar": "🥀",
+        "user": "Wren",
+        "char": "Ilse"
+      }
+    },
+    {
+      "key": "lovesick",
+      "prefix": "LOVESICK",
+      "bundle": "LOVESICK_regex_bundle.json",
+      "title": "💌 LOVESICK",
+      "host": "Juno, a romance editor with a matchmaker's god complex",
+      "bestFor": "Modern-day romance and heat. Trope picks, a heat dial, Screenlife visuals (texts, group chat, delulu meter), and an Assistant Mode.",
+      "persona": {
+        "name": "Juno",
+        "avatar": "💌",
+        "user": "Maya",
+        "char": "Theo"
+      }
+    },
+    {
+      "key": "callboard",
+      "prefix": "CALLBOARD",
+      "bundle": "CALLBOARD_regex_bundle.json",
+      "title": "📋 CALLBOARD",
+      "host": "Xavi, your stage manager",
+      "bestFor": "Modular setting \"wings\" (Modern, College AU, Y2K, Westeros, Regency, Fantasy…), trackers, model correction layers, and chat panels for Twitch, Discord, X, Reddit, and the press.",
+      "persona": {
+        "name": "Xavi",
+        "avatar": "📋",
+        "user": "Dani",
+        "char": "Rory"
+      }
+    }
+  ],
+  "extensions": [
+    {
+      "repo": "SillyTavern-Offstage",
+      "file": "manifest.json"
+    },
+    {
+      "repo": "SillyTavern-Wardrobe",
+      "file": "manifest.json"
+    },
+    {
+      "repo": "guidedgens-si",
+      "file": "manifest.json"
+    },
+    {
+      "repo": "SillyTavern-surtitle",
+      "file": "manifest.json"
+    },
+    {
+      "repo": "LoreLink",
+      "file": "manifest.json"
+    },
+    {
+      "repo": "preset-manager",
+      "file": "manifest.json"
+    },
+    {
+      "repo": "prompt-checkboxes",
+      "file": "manifest.json"
+    },
+    {
+      "repo": "contextlens",
+      "file": "manifest.json"
+    },
+    {
+      "repo": "SillyTavern-Encore",
+      "file": "manifest.json"
+    },
+    {
+      "repo": "ExtensionOrganizer",
+      "file": "manifest.json"
+    },
+    {
+      "repo": "roleplay-frontend-personal",
+      "file": "package.json"
+    }
+  ],
+  "janitor": [
+    {
+      "key": "modern",
+      "file": "janitor/modern.md"
+    },
+    {
+      "key": "fantasy",
+      "file": "janitor/fantasy.md"
+    },
+    {
+      "key": "medieval",
+      "file": "janitor/medieval.md"
+    },
+    {
+      "key": "asoiaf",
+      "file": "janitor/asoiaf.md"
+    },
+    {
+      "key": "regency",
+      "file": "janitor/regency.md"
+    },
+    {
+      "key": "opus47",
+      "file": "janitor/modules/correction-layer-opus-4.7.md"
+    }
+  ]
+}

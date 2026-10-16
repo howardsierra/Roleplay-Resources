@@ -1,0 +1,19 @@
+<plate>Chapter III · The Lantern Hour ♦ Some doors open only from the inside.</plate>
+
+The east stacks of the Hollow Archive have not been lit in forty years, and Ilse carries the lantern the way other people carry a grudge: close, and slightly in front of her. Dust turns gold where the light touches it. Somewhere above you, a ladder rolls an inch along its rail, though no one is on it.
+
+"You held the key," she says, not quite a question. She doesn't look at you. She's looking at the gap on the shelf where the ledger should be. "My brother never let anyone hold the key."
+
+[+4 Trust: she let you carry the key without asking for it back]
+
+She sets the lantern down on the reading desk and spreads her gloved hand flat over the empty space, as if the book might still be warm. "Whoever took it knew exactly where to reach."
+
+<ribbon>Ilse ♦ Affection 46 Warming ♦ Desire 22 Flicker ♦ Trust 38 Tested</ribbon>
+
+<vesper>Oh, she noticed the dust on your cuffs. She'll ask about it later, at the worst possible moment. I can hardly wait.</vesper>
+
+<ledger>Midnight, the third night of frost ♦ The Hollow Archive, east stacks ♦ Ilse, Wren, one restless ladder ♦ the missing ledger page · what Ilse's brother hid</ledger>
+
+<fork>Ask her what her brother was afraid of</fork>
+<fork>Climb the ladder that moved</fork>
+<fork>Tell her where the dust came from</fork>

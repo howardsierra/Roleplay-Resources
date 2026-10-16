@@ -1,0 +1,40 @@
+Rory has been live for three hours and forty minutes, and for the last ten of them chat has been absolutely feral. He doesn't know why yet. He's mid-run, headset crooked, narrating a boss fight to nobody, when he finally glances at the second monitor.
+
+[[TWITCH]]
+TW> live|roryplays|day 3 of the 100% run (I will not rage)|Hollow Knight|4,812|3:41:07
+TW> msg|#1E90FF|nightowl89|⭐|chat is that a second voice off-mic
+TW> msg|#FF69B4|softboiled_|💎|SHE SAID "you missed the jump" 😭😭
+TW> msg|#9ACD32|tinmanTV||+2 she's right
+TW> msg|#DAA520|mod_meridian|🗡️|be normal chat :KEKW:
+TW> sub|cozyquill|subscribed for 14 months · Tier 1|whose hoodie is that rory
+TW> msg|#8A2BE2|pixelwitch|⭐👑|the HOODIE. it's not his size. :Clueless:
+TW> msg|#1E90FF|nightowl89|⭐|@roryplays answer the question
+[[/TWITCH]]
+
+He reads it once. Reads it again. Behind him, Dani goes very still on the couch, a bowl of cereal halfway to her mouth, wearing his hoodie, the one with the burn hole on the cuff.
+
+"I'm muted," she whispers.
+
+"You're not," he whispers back, and four thousand people type the same thing at once.
+
+Twenty minutes later, after an emergency "be right back" screen that fools no one, the friend server has opinions.
+
+[[DISCORD]]
+DC> place|the group chat that went too far|#general
+DC> msg|#f47b67|Mara|certified menace|Today at 11:58 PM|so are we telling him the clip has 40k views or
+DC> react|💀 6 · 😭 3
+DC> msg|#5865f2|Jules||Today at 11:59 PM|@Dani you had ONE job and it was to be quiet
+DC> more|the cereal crunch was audible
+DC> typing|Dani is typing…
+[[/DISCORD]]
+
+<cb_state>
+[[TRK]]
+T> time|11:59 PM, Friday
+T> place|Rory's apartment, the streaming corner
+T> mood|caught, and weirdly not sorry
+T> affinity|Rory|71|he didn't deny it on stream
+[[/TRK]]
+</cb_state>
+
+<xavi>Cue the fallout. Let Rory decide whether to address it on stream tomorrow, and let Dani's silence in the server sit for one beat longer than comfortable.</xavi>

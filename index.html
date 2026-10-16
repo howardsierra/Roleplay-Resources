@@ -8,6 +8,13 @@
 <meta property="og:title" content="Roleplay Resources by Sierra">
 <meta property="og:description" content="SillyTavern presets, regex bundles, and extensions. Four hostesses, ten crew members, one stage.">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://howardsierra.github.io/Roleplay-Resources/">
+<meta property="og:image" content="https://howardsierra.github.io/Roleplay-Resources/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Roleplay Resources: a velvet theatre curtain with gold lettering, featuring Rosie, Velvet Vigil, LOVESICK, and CALLBOARD.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://howardsierra.github.io/Roleplay-Resources/assets/og-image.png">
 <meta name="theme-color" content="#3a0a16">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎭</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -342,6 +349,126 @@
   .stub .btn.line { border-color: var(--line); color: var(--ink); background: transparent; }
   .stub .btn.line:hover { border-color: var(--gold); }
 
+  /* ---------- on tour: Janitor.AI prompts ---------- */
+  .tour { display: grid; gap: 18px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 330px), 1fr)); }
+  .wing {
+    --a: #8f1d33; --tint: rgba(143, 29, 51, .08);
+    position: relative; overflow: hidden;
+    background: var(--card); border: 1px solid var(--line); border-radius: 20px;
+    box-shadow: var(--shadow);
+    display: flex; flex-direction: column;
+    transition: transform .2s ease, border-color .2s ease;
+  }
+  .wing:hover { transform: translateY(-3px); border-color: var(--a); }
+  .wing-band {
+    height: 92px; padding: 18px 20px; position: relative;
+    display: flex; align-items: flex-end; justify-content: space-between; gap: 10px;
+    background: var(--band);
+    color: #fff;
+  }
+  .wing-band .emoji {
+    font-size: 30px; width: 56px; height: 56px; border-radius: 16px; display: grid; place-items: center;
+    background: rgba(255, 255, 255, .18); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .3);
+    transform: translateY(26px);
+  }
+  .wing-band .where { font: 600 11px/1 var(--body); letter-spacing: .24em; text-transform: uppercase; opacity: .92; }
+  .wing-body { padding: 34px 20px 20px; display: flex; flex-direction: column; gap: 12px; flex: 1; }
+  .wing h3 { margin: 0; font: 700 1.6rem/1.1 var(--display); }
+  .wing .line-1 { margin: 0; font: italic 500 1.12rem/1.4 var(--script); color: var(--ink); }
+  .wing ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 7px; font-size: 14px; color: var(--muted); flex: 1; }
+  .wing li { display: flex; gap: 9px; }
+  .wing li::before { content: "✦"; color: var(--a); font-size: 10px; line-height: 2.2; flex: none; }
+  .meta { display: flex; flex-wrap: wrap; gap: 6px; }
+  .meta span { font: 600 11.5px/1 var(--body); padding: 6px 9px; border-radius: 7px; background: var(--tint); color: var(--a); }
+  .wing .actions, .module .actions { display: flex; gap: 8px; margin-top: 4px; }
+  .wing .btn, .module .btn { min-height: 40px; padding: 8px 14px; font-size: 13px; }
+  .btn.jcopy { background: var(--a); color: #fff; flex: 1; }
+  .btn.jcopy.done { filter: brightness(1.15); }
+  .btn.jview { border-color: var(--line); color: var(--ink); background: transparent; }
+  .btn.jview:hover { border-color: var(--a); color: var(--a); }
+  .w-modern   { --a: #b0457a; --tint: rgba(176, 69, 122, .1);  --band: linear-gradient(135deg, #f29ac0, #b0457a 70%, #7d2a63); }
+  .w-fantasy  { --a: #2f7d5b; --tint: rgba(47, 125, 91, .1);   --band: linear-gradient(135deg, #6fcf9f, #2f7d5b 60%, #1c4a3f); }
+  .w-medieval { --a: #7a5a2e; --tint: rgba(122, 90, 46, .12);  --band: linear-gradient(135deg, #c9a46a, #7a5a2e 60%, #3f2d18); }
+  .w-asoiaf   { --a: #4c6a8a; --tint: rgba(76, 106, 138, .12); --band: linear-gradient(135deg, #b9cde0, #4c6a8a 55%, #1f2b3a); }
+  .w-regency  { --a: #5874a8; --tint: rgba(88, 116, 168, .1);  --band: linear-gradient(135deg, #f6d4dc, #9fb4dc 45%, #5874a8); }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .w-modern { --a: #f08bb8; }
+    :root:not([data-theme="light"]) .w-fantasy { --a: #6fcf9f; }
+    :root:not([data-theme="light"]) .w-medieval { --a: #d6b37a; }
+    :root:not([data-theme="light"]) .w-asoiaf { --a: #a9c3dd; }
+    :root:not([data-theme="light"]) .w-regency { --a: #a9bde6; }
+    :root:not([data-theme="light"]) .btn.jcopy { color: #14100f; }
+  }
+  :root[data-theme="dark"] .w-modern { --a: #f08bb8; }
+  :root[data-theme="dark"] .w-fantasy { --a: #6fcf9f; }
+  :root[data-theme="dark"] .w-medieval { --a: #d6b37a; }
+  :root[data-theme="dark"] .w-asoiaf { --a: #a9c3dd; }
+  :root[data-theme="dark"] .w-regency { --a: #a9bde6; }
+  :root[data-theme="dark"] .btn.jcopy { color: #14100f; }
+
+  .module {
+    --a: var(--accent); --tint: var(--page-2);
+    margin-top: 18px; padding: 20px 22px; border-radius: 18px;
+    background: var(--card); border: 1px dashed var(--line);
+    display: flex; flex-wrap: wrap; align-items: center; gap: 14px 22px;
+  }
+  .module .tag { font: 600 11px/1 var(--body); letter-spacing: .22em; text-transform: uppercase; color: var(--gold); }
+  .module h3 { margin: 6px 0 4px; font: 700 1.3rem/1.1 var(--display); }
+  .module p { margin: 0; color: var(--muted); font-size: 14px; max-width: 560px; }
+  .module > div:first-child { flex: 1 1 320px; }
+  .module .meta span { background: var(--page-2); color: var(--muted); }
+
+  .howto {
+    margin-top: 22px; padding: 18px 22px; border-radius: 16px;
+    background: var(--page-2); color: var(--muted); font-size: 14.5px;
+  }
+  .howto strong { color: var(--ink); }
+  .howto ol { margin: 8px 0 0; padding-left: 20px; display: grid; gap: 4px; }
+
+  /* ---------- live preview viewer ---------- */
+  .bill .btn.preview { flex-basis: 100%; background: var(--chip); border-color: transparent; }
+  .bill .btn.preview:hover { border-color: var(--acc); color: var(--acc); }
+  .viewer {
+    width: min(880px, calc(100vw - 24px)); max-height: calc(100dvh - 24px);
+    padding: 0; border: 0; border-radius: 22px; overflow: hidden;
+    background: #16161a; color: #f3e9e0;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, .6);
+  }
+  .viewer[open] { display: flex; flex-direction: column; animation: rise .25s ease; }
+  .viewer::backdrop { background: rgba(20, 6, 10, .8); }
+  @keyframes rise { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+  .viewer-head {
+    display: flex; align-items: center; justify-content: space-between; gap: 12px;
+    padding: 18px 20px 14px;
+    background: repeating-linear-gradient(90deg, #4a0c19 0 6px, #6e1426 22px, #8a1c31 34px, #6e1426 46px, #4a0c19 62px);
+    border-bottom: 2px solid #c79a45;
+  }
+  .viewer-head h2 { margin: 0; font: 700 1.5rem/1.1 var(--display); color: #fbe6b5; }
+  .viewer-head p { margin: 4px 0 0; font-size: 13px; color: #f0d9b5; }
+  .close {
+    flex: none; width: 40px; height: 40px; border-radius: 50%; cursor: pointer;
+    border: 1px solid rgba(246, 227, 194, .45); background: rgba(0, 0, 0, .2); color: #fbefd9; font-size: 18px;
+  }
+  .close:hover { background: rgba(0, 0, 0, .4); }
+  .tabs { display: flex; gap: 6px; padding: 12px 16px 0; overflow-x: auto; background: #1d1418; scrollbar-width: none; }
+  .tabs button {
+    flex: none; cursor: pointer; padding: 9px 14px; border-radius: 12px 12px 0 0;
+    font: 600 13px var(--body); color: #b4a199; background: transparent; border: 0; border-bottom: 2px solid transparent;
+  }
+  .tabs button:hover { color: #f3e9e0; }
+  .tabs button[aria-selected="true"] { color: #fbe6b5; background: #16161a; border-bottom-color: #e2b65c; }
+  .viewer iframe { display: block; width: 100%; height: min(68vh, 760px); border: 0; background: #16161a; }
+  .viewer-foot {
+    display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px;
+    padding: 12px 20px; font-size: 12.5px; color: #9b8f88; border-top: 1px solid #2c2228; background: #1d1418;
+  }
+  .viewer-foot .btn { min-height: 38px; padding: 8px 16px; font-size: 13px; }
+  @media (max-width: 560px) {
+    .viewer { border-radius: 16px; }
+    .viewer-head { padding: 14px 14px 12px; }
+    .viewer iframe { height: 64vh; }
+  }
+
   /* ---------- the house: Reverie ---------- */
   .house {
     position: relative; overflow: hidden; isolation: isolate;
@@ -483,7 +610,8 @@
     .drape.right { --to: 92%; }
     .bill { padding: 24px 20px 22px; }
     .seal { width: 54px; height: 54px; font-size: 26px; }
-    .billing { display: grid; grid-template-columns: 1fr 1fr; gap: 18px 12px; }
+    .billing { gap: 18px 10px; }
+    .billing > div { flex: 0 0 30%; }
   }
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
@@ -503,15 +631,17 @@
     <p class="kicker">Sierra presents</p>
     <h1>Roleplay <em>Resources</em></h1>
     <div class="bulbs" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-    <p class="tagline">Presets, extensions, and a frontend of my own. Four hostesses, a backstage crew, a house to play in, and a story that’s yours to steer.</p>
+    <p class="tagline">Presets, Janitor.AI prompts, extensions, and a frontend of my own. Four hostesses, a touring company, a backstage crew, and a story that’s yours to steer.</p>
     <div class="cta" style="margin-top:30px">
       <a class="btn gold" href="#company">See the company</a>
+      <a class="btn ghost" href="#tour">On tour</a>
       <a class="btn ghost" href="#crew">Meet the crew</a>
       <a class="btn ghost" href="#house">Tour the house</a>
     </div>
     <div class="billing">
       <div><b>4</b>presets</div>
-      <div><b>152</b>regex scripts</div>
+      <div><b data-total="regex">152</b>regex scripts</div>
+      <div><b>5</b>Janitor prompts</div>
       <div><b>10</b>extensions</div>
       <div><b>1</b>frontend</div>
     </div>
@@ -531,7 +661,7 @@
       <div class="company">
         <article class="bill rosie reveal">
           <div class="pattern" aria-hidden="true"></div>
-          <div class="bill-top"><span class="now">Now playing</span><span class="ver">v2.7</span></div>
+          <div class="bill-top"><span class="now">Now playing</span><span class="ver" data-preset-ver="rosie">v2.7</span></div>
           <div class="title-row">
             <div class="seal" aria-hidden="true">🌹</div>
             <div>
@@ -546,19 +676,20 @@
             <li>Info boards, status reports, and HEX- and SELARU-style affinity panels</li>
           </ul>
           <div class="stats">
-            <div><b>140</b><span>prompts</span></div>
-            <div><b>34</b><span>regex</span></div>
-            <div><b>128k</b><span>context</span></div>
+            <div><b data-preset-stat="rosie:prompts">140</b><span>prompts</span></div>
+            <div><b data-preset-stat="rosie:regex">34</b><span>regex</span></div>
+            <div><b data-preset-stat="rosie:context">128k</b><span>context</span></div>
           </div>
           <div class="actions">
-            <a class="btn solid" href="presets/Rosie_Full_Bloom_v2.7.json" download>Download preset</a>
-            <a class="btn line" href="regex/Rosie_regex_bundle.json" download>Regex bundle</a>
+            <button class="btn line preview" type="button" data-preview="rosie">▶ See it in action</button>
+            <a class="btn solid" data-preset="rosie" data-kind="download" href="presets/Rosie_Full_Bloom_v2.7.json" download>Download preset</a>
+            <a class="btn line" data-preset="rosie" data-kind="regex" href="regex/Rosie_regex_bundle.json" download>Regex bundle</a>
           </div>
         </article>
 
         <article class="bill vigil reveal">
           <div class="pattern" aria-hidden="true"></div>
-          <div class="bill-top"><span class="now">Now playing</span><span class="ver">v3.2.2</span></div>
+          <div class="bill-top"><span class="now">Now playing</span><span class="ver" data-preset-ver="vigil">v3.2.2</span></div>
           <div class="title-row">
             <div class="seal" aria-hidden="true">🥀</div>
             <div>
@@ -573,19 +704,20 @@
             <li>Diegetic HTML panels, plus a token-light Loom Mode drawn by regex</li>
           </ul>
           <div class="stats">
-            <div><b>107</b><span>prompts</span></div>
-            <div><b>8</b><span>regex</span></div>
-            <div><b>45k</b><span>context</span></div>
+            <div><b data-preset-stat="vigil:prompts">107</b><span>prompts</span></div>
+            <div><b data-preset-stat="vigil:regex">8</b><span>regex</span></div>
+            <div><b data-preset-stat="vigil:context">45k</b><span>context</span></div>
           </div>
           <div class="actions">
-            <a class="btn solid" href="presets/The_Velvet_Vigil_v3.2.2.json" download>Download preset</a>
-            <a class="btn line" href="regex/Velvet_Vigil_regex_bundle.json" download>Regex bundle</a>
+            <button class="btn line preview" type="button" data-preview="vigil">▶ See it in action</button>
+            <a class="btn solid" data-preset="vigil" data-kind="download" href="presets/The_Velvet_Vigil_v3.2.2.json" download>Download preset</a>
+            <a class="btn line" data-preset="vigil" data-kind="regex" href="regex/Velvet_Vigil_regex_bundle.json" download>Regex bundle</a>
           </div>
         </article>
 
         <article class="bill lovesick reveal">
           <div class="pattern" aria-hidden="true"></div>
-          <div class="bill-top"><span class="now">Now playing</span><span class="ver">v1.4.1</span></div>
+          <div class="bill-top"><span class="now">Now playing</span><span class="ver" data-preset-ver="lovesick">v1.4.1</span></div>
           <div class="title-row">
             <div class="seal" aria-hidden="true">💌</div>
             <div>
@@ -600,19 +732,20 @@
             <li>Screenlife visuals: texts, the group chat, chapter cards, the Delulu Meter</li>
           </ul>
           <div class="stats">
-            <div><b>78</b><span>prompts</span></div>
-            <div><b>12</b><span>regex</span></div>
-            <div><b>45k</b><span>context</span></div>
+            <div><b data-preset-stat="lovesick:prompts">78</b><span>prompts</span></div>
+            <div><b data-preset-stat="lovesick:regex">12</b><span>regex</span></div>
+            <div><b data-preset-stat="lovesick:context">45k</b><span>context</span></div>
           </div>
           <div class="actions">
-            <a class="btn solid" href="presets/LOVESICK_v1.4.1.json" download>Download preset</a>
-            <a class="btn line" href="regex/LOVESICK_regex_bundle.json" download>Regex bundle</a>
+            <button class="btn line preview" type="button" data-preview="lovesick">▶ See it in action</button>
+            <a class="btn solid" data-preset="lovesick" data-kind="download" href="presets/LOVESICK_v1.4.1.json" download>Download preset</a>
+            <a class="btn line" data-preset="lovesick" data-kind="regex" href="regex/LOVESICK_regex_bundle.json" download>Regex bundle</a>
           </div>
         </article>
 
         <article class="bill callboard reveal">
           <div class="pattern" aria-hidden="true"></div>
-          <div class="bill-top"><span class="now">Now playing</span><span class="ver">v1.3.0</span></div>
+          <div class="bill-top"><span class="now">Now playing</span><span class="ver" data-preset-ver="callboard">v1.3.0</span></div>
           <div class="title-row">
             <div class="seal" aria-hidden="true">📋</div>
             <div>
@@ -627,15 +760,139 @@
             <li>Chat panels for Twitch, Discord, X, Reddit, AIM, MySpace, and the tabloids</li>
           </ul>
           <div class="stats">
-            <div><b>139</b><span>prompts</span></div>
-            <div><b>98</b><span>regex</span></div>
-            <div><b>100k</b><span>context</span></div>
+            <div><b data-preset-stat="callboard:prompts">139</b><span>prompts</span></div>
+            <div><b data-preset-stat="callboard:regex">98</b><span>regex</span></div>
+            <div><b data-preset-stat="callboard:context">100k</b><span>context</span></div>
           </div>
           <div class="actions">
-            <a class="btn solid" href="presets/CALLBOARD_v1.3.0.json" download>Download preset</a>
-            <a class="btn line" href="regex/CALLBOARD_regex_bundle.json" download>Regex bundle</a>
+            <button class="btn line preview" type="button" data-preview="callboard">▶ See it in action</button>
+            <a class="btn solid" data-preset="callboard" data-kind="download" href="presets/CALLBOARD_v1.3.0.json" download>Download preset</a>
+            <a class="btn line" data-preset="callboard" data-kind="regex" href="regex/CALLBOARD_regex_bundle.json" download>Regex bundle</a>
           </div>
         </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="tour">
+    <div class="wrap">
+      <div class="head reveal">
+        <div class="act">Act II</div>
+        <h2>On Tour</h2>
+        <p>The company travels. These prompts are written for Janitor.AI: pick the setting your bot lives in, copy it, and paste it in.</p>
+        <div class="flourish" aria-hidden="true">✦</div>
+      </div>
+
+      <div class="tour">
+        <article class="wing w-modern reveal">
+          <div class="wing-band"><span class="emoji" aria-hidden="true">🧁</span><span class="where">Contemporary</span></div>
+          <div class="wing-body">
+            <h3>Modern</h3>
+            <p class="line-1">“Most people are ordinary most of the time.”</p>
+            <ul>
+              <li>Characters with one or two habits, used when they matter, not a stack of tics</li>
+              <li>Media Module: texts, DMs, group chats, and posts rendered as real screens</li>
+              <li>An Explicit Module written as close and honest as every other scene</li>
+            </ul>
+            <div class="meta"><span>18+</span><span data-jai-chars="modern">20,661 characters</span></div>
+            <div class="actions">
+              <button class="btn jcopy" type="button" data-src="janitor/modern.md">Copy prompt</button>
+              <a class="btn jview" href="https://github.com/howardsierra/Roleplay-Resources/blob/HEAD/janitor/modern.md">View ↗</a>
+            </div>
+          </div>
+        </article>
+        <article class="wing w-fantasy reveal">
+          <div class="wing-band"><span class="emoji" aria-hidden="true">🐉</span><span class="where">High fantasy</span></div>
+          <div class="wing-body">
+            <h3>Fantasy</h3>
+            <p class="line-1">“You are the world entire, every god half-asleep in it.”</p>
+            <ul>
+              <li>Magic with laws: every working has a cost, and limits never bend for the plot</li>
+              <li>Bells, moons, leagues, and five-and-twenty: the old ways of counting</li>
+              <li>Bounties, prophecies, and sendings rendered as written artifacts</li>
+            </ul>
+            <div class="meta"><span>18+</span><span data-jai-chars="fantasy">32,295 characters</span></div>
+            <div class="actions">
+              <button class="btn jcopy" type="button" data-src="janitor/fantasy.md">Copy prompt</button>
+              <a class="btn jview" href="https://github.com/howardsierra/Roleplay-Resources/blob/HEAD/janitor/fantasy.md">View ↗</a>
+            </div>
+          </div>
+        </article>
+        <article class="wing w-medieval reveal">
+          <div class="wing-band"><span class="emoji" aria-hidden="true">🏰</span><span class="where">Historical</span></div>
+          <div class="wing-body">
+            <h3>Medieval</h3>
+            <p class="line-1">“Every soul laboring in it, praying in it, and quietly plotting.”</p>
+            <ul>
+              <li>The tongue of the age: no modern words, contractions, or rhythms</li>
+              <li>Letters by rider and herald, proclamations, and alehouse songs</li>
+              <li>Consequences that outlive the people who started them</li>
+            </ul>
+            <div class="meta"><span>18+</span><span data-jai-chars="medieval">29,231 characters</span></div>
+            <div class="actions">
+              <button class="btn jcopy" type="button" data-src="janitor/medieval.md">Copy prompt</button>
+              <a class="btn jview" href="https://github.com/howardsierra/Roleplay-Resources/blob/HEAD/janitor/medieval.md">View ↗</a>
+            </div>
+          </div>
+        </article>
+        <article class="wing w-asoiaf reveal">
+          <div class="wing-band"><span class="emoji" aria-hidden="true">⚔️</span><span class="where">Westeros</span></div>
+          <div class="wing-body">
+            <h3>ASOIAF</h3>
+            <p class="line-1">“The realm, and every soul freezing, feasting, and scheming inside it.”</p>
+            <ul>
+              <li>Westerosi vocabulary: seven hells, ser, maesters, moon tea, bend the knee</li>
+              <li>Ravens and decrees, terse because parchment is dear</li>
+              <li>A status bar with a Tension line for what hangs unspoken</li>
+            </ul>
+            <div class="meta"><span>18+</span><span data-jai-chars="asoiaf">26,281 characters</span></div>
+            <div class="actions">
+              <button class="btn jcopy" type="button" data-src="janitor/asoiaf.md">Copy prompt</button>
+              <a class="btn jview" href="https://github.com/howardsierra/Roleplay-Resources/blob/HEAD/janitor/asoiaf.md">View ↗</a>
+            </div>
+          </div>
+        </article>
+        <article class="wing w-regency reveal">
+          <div class="wing-band"><span class="emoji" aria-hidden="true">🎀</span><span class="where">The ton</span></div>
+          <div class="wing-body">
+            <h3>Regency</h3>
+            <p class="line-1">“Every whisper travelling behind every fan in the room.”</p>
+            <ul>
+              <li>Forms of address, precedence, and Christian names that scandalize</li>
+              <li>Scandal sheets, letters, and calling cards as artifacts</li>
+              <li>A Reputation tracker, from Spotless to Ruined</li>
+            </ul>
+            <div class="meta"><span>18+</span><span data-jai-chars="regency">31,469 characters</span></div>
+            <div class="actions">
+              <button class="btn jcopy" type="button" data-src="janitor/regency.md">Copy prompt</button>
+              <a class="btn jview" href="https://github.com/howardsierra/Roleplay-Resources/blob/HEAD/janitor/regency.md">View ↗</a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="module reveal">
+        <div>
+          <span class="tag">Add-on · model correction layer</span>
+          <h3>Opus 4.7 correction layer</h3>
+          <p>Append it to any setting when you’re running Opus 4.7. It pulls the model back from its elevated literary register to the close, raw voice the prompts are written for.</p>
+        </div>
+        <div>
+          <div class="meta" style="margin-bottom:10px"><span data-jai-chars="opus47">1,877 characters</span></div>
+          <div class="actions">
+            <button class="btn jcopy" type="button" data-src="janitor/modules/correction-layer-opus-4.7.md">Copy layer</button>
+            <a class="btn jview" href="https://github.com/howardsierra/Roleplay-Resources/blob/HEAD/janitor/modules/correction-layer-opus-4.7.md">View ↗</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="howto reveal">
+        <strong>Using them on Janitor.AI</strong>
+        <ol>
+          <li>Open a chat with your bot and go to its <strong>API Settings</strong>.</li>
+          <li>Paste the setting into the <strong>Custom Prompt</strong> box. If you’re on Opus 4.7, paste the correction layer underneath it.</li>
+          <li>Every reply opens with a status bar. Impersonate mode is on by default, so the model writes your character too; type <kbd>[MANUAL: ON]</kbd> to take the pen back.</li>
+        </ol>
       </div>
     </div>
   </section>
@@ -643,7 +900,7 @@
   <section id="crew">
     <div class="wrap">
       <div class="head reveal">
-        <div class="act">Act II</div>
+        <div class="act">Act III</div>
         <h2>The Crew</h2>
         <p>Extensions that work backstage. Install any of them from <kbd>Extensions</kbd> → <kbd>Install extension</kbd> by pasting the repo URL.</p>
         <div class="flourish" aria-hidden="true">✦</div>
@@ -658,7 +915,7 @@
 
       <div class="crew">
         <article class="stub reveal" data-cat="writing">
-          <div class="stub-head"><span class="role">Keeps the dossiers</span><span class="ver">v0.8.0</span></div>
+          <div class="stub-head"><span class="role">Keeps the dossiers</span><span class="ver" data-ext="SillyTavern-Offstage">v0.8.0</span></div>
           <div class="stub-body">
             <h3><span aria-hidden="true">🗂️</span>Offstage</h3>
             <p>A private dossier per character, with an inbox of details the model noticed. Nothing sticks until you approve it, and every fact records where it came from.</p>
@@ -670,7 +927,7 @@
         </article>
 
         <article class="stub reveal" data-cat="writing">
-          <div class="stub-head"><span class="role">Costumes your persona</span><span class="ver">v1.1.0</span></div>
+          <div class="stub-head"><span class="role">Costumes your persona</span><span class="ver" data-ext="SillyTavern-Wardrobe">v1.1.0</span></div>
           <div class="stub-body">
             <h3><span aria-hidden="true">👗</span>Wardrobe</h3>
             <p>Per-chat persona lore. Keep a library of backstory pieces and toggle which ones are true in this chat, without ever editing the persona.</p>
@@ -682,7 +939,7 @@
         </article>
 
         <article class="stub reveal" data-cat="writing">
-          <div class="stub-head"><span class="role">The prompter</span><span class="ver">v0.6.1</span></div>
+          <div class="stub-head"><span class="role">The prompter</span><span class="ver" data-ext="guidedgens-si">v0.6.1</span></div>
           <div class="stub-body">
             <h3><span aria-hidden="true">🪶</span>Guided Gens SI</h3>
             <p>Four in-character buttons: Impersonate, Respond, Swipe, and Correct. Steer the next message from your input box while each speaker keeps their voice.</p>
@@ -694,7 +951,7 @@
         </article>
 
         <article class="stub reveal" data-cat="writing">
-          <div class="stub-head"><span class="role">Translates above the stage</span><span class="ver">v0.3.0</span></div>
+          <div class="stub-head"><span class="role">Translates above the stage</span><span class="ver" data-ext="SillyTavern-surtitle">v0.3.0</span></div>
           <div class="stub-body">
             <h3><span aria-hidden="true">🈯</span>Surtitle</h3>
             <p>English surtitles under foreign-language lines, from Japanese to Old Norse runes, while the original stays exactly as written.</p>
@@ -706,7 +963,7 @@
         </article>
 
         <article class="stub reveal" data-cat="writing">
-          <div class="stub-head"><span class="role">Props master</span><span class="ver">v1.0.0</span></div>
+          <div class="stub-head"><span class="role">Props master</span><span class="ver" data-ext="LoreLink">v1.0.0</span></div>
           <div class="stub-body">
             <h3><span aria-hidden="true">🔗</span>LoreLink</h3>
             <p>Pairs global lorebooks with specific characters, so your fantasy worldbook stops firing in your modern-day chats.</p>
@@ -718,7 +975,7 @@
         </article>
 
         <article class="stub reveal" data-cat="tools">
-          <div class="stub-head"><span class="role">The prompt book</span><span class="ver">v1.6.0</span></div>
+          <div class="stub-head"><span class="role">The prompt book</span><span class="ver" data-ext="preset-manager">v1.6.0</span></div>
           <div class="stub-body">
             <h3><span aria-hidden="true">📚</span>Preset Organizer</h3>
             <p>Collapsible sections, search, and bulk toggles for the prompt manager, plus a grid-style Preset Navigator for every API.</p>
@@ -730,7 +987,7 @@
         </article>
 
         <article class="stub reveal" data-cat="tools">
-          <div class="stub-head"><span class="role">The cue sheet</span><span class="ver">v1.0.0</span></div>
+          <div class="stub-head"><span class="role">The cue sheet</span><span class="ver" data-ext="prompt-checkboxes">v1.0.0</span></div>
           <div class="stub-body">
             <h3><span aria-hidden="true">☑️</span>Prompt Checkboxes</h3>
             <p>Swaps the prompt manager’s toggle icon for a real checkbox. It changes the UI only; nothing else behaves differently.</p>
@@ -742,7 +999,7 @@
         </article>
 
         <article class="stub reveal" data-cat="tools">
-          <div class="stub-head"><span class="role">The lighting desk</span><span class="ver">v1.0.0</span></div>
+          <div class="stub-head"><span class="role">The lighting desk</span><span class="ver" data-ext="contextlens">v1.0.0</span></div>
           <div class="stub-body">
             <h3><span aria-hidden="true">🔍</span>Context Lens</h3>
             <p>See what’s lit in your context window: a fill donut, a token breakdown, the lorebook entries that fired, and where truncation cut off.</p>
@@ -754,7 +1011,7 @@
         </article>
 
         <article class="stub reveal" data-cat="ui">
-          <div class="stub-head"><span class="role">Calls for another take</span><span class="ver">v1.0.0</span></div>
+          <div class="stub-head"><span class="role">Calls for another take</span><span class="ver" data-ext="SillyTavern-Encore">v1.0.0</span></div>
           <div class="stub-body">
             <h3><span aria-hidden="true">🔁</span>Encore</h3>
             <p>A floating, draggable regenerate button. Tap to reroll; hold for swipe, continue, or stop. Made for mobile.</p>
@@ -766,7 +1023,7 @@
         </article>
 
         <article class="stub reveal" data-cat="ui">
-          <div class="stub-head"><span class="role">Front of house</span><span class="ver">v1.0.0</span></div>
+          <div class="stub-head"><span class="role">Front of house</span><span class="ver" data-ext="ExtensionOrganizer">v1.0.0</span></div>
           <div class="stub-body">
             <h3><span aria-hidden="true">🗃️</span>Extension Organizer</h3>
             <p>Search, pin, sort, and categorize the drawers in the Extensions panel, so finding one stops being a scavenger hunt.</p>
@@ -783,7 +1040,7 @@
   <section id="house">
     <div class="wrap">
       <div class="head reveal">
-        <div class="act">Act III</div>
+        <div class="act">Act IV</div>
         <h2>The House</h2>
         <p>Every show needs a theatre. This is the one I built.</p>
         <div class="flourish" aria-hidden="true">✦</div>
@@ -794,7 +1051,7 @@
         <div>
           <div class="bill-top" style="justify-content:flex-start;gap:12px">
             <span class="now">Opening night</span>
-            <span class="ver" style="background:rgba(255,255,255,.1);color:#cfc9ec">v0.1.0</span>
+            <span class="ver" data-ext="roleplay-frontend-personal" style="background:rgba(255,255,255,.1);color:#cfc9ec">v0.1.0</span>
           </div>
           <h3>✦ Reverie</h3>
           <p class="lead">A self-hosted roleplay frontend that looks good on phones and computers and needs very little setup.</p>
@@ -868,7 +1125,73 @@
   <p><a href="https://github.com/howardsierra/Roleplay-Resources">View the repository on GitHub</a></p>
 </footer>
 
+<dialog class="viewer" id="viewer" aria-labelledby="viewer-title">
+  <div class="viewer-head">
+    <div>
+      <h2 id="viewer-title">See it in action</h2>
+      <p>A sample reply drawn by each preset’s own regex scripts, just as SillyTavern renders it.</p>
+    </div>
+    <button class="close" type="button" aria-label="Close preview">✕</button>
+  </div>
+  <div class="tabs" role="tablist" aria-label="Choose a preset">
+    <button role="tab" type="button" data-tab="rosie">🌹 Rosie</button>
+    <button role="tab" type="button" data-tab="vigil">🥀 Velvet Vigil</button>
+    <button role="tab" type="button" data-tab="lovesick">💌 LOVESICK</button>
+    <button role="tab" type="button" data-tab="callboard">📋 CALLBOARD</button>
+  </div>
+  <iframe id="viewer-frame" title="Preset preview" sandbox loading="lazy"></iframe>
+  <div class="viewer-foot">
+    <span>Sample text, real regex. Panels marked ▸ open when clicked.</span>
+    <a class="btn gold" id="viewer-download" href="#" download>Download this preset</a>
+  </div>
+</dialog>
+
 <script>
+  // Live previews
+  const viewer = document.getElementById("viewer");
+  const frame = document.getElementById("viewer-frame");
+  const tabs = viewer.querySelectorAll("[data-tab]");
+  function showPreview(key) {
+    tabs.forEach((t) => t.setAttribute("aria-selected", String(t.dataset.tab === key)));
+    frame.src = `previews/${key}.html`;
+    const dl = document.querySelector(`[data-preset="${key}"][data-kind="download"]`);
+    document.getElementById("viewer-download").href = dl ? dl.getAttribute("href") : "#company";
+  }
+  document.querySelectorAll("[data-preview]").forEach((b) => b.addEventListener("click", () => {
+    showPreview(b.dataset.preview);
+    if (viewer.showModal) viewer.showModal(); else viewer.setAttribute("open", "");
+  }));
+  tabs.forEach((t) => t.addEventListener("click", () => showPreview(t.dataset.tab)));
+  viewer.querySelector(".close").addEventListener("click", () => viewer.close());
+  viewer.addEventListener("click", (e) => { if (e.target === viewer) viewer.close(); });
+
+  // Copy Janitor.AI prompts. ClipboardItem keeps Safari's user-gesture rule happy
+  // while the file is still downloading; other browsers fall back to writeText.
+  document.addEventListener("click", async (e) => {
+    const b = e.target.closest(".jcopy");
+    if (!b) return;
+    const label = b.textContent;
+    const text = () => fetch(b.dataset.src).then((r) => {
+      if (!r.ok) throw new Error(r.status);
+      return r.text();
+    });
+    try {
+      if (window.ClipboardItem && navigator.clipboard.write) {
+        await navigator.clipboard.write([new ClipboardItem({
+          "text/plain": text().then((t) => new Blob([t], { type: "text/plain" })),
+        })]);
+      } else {
+        await navigator.clipboard.writeText(await text());
+      }
+      b.textContent = "Copied ✓";
+      b.classList.add("done");
+    } catch {
+      window.open(b.dataset.src, "_blank", "noopener");
+      return;
+    }
+    setTimeout(() => { b.textContent = label; b.classList.remove("done"); }, 1800);
+  });
+
   // Copy install URLs
   document.addEventListener("click", async (e) => {
     const b = e.target.closest(".copy");
