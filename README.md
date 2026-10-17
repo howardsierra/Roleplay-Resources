@@ -109,17 +109,20 @@ Each preset already carries its regex scripts inside it. Recent SillyTavern vers
 
 The visual modules (boards, trackers, chat panels, Loom / Signal Mode) need these regexes to render. Without them, leave those modules off.
 
+**What does each regex do?** See the [Regex Guide](regex/README.md) ([on the site](https://howardsierra.github.io/Roleplay-Resources/regex.html)). It covers all of them, with the tag that triggers each one.
+
 ---
 
 ## Repository layout
 
 ```
 presets/   Chat Completion presets (import in AI Response Configuration)
-regex/     Regex bundles pulled from each preset (import in Extensions → Regex)
+regex/     Regex bundles pulled from each preset, plus the Regex Guide (README.md)
 janitor/   Janitor.AI setting prompts, plus add-on modules
 previews/  "See it in action" previews; edit samples/, not the .html files
 assets/    Social preview image (og-image.png) and its source
-scripts/   build.mjs, which keeps everything in sync
+scripts/   build.mjs, which keeps everything in sync; regex-notes.json, the guide's blurbs
+regex.html The Regex Guide page
 index.html The GitHub Pages site
 ```
 
@@ -132,5 +135,6 @@ You don't need to edit the site or README by hand when you update something. A G
 - re-renders the "See it in action" previews through the preset's own regex scripts
 - refreshes each extension's version number from its repo
 - updates the Janitor prompts' character counts
+- rebuilds the Regex Guide from `scripts/regex-notes.json`, and warns in the log about any regex that doesn't have a blurb yet
 
 To ship a new preset version, upload the new file to `presets/` (for example `LOVESICK_v1.5.0.json`). You can delete the old one or keep it around. To run the script yourself: `node scripts/build.mjs --fetch` (needs Node 20+).

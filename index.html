@@ -425,6 +425,9 @@
   .howto strong { color: var(--ink); }
   .howto ol { margin: 8px 0 0; padding-left: 20px; display: grid; gap: 4px; }
 
+  .bill .guide-link { font: 600 13px var(--body); color: var(--acc); text-decoration: none; margin-top: -6px; }
+  .bill .guide-link:hover { text-decoration: underline; text-underline-offset: 3px; }
+
   /* ---------- live preview viewer ---------- */
   .bill .btn.preview { flex-basis: 100%; background: var(--chip); border-color: transparent; }
   .bill .btn.preview:hover { border-color: var(--acc); color: var(--acc); }
@@ -729,6 +732,7 @@
             <a class="btn solid" data-preset="rosie" data-kind="download" href="presets/Rosie_Full_Bloom_v2.7.json" download>Download preset</a>
             <a class="btn line" data-preset="rosie" data-kind="regex" href="regex/Rosie_regex_bundle.json" download>Regex bundle</a>
           </div>
+          <a class="guide-link" href="regex.html#rosie">What each regex does →</a>
         </article>
 
         <article class="bill vigil reveal">
@@ -757,6 +761,7 @@
             <a class="btn solid" data-preset="vigil" data-kind="download" href="presets/The_Velvet_Vigil_v3.2.2.json" download>Download preset</a>
             <a class="btn line" data-preset="vigil" data-kind="regex" href="regex/Velvet_Vigil_regex_bundle.json" download>Regex bundle</a>
           </div>
+          <a class="guide-link" href="regex.html#vigil">What each regex does →</a>
         </article>
 
         <article class="bill lovesick reveal">
@@ -785,6 +790,7 @@
             <a class="btn solid" data-preset="lovesick" data-kind="download" href="presets/LOVESICK_v1.4.1.json" download>Download preset</a>
             <a class="btn line" data-preset="lovesick" data-kind="regex" href="regex/LOVESICK_regex_bundle.json" download>Regex bundle</a>
           </div>
+          <a class="guide-link" href="regex.html#lovesick">What each regex does →</a>
         </article>
 
         <article class="bill callboard reveal">
@@ -813,6 +819,7 @@
             <a class="btn solid" data-preset="callboard" data-kind="download" href="presets/CALLBOARD_v1.3.0.json" download>Download preset</a>
             <a class="btn line" data-preset="callboard" data-kind="regex" href="regex/CALLBOARD_regex_bundle.json" download>Regex bundle</a>
           </div>
+          <a class="guide-link" href="regex.html#callboard">What each regex does →</a>
         </article>
       </div>
     </div>
@@ -1190,7 +1197,7 @@
         <article class="reveal">
           <div class="numeral">II.</div>
           <h3>Bring the regex</h3>
-          <p>Every preset carries its own regex scripts. If SillyTavern doesn’t offer to import them, use the bundle: <kbd>Extensions</kbd> → <kbd>Regex</kbd> → <kbd>Import</kbd>.</p>
+          <p>Every preset carries its own regex scripts. If SillyTavern doesn’t offer to import them, use the bundle: <kbd>Extensions</kbd> → <kbd>Regex</kbd> → <kbd>Import</kbd>. The <a href="regex.html" style="color:var(--accent);font-weight:600">Regex Guide</a> explains what each one does.</p>
         </article>
         <article class="reveal">
           <div class="numeral">III.</div>

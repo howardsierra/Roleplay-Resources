@@ -1,0 +1,884 @@
+{
+  "rosie": {
+    "intro": "Turn on Regex Keepsakes (or a board, report, or HEX/SELARU module) in the preset, and Rosie writes these short bracket tags. The regexes draw them as cards.",
+    "groups": [
+      {
+        "title": "Keepsakes",
+        "intro": "Small cards Rosie drops into the story.",
+        "scripts": [
+          {
+            "name": "🌹 Rosie Scene Compass",
+            "syntax": "[RSCENE: title | place | time | present | mood | thread | nudge]",
+            "blurb": "A pink fold-out card for the current scene: place, time, who's present, mood, the live thread, and a one-line nudge. Tap the title to open it."
+          },
+          {
+            "name": "💌 Rosie Ship Ledger",
+            "syntax": "[RSHIP: pair | stage | heat | obstacle | payoff | note]",
+            "blurb": "A card for a pairing: where they stand, the heat, what's in the way, the payoff it's building to, and a note."
+          },
+          {
+            "name": "📱 Rosie Phone Message",
+            "syntax": "[RPHONE: contact | time | status | message]",
+            "blurb": "Draws a text message as a phone screen, with the contact, time, delivery status, and message bubble."
+          },
+          {
+            "name": "🧭 Rosie Quest Card",
+            "syntax": "[RQUEST: title | current | next | risk | reward]",
+            "blurb": "A quest card: the current step, what comes next, the risk, and the reward."
+          },
+          {
+            "name": "🎁 Rosie Inventory Keepsake",
+            "syntax": "[RITEM: item | owner | state | meaning | note]",
+            "blurb": "An item card: who owns it, what shape it's in, and what it means to them."
+          },
+          {
+            "name": "👗 Rosie Wardrobe Card",
+            "syntax": "[RWARDROBE: character | outfit | posture | detail | mood | note]",
+            "blurb": "What a character is wearing right now, with their posture, one telling detail, and their mood."
+          },
+          {
+            "name": "🗣️ Rosie Rumor Board",
+            "syntax": "[RRUMOR: source | subject | claim | spread | consequence]",
+            "blurb": "A rumor: who started it, who it's about, what's being said, how far it's spread, and what it'll cost."
+          },
+          {
+            "name": "💞 Rosie Relationship Map",
+            "syntax": "[RREL: title | person_a | person_b | bond | tension | note]",
+            "blurb": "Two people side by side, with the bond between them and the tension in it."
+          }
+        ]
+      },
+      {
+        "title": "Info boards",
+        "intro": "Dashboards from the Info Board System. Each one also has an \"Always Fire\" module.",
+        "scripts": [
+          {
+            "name": "📋 Rosie General Info Board",
+            "syntax": "[RBOARD: title | subtitle | left label | left value | right label | right value | note]",
+            "blurb": "A general-purpose board: a title, two labeled values side by side, and a note."
+          },
+          {
+            "name": "📍 Rosie Status Board",
+            "syntax": "[RSTATUS: title | location | time | pressure | danger | objective | next]",
+            "blurb": "The scene at a glance: location, time, pressure, danger, the objective, and what's next."
+          },
+          {
+            "name": "👥 Rosie Cast Board",
+            "syntax": "[RCAST: title | active | nearby | absent | wild card | note]",
+            "blurb": "Who's in the scene, who's nearby, who's missing, and the wild card."
+          },
+          {
+            "name": "🧠 Rosie Knowledge Board",
+            "syntax": "[RKNOW: title | character | knows | suspects | does not know | risk]",
+            "blurb": "What one character knows, suspects, and doesn't know, and the risk hiding in the gap."
+          },
+          {
+            "name": "🕯️ Rosie Calendar / Countdown Board",
+            "syntax": "[RCLOCK: title | date | time | deadline | event | note]",
+            "blurb": "The date and time, with a countdown to the next deadline or event."
+          },
+          {
+            "name": "🗂️ Rosie Case Board",
+            "syntax": "[RCASE: title | lead | evidence | suspect | contradiction | next]",
+            "blurb": "A mystery case file: the lead, the evidence, the suspect, the contradiction, and the next step."
+          },
+          {
+            "name": "👑 Rosie Reputation Board",
+            "syntax": "[RREP: title | public read | allies | threats | gossip | consequence]",
+            "blurb": "How the world sees a character: the public read, allies, threats, gossip, and consequences."
+          }
+        ]
+      },
+      {
+        "title": "Status reports",
+        "intro": "F.A.Y.E.-inspired reports. Turn on the Status Report System and pick a style.",
+        "scripts": [
+          {
+            "name": "🌹 Rosie SFW Status Report",
+            "syntax": "[RSFWREPORT: title | when/where | mood | pressure | thread | next opening | rosie note]",
+            "blurb": "A styled status report card for the scene, with Rosie's note at the bottom."
+          },
+          {
+            "name": "🌹 Rosie SFW Markdown-Style Status",
+            "syntax": "[RSFWMD: title | when/where | mood | pressure | next opening | rosie note]",
+            "blurb": "A lighter, quote-style version of the same report."
+          },
+          {
+            "name": "🫦 Rosie Velvet Heat Report",
+            "syntax": "[RVELVET: title | adult check | privacy | heat | consent/boundaries | emotional risk | aftercare | next opening | rosie note]",
+            "blurb": "The adults-only report for intimate scenes: adult check, privacy, heat, consent and boundaries, emotional risk, and aftercare."
+          },
+          {
+            "name": "🫦 Rosie Velvet Markdown-Style Status",
+            "syntax": "[RVELVETMD: title | adult check | privacy | heat | consent/boundaries | next opening | rosie note]",
+            "blurb": "A lighter, quote-style version of the Velvet Heat Report."
+          },
+          {
+            "name": "🌹 Rosie AI Affinity Status Board",
+            "syntax": "[RAFFINITY: status | affection % | change | attraction % | change | loyalty % | change | intelligence % | change | intrigue % | change | understanding you | perceived threats | sweet things | sad things | internal monologue]",
+            "blurb": "The big screenshot-style panel: five stats with their latest changes, what the character understands about you, perceived threats, sweet and sad things, and an internal monologue."
+          }
+        ]
+      },
+      {
+        "title": "HEX- and SELARU-style boards",
+        "intro": "Alternate board styles inspired by HEX's environmental boards and SELARU's in-world objects. Commands like [ROSIE:HEX INFO] call them up.",
+        "scripts": [
+          {
+            "name": "🔥 Rosie HEX-Style Info Board",
+            "syntax": "[RHEXINFO: date | season | start time | end time | location | temperature | weather/visibility/light | illumination | scene pressure]",
+            "blurb": "An environmental board: date, season, how much time passed, location, temperature, weather, light, and scene pressure."
+          },
+          {
+            "name": "🔥 Rosie HEX-Style Affinity Board",
+            "syntax": "[RHEXAFF: focus | thought/meta read | mood | affinity | heat/tension | physical state | soundtrack | scenery]",
+            "blurb": "An affinity board for one character: their read on things, mood, affinity, tension, and physical state, plus a soundtrack and a scenery line."
+          },
+          {
+            "name": "🌹 Rosie HEX-Style SFW Affinity Board",
+            "syntax": "[RHEXAFFSFW: focus | public read | mood | affinity | tension | posture | soundtrack | scenery]",
+            "blurb": "The SFW version: public read, mood, affinity, tension, and posture."
+          },
+          {
+            "name": "🫦 Rosie HEX-Style Velvet Affinity Board",
+            "syntax": "[RHEXAFFNSFW: focus | adult check | privacy | heat | consent/boundaries | arousal/tension | physical state | aftercare/aftermath | note]",
+            "blurb": "The adults-only version, with an adult check, privacy, heat, consent and boundaries, and aftercare."
+          },
+          {
+            "name": "🪞 Rosie SELARU-Style Diegetic Info Board",
+            "syntax": "[RSELINFO: object type | title | source | visible text/detail | interaction | consequence | character reaction]",
+            "blurb": "Shows information as an object in the story world, like a sign, a note, or a screen: what it says, how it's used, and how the character reacts."
+          },
+          {
+            "name": "🪞 Rosie SELARU-Style Affinity Evidence Board",
+            "syntax": "[RSELAFF: pair/focus | visible evidence | private/public status | trust | pressure | risk | next opening]",
+            "blurb": "Affinity told through evidence you could actually see instead of a number: what's visible, whether it's public, trust, pressure, and risk."
+          },
+          {
+            "name": "📜 Rosie SELARU-Style Document Board",
+            "syntax": "[RSELDOC: document type | title | issuer/source | contents | seal/status | consequence | note]",
+            "blurb": "An in-world document such as a letter, contract, or decree, with its issuer, contents, seal, and consequence."
+          },
+          {
+            "name": "🖥️ Rosie SELARU-Style Terminal Board",
+            "syntax": "[RSELTERM: interface | status | signal/source | message | warning | action prompt | consequence]",
+            "blurb": "An in-world terminal or device screen, with its status, message, warning, and an action prompt."
+          }
+        ]
+      },
+      {
+        "title": "Behind the scenes",
+        "intro": "These hide things rather than draw them.",
+        "scripts": [
+          {
+            "name": "🌹 Rosie Secret Stitch Note",
+            "syntax": "[ROSIE NOTE: note]",
+            "blurb": "Takes Rosie's private continuity notes out of the reply and files them in the rosie_notes chat variable, so they're remembered but never shown."
+          },
+          {
+            "name": "🌹 Rosie Chekhov Plant",
+            "syntax": "[PLANT: setup]",
+            "blurb": "Files a planted setup (a Chekhov's gun) in the rosie_planted chat variable instead of showing it."
+          },
+          {
+            "name": "🌹 Rosie Chekhov Fired",
+            "syntax": "[FIRED: payoff]",
+            "blurb": "Logs a payoff in the rosie_fired chat variable when a planted setup goes off."
+          },
+          {
+            "name": "🌹 Rosie HTML Marker Cleanup",
+            "syntax": "",
+            "blurb": "Removes the invisible ROSIE_HTML start and end markers around Rosie's HTML panels."
+          },
+          {
+            "name": "🌹 Rosie Macro Cleanup",
+            "syntax": "",
+            "blurb": "Hides any leftover {{addvar}}, {{setvar}}, {{getvar}}, {{incvar}}, or {{decvar}} macros so they never show up in a reply."
+          },
+          {
+            "name": "🌹 Rosie Prefill Strip",
+            "syntax": "",
+            "blurb": "Removes a \"[Continuing in-character…]\" prefill if the model echoes it at the start of a reply."
+          }
+        ]
+      }
+    ]
+  },
+  "vigil": {
+    "intro": "Turn on 🧵 Loom Mode in the preset, and Vesper writes these light tags instead of full HTML. It's cheaper on tokens and keeps the look consistent.",
+    "groups": [
+      {
+        "title": "Loom fixtures",
+        "intro": "",
+        "scripts": [
+          {
+            "name": "VV - Chapter Plate",
+            "syntax": "<plate>Number · Title ♦ epigraph</plate>",
+            "blurb": "A centered chapter plate: the number and title in small caps over an italic epigraph."
+          },
+          {
+            "name": "VV - Scene Ledger",
+            "syntax": "<ledger>when ♦ where ♦ present ♦ threads</ledger>",
+            "blurb": "The Scene Ledger: when, where, who's present, and the open threads."
+          },
+          {
+            "name": "VV - Ribbon Ledger",
+            "syntax": "<ribbon>Name ♦ Affection NN Stage ♦ Desire NN Stage ♦ Trust NN Stage</ribbon>",
+            "blurb": "The Ribbon Ledger for one bond: Affection, Desire, and Trust meters, each with its number and stage."
+          },
+          {
+            "name": "VV - Ribbon Delta Chip",
+            "syntax": "[+4 Trust: reason]",
+            "blurb": "A small inline chip for a change to a bond, with the reason."
+          },
+          {
+            "name": "VV - Vesper Remark",
+            "syntax": "<vesper>remark</vesper>",
+            "blurb": "Vesper's signed remark under a reply, in her burgundy margin style."
+          },
+          {
+            "name": "VV - Reading Room Patron",
+            "syntax": "<patron handle=\"name\">comment</patron>",
+            "blurb": "One Reading Room reader's reaction, with their @handle."
+          },
+          {
+            "name": "VV - Crossroads Fork",
+            "syntax": "<fork>option</fork>",
+            "blurb": "Draws each of Vesper's Crossroads options as a pill-shaped choice."
+          },
+          {
+            "name": "VV - Night Reading Veil",
+            "syntax": "<think>…</think>",
+            "blurb": "Wraps the model's reasoning in a 🕯️ \"the night reading\" fold-out, so it doesn't sprawl across the reply."
+          }
+        ]
+      }
+    ]
+  },
+  "lovesick": {
+    "intro": "Turn on 📶 Signal Mode in the preset, and Juno writes these light tags instead of full HTML. It's cheaper on tokens and keeps the look consistent.",
+    "groups": [
+      {
+        "title": "Screenlife fixtures",
+        "intro": "",
+        "scripts": [
+          {
+            "name": "LS - Chapter Card",
+            "syntax": "<chapter>No. · title ♦ epigraph</chapter>",
+            "blurb": "A chapter card with its number and title over an italic epigraph."
+          },
+          {
+            "name": "LS - The Receipts",
+            "syntax": "<receipts>when ♦ where ♦ present ♦ threads</receipts>",
+            "blurb": "The Receipts: when, where, who's there, and the threads in play."
+          },
+          {
+            "name": "LS - The Pinboard",
+            "syntax": "<pinboard>when ♦ where ♦ the room ♦ fit check ♦ the vibe ♦ threads ♦ up next</pinboard>",
+            "blurb": "The detailed scene board: when, where, the room, fit check, the vibe, threads, and what's up next. It replaces The Receipts when both are on."
+          },
+          {
+            "name": "LS - Group Chat Name",
+            "syntax": "<gcname>chat title</gcname>",
+            "blurb": "The group chat's name, as a header above its messages."
+          },
+          {
+            "name": "LS - Group Chat Message",
+            "syntax": "<gc handle=\"name\">message</gc>",
+            "blurb": "One group chat bubble with the sender's name."
+          },
+          {
+            "name": "LS - Delulu Meter",
+            "syntax": "<delulu>Name ♦ Feelings NN Stage ♦ Heat NN Stage ♦ Honesty NN Stage</delulu>",
+            "blurb": "The Delulu Meter for a pairing: Feelings, Heat, and Honesty bars, each with its number and stage."
+          },
+          {
+            "name": "LS - Delulu Delta Chip",
+            "syntax": "[+6 Honesty: reason]",
+            "blurb": "A small inline chip for a change to Feelings, Heat, or Honesty, with the reason."
+          },
+          {
+            "name": "LS - Juno Comment",
+            "syntax": "<juno>comment</juno>",
+            "blurb": "Juno's signed comment under a reply, liveblogging your love life."
+          },
+          {
+            "name": "LS - What They Didnt Say",
+            "syntax": "<unsaid>the line</unsaid>",
+            "blurb": "A 🤫 fold-out holding the line someone didn't say out loud."
+          },
+          {
+            "name": "LS - The Firsts",
+            "syntax": "<firsts>✓/○ lines</firsts>",
+            "blurb": "A 💌 fold-out checklist of the relationship's firsts, done and not yet."
+          },
+          {
+            "name": "LS - Needle Drop",
+            "syntax": "<track>Song — Artist</track>",
+            "blurb": "A small \"♪ now playing\" line for the scene's song."
+          },
+          {
+            "name": "LS - Margin Notes (think)",
+            "syntax": "<think>…</think>",
+            "blurb": "Juno's readable reasoning: wraps <think> in a 🖊️ \"juno's margin notes\" fold-out. You don't need it if SillyTavern's Auto-Parse Reasoning already catches <think> tags."
+          }
+        ]
+      }
+    ]
+  },
+  "callboard": {
+    "intro": "CALLBOARD writes data lines, like TW> msg|… for a Twitch message, inside [[SHELL]] tags. Row regexes draw each line, and shell regexes draw the window around them. Import the whole bundle: the pieces need each other.",
+    "groups": [
+      {
+        "title": "Dividers",
+        "intro": "These also work in your own messages.",
+        "scripts": [
+          {
+            "name": "CB · Divider — Act Break",
+            "syntax": "a line of ---, ***, ===, or ~~~",
+            "blurb": "Turns the line into a ✦ ✦ ✦ act break."
+          },
+          {
+            "name": "CB · Divider — Scene Shift (⁂)",
+            "syntax": "⁂ on its own line",
+            "blurb": "Turns it into a centered scene-shift mark."
+          },
+          {
+            "name": "CB · Divider — Timeskip (↷)",
+            "syntax": "↷, »»», or →→→ on its own line",
+            "blurb": "Turns it into a \"later\" timeskip divider."
+          }
+        ]
+      },
+      {
+        "title": "Xavi",
+        "intro": "Your stage manager's notes and asides.",
+        "scripts": [
+          {
+            "name": "CB · Callboard — style think foldout",
+            "syntax": "<think>…</think>",
+            "blurb": "Shows Xavi's reasoning as a 🎧 \"Xavi at the board\" fold-out."
+          },
+          {
+            "name": "CB · Callboard — hide think from prompt",
+            "syntax": "",
+            "blurb": "Leaves Xavi's <think> notes out of what's sent back to the model on later turns, to save tokens. What you see doesn't change."
+          },
+          {
+            "name": "CB · Xavi — curtain note (style)",
+            "syntax": "<xavi>note</xavi>",
+            "blurb": "Xavi's curtain note: a 🎧 card under the reply."
+          },
+          {
+            "name": "CB · Xavi — curtain note (hide from prompt)",
+            "syntax": "",
+            "blurb": "Leaves Xavi's curtain notes out of what's sent back to the model, so they cost no tokens later."
+          },
+          {
+            "name": "CB · Xavi — OOC aside (style, AI output only)",
+            "syntax": "(OOC: aside)",
+            "blurb": "Styles Xavi's (OOC: …) asides as a \"from the wings\" note signed — X. It only touches the AI's replies, so your own OOC stays plain."
+          }
+        ]
+      },
+      {
+        "title": "Tracker and boards",
+        "intro": "Written inside one <cb_state> block. Shell regexes draw each card, and row regexes draw the lines inside it.",
+        "scripts": [
+          {
+            "name": "CB · Tracker shell",
+            "syntax": "[[TRK]] … [[/TRK]]",
+            "blurb": "Wraps the tracker lines in the 🎛️ Status card."
+          },
+          {
+            "name": "CB · Tracker row — line",
+            "syntax": "T> time|… · T> place|… · T> mood|…",
+            "blurb": "A label-and-value line in the Status card for the time, place, or mood."
+          },
+          {
+            "name": "CB · Tracker row — affinity",
+            "syntax": "T> affinity|name|0–100|why",
+            "blurb": "An affinity bar for the focus character, with the reason underneath."
+          },
+          {
+            "name": "CB · Tracker row — reputation",
+            "syntax": "T> reputation|standing|why",
+            "blurb": "A reputation line, with the reason underneath."
+          },
+          {
+            "name": "CB · Board shell — Cast",
+            "syntax": "[[CAST]] … [[/CAST]]",
+            "blurb": "Wraps Cast & Affinity rows in their card."
+          },
+          {
+            "name": "CB · Board row — Cast",
+            "syntax": "C> name|role|0–100|mood|status",
+            "blurb": "A Cast row: role, an affinity bar, mood, and status."
+          },
+          {
+            "name": "CB · Board shell — Web",
+            "syntax": "[[WEB]] … [[/WEB]]",
+            "blurb": "Wraps Relationship Web rows in their card."
+          },
+          {
+            "name": "CB · Board row — Web",
+            "syntax": "W> A ↔ B|bond|0–100|note",
+            "blurb": "A Relationship Web row: the pair, their bond, its strength, and a note."
+          },
+          {
+            "name": "CB · Board shell — Status",
+            "syntax": "[[STATUS]] … [[/STATUS]]",
+            "blurb": "Wraps Status & Conditions rows in their card."
+          },
+          {
+            "name": "CB · Board row — Status",
+            "syntax": "S> name|health|energy|condition",
+            "blurb": "A Status & Conditions row: ♥ health, ⚡ energy, and what's wrong."
+          },
+          {
+            "name": "CB · Board shell — Inventory",
+            "syntax": "[[INV]] … [[/INV]]",
+            "blurb": "Wraps Inventory & Keepsakes rows in their card."
+          },
+          {
+            "name": "CB · Board row — Inventory",
+            "syntax": "I> item|type|note",
+            "blurb": "An Inventory & Keepsakes row."
+          },
+          {
+            "name": "CB · Board shell — Codex",
+            "syntax": "[[CODEX]] … [[/CODEX]]",
+            "blurb": "Wraps World Codex rows in their card."
+          },
+          {
+            "name": "CB · Board row — Codex",
+            "syntax": "X> entry|type|note",
+            "blurb": "A World Codex / Clue Log row: a faction, place, mystery, or clue."
+          },
+          {
+            "name": "CB · Board row — catch-all (malformed lines)",
+            "syntax": "",
+            "blurb": "Catches tracker or board lines with the wrong number of fields and shows them as plain text instead of a broken row."
+          },
+          {
+            "name": "CB · State — unwrap (keep rendered cards)",
+            "syntax": "<cb_state> … </cb_state>",
+            "blurb": "Removes the <cb_state> wrapper so only the finished cards show."
+          }
+        ]
+      },
+      {
+        "title": "Twitch",
+        "intro": "Written inside [[TWITCH]] … [[/TWITCH]].",
+        "scripts": [
+          {
+            "name": "CB · Shell — Twitch chat",
+            "syntax": "[[TWITCH]] … [[/TWITCH]]",
+            "blurb": "The Twitch chat window that floats beside the prose, with its \"Send a message\" box."
+          },
+          {
+            "name": "CB · Twitch row — live header",
+            "syntax": "TW> live|channel|title|category|viewers|uptime",
+            "blurb": "The stream header: channel, LIVE badge, title, category, viewer count, and uptime."
+          },
+          {
+            "name": "CB · Twitch row — message",
+            "syntax": "TW> msg|#color|user|badges|message",
+            "blurb": "A chat message, with badges and the viewer's name color."
+          },
+          {
+            "name": "CB · Twitch row — sub / gift",
+            "syntax": "TW> sub|user|kind|message",
+            "blurb": "A highlighted sub or gift-sub alert."
+          },
+          {
+            "name": "CB · Twitch row — bits",
+            "syntax": "TW> bits|user|amount|message",
+            "blurb": "A cheer with bits."
+          },
+          {
+            "name": "CB · Twitch row — tip (TTS)",
+            "syntax": "TW> tip|user|$amount|message",
+            "blurb": "A TTS donation alert, the kind the streamer hears read out loud."
+          },
+          {
+            "name": "CB · Twitch row — raid",
+            "syntax": "TW> raid|channel|viewers",
+            "blurb": "A raid alert."
+          },
+          {
+            "name": "CB · Twitch row — follow",
+            "syntax": "TW> follow|user",
+            "blurb": "A new-follower line."
+          },
+          {
+            "name": "CB · Twitch row — mod action",
+            "syntax": "TW> mod|what happened",
+            "blurb": "A mod action, like a timeout."
+          },
+          {
+            "name": "CB · Twitch row — clip",
+            "syntax": "TW> clip|title|clipped by",
+            "blurb": "A ✂️ clip card."
+          },
+          {
+            "name": "CB · Twitch inline — @mention",
+            "syntax": "@username",
+            "blurb": "Highlights @mentions in Twitch chat."
+          }
+        ]
+      },
+      {
+        "title": "Discord",
+        "intro": "Written inside [[DISCORD]] … [[/DISCORD]].",
+        "scripts": [
+          {
+            "name": "CB · Shell — Discord window",
+            "syntax": "[[DISCORD]] … [[/DISCORD]]",
+            "blurb": "The Discord window around the messages, with its message box."
+          },
+          {
+            "name": "CB · Discord row — place header",
+            "syntax": "DC> place|server|#channel",
+            "blurb": "The server and channel header, or Direct Messages."
+          },
+          {
+            "name": "CB · Discord row — message (no tag)",
+            "syntax": "DC> msg|#color|name||time|message",
+            "blurb": "A message from someone without a role badge."
+          },
+          {
+            "name": "CB · Discord row — message (tagged)",
+            "syntax": "DC> msg|#color|name|tag|time|message",
+            "blurb": "A message with a role badge like MOD, or a joke role."
+          },
+          {
+            "name": "CB · Discord row — grouped follow-up",
+            "syntax": "DC> more|message",
+            "blurb": "A follow-up grouped under the same person's last message."
+          },
+          {
+            "name": "CB · Discord row — reply line",
+            "syntax": "DC> reply|name|snippet",
+            "blurb": "The small \"replying to\" line above a reply."
+          },
+          {
+            "name": "CB · Discord row — reactions",
+            "syntax": "DC> react|💀 4 · 😭 2",
+            "blurb": "Reaction pills under a message."
+          },
+          {
+            "name": "CB · Discord row — attachment",
+            "syntax": "DC> attach|what it is",
+            "blurb": "An image or file attachment."
+          },
+          {
+            "name": "CB · Discord row — system line",
+            "syntax": "DC> sys|line",
+            "blurb": "A system line, like a pinned message, a join, or a call."
+          },
+          {
+            "name": "CB · Discord row — typing",
+            "syntax": "DC> typing|Mara is typing…",
+            "blurb": "The typing indicator."
+          },
+          {
+            "name": "CB · Discord inline — @mention",
+            "syntax": "@name",
+            "blurb": "Highlights @mentions, Discord-style."
+          },
+          {
+            "name": "CB · Discord inline — (edited)",
+            "syntax": "(edited)",
+            "blurb": "Turns \"(edited)\" into Discord's small grey tag."
+          },
+          {
+            "name": "CB · Discord inline — split reactions",
+            "syntax": "",
+            "blurb": "Splits a reactions line into separate pills."
+          },
+          {
+            "name": "CB · Chat inline — emotes :Name: (Twitch/Discord)",
+            "syntax": ":KEKW:",
+            "blurb": "Turns emotes in Twitch and Discord lines into emote pills."
+          }
+        ]
+      },
+      {
+        "title": "Press clippings",
+        "intro": "Written inside [[TABLOID]], [[BLOG]], [[MAG]], or [[BLIND]].",
+        "scripts": [
+          {
+            "name": "CB · Shell — Press tabloid",
+            "syntax": "[[TABLOID]] … [[/TABLOID]]",
+            "blurb": "The red, loud tabloid page."
+          },
+          {
+            "name": "CB · Shell — Press blog",
+            "syntax": "[[BLOG]] … [[/BLOG]]",
+            "blurb": "The hot-pink gossip blog."
+          },
+          {
+            "name": "CB · Shell — Press mag",
+            "syntax": "[[MAG]] … [[/MAG]]",
+            "blurb": "The glossy magazine spread."
+          },
+          {
+            "name": "CB · Shell — Press blind",
+            "syntax": "[[BLIND]] … [[/BLIND]]",
+            "blurb": "The anonymous blind item."
+          },
+          {
+            "name": "CB · Press row — outlet masthead",
+            "syntax": "PR> outlet|name|date or section",
+            "blurb": "The outlet's masthead."
+          },
+          {
+            "name": "CB · Press row — headline",
+            "syntax": "PR> head|headline",
+            "blurb": "The headline."
+          },
+          {
+            "name": "CB · Press row — deck",
+            "syntax": "PR> deck|subhead",
+            "blurb": "The subhead under the headline."
+          },
+          {
+            "name": "CB · Press row — paparazzi photo",
+            "syntax": "PR> photo|what it shows|credit",
+            "blurb": "A 📸 EXCLUSIVE box describing the shot, with its credit."
+          },
+          {
+            "name": "CB · Press row — body",
+            "syntax": "PR> body|paragraph",
+            "blurb": "A paragraph of the story."
+          },
+          {
+            "name": "CB · Press row — pull quote",
+            "syntax": "PR> quote|quote|who said it",
+            "blurb": "A pull quote."
+          },
+          {
+            "name": "CB · Press row — stats / cover line",
+            "syntax": "PR> stats|line",
+            "blurb": "Views and comments, or a cover price and issue number."
+          },
+          {
+            "name": "CB · Press row — reader comment",
+            "syntax": "PR> comment|user|comment",
+            "blurb": "A reader comment."
+          }
+        ]
+      },
+      {
+        "title": "X / Twitter",
+        "intro": "Written inside [[X]] … [[/X]].",
+        "scripts": [
+          {
+            "name": "CB · Shell — X post",
+            "syntax": "[[X]] … [[/X]]",
+            "blurb": "The X card around the post."
+          },
+          {
+            "name": "CB · X row — post (no badge)",
+            "syntax": "XT> post|#avatar|name|@handle||time|text",
+            "blurb": "A post from an account without a badge."
+          },
+          {
+            "name": "CB · X row — post (badge)",
+            "syntax": "XT> post|#avatar|name|@handle|badge|time|text",
+            "blurb": "A post from an account with a badge."
+          },
+          {
+            "name": "CB · X row — reply (no badge)",
+            "syntax": "XT> reply|#avatar|name|@handle||time|text",
+            "blurb": "A reply from an account without a badge."
+          },
+          {
+            "name": "CB · X row — reply (badge)",
+            "syntax": "XT> reply|#avatar|name|@handle|badge|time|text",
+            "blurb": "A reply from an account with a badge."
+          },
+          {
+            "name": "CB · X row — media",
+            "syntax": "XT> media|what it shows",
+            "blurb": "A photo or video in the post."
+          },
+          {
+            "name": "CB · X row — quote",
+            "syntax": "XT> quote|name|@handle|text",
+            "blurb": "A quoted post."
+          },
+          {
+            "name": "CB · X row — stats",
+            "syntax": "XT> stats|replies|reposts|likes|views",
+            "blurb": "The engagement line."
+          },
+          {
+            "name": "CB · X inline — @mention / #hashtag (last field only)",
+            "syntax": "@handle · #hashtag",
+            "blurb": "Colors @handles and #hashtags in a post's text."
+          }
+        ]
+      },
+      {
+        "title": "Reddit",
+        "intro": "Written inside [[REDDIT]] … [[/REDDIT]].",
+        "scripts": [
+          {
+            "name": "CB · Shell — Reddit thread",
+            "syntax": "[[REDDIT]] … [[/REDDIT]]",
+            "blurb": "The Reddit thread around the post and comments."
+          },
+          {
+            "name": "CB · Reddit row — subreddit header",
+            "syntax": "RD> sub|r/name|tagline",
+            "blurb": "The subreddit header."
+          },
+          {
+            "name": "CB · Reddit row — post (no flair)",
+            "syntax": "RD> post|u/user|time||title",
+            "blurb": "A post title without flair."
+          },
+          {
+            "name": "CB · Reddit row — post (flair)",
+            "syntax": "RD> post|u/user|time|flair|title",
+            "blurb": "A post title with flair."
+          },
+          {
+            "name": "CB · Reddit row — body text",
+            "syntax": "RD> text|paragraph",
+            "blurb": "A paragraph of the post body."
+          },
+          {
+            "name": "CB · Reddit row — media",
+            "syntax": "RD> media|what it shows",
+            "blurb": "An image in the post."
+          },
+          {
+            "name": "CB · Reddit row — stats",
+            "syntax": "RD> stats|upvotes|comments",
+            "blurb": "Upvotes and the comment count."
+          },
+          {
+            "name": "CB · Reddit row — comment",
+            "syntax": "RD> comment|depth|u/user|points|text",
+            "blurb": "A comment, indented by its depth (0–3)."
+          },
+          {
+            "name": "CB · Reddit inline — (OP) tag",
+            "syntax": "(OP)",
+            "blurb": "Turns \"(OP)\" after a username into Reddit's OP badge."
+          },
+          {
+            "name": "CB · Reddit inline — EDIT:",
+            "syntax": "EDIT:",
+            "blurb": "Bolds \"EDIT:\" in posts and comments."
+          }
+        ]
+      },
+      {
+        "title": "Y2K comms",
+        "intro": "For the Y2K wing: AIM, flip phones, and MySpace.",
+        "scripts": [
+          {
+            "name": "CB · Shell — AIM window",
+            "syntax": "[[AIM]] … [[/AIM]]",
+            "blurb": "The AIM chat window."
+          },
+          {
+            "name": "CB · AIM row — window bar",
+            "syntax": "AIM> win|screen name|status",
+            "blurb": "The window's title bar, with the buddy's status."
+          },
+          {
+            "name": "CB · AIM row — red (you)",
+            "syntax": "AIM> red|ScreenName|time|message",
+            "blurb": "Your character's messages, in AIM red."
+          },
+          {
+            "name": "CB · AIM row — blue (them)",
+            "syntax": "AIM> blue|ScreenName|time|message",
+            "blurb": "The other person's messages, in AIM blue."
+          },
+          {
+            "name": "CB · AIM row — away message",
+            "syntax": "AIM> away|ScreenName|message",
+            "blurb": "An away message."
+          },
+          {
+            "name": "CB · AIM row — system",
+            "syntax": "AIM> sys|line",
+            "blurb": "A system line, like someone signing off."
+          },
+          {
+            "name": "CB · Shell — Flip phone",
+            "syntax": "[[FLIP]] … [[/FLIP]]",
+            "blurb": "The flip phone around the texts."
+          },
+          {
+            "name": "CB · Flip row — header",
+            "syntax": "FLIP> head|contact|carrier + time",
+            "blurb": "The phone's screen header."
+          },
+          {
+            "name": "CB · Flip row — received",
+            "syntax": "FLIP> in|text|time",
+            "blurb": "A received text."
+          },
+          {
+            "name": "CB · Flip row — sent",
+            "syntax": "FLIP> out|text|time",
+            "blurb": "A sent text."
+          },
+          {
+            "name": "CB · Shell — MySpace comments",
+            "syntax": "[[MYSPACE]] … [[/MYSPACE]]",
+            "blurb": "The MySpace comment wall."
+          },
+          {
+            "name": "CB · MySpace row — header",
+            "syntax": "MS> head|name|mood",
+            "blurb": "The profile header, with their mood."
+          },
+          {
+            "name": "CB · MySpace row — Top 8",
+            "syntax": "MS> top8|names, comma-separated",
+            "blurb": "The Top 8."
+          },
+          {
+            "name": "CB · MySpace row — comment",
+            "syntax": "MS> comment|name|date|comment",
+            "blurb": "A wall comment."
+          }
+        ]
+      },
+      {
+        "title": "Plumbing and extras",
+        "intro": "",
+        "scripts": [
+          {
+            "name": "CB · Chat/Press row — catch-all (malformed lines)",
+            "syntax": "",
+            "blurb": "Catches chat or press lines with the wrong number of fields and shows them as plain text instead of breaking the panel."
+          },
+          {
+            "name": "CB · Chat/Press — join rendered rows",
+            "syntax": "",
+            "blurb": "Removes the line breaks between drawn rows so panels don't get gaps."
+          },
+          {
+            "name": "CB · Visuals — collapse old chat/press blocks in prompt (optional)",
+            "syntax": "",
+            "blurb": "Swaps chat and press panels older than six messages for a short placeholder in what's sent to the model, to save tokens."
+          },
+          {
+            "name": "CB · Extreme — Pollinations image",
+            "syntax": "<cb_img>prompt: … | ar: 16:9</cb_img>",
+            "blurb": "Turns an image directive into a picture from Pollinations. It's the only regex that loads anything from outside, so it needs \"Forbid External Media\" turned off."
+          }
+        ]
+      }
+    ]
+  }
+}
