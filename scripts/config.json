@@ -48,7 +48,7 @@
       "bundle": "CALLBOARD_regex_bundle.json",
       "title": "📋 CALLBOARD",
       "host": "Xavi, your stage manager",
-      "bestFor": "Fourteen setting \"wings\" (Modern, Y2K, Regency, Westeros, Wuxia, Cyberpunk, Sci-Fi…), Cue Calls, The Program, trackers, model correction layers, and chat panels for Twitch, Discord, X, Reddit, and the press.",
+      "bestFor": "Fourteen setting \"wings\" (Modern, Y2K, Regency, Westeros, Wuxia, Cyberpunk, Sci-Fi…), Cue Calls, The Program, trackers, model correction layers, and panels for Twitch, Discord, X, Reddit, the press, and (new in v1.5) a dating app, browser, Instagram, private photos, and a creator page.",
       "persona": {
         "name": "Xavi",
         "avatar": "📋",
@@ -63,7 +63,7 @@
       "sameRegexAs": "callboard",
       "title": "📋 CALLBOARD Lite",
       "host": "Xavi, your stage manager",
-      "bestFor": "The same show in about 2.9k tokens instead of 13.7k: every wing at full strength, merged charters, compact Cue Calls and Program. For cheaper models, small context windows, and long chats.",
+      "bestFor": "The same show in about 2.9k tokens instead of 13.7k: every wing at full strength, merged charters, compact Cue Calls and Program, and the same panels, including the v1.5 apps. For cheaper models, small context windows, and long chats.",
       "persona": {
         "name": "Xavi",
         "avatar": "📋",

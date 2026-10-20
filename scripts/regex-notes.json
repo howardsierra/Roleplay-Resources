@@ -905,13 +905,278 @@
         ]
       },
       {
+        "title": "Dating app",
+        "intro": "New in v1.5. Written inside [[DATING]] … [[/DATING]]. Every profile is an adult.",
+        "scripts": [
+          {
+            "name": "CB · Shell — Dating app",
+            "syntax": "[[DATING]] … [[/DATING]]",
+            "blurb": "The dating app's phone screen around everything."
+          },
+          {
+            "name": "CB · Dating row — app bar",
+            "syntax": "DT> app|app name|screen",
+            "blurb": "The app's top bar, with the screen you're on (Discover · 4 mi away, Matches)."
+          },
+          {
+            "name": "CB · Dating row — profile",
+            "syntax": "DT> profile|name|age|job or bio|distance",
+            "blurb": "The profile card's name and age, with 💼 job and 📍 distance."
+          },
+          {
+            "name": "CB · Dating row — photo",
+            "syntax": "DT> photo|what it shows",
+            "blurb": "A 📷 profile photo, described."
+          },
+          {
+            "name": "CB · Dating row — prompt",
+            "syntax": "DT> prompt|question|answer",
+            "blurb": "A prompt answer card with a ♡."
+          },
+          {
+            "name": "CB · Dating row — tags",
+            "syntax": "DT> tags|detail, detail, detail",
+            "blurb": "Detail chips like height, drinking, and what they're looking for."
+          },
+          {
+            "name": "CB · Dating inline — split tags",
+            "syntax": "",
+            "blurb": "Splits the comma-separated tags line into separate chips."
+          },
+          {
+            "name": "CB · Dating row — match",
+            "syntax": "DT> match|name|name",
+            "blurb": "The \"It's a Match!\" banner."
+          },
+          {
+            "name": "CB · Dating row — received",
+            "syntax": "DT> in|time|message",
+            "blurb": "A message from the match."
+          },
+          {
+            "name": "CB · Dating row — sent",
+            "syntax": "DT> out|time|message",
+            "blurb": "A message from your character."
+          },
+          {
+            "name": "CB · Dating row — system",
+            "syntax": "DT> sys|line",
+            "blurb": "A system line, like Liked your photo, Unmatched, or Seen 2h ago."
+          }
+        ]
+      },
+      {
+        "title": "Web browser",
+        "intro": "New in v1.5. Written inside [[BROWSER]] or [[INCOGNITO]].",
+        "scripts": [
+          {
+            "name": "CB · Shell — Browser",
+            "syntax": "[[BROWSER]] … [[/BROWSER]]",
+            "blurb": "The browser window."
+          },
+          {
+            "name": "CB · Shell — Browser (incognito)",
+            "syntax": "[[INCOGNITO]] … [[/INCOGNITO]]",
+            "blurb": "A dark incognito window: \"nothing here is saved to history.\""
+          },
+          {
+            "name": "CB · Browser row — address bar",
+            "syntax": "BR> bar|url|tab title",
+            "blurb": "The active tab and address bar."
+          },
+          {
+            "name": "CB · Browser row — open tabs",
+            "syntax": "BR> tabs|tab, tab, tab",
+            "blurb": "The other open tabs."
+          },
+          {
+            "name": "CB · Browser inline — split tabs",
+            "syntax": "",
+            "blurb": "Splits the comma-separated tabs line into separate tabs."
+          },
+          {
+            "name": "CB · Browser row — search box",
+            "syntax": "BR> search|what's typed",
+            "blurb": "The search box with what's being typed."
+          },
+          {
+            "name": "CB · Browser row — autocomplete",
+            "syntax": "BR> suggest|past search",
+            "blurb": "A 🕘 autocomplete suggestion from a past search, often a revealing one."
+          },
+          {
+            "name": "CB · Browser row — result",
+            "syntax": "BR> result|title|url|snippet",
+            "blurb": "A search result."
+          },
+          {
+            "name": "CB · Browser row — page",
+            "syntax": "BR> page|heading|paragraph",
+            "blurb": "An open page's heading and text."
+          },
+          {
+            "name": "CB · Browser row — history day",
+            "syntax": "BR> day|date",
+            "blurb": "A date header in the browsing history."
+          },
+          {
+            "name": "CB · Browser row — history entry",
+            "syntax": "BR> hist|time|title|url",
+            "blurb": "One browsing-history entry."
+          }
+        ]
+      },
+      {
+        "title": "Instagram",
+        "intro": "New in v1.5. Written inside [[INSTA]] … [[/INSTA]].",
+        "scripts": [
+          {
+            "name": "CB · Shell — Instagram",
+            "syntax": "[[INSTA]] … [[/INSTA]]",
+            "blurb": "The Instagram frame."
+          },
+          {
+            "name": "CB · Instagram row — profile",
+            "syntax": "IG> profile|username|display name|posts|followers|following|bio",
+            "blurb": "The profile header, with post, follower, and following counts and the bio."
+          },
+          {
+            "name": "CB · Instagram row — post header",
+            "syntax": "IG> post|username|location|✓",
+            "blurb": "A post's header, with the location and a verified check."
+          },
+          {
+            "name": "CB · Instagram row — photo",
+            "syntax": "IG> photo|what it shows",
+            "blurb": "A 📷 photo in the post. Repeat it for a carousel."
+          },
+          {
+            "name": "CB · Instagram row — stats",
+            "syntax": "IG> stats|likes|time",
+            "blurb": "The action row, like count, and time."
+          },
+          {
+            "name": "CB · Instagram row — caption",
+            "syntax": "IG> caption|username|text",
+            "blurb": "The caption."
+          },
+          {
+            "name": "CB · Instagram row — comment",
+            "syntax": "IG> comment|username|comment|likes",
+            "blurb": "A comment with its ♡ count."
+          },
+          {
+            "name": "CB · Instagram row — story",
+            "syntax": "IG> story|username|what it shows|time",
+            "blurb": "A story, with its text or stickers and a \"Send message\" bar."
+          },
+          {
+            "name": "CB · Instagram inline — @mention / #hashtag",
+            "syntax": "@handle · #hashtag",
+            "blurb": "Colors @mentions and #hashtags in captions and comments."
+          }
+        ]
+      },
+      {
+        "title": "Private photos",
+        "intro": "New in v1.5. Written inside [[PRIVATE]] … [[/PRIVATE]]. Everyone in a photo is an adult, and every photo is sent by choice.",
+        "scripts": [
+          {
+            "name": "CB · Shell — Private photos",
+            "syntax": "[[PRIVATE]] … [[/PRIVATE]]",
+            "blurb": "The private chat thread, with a \"Send a chat…\" box."
+          },
+          {
+            "name": "CB · Private row — header",
+            "syntax": "PX> head|thread name|contact",
+            "blurb": "The thread's header, marked 🔒 private."
+          },
+          {
+            "name": "CB · Private row — photo received",
+            "syntax": "PX> pic|in|time|what it shows|caption|view once / replay / saved",
+            "blurb": "A received photo as a frosted tile you tap to reveal, with its caption and view-once or replay status."
+          },
+          {
+            "name": "CB · Private row — photo sent",
+            "syntax": "PX> pic|out|time|what it shows|caption|view once / replay / saved",
+            "blurb": "A sent photo as a tap-to-reveal tile."
+          },
+          {
+            "name": "CB · Private row — received",
+            "syntax": "PX> in|time|message",
+            "blurb": "A received message."
+          },
+          {
+            "name": "CB · Private row — sent",
+            "syntax": "PX> out|time|message",
+            "blurb": "A sent message."
+          },
+          {
+            "name": "CB · Private row — system",
+            "syntax": "PX> sys|line",
+            "blurb": "A system line, like Opened, unsent a photo, or 📸 took a screenshot!"
+          }
+        ]
+      },
+      {
+        "title": "Creator page",
+        "intro": "New in v1.5. Written inside [[CREATOR]] … [[/CREATOR]]. The creator, and everyone in the content, is an adult.",
+        "scripts": [
+          {
+            "name": "CB · Shell — Creator page",
+            "syntax": "[[CREATOR]] … [[/CREATOR]]",
+            "blurb": "The subscription page."
+          },
+          {
+            "name": "CB · Creator row — header",
+            "syntax": "CR> head|name|@handle|subscribers|price per month|bio",
+            "blurb": "The page header: verified name, subscriber count, bio, and a Subscribe button with the monthly price."
+          },
+          {
+            "name": "CB · Creator row — free post",
+            "syntax": "CR> post|time|caption|free|what it shows",
+            "blurb": "A free post, with a Send Tip button."
+          },
+          {
+            "name": "CB · Creator row — locked post",
+            "syntax": "CR> post|time|teaser|$price|what it shows",
+            "blurb": "A 🔒 locked post with its unlock price. Tap to peek at what's behind it."
+          },
+          {
+            "name": "CB · Creator row — tip",
+            "syntax": "CR> tip|username|$amount|message",
+            "blurb": "A 💸 tip with its message."
+          },
+          {
+            "name": "CB · Creator row — fan message",
+            "syntax": "CR> fan|username|message",
+            "blurb": "A DM from a subscriber."
+          },
+          {
+            "name": "CB · Creator row — creator reply",
+            "syntax": "CR> reply|message",
+            "blurb": "The creator's reply."
+          },
+          {
+            "name": "CB · Creator row — pay-per-view message",
+            "syntax": "CR> ppv|$price|what it contains",
+            "blurb": "A 🔒 pay-per-view message. Tap to see what it holds."
+          },
+          {
+            "name": "CB · Creator row — dashboard",
+            "syntax": "CR> stats|line",
+            "blurb": "A 📈 earnings and subscriber line."
+          }
+        ]
+      },
+      {
         "title": "Plumbing and extras",
         "intro": "",
         "scripts": [
           {
             "name": "CB · Chat/Press row — catch-all (malformed lines)",
             "syntax": "",
-            "blurb": "Catches chat or press lines with the wrong number of fields and shows them as plain text instead of breaking the panel."
+            "blurb": "Catches chat, press, or app lines with the wrong number of fields and shows them as plain text instead of breaking the panel."
           },
           {
             "name": "CB · Chat/Press — join rendered rows",
@@ -921,7 +1186,7 @@
           {
             "name": "CB · Visuals — collapse old chat/press blocks in prompt (optional)",
             "syntax": "",
-            "blurb": "Swaps chat panels, press pages, and the Program for a short placeholder in what's sent to the model once they're six or more messages old, to save tokens. What you see doesn't change."
+            "blurb": "Swaps chat panels, press pages, app panels, and the Program for a short placeholder in what's sent to the model once they're six or more messages old, to save tokens. What you see doesn't change."
           },
           {
             "name": "CB · Extreme — Pollinations image",

@@ -7,7 +7,7 @@ Every preset ships with regex scripts that turn short tags into styled panels. H
 - [🌹 Rosie Full Bloom](#rosie) (34)
 - [🥀 The Velvet Vigil](#vigil) (8)
 - [💌 LOVESICK](#lovesick) (12)
-- [📋 CALLBOARD](#callboard) (107)
+- [📋 CALLBOARD](#callboard) (154)
 
 <a id="rosie"></a>
 ## 🌹 Rosie Full Bloom v2.7
@@ -161,9 +161,9 @@ Turn on 📶 Signal Mode in the preset, and Juno writes these light tags instead
   `<think>…</think>`
 
 <a id="callboard"></a>
-## 📋 CALLBOARD v1.4.0
+## 📋 CALLBOARD v1.5.0
 
-CALLBOARD writes data lines, like TW> msg|… for a Twitch message, inside [[SHELL]] tags. Row regexes draw each line, and shell regexes draw the window around them. They ship inside the preset: allow them when SillyTavern asks, or import the bundle. CALLBOARD Lite v1.4.0 uses exactly the same regex. Bundle: [`CALLBOARD_regex_bundle.json`](CALLBOARD_regex_bundle.json).
+CALLBOARD writes data lines, like TW> msg|… for a Twitch message, inside [[SHELL]] tags. Row regexes draw each line, and shell regexes draw the window around them. They ship inside the preset: allow them when SillyTavern asks, or import the bundle. CALLBOARD Lite v1.5.0 uses exactly the same regex. Bundle: [`CALLBOARD_regex_bundle.json`](CALLBOARD_regex_bundle.json).
 
 ### Dividers
 
@@ -415,10 +415,127 @@ For the Y2K wing: AIM, flip phones, and MySpace.
 - **CB · MySpace row — comment**: A wall comment. _(Also runs on your messages)_
   `MS> comment|name|date|comment`
 
+### Dating app
+
+New in v1.5. Written inside [[DATING]] … [[/DATING]]. Every profile is an adult.
+
+- **CB · Shell — Dating app**: The dating app's phone screen around everything. _(Also runs on your messages)_
+  `[[DATING]] … [[/DATING]]`
+- **CB · Dating row — app bar**: The app's top bar, with the screen you're on (Discover · 4 mi away, Matches). _(Also runs on your messages)_
+  `DT> app|app name|screen`
+- **CB · Dating row — profile**: The profile card's name and age, with 💼 job and 📍 distance. _(Also runs on your messages)_
+  `DT> profile|name|age|job or bio|distance`
+- **CB · Dating row — photo**: A 📷 profile photo, described. _(Also runs on your messages)_
+  `DT> photo|what it shows`
+- **CB · Dating row — prompt**: A prompt answer card with a ♡. _(Also runs on your messages)_
+  `DT> prompt|question|answer`
+- **CB · Dating row — tags**: Detail chips like height, drinking, and what they're looking for. _(Also runs on your messages)_
+  `DT> tags|detail, detail, detail`
+- **CB · Dating inline — split tags**: Splits the comma-separated tags line into separate chips. _(Also runs on your messages)_
+- **CB · Dating row — match**: The "It's a Match!" banner. _(Also runs on your messages)_
+  `DT> match|name|name`
+- **CB · Dating row — received**: A message from the match. _(Also runs on your messages)_
+  `DT> in|time|message`
+- **CB · Dating row — sent**: A message from your character. _(Also runs on your messages)_
+  `DT> out|time|message`
+- **CB · Dating row — system**: A system line, like Liked your photo, Unmatched, or Seen 2h ago. _(Also runs on your messages)_
+  `DT> sys|line`
+
+### Web browser
+
+New in v1.5. Written inside [[BROWSER]] or [[INCOGNITO]].
+
+- **CB · Shell — Browser**: The browser window. _(Also runs on your messages)_
+  `[[BROWSER]] … [[/BROWSER]]`
+- **CB · Shell — Browser (incognito)**: A dark incognito window: "nothing here is saved to history." _(Also runs on your messages)_
+  `[[INCOGNITO]] … [[/INCOGNITO]]`
+- **CB · Browser row — address bar**: The active tab and address bar. _(Also runs on your messages)_
+  `BR> bar|url|tab title`
+- **CB · Browser row — open tabs**: The other open tabs. _(Also runs on your messages)_
+  `BR> tabs|tab, tab, tab`
+- **CB · Browser inline — split tabs**: Splits the comma-separated tabs line into separate tabs. _(Also runs on your messages)_
+- **CB · Browser row — search box**: The search box with what's being typed. _(Also runs on your messages)_
+  `BR> search|what's typed`
+- **CB · Browser row — autocomplete**: A 🕘 autocomplete suggestion from a past search, often a revealing one. _(Also runs on your messages)_
+  `BR> suggest|past search`
+- **CB · Browser row — result**: A search result. _(Also runs on your messages)_
+  `BR> result|title|url|snippet`
+- **CB · Browser row — page**: An open page's heading and text. _(Also runs on your messages)_
+  `BR> page|heading|paragraph`
+- **CB · Browser row — history day**: A date header in the browsing history. _(Also runs on your messages)_
+  `BR> day|date`
+- **CB · Browser row — history entry**: One browsing-history entry. _(Also runs on your messages)_
+  `BR> hist|time|title|url`
+
+### Instagram
+
+New in v1.5. Written inside [[INSTA]] … [[/INSTA]].
+
+- **CB · Shell — Instagram**: The Instagram frame. _(Also runs on your messages)_
+  `[[INSTA]] … [[/INSTA]]`
+- **CB · Instagram row — profile**: The profile header, with post, follower, and following counts and the bio. _(Also runs on your messages)_
+  `IG> profile|username|display name|posts|followers|following|bio`
+- **CB · Instagram row — post header**: A post's header, with the location and a verified check. _(Also runs on your messages)_
+  `IG> post|username|location|✓`
+- **CB · Instagram row — photo**: A 📷 photo in the post. Repeat it for a carousel. _(Also runs on your messages)_
+  `IG> photo|what it shows`
+- **CB · Instagram row — stats**: The action row, like count, and time. _(Also runs on your messages)_
+  `IG> stats|likes|time`
+- **CB · Instagram row — caption**: The caption. _(Also runs on your messages)_
+  `IG> caption|username|text`
+- **CB · Instagram row — comment**: A comment with its ♡ count. _(Also runs on your messages)_
+  `IG> comment|username|comment|likes`
+- **CB · Instagram row — story**: A story, with its text or stickers and a "Send message" bar. _(Also runs on your messages)_
+  `IG> story|username|what it shows|time`
+- **CB · Instagram inline — @mention / #hashtag**: Colors @mentions and #hashtags in captions and comments. _(Also runs on your messages)_
+  `@handle · #hashtag`
+
+### Private photos
+
+New in v1.5. Written inside [[PRIVATE]] … [[/PRIVATE]]. Everyone in a photo is an adult, and every photo is sent by choice.
+
+- **CB · Shell — Private photos**: The private chat thread, with a "Send a chat…" box. _(Also runs on your messages)_
+  `[[PRIVATE]] … [[/PRIVATE]]`
+- **CB · Private row — header**: The thread's header, marked 🔒 private. _(Also runs on your messages)_
+  `PX> head|thread name|contact`
+- **CB · Private row — photo received**: A received photo as a frosted tile you tap to reveal, with its caption and view-once or replay status. _(Also runs on your messages)_
+  `PX> pic|in|time|what it shows|caption|view once / replay / saved`
+- **CB · Private row — photo sent**: A sent photo as a tap-to-reveal tile. _(Also runs on your messages)_
+  `PX> pic|out|time|what it shows|caption|view once / replay / saved`
+- **CB · Private row — received**: A received message. _(Also runs on your messages)_
+  `PX> in|time|message`
+- **CB · Private row — sent**: A sent message. _(Also runs on your messages)_
+  `PX> out|time|message`
+- **CB · Private row — system**: A system line, like Opened, unsent a photo, or 📸 took a screenshot! _(Also runs on your messages)_
+  `PX> sys|line`
+
+### Creator page
+
+New in v1.5. Written inside [[CREATOR]] … [[/CREATOR]]. The creator, and everyone in the content, is an adult.
+
+- **CB · Shell — Creator page**: The subscription page. _(Also runs on your messages)_
+  `[[CREATOR]] … [[/CREATOR]]`
+- **CB · Creator row — header**: The page header: verified name, subscriber count, bio, and a Subscribe button with the monthly price. _(Also runs on your messages)_
+  `CR> head|name|@handle|subscribers|price per month|bio`
+- **CB · Creator row — free post**: A free post, with a Send Tip button. _(Also runs on your messages)_
+  `CR> post|time|caption|free|what it shows`
+- **CB · Creator row — locked post**: A 🔒 locked post with its unlock price. Tap to peek at what's behind it. _(Also runs on your messages)_
+  `CR> post|time|teaser|$price|what it shows`
+- **CB · Creator row — tip**: A 💸 tip with its message. _(Also runs on your messages)_
+  `CR> tip|username|$amount|message`
+- **CB · Creator row — fan message**: A DM from a subscriber. _(Also runs on your messages)_
+  `CR> fan|username|message`
+- **CB · Creator row — creator reply**: The creator's reply. _(Also runs on your messages)_
+  `CR> reply|message`
+- **CB · Creator row — pay-per-view message**: A 🔒 pay-per-view message. Tap to see what it holds. _(Also runs on your messages)_
+  `CR> ppv|$price|what it contains`
+- **CB · Creator row — dashboard**: A 📈 earnings and subscriber line. _(Also runs on your messages)_
+  `CR> stats|line`
+
 ### Plumbing and extras
 
-- **CB · Chat/Press row — catch-all (malformed lines)**: Catches chat or press lines with the wrong number of fields and shows them as plain text instead of breaking the panel. _(Also runs on your messages)_
+- **CB · Chat/Press row — catch-all (malformed lines)**: Catches chat, press, or app lines with the wrong number of fields and shows them as plain text instead of breaking the panel. _(Also runs on your messages)_
 - **CB · Chat/Press — join rendered rows**: Removes the line breaks between drawn rows so panels don't get gaps. _(Also runs on your messages)_
-- **CB · Visuals — collapse old chat/press blocks in prompt (optional)**: Swaps chat panels, press pages, and the Program for a short placeholder in what's sent to the model once they're six or more messages old, to save tokens. What you see doesn't change. _(Only changes what the model sees · Also runs on your messages)_
+- **CB · Visuals — collapse old chat/press blocks in prompt (optional)**: Swaps chat panels, press pages, app panels, and the Program for a short placeholder in what's sent to the model once they're six or more messages old, to save tokens. What you see doesn't change. _(Only changes what the model sees · Also runs on your messages)_
 - **CB · Extreme — Pollinations image**: Turns an image directive into a picture generated by Pollinations (Flux, 1024×1024). It's the only regex that loads anything from outside, so it needs "Forbid External Media" turned off.
   `<cb_img>prompt: … | ar: 16:9</cb_img>`
