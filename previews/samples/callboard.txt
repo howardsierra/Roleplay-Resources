@@ -1,5 +1,6 @@
 Rory has been live for three hours and forty minutes, and for the last ten of them chat has been absolutely feral. He doesn't know why yet. He's mid-run, headset crooked, narrating a boss fight to nobody, when he finally glances at the second monitor.
 
+CUE> 💜|Twitch chat panel|Rory finally looks at his second monitor|The live chat: colored names are viewers, ⭐ marks subscribers, 🗡️ mods, and pills are emotes. Chat notices everything.
 [[TWITCH]]
 TW> live|roryplays|day 3 of the 100% run (I will not rage)|Hollow Knight|4,812|3:41:07
 TW> msg|#1E90FF|nightowl89|⭐|chat is that a second voice off-mic

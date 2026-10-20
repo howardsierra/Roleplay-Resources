@@ -69,6 +69,7 @@ Install any of these from SillyTavern: **Extensions → Install extension →** 
 
 | Extension | What it does |
 | --- | --- |
+| [**CALLBOARD Suite**](https://github.com/howardsierra/CALLBOARD) | A stage manager's control board for the CALLBOARD preset: pick-one bands, per-module token costs, a checker with one-click fixes, loadouts with 14 starters, per-chat pins, and `/cb` slash commands. |
 | [**Preset Organizer**](https://github.com/howardsierra/preset-manager) | Collapsible sections, search, and bulk toggles for the Chat Completion prompt manager, plus a grid-style Preset Navigator. |
 | [**Prompt Checkboxes**](https://github.com/howardsierra/prompt-checkboxes) | Replaces the prompt manager's on/off toggle icon with a real checkbox. A UI-only swap. |
 | [**Context Lens**](https://github.com/howardsierra/contextlens) | A context-window dashboard: fill donut, per-category token bars, the lorebook entries that fired, and where truncation cut off. |
@@ -92,7 +93,8 @@ Chat Completion presets, tuned for Claude. Each has a hostess character who narr
 | [**🌹 Rosie Full Bloom** v2.7](presets/Rosie_Full_Bloom_v2.7.json) | Rosie, a fangirly creative-writing mascot | Everything: romance, dark romance, horror, mystery, cozy. Prose Wardrobe styles, Writer's Room lenses, info boards and status reports. | 140 | [34 scripts](regex/Rosie_regex_bundle.json) |
 | [**🥀 The Velvet Vigil** v3.2.2](presets/The_Velvet_Vigil_v3.2.2.json) | Vesper, a night-archivist | Gothic and literary storytelling. Voice and genre picks, story systems, diegetic HTML visuals, and Loom Mode. | 107 | [8 scripts](regex/Velvet_Vigil_regex_bundle.json) |
 | [**💌 LOVESICK** v1.4.1](presets/LOVESICK_v1.4.1.json) | Juno, a romance editor with a matchmaker's god complex | Modern-day romance and heat. Trope picks, a heat dial, Screenlife visuals (texts, group chat, delulu meter), and an Assistant Mode. | 78 | [12 scripts](regex/LOVESICK_regex_bundle.json) |
-| [**📋 CALLBOARD** v1.3.0](presets/CALLBOARD_v1.3.0.json) | Xavi, your stage manager | Modular setting "wings" (Modern, College AU, Y2K, Westeros, Regency, Fantasy…), trackers, model correction layers, and chat panels for Twitch, Discord, X, Reddit, and the press. | 139 | [98 scripts](regex/CALLBOARD_regex_bundle.json) |
+| [**📋 CALLBOARD** v1.4.0](presets/CALLBOARD_v1.4.0.json) | Xavi, your stage manager | Fourteen setting "wings" (Modern, Y2K, Regency, Westeros, Wuxia, Cyberpunk, Sci-Fi…), Cue Calls, The Program, trackers, model correction layers, and chat panels for Twitch, Discord, X, Reddit, and the press. | 148 | [107 scripts](regex/CALLBOARD_regex_bundle.json) |
+| [**📋 CALLBOARD Lite** v1.4.0](presets/CALLBOARD_Lite_v1.4.0.json) | Xavi, your stage manager | The same show in about 2.9k tokens instead of 13.7k: every wing at full strength, merged charters, compact Cue Calls and Program. For cheaper models, small context windows, and long chats. | 99 | [107 scripts](regex/CALLBOARD_regex_bundle.json) |
 <!-- presets:end -->
 
 Every preset ships a **Read Me** prompt at the top of its list (disabled, so it's never sent to the model) with a quick start.

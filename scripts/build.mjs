@@ -78,7 +78,7 @@ for (const p of presets) {
   html = setHref(html, `data-preset="${p.key}" data-kind="download"`, `presets/${p.file}`);
   html = setHref(html, `data-preset="${p.key}" data-kind="regex"`, `regex/${p.bundle}`);
 }
-html = setText(html, 'data-total="regex"', presets.reduce((n, p) => n + p.regex.length, 0));
+html = setText(html, 'data-total="regex"', presets.filter((p) => !p.sameRegexAs).reduce((n, p) => n + p.regex.length, 0));
 
 // Janitor.AI prompts: show each one's length, since Janitor's prompt boxes have limits.
 for (const j of config.janitor ?? []) {
@@ -218,7 +218,8 @@ function badgesFor(s) {
   return b;
 }
 
-const guide = presets.map((p) => {
+// Presets that share another preset's regex (CALLBOARD Lite) are covered by that preset's section.
+const guide = presets.filter((p) => !p.sameRegexAs).map((p) => {
   const n = notes[p.key] ?? { intro: "", groups: [] };
   const byName = new Map(p.regex.map((s) => [s.scriptName, s]));
   const described = new Set();
@@ -237,7 +238,9 @@ const guide = presets.map((p) => {
       scripts: undescribed.map((s) => ({ name: s.scriptName, syntax: "", blurb: "No notes yet.", badges: badgesFor(s) })),
     });
   }
-  return { ...p, intro: n.intro, groups };
+  const sharers = presets.filter((o) => o.sameRegexAs === p.key).map((o) => `${o.title.replace(/^\S+\s/, "")} v${o.version}`);
+  const intro = sharers.length ? `${n.intro} ${sharers.join(" and ")} uses exactly the same regex.` : n.intro;
+  return { ...p, intro, groups };
 });
 
 const md = [

@@ -44,20 +44,33 @@
     },
     {
       "key": "callboard",
-      "prefix": "CALLBOARD",
+      "prefix": "CALLBOARD_v",
       "bundle": "CALLBOARD_regex_bundle.json",
       "title": "📋 CALLBOARD",
       "host": "Xavi, your stage manager",
-      "bestFor": "Modular setting \"wings\" (Modern, College AU, Y2K, Westeros, Regency, Fantasy…), trackers, model correction layers, and chat panels for Twitch, Discord, X, Reddit, and the press.",
+      "bestFor": "Fourteen setting \"wings\" (Modern, Y2K, Regency, Westeros, Wuxia, Cyberpunk, Sci-Fi…), Cue Calls, The Program, trackers, model correction layers, and chat panels for Twitch, Discord, X, Reddit, and the press.",
       "persona": {
         "name": "Xavi",
         "avatar": "📋",
         "user": "Dani",
         "char": "Rory"
       }
+    },
+    {
+      "key": "callboard-lite",
+      "prefix": "CALLBOARD_Lite",
+      "bundle": "CALLBOARD_regex_bundle.json",
+      "sameRegexAs": "callboard",
+      "title": "📋 CALLBOARD Lite",
+      "host": "Xavi, your stage manager",
+      "bestFor": "The same show in about 2.9k tokens instead of 13.7k: every wing at full strength, merged charters, compact Cue Calls and Program. For cheaper models, small context windows, and long chats."
     }
   ],
   "extensions": [
+    {
+      "repo": "CALLBOARD",
+      "file": "manifest.json"
+    },
     {
       "repo": "SillyTavern-Offstage",
       "file": "manifest.json"

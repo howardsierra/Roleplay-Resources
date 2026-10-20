@@ -425,6 +425,17 @@
   .howto strong { color: var(--ink); }
   .howto ol { margin: 8px 0 0; padding-left: 20px; display: grid; gap: 4px; }
 
+  .bill .lite {
+    display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 14px;
+    padding: 12px 14px; border-radius: 14px; border: 1px dashed var(--rule); background: var(--chip);
+    font-size: 13.5px; color: var(--soft);
+  }
+  .bill .lite > div { flex: 1 1 220px; }
+  .bill .lite b { display: block; color: var(--fg); font-size: 14px; margin-bottom: 2px; }
+  .bill .lite b span { font-weight: 500; color: var(--soft); font-size: 12px; margin-left: 4px; }
+  .bill .lite .btn { min-height: 38px; padding: 8px 14px; font-size: 13px; }
+  .bill .pair { margin: -4px 0 0; font-size: 13.5px; color: var(--soft); }
+  .bill .pair a { color: var(--acc); font-weight: 600; }
   .bill .guide-link { font: 600 13px var(--body); color: var(--acc); text-decoration: none; margin-top: -6px; }
   .bill .guide-link:hover { text-decoration: underline; text-underline-offset: 3px; }
 
@@ -687,9 +698,9 @@
     </div>
     <div class="billing">
       <div><b>4</b>presets</div>
-      <div><b data-total="regex">152</b>regex scripts</div>
+      <div><b data-total="regex">161</b>regex scripts</div>
       <div><b>5</b>Janitor prompts</div>
-      <div><b>10</b>extensions</div>
+      <div><b>11</b>extensions</div>
       <div><b>1</b>frontend</div>
     </div>
   </div>
@@ -795,7 +806,7 @@
 
         <article class="bill callboard reveal">
           <div class="pattern" aria-hidden="true"></div>
-          <div class="bill-top"><span class="now">Now playing</span><span class="ver" data-preset-ver="callboard">v1.3.0</span></div>
+          <div class="bill-top"><span class="now">Now playing</span><span class="ver" data-preset-ver="callboard">v1.4.0</span></div>
           <div class="title-row">
             <div class="seal" aria-hidden="true">📋</div>
             <div>
@@ -805,20 +816,25 @@
           </div>
           <blockquote>“Pick-one bands are labeled. Two wings lit at once will fight.”</blockquote>
           <ul>
-            <li>Setting wings: Modern, College AU, Y2K, Westeros, Medieval, Regency, Fantasy</li>
-            <li>Trackers, model correction layers, and Impersonate or Story Mode</li>
-            <li>Chat panels for Twitch, Discord, X, Reddit, AIM, MySpace, and the tabloids</li>
+            <li>Fourteen setting wings, from Regency and Westeros to Wuxia, Cyberpunk, and Post-Apocalyptic</li>
+            <li>Cue Calls: a gold STANDBY slip before anything appears, with a legend the first time</li>
+            <li>The Program, trackers, and chat panels for Twitch, Discord, X, Reddit, and the tabloids</li>
           </ul>
           <div class="stats">
-            <div><b data-preset-stat="callboard:prompts">139</b><span>prompts</span></div>
-            <div><b data-preset-stat="callboard:regex">98</b><span>regex</span></div>
-            <div><b data-preset-stat="callboard:context">100k</b><span>context</span></div>
+            <div><b data-preset-stat="callboard:prompts">148</b><span>prompts</span></div>
+            <div><b data-preset-stat="callboard:regex">107</b><span>regex</span></div>
+            <div><b data-preset-stat="callboard:context">270k</b><span>context</span></div>
           </div>
           <div class="actions">
             <button class="btn line preview" type="button" data-preview="callboard">▶ See it in action</button>
-            <a class="btn solid" data-preset="callboard" data-kind="download" href="presets/CALLBOARD_v1.3.0.json" download>Download preset</a>
+            <a class="btn solid" data-preset="callboard" data-kind="download" href="presets/CALLBOARD_v1.4.0.json" download>Download preset</a>
             <a class="btn line" data-preset="callboard" data-kind="regex" href="regex/CALLBOARD_regex_bundle.json" download>Regex bundle</a>
           </div>
+          <div class="lite">
+            <div><b>CALLBOARD Lite <span data-preset-ver="callboard-lite">v1.4.0</span></b>The same show in about 2.9k tokens instead of 13.7k, for cheaper models and long chats.</div>
+            <a class="btn line" data-preset="callboard-lite" data-kind="download" href="presets/CALLBOARD_Lite_v1.4.0.json" download>Download Lite</a>
+          </div>
+          <p class="pair">🎧 Pair it with <a href="#crew">CALLBOARD Suite</a>, the stage manager’s control board.</p>
           <a class="guide-link" href="regex.html#callboard">What each regex does →</a>
         </article>
       </div>
@@ -1037,6 +1053,18 @@
             <div class="actions">
               <button class="btn copy" data-url="https://github.com/howardsierra/LoreLink">Copy install URL</button>
               <a class="btn line" href="https://github.com/howardsierra/LoreLink">GitHub ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="stub reveal" data-cat="tools">
+          <div class="stub-head"><span class="role">The stage manager’s board</span><span class="ver" data-ext="CALLBOARD">v0.4.0</span></div>
+          <div class="stub-body">
+            <h3><span aria-hidden="true">🎧</span>CALLBOARD Suite</h3>
+            <p>A control board for the CALLBOARD preset: pick-one bands, token costs per module, a checker with one-click fixes, loadouts with 14 starters, per-chat pins, and /cb commands.</p>
+            <div class="actions">
+              <button class="btn copy" data-url="https://github.com/howardsierra/CALLBOARD">Copy install URL</button>
+              <a class="btn line" href="https://github.com/howardsierra/CALLBOARD">GitHub ↗</a>
             </div>
           </div>
         </article>

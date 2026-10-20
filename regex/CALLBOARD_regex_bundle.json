@@ -1440,6 +1440,150 @@
         "maxDepth": null
     },
     {
+        "id": "fa8449cf-bbdd-49bd-a414-ce337b2f4b75",
+        "scriptName": "CB · Cue — standby slip (with legend)",
+        "findRegex": "/^CUE(?:&gt;|>)[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*$/gmi",
+        "replaceString": "<details open style=\"margin:12px 0 8px;border:1px solid #3d3122;border-left:3px solid #e8b04a;border-radius:0 10px 10px 0;background:linear-gradient(90deg,rgba(232,176,74,.11),rgba(232,176,74,.02));font-size:12.5px;\"><summary style=\"cursor:pointer;padding:7px 12px;color:#eadfca;display:flex;align-items:center;gap:8px;flex-wrap:wrap;\"><span style=\"font-size:9.5px;letter-spacing:3px;font-weight:700;color:#e8b04a;\">● STANDBY</span><span>$1 <b>$2</b></span><span style=\"color:#a99c87;font-style:italic;\">$3</span></summary><div style=\"padding:0 14px 10px;color:#d3c6ae;line-height:1.55;\"><span style=\"font-size:9.5px;letter-spacing:2px;font-weight:700;color:#e8b04a;\">WHAT IT MEANS · </span>$4</div></details>",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "d94ef766-9ccc-4409-9777-58035a076ad9",
+        "scriptName": "CB · Cue — standby slip",
+        "findRegex": "/^CUE(?:&gt;|>)[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*(?:\\|[ \\t]*)?$/gmi",
+        "replaceString": "<div style=\"margin:12px 0 8px;padding:6px 12px;border:1px solid #3d3122;border-left:3px solid #e8b04a;border-radius:0 10px 10px 0;background:linear-gradient(90deg,rgba(232,176,74,.09),transparent);font-size:12.5px;color:#eadfca;display:flex;align-items:center;gap:8px;flex-wrap:wrap;\"><span style=\"font-size:9.5px;letter-spacing:3px;font-weight:700;color:#e8b04a;\">● STANDBY</span><span>$1 <b>$2</b></span><span style=\"color:#a99c87;font-style:italic;\">$3</span></div>",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "5f9aa1ad-68ad-4e2a-9fc8-86c12388389b",
+        "scriptName": "CB · Cue — catch-all (malformed lines)",
+        "findRegex": "/^CUE(?:&gt;|>)[ \\t]*([^\\n]+?)[ \\t]*$/gm",
+        "replaceString": "<div style=\"margin:10px 0 6px;padding:5px 12px;border-left:3px solid #e8b04a;font-size:12px;color:#cdbfa8;opacity:.85;\"><span style=\"font-size:9.5px;letter-spacing:3px;font-weight:700;color:#e8b04a;\">● STANDBY </span>$1</div>",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "6e5aa2fd-91ae-4eaa-99be-7e0c3452df47",
+        "scriptName": "CB · Program row — title",
+        "findRegex": "/^PG(?:&gt;|>)[ \\t]*title[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*$/gmi",
+        "replaceString": "<div style=\"text-align:center;font-family:Georgia,'Times New Roman',serif;font-size:19px;font-weight:700;color:#1a1a1a;padding:14px 16px 3px;line-height:1.25;\">$1</div><!--cbrow-->",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "3da90199-ddbf-4009-a905-9ec86fa50fd2",
+        "scriptName": "CB · Program row — cast line",
+        "findRegex": "/^PG(?:&gt;|>)[ \\t]*cast[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*$/gmi",
+        "replaceString": "<div style=\"text-align:center;font-size:11.5px;color:#5b5548;font-style:italic;padding:0 16px 12px;border-bottom:1px solid #d9d1bd;\">$1</div><!--cbrow-->",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "7fce9786-9aea-4621-87b9-22c7d256686c",
+        "scriptName": "CB · Program row — act",
+        "findRegex": "/^PG(?:&gt;|>)[ \\t]*act[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*$/gmi",
+        "replaceString": "<div style=\"display:flex;gap:11px;padding:9px 16px;border-bottom:1px dotted #d9d1bd;\"><div style=\"font-size:19px;line-height:1.15;width:24px;text-align:center;\">$1</div><div style=\"flex:1;min-width:0;\"><div style=\"font-weight:700;color:#1a1a1a;font-size:13px;margin-bottom:2px;\">$2</div><div style=\"font-size:11.5px;color:#5b5548;line-height:1.4;\"><span style=\"font-size:9.5px;letter-spacing:1.5px;font-weight:700;color:#9a7b2f;\">CUE </span>$3</div><div style=\"font-size:11.5px;color:#2f2c26;line-height:1.4;\"><span style=\"font-size:9.5px;letter-spacing:1.5px;font-weight:700;color:#9a7b2f;\">YOU'LL SEE </span>$4</div></div></div><!--cbrow-->",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "40116630-1d12-4366-b80c-2b3b42de9e2a",
+        "scriptName": "CB · Program row — note from Xavi",
+        "findRegex": "/^PG(?:&gt;|>)[ \\t]*note[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*$/gmi",
+        "replaceString": "<div style=\"padding:11px 16px 13px;font-style:italic;color:#4a3f5c;font-size:12.5px;line-height:1.5;\">🎧 $1 <span style=\"color:#7a6a95;font-style:normal;\">— X</span></div><!--cbrow-->",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "99e7f037-f77b-490e-873c-7396b19cc572",
+        "scriptName": "CB · Program row — catch-all (malformed lines)",
+        "findRegex": "/^PG(?:&gt;|>)[ \\t]*([^\\n]+?)[ \\t]*$/gm",
+        "replaceString": "<div style=\"padding:6px 16px;font-size:12px;color:#5b5548;border-bottom:1px dotted #d9d1bd;\">$1</div><!--cbrow-->",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
         "id": "2a43302c-5dd1-4e2c-b93d-9de42ae0c9e4",
         "scriptName": "CB · Chat/Press — join rendered rows",
         "findRegex": "/<!--cbrow-->\\s*?\\n?/g",
@@ -1656,28 +1800,10 @@
         "maxDepth": null
     },
     {
-        "id": "5079657f-2dfc-4ef6-8dba-643e8b845ac2",
-        "scriptName": "CB · Visuals — collapse old chat/press blocks in prompt (optional)",
-        "findRegex": "/\\[\\[(TWITCH|DISCORD|TABLOID|BLOG|MAG|BLIND|AIM|FLIP|MYSPACE|X|REDDIT)\\]\\][\\s\\S]*?\\[\\[\\/\\1\\]\\]/g",
-        "replaceString": "[($1 panel shown to the reader)]",
-        "trimStrings": [],
-        "placement": [
-            1,
-            2
-        ],
-        "disabled": true,
-        "markdownOnly": false,
-        "promptOnly": true,
-        "runOnEdit": true,
-        "substituteRegex": 0,
-        "minDepth": 6,
-        "maxDepth": null
-    },
-    {
-        "id": "0048e34b-3a90-4856-a958-c732e3f171a2",
-        "scriptName": "CB · State — unwrap (keep rendered cards)",
-        "findRegex": "/<cb_state>([\\s\\S]*?)<\\/cb_state>/g",
-        "replaceString": "$1",
+        "id": "1901fb19-3dd1-4606-9dbb-cf83b29fc806",
+        "scriptName": "CB · Shell — The Program",
+        "findRegex": "/\\[\\[PROGRAM\\]\\]\\s*([\\s\\S]*?)\\s*\\[\\[\\/PROGRAM\\]\\]/g",
+        "replaceString": "<div style=\"clear:both;max-width:400px;margin:14px auto 18px;background:#fbf8ef;border:1px solid #cfc6ae;box-shadow:0 8px 26px rgba(0,0,0,.45);font-family:'Helvetica Neue',Arial,sans-serif;color:#1a1a1a;\"><div style=\"background:#f3c623;padding:9px 16px 7px;border-bottom:3px solid #1a1a1a;\"><div style=\"font-family:Georgia,serif;font-weight:900;font-size:25px;letter-spacing:1px;line-height:1;color:#1a1a1a;\">THE PROGRAM</div><div style=\"font-size:9px;letter-spacing:3px;color:#1a1a1a;margin-top:4px;\">THE CALLBOARD THEATRE · TONIGHT'S PERFORMANCE</div></div>$1<div style=\"text-align:center;font-size:9px;letter-spacing:3px;color:#8a826f;padding:8px;background:#f1ecdd;\">SEND [PROGRAM] ANY TIME TO SEE THIS AGAIN</div></div>",
         "trimStrings": [],
         "placement": [
             1,
@@ -1692,10 +1818,28 @@
         "maxDepth": null
     },
     {
-        "id": "67924bd3-729a-4c2a-ade5-a08efa02c5ed",
-        "scriptName": "CB · Extreme — Pollinations image",
-        "findRegex": "/<cb_img>\\s*prompt:\\s*([^|]+?)\\s*\\|\\s*ar:\\s*([0-9]+:[0-9]+)\\s*<\\/cb_img>/g",
-        "replaceString": "<div style=\"clear:both;margin:12px auto;max-width:75%;\"><img src=\"https://image.pollinations.ai/prompt/$1?nologo=true\" alt=\"$1\" style=\"width:100%;border-radius:14px;border:1px solid #2b2436;box-shadow:0 8px 26px rgba(0,0,0,.5);\"></div>",
+        "id": "5079657f-2dfc-4ef6-8dba-643e8b845ac2",
+        "scriptName": "CB · Visuals — collapse old chat/press blocks in prompt (optional)",
+        "findRegex": "/\\[\\[(TWITCH|DISCORD|TABLOID|BLOG|MAG|BLIND|AIM|FLIP|MYSPACE|X|REDDIT|PROGRAM)\\]\\][\\s\\S]*?\\[\\[\\/\\1\\]\\]/g",
+        "replaceString": "[($1 panel shown to the reader)]",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": false,
+        "promptOnly": true,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": 6,
+        "maxDepth": null
+    },
+    {
+        "id": "0048e34b-3a90-4856-a958-c732e3f171a2",
+        "scriptName": "CB · State — unwrap (keep rendered cards)",
+        "findRegex": "/<cb_state>([\\s\\S]*?)<\\/cb_state>/g",
+        "replaceString": "$1",
         "trimStrings": [],
         "placement": [
             1,
@@ -1757,6 +1901,23 @@
         "disabled": false,
         "markdownOnly": false,
         "promptOnly": true,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "5ef67c9a-e268-47a1-bc85-de513dacfa37",
+        "scriptName": "CB · Extreme — Pollinations image",
+        "findRegex": "/<cb_img>\\s*prompt:\\s*([^|]+?)\\s*\\|\\s*ar:\\s*([0-9]+):([0-9]+)\\s*<\\/cb_img>/g",
+        "replaceString": "<div style=\"clear:both;margin:12px auto;max-width:75%;\">\n  <img src=\"https://gen.pollinations.ai/image/$1?model=flux&width=1024&height=1024&seed=0&enhance=false&key=sk_tu3mMpFFgO1dU9hKk0hXPpEywJcxyT0g\"\n       alt=\"$1\"\n       loading=\"lazy\"\n       style=\"display:block;width:100%;aspect-ratio:$2 / $3;object-fit:cover;border-radius:14px;border:1px solid #2b2436;box-shadow:0 8px 26px rgba(0,0,0,.5);\">\n</div>",
+        "trimStrings": [],
+        "placement": [
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
         "runOnEdit": true,
         "substituteRegex": 0,
         "minDepth": null,
