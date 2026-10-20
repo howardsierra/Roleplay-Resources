@@ -29,13 +29,52 @@ DC> more|the cereal crunch was audible
 DC> typing|Dani is typing…
 [[/DISCORD]]
 
+She doesn't send it. Instead she holds out a hand for his laptop, because the clip is apparently everywhere and she would like to see exactly how bad it is. Rory gives it to her without thinking, which is his first mistake.
+
+CUE> 🌐|Web browser|Dani borrows Rory's laptop to find the clip|The address bar and open tabs sit up top. Autocomplete shows his past searches, and the history lists what he looked at, newest first.
+[[BROWSER]]
+BR> bar|twitch.tv/roryplays/clip/HoodieGate|HOODIE GATE 😭 · roryplays
+BR> tabs|Twitch, Hollow Knight wiki, how long does a hoodie smell like someone
+BR> search|how to tell if
+BR> suggest|how to tell if your best friend likes you back
+BR> suggest|how to tell if she already knows
+BR> day|Yesterday — Thursday
+BR> hist|3:12 AM|is it weird to give your friend your hoodie : r/relationship_advice|reddit.com
+BR> hist|2:58 AM|how to say you like someone without ruining the friendship|google.com
+BR> hist|2:41 AM|Kindling: Matches|kindling.app
+[[/BROWSER]]
+
+"Rory." She doesn't look up from the screen. "Why does your laptop think I already know?"
+
+He opens his mouth, closes it, and reaches for the laptop. She leans away from him and pulls out her own phone instead.
+
+CUE> 💘|Dating app|Dani opens her matches|A dating profile: photos, prompt answers, and detail chips. The match banner means both people swiped yes. The chat below it is theirs.
+[[DATING]]
+DT> app|Kindling|Matches
+DT> match|Dani|Rory
+DT> sys|Matched 2 months ago · no messages yet
+DT> profile|Rory|27|streams for a living, bad at Hollow Knight|2 mi away
+DT> photo|Rory in the burn-hole hoodie, squinting into a ring light
+DT> prompt|The way to win me over is|beat me at Mario Kart. you won't.
+DT> tags|5'11", night owl, cat person, looking for something real
+DT> out|12:41 AM|you never messaged me
+[[/DATING]]
+
+"I panicked," Rory says, to the ceiling. "You matched with me, and I panicked, and then it had been a week, and then it was weird."
+
+"So you gave me your hoodie instead."
+
+"It was cold."
+
+"It's *July*, Rory." But she's smiling into the cuff of it, and she doesn't give it back.
+
 <cb_state>
 [[TRK]]
-T> time|11:59 PM, Friday
+T> time|12:44 AM, Saturday
 T> place|Rory's apartment, the streaming corner
-T> mood|caught, and weirdly not sorry
-T> affinity|Rory|71|he didn't deny it on stream
+T> mood|caught, and very much not sorry
+T> affinity|Rory|84|two months ago he swiped yes, too
 [[/TRK]]
 </cb_state>
 
-<xavi>Cue the fallout. Let Rory decide whether to address it on stream tomorrow, and let Dani's silence in the server sit for one beat longer than comfortable.</xavi>
+<xavi>Two months of not messaging just became the plot. Let him answer the server before he answers her, Director; it'll hurt more.</xavi>
