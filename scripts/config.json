@@ -63,7 +63,13 @@
       "sameRegexAs": "callboard",
       "title": "📋 CALLBOARD Lite",
       "host": "Xavi, your stage manager",
-      "bestFor": "The same show in about 2.9k tokens instead of 13.7k: every wing at full strength, merged charters, compact Cue Calls and Program. For cheaper models, small context windows, and long chats."
+      "bestFor": "The same show in about 2.9k tokens instead of 13.7k: every wing at full strength, merged charters, compact Cue Calls and Program. For cheaper models, small context windows, and long chats.",
+      "persona": {
+        "name": "Xavi",
+        "avatar": "📋",
+        "user": "Eleanor",
+        "char": "Lord Ravensworth"
+      }
     }
   ],
   "extensions": [

@@ -434,6 +434,8 @@
   .bill .lite b { display: block; color: var(--fg); font-size: 14px; margin-bottom: 2px; }
   .bill .lite b span { font-weight: 500; color: var(--soft); font-size: 12px; margin-left: 4px; }
   .bill .lite .btn { min-height: 38px; padding: 8px 14px; font-size: 13px; }
+  .bill .lite-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+  .bill .lite .btn.preview { flex-basis: auto; }
   .bill .pair { margin: -4px 0 0; font-size: 13.5px; color: var(--soft); }
   .bill .pair a { color: var(--acc); font-weight: 600; }
   .bill .guide-link { font: 600 13px var(--body); color: var(--acc); text-decoration: none; margin-top: -6px; }
@@ -832,7 +834,10 @@
           </div>
           <div class="lite">
             <div><b>CALLBOARD Lite <span data-preset-ver="callboard-lite">v1.4.0</span></b>The same show in about 2.9k tokens instead of 13.7k, for cheaper models and long chats.</div>
-            <a class="btn line" data-preset="callboard-lite" data-kind="download" href="presets/CALLBOARD_Lite_v1.4.0.json" download>Download Lite</a>
+            <div class="lite-actions">
+              <button class="btn line preview" type="button" data-preview="callboard-lite">▶ Preview</button>
+              <a class="btn line" data-preset="callboard-lite" data-kind="download" href="presets/CALLBOARD_Lite_v1.4.0.json" download>Download Lite</a>
+            </div>
           </div>
           <p class="pair">🎧 Pair it with <a href="#crew">CALLBOARD Suite</a>, the stage manager’s control board.</p>
           <a class="guide-link" href="regex.html#callboard">What each regex does →</a>
@@ -1256,6 +1261,7 @@
     <button role="tab" type="button" data-tab="vigil">🥀 Velvet Vigil</button>
     <button role="tab" type="button" data-tab="lovesick">💌 LOVESICK</button>
     <button role="tab" type="button" data-tab="callboard">📋 CALLBOARD</button>
+    <button role="tab" type="button" data-tab="callboard-lite">📋 Lite</button>
   </div>
   <iframe id="viewer-frame" title="Preset preview" sandbox loading="lazy"></iframe>
   <div class="viewer-foot">

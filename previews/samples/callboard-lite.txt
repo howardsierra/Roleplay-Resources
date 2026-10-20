@@ -1,0 +1,47 @@
+<think>
+SCENE: Lady Fairfax's ball, the terrace · CAST: Ravensworth wants the letter back and hides that he read it; Eleanor wants to know whose hand it is
+LAST BEAT → THIS BEAT: she declined a third dance → she follows him outside
+HER: holds out the letter; "You dropped this, my lord." Thinks: *he knew the hand*
+WATCH: reputation (two dances, noticed); Mrs. Pell is ten minutes behind
+CALL: the letter changes hands, and so does the advantage
+</think>
+
+[[PROGRAM]]
+PG> title|A Regency Courtship — a slow burn in three acts
+PG> cast|🎀 Regency · 🎭 Impersonate · one-line curtain
+PG> act|🎛️|Tracker + Reputation|every reply, as the Season turns|the hour, the place, her mood, his warmth toward her, and what society believes
+PG> act|🪪|Cast board|whoever matters in the room|one row each: role, warmth toward her, mood, and where they stand
+PG> act|📣|Cue Calls|anything about to appear that isn't prose|a gold STANDBY slip, with a legend the first time
+PG> act|🎧|CoT foldout|before every reply|my board notes, folded away
+PG> note|Gloves on, Director. The ton bites.
+[[/PROGRAM]]
+
+CUE> 🎛️|Tracker and cast board|the first night of the Season|The bar is how warm he is toward her, 0 to 100. Reputation runs from Spotless to Ruined, and it does not grow back.
+
+<cb_state>
+[[TRK]]
+T> time|a quarter past eleven, Thursday the ninth of April
+T> place|Lady Fairfax's terrace, Grosvenor Square
+T> mood|curious, and pretending otherwise
+T> affinity|Lord Ravensworth|38|she picked up the letter he dropped
+T> reputation|Whispered of|two dances with the same gentleman; Lady Jersey counted
+[[/TRK]]
+[[CAST]]
+C> Lord Ravensworth|viscount, unreadable|38|guarded|at the balustrade, gloves off
+C> Mrs. Pell|her chaperone|70|distracted|at the card tables, for now
+[[/CAST]]
+</cb_state>
+
+The terrace is colder than the ballroom by a full season. Behind Eleanor the quartet has begun the next set without her, and she can feel, as surely as the draught at her ankles, every head that turned when she slipped out through the glass doors.
+
+Lord Ravensworth does not turn round. He has taken his gloves off, which no gentleman does at Lady Fairfax's, and is resting both bare hands on the cold stone as if he means to push the whole of Grosvenor Square away from him.
+
+"You dropped this, my lord." She holds the letter out between two fingers, the way one holds something that might be hot. The seal is broken. *He knew the hand. He went white when he saw it fall.*
+
+"Did I." Not a question. He looks at the letter, then at her, and his mouth does something that is almost a smile and nothing like one. "And you read it, Miss Ashby."
+
+"I did not." A pause, which she dislikes herself for. "I read the direction. It was addressed to a lady who has been dead these five-and-twenty years."
+
+He takes the letter. His fingers do not touch hers, and somehow that is worse.
+
+<xavi>Two dances and a terrace. Lady Jersey can count, Director, and so can I.</xavi>
