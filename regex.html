@@ -106,7 +106,7 @@
     <a href="#rosie">🌹 Rosie Full Bloom <span style="opacity:.6">34</span></a>
     <a href="#vigil">🥀 The Velvet Vigil <span style="opacity:.6">8</span></a>
     <a href="#lovesick">💌 LOVESICK <span style="opacity:.6">12</span></a>
-    <a href="#callboard">📋 CALLBOARD <span style="opacity:.6">154</span></a>
+    <a href="#callboard">📋 CALLBOARD <span style="opacity:.6">167</span></a>
     <input type="search" id="find" placeholder="Search regexes…" aria-label="Search regexes">
   </div>
 </nav>
@@ -218,7 +218,7 @@
     </div>
   </section>
   <section class="preset" id="callboard">
-    <h2>📋 CALLBOARD<small>v1.5.0 · 154 scripts</small></h2>
+    <h2>📋 CALLBOARD<small>v1.5.0 · 167 scripts</small></h2>
     <p class="intro">CALLBOARD writes data lines, like TW&gt; msg|… for a Twitch message, inside [[SHELL]] tags. Row regexes draw each line, and shell regexes draw the window around them. They ship inside the preset: allow them when SillyTavern asks, or import the bundle. CALLBOARD Lite v1.5.0 uses exactly the same regex. <a href="regex/CALLBOARD_regex_bundle.json" download>Download the bundle</a>.</p>
     <div class="grp">
     <h3 class="group">Dividers</h3>
@@ -461,12 +461,31 @@
     </ul>
     </div>
     <div class="grp">
+    <h3 class="group">Fan platform</h3>
+    <p class="group-intro">New in v1.5. Written inside [[BUBBLE]] for an idol's paid chat, or [[LIVE]] for a fan livestream. Pairs with the K-pop Idol flavor.</p>
+    <ul class="scripts">
+      <li><div class="name">CB · Shell — Fan platform chat (bubble)</div><p class="blurb">The idol's paid private chat, with a &quot;Reply to your artist…&quot; box.</p><code>[[BUBBLE]] … [[/BUBBLE]]</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Shell — Fan platform livestream</div><p class="blurb">The fan livestream window, with a chat box and heart and gift buttons.</p><code>[[LIVE]] … [[/LIVE]]</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Fan platform row — bubble header</div><p class="blurb">The chat header: the idol, their group or agency, and the D+ subscription counter.</p><code>FP&gt; head|idol|group or agency|D+ counter</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Fan platform row — idol message</div><p class="blurb">A message from the idol.</p><code>FP&gt; msg|time|message</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Fan platform row — idol photo</div><p class="blurb">A selfie or photo from the idol.</p><code>FP&gt; photo|time|what it shows</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Fan platform row — voice memo</div><p class="blurb">A voice memo with its length and a transcript.</p><code>FP&gt; voice|time|duration|what they say</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Fan platform row — fan reply</div><p class="blurb">The subscriber's own reply, which only they can see.</p><code>FP&gt; reply|time|message</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Fan platform row — live header</div><p class="blurb">The ● LIVE header, with viewer and heart counts.</p><code>FP&gt; live|channel|title|viewers|hearts</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Fan platform row — idol speaking</div><p class="blurb">What the idol says on stream, as a caption.</p><code>FP&gt; say|what they say</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Fan platform row — live chat</div><p class="blurb">A comment scrolling past in the live chat.</p><code>FP&gt; chat|username|comment</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Fan platform row — hearts / gift</div><p class="blurb">A heart or gift alert.</p><code>FP&gt; heart|username|what they sent</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Fan platform row — system</div><p class="blurb">A system line, like new messages, a renewed subscription, or someone joining.</p><code>FP&gt; sys|line</code><div class="badges"><span>Also runs on your messages</span></div></li>
+    </ul>
+    </div>
+    <div class="grp">
     <h3 class="group">Plumbing and extras</h3>
     <ul class="scripts">
+      <li><div class="name">CB · Data lines — drop a stray trailing |</div><p class="blurb">Runs first. Removes a stray | that the model leaves at the end of any data line, so the line still draws as its card instead of falling back to raw text.</p><div class="badges"><span>Also runs on your messages</span></div></li>
       <li><div class="name">CB · Chat/Press row — catch-all (malformed lines)</div><p class="blurb">Catches chat, press, or app lines with the wrong number of fields and shows them as plain text instead of breaking the panel.</p><div class="badges"><span>Also runs on your messages</span></div></li>
       <li><div class="name">CB · Chat/Press — join rendered rows</div><p class="blurb">Removes the line breaks between drawn rows so panels don't get gaps.</p><div class="badges"><span>Also runs on your messages</span></div></li>
       <li><div class="name">CB · Visuals — collapse old chat/press blocks in prompt (optional)</div><p class="blurb">Swaps chat panels, press pages, app panels, and the Program for a short placeholder in what's sent to the model once they're six or more messages old, to save tokens. What you see doesn't change.</p><div class="badges"><span>Only changes what the model sees</span><span>Also runs on your messages</span></div></li>
-      <li><div class="name">CB · Extreme — Pollinations image</div><p class="blurb">Turns an image directive into a picture generated by Pollinations (Flux, 1024×1024). It's the only regex that loads anything from outside, so it needs &quot;Forbid External Media&quot; turned off.</p><code>&lt;cb_img&gt;prompt: … | ar: 16:9&lt;/cb_img&gt;</code></li>
+      <li><div class="name">CB · Extreme — Pollinations image</div><p class="blurb">Marks where a picture goes and shows its prompt. CALLBOARD Suite's 🎨 Studio turns the mark into a Pollinations image using a key saved only on your device, and adds reroll and fine-tune buttons. Images need &quot;Forbid External Media&quot; turned off.</p><code>&lt;cb_img&gt;prompt: … | ar: 16:9&lt;/cb_img&gt;</code></li>
     </ul>
     </div>
   </section>

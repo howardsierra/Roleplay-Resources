@@ -55,8 +55,9 @@ const presets = config.presets.map((cfg) => {
   };
 });
 
+// A preset that shares another's regex (CALLBOARD Lite) leaves the bundle to that preset.
 for (const p of presets) {
-  write(`regex/${p.bundle}`, JSON.stringify(p.regex, null, 4));
+  if (!p.sameRegexAs) write(`regex/${p.bundle}`, JSON.stringify(p.regex, null, 4));
 }
 
 // ---------- site + README ----------

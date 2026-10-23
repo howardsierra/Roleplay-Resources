@@ -48,7 +48,7 @@
       "bundle": "CALLBOARD_regex_bundle.json",
       "title": "📋 CALLBOARD",
       "host": "Xavi, your stage manager",
-      "bestFor": "Fourteen setting \"wings\" (Modern, Y2K, Regency, Westeros, Wuxia, Cyberpunk, Sci-Fi…), Cue Calls, The Program, trackers, model correction layers, and panels for Twitch, Discord, X, Reddit, the press, and (new in v1.5) a dating app, browser, Instagram, private photos, and a creator page.",
+      "bestFor": "Fourteen setting \"wings\" (Modern, Y2K, Regency, Westeros, Wuxia, Cyberpunk, Sci-Fi…), Cue Calls, The Program, trackers, model correction layers, and panels for Twitch, Discord, X, Reddit, the press, and (new in v1.5) a dating app, browser, Instagram, private photos, and a creator page, and a K-pop fan platform.",
       "persona": {
         "name": "Xavi",
         "avatar": "📋",
@@ -75,6 +75,14 @@
   "extensions": [
     {
       "repo": "CALLBOARD",
+      "file": "manifest.json"
+    },
+    {
+      "repo": "Character-Grid",
+      "file": "manifest.json"
+    },
+    {
+      "repo": "revampedimagegen",
       "file": "manifest.json"
     },
     {

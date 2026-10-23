@@ -29,7 +29,7 @@
             "identifier": "cb_readme",
             "name": "📋 CALLBOARD — Read Me",
             "role": "system",
-            "content": "{{//📋 CALLBOARD LITE — READ ME. Not sent to the model; a note to you. It's off already and costs nothing.}}\nCALLBOARD LITE v1.5 — the same show for about a quarter of the tokens. Host: Xavi, your stage manager.\nWHAT'S DIFFERENT FROM FULL: the core charters and prose rules are merged into two tight prompts (🫀 The Charter, ✒️ Prose That Hits); the always-on rules are condensed; trackers, boards, and chat panels keep their exact formats but lose the long explanations; the hand-written HTML/JS/EXTREME visuals, the echoes, Patter/Mood, and the Pop/Rock flavors are gone. All 14 wings are full strength—only one is ever lit.\nFIRST: ALLOW THE REGEX. Every card, panel, cue slip, and the Program is drawn by regex that ships INSIDE this preset. SillyTavern ignores a preset's regex until you allow it: say yes when it asks, or go to Extensions → Regex → Preset scripts. (The CALLBOARD Suite extension does it in one click.)\nHOW TO DRESS THE STAGE:\n0. MODE — ONE: 🎭 Impersonate ([MANUAL: ON] / [MANUAL: OFF] pauses it) or 🖊️ Story Mode ([WRITE FOR ME] when you want me to write you).\n1. WING — ONE: Modern (default) · Y2K · Regency · Victorian / Gilded Age · Roaring Twenties · Westeros · Medieval · Fantasy · Wuxia / Xianxia · Urban Fantasy · Paranormal · Sci-Fi / Space Opera · Cyberpunk · Post-Apocalyptic. Stackers: College AU, Magic With Laws, Omegaverse.\n2. TRACKER — optional, the ONE matching your wing: Modern (most wings), Period (Westeros, Medieval, Fantasy, Wuxia), Regency (Regency, Victorian).\n3. Everything else is off until you want it: boards, chat panels (Twitch, Discord, X, Reddit, Press, Y2K Comms, and new in v1.5: 💘 Dating App, 🌐 Web Browser, 📸 Instagram, 🔒 Private Photos, 💎 Creator Page), story systems, Fame, the Lite CoT, extra model layers.\n4. 📣 Cue Calls and 🎟️ The Program are on: a STANDBY slip warns you before anything pops up and explains it the first time; send [PROGRAM] to see what's lit.\nWant everything? Use the full CALLBOARD v1.4 preset instead.",
+            "content": "{{//📋 CALLBOARD LITE — READ ME. Not sent to the model; a note to you. It's off already and costs nothing.}}\nCALLBOARD LITE v1.5 — the same show for about a quarter of the tokens. Host: Xavi, your stage manager.\nWHAT'S DIFFERENT FROM FULL: the core charters and prose rules are merged into two tight prompts (🫀 The Charter, ✒️ Prose That Hits); the always-on rules are condensed; trackers, boards, and chat panels keep their exact formats but lose the long explanations; the hand-written HTML/JS/EXTREME visuals, the echoes, Patter/Mood, and the Pop/Rock flavors are gone. All 14 wings are full strength—only one is ever lit.\nFIRST: ALLOW THE REGEX. Every card, panel, cue slip, and the Program is drawn by regex that ships INSIDE this preset. SillyTavern ignores a preset's regex until you allow it: say yes when it asks, or go to Extensions → Regex → Preset scripts. (The CALLBOARD Suite extension does it in one click.)\nHOW TO DRESS THE STAGE:\n0. MODE — ONE: 🎭 Impersonate ([MANUAL: ON] / [MANUAL: OFF] pauses it) or 🖊️ Story Mode ([WRITE FOR ME] when you want me to write you).\n1. WING — ONE: Modern (default) · Y2K · Regency · Victorian / Gilded Age · Roaring Twenties · Westeros · Medieval · Fantasy · Wuxia / Xianxia · Urban Fantasy · Paranormal · Sci-Fi / Space Opera · Cyberpunk · Post-Apocalyptic. Stackers: College AU, Magic With Laws, Omegaverse.\n2. TRACKER — optional, the ONE matching your wing: Modern (most wings), Period (Westeros, Medieval, Fantasy, Wuxia), Regency (Regency, Victorian).\n3. Everything else is off until you want it: boards, chat panels (Twitch, Discord, X, Reddit, Press, Y2K Comms, and new in v1.5: 💘 Dating App, 🌐 Web Browser, 📸 Instagram, 🔒 Private Photos, 💎 Creator Page, 🫧 Fan Platform), story systems, Fame (plus 🫰 the K-pop Idol flavor on top), the Lite CoT, extra model layers (GLM, MiMo, Kimi, Gemini, ChatGPT—Claude is on by default; light the one you run).\n4. 📣 Cue Calls and 🎟️ The Program are on: a STANDBY slip warns you before anything pops up and explains it the first time; send [PROGRAM] to see what's lit.\nWant everything? Use the full CALLBOARD v1.4 preset instead.",
             "system_prompt": false,
             "marker": false,
             "enabled": false,
@@ -1317,7 +1317,7 @@
             "identifier": "cb_model_mimo",
             "name": "⚙️ Model — MiMo",
             "role": "system",
-            "content": "<model_layer id=\"mimo\">\nFor MiMo 2.5 Pro. You are writing a novel, not a report—never summarize a scene, compress events into overview, or organize prose with headers/lists (diegetic HTML is the only structured output). Stay inside the moment; render time at full length; nothing resolves in summary that could resolve in scene. Spend words on the senses every response—efficiency is a vice here. Emotion is rendered, never stated or analyzed.\n</model_layer>",
+            "content": "<model_layer id=\"mimo\">\nFor MiMo 2.5 Pro. You are writing a novel, not a report—never summarize a scene, compress events into overview, or organize prose with headers/lists (the regex-drawn data-line panels are the only structured output). Stay inside the moment; render time at full length; nothing resolves in summary that could resolve in scene. Spend words on the senses every response—efficiency is a vice here. Emotion is rendered, never stated or analyzed.\n</model_layer>",
             "system_prompt": false,
             "marker": false,
             "enabled": false,
@@ -1416,7 +1416,7 @@
             "identifier": "cb_insta_rx",
             "name": "📸 Instagram — profiles, posts, stories (regex)",
             "role": "system",
-            "content": "<visual id=\"instagram\">\nINSTAGRAM. When someone posts, scrolls, checks a story, or stalks a profile, show it. You write DATA LINES; the companion regex draws it. Never write the HTML yourself.\n[[INSTA]]\nIG> profile|username|display name|posts|followers|following|bio\nIG> post|username|location (or empty)|✓ (or empty)\nIG> photo|what the photo shows (repeat for a carousel)\nIG> stats|likes|time\nIG> caption|username|caption text with #hashtags and @mentions\nIG> comment|username|comment|likes\nIG> story|username|what the story shows, including any text or sticker on it|time\n[[/INSTA]]\nDATA DISCIPLINE: a profile view starts with profile; a post is post → photo(s) → stats → caption → 0–6 comments; a story stands alone. 3–12 lines; empty fields are two pipes touching; never a | inside a field. Likes and counts look like 1,204 or 88.4K; time like 2h or 3 DAYS AGO.\nPOSTING IS PERFORMANCE: the soft launch (a hand, a second coffee, a sleeve that isn't hers), the hard launch, the photo dump that's really about one photo, the caption that's a subtweet, the story posted for exactly one viewer, the close-friends list, the like from someone who shouldn't be looking, the account that suddenly archives every photo of them together. Comments are the chorus. Modern wings only (2010 onward); in Y2K use MySpace via Y2K Comms. Then back to prose—someone reacts.\n</visual>",
+            "content": "<visual id=\"instagram\">\nINSTAGRAM. When someone posts, scrolls, checks a story, or stalks a profile, show it. You write DATA LINES; the companion regex draws it. Never write the HTML yourself.\n[[INSTA]]\nIG> profile|username|display name|posts|followers|following|bio\nIG> post|username|location (or empty)|✓ (or empty)\nIG> photo|what the photo shows (repeat for a carousel)\nIG> stats|likes|time\nIG> caption|username|caption text with #hashtags and @mentions\nIG> comment|username|comment|likes (optional)\nIG> story|username|what the story shows, including any text or sticker on it|time\n[[/INSTA]]\nDATA DISCIPLINE: usernames are written without the @ (lexhayes, not @lexhayes); @ is only for mentions inside a caption or comment. A profile view starts with profile; a post is post → photo(s) → stats → caption → 0–6 comments; a story stands alone. 3–12 lines; empty fields are two pipes touching; never a | inside a field. Likes and counts look like 1,204 or 88.4K; time like 2h or 3 DAYS AGO.\nPOSTING IS PERFORMANCE: the soft launch (a hand, a second coffee, a sleeve that isn't hers), the hard launch, the photo dump that's really about one photo, the caption that's a subtweet, the story posted for exactly one viewer, the close-friends list, the like from someone who shouldn't be looking, the account that suddenly archives every photo of them together. Comments are the chorus. Modern wings only (2010 onward); in Y2K use MySpace via Y2K Comms. Then back to prose—someone reacts.\n</visual>",
             "system_prompt": false,
             "marker": false,
             "enabled": true,
@@ -1445,6 +1445,76 @@
             "name": "💎 Creator Page — subscriptions, locked posts, tips (regex)",
             "role": "system",
             "content": "<visual id=\"creator\">\nCREATOR PAGE. When a character sells content on a subscription platform—or someone discovers that they do—show the page. You write DATA LINES; the companion regex draws it. Never write the HTML yourself.\n[[CREATOR]]\nCR> head|display name|@handle|subscriber count|price per month|bio\nCR> post|time|caption|free|what the post shows\nCR> post|time|teaser caption|$price to unlock|what the post shows (hidden behind the lock)\nCR> tip|username|$amount|message\nCR> fan|username|message from a subscriber\nCR> reply|the creator's reply\nCR> ppv|$price|what the pay-per-view message contains\nCR> stats|dashboard line (This month: $4,210 · 312 new subs · 18 renewals off)\n[[/CREATOR]]\nDATA DISCIPLINE: head first, then 3–12 lines. The fourth post field is the literal word free, or a price. Exact field counts; never a | inside a field.\nTHE CREATOR IS AN ADULT (18+), always, and so is everyone in the content.\nIT'S A BUSINESS AND A PERSONA: the stage name, the ring light, the content calendar, the regulars who think it's a relationship, the custom requests, the chargebacks, the fan who found her real name, the money that pays rent. Show the person under the persona and the cost of keeping them apart—and what happens when someone from her real life subscribes. Invent the platform's name or use a real one in prose. Modern wings only. Then back to prose—someone reacts.\n</visual>",
+            "system_prompt": false,
+            "marker": false,
+            "enabled": true,
+            "injection_position": 0,
+            "injection_depth": 4,
+            "injection_order": 100,
+            "forbid_overrides": false,
+            "injection_trigger": []
+        },
+        {
+            "identifier": "cb_model_gemini",
+            "name": "⚙️ Model — Gemini",
+            "role": "system",
+            "content": "<model_layer id=\"gemini\">\nFor Gemini. Never open by echoing or paraphrasing {{user}}'s last message—start from what happens next. No recycled tics: \"a testament to,\" \"the air thick with,\" the smell of ozone, \"a dance of,\" \"something shifted,\" a smirk in every paragraph, knuckles whitening; once a phrase has appeared, it is spent for the rest of the chat. Length is weight, not volume—don't re-describe the room every turn or pad toward a big response. Characters keep their edges: no sudden softening, no melodrama the story hasn't paid for. Planning, headers, and meta-commentary never leak outside the <think> block. End on a beat, never on a question to {{user}}. No moralizing, no disclaimers.\n</model_layer>",
+            "system_prompt": false,
+            "marker": false,
+            "enabled": false,
+            "injection_position": 0,
+            "injection_depth": 4,
+            "injection_order": 100,
+            "forbid_overrides": false,
+            "injection_trigger": []
+        },
+        {
+            "identifier": "cb_model_gpt",
+            "name": "⚙️ Model — ChatGPT",
+            "role": "system",
+            "content": "<model_layer id=\"gpt\">\nFor ChatGPT / OpenAI GPT models. The drift is toward niceness and tidiness—resist both. Characters don't turn reasonable, apologize, or talk through their feelings because it would be healthy; no therapy-speak (\"I hear you,\" \"that's valid,\" \"boundaries\") unless the character would truly say it. Conflicts don't resolve in one scene, and endings aren't bows. No moralizing, no softened cruelty, no fade-to-black or skipping what the lit content toggles allow. Prose, not presentation: no headers, bullet lists, or bold outside diegetic artifacts; ration the em-dashes; never \"It's not X—it's Y.\" Never close by asking {{user}} what happens next or offering options. Impersonate lit: write her in full without hedging. Story Mode lit: don't slip her even small reactions.\n</model_layer>",
+            "system_prompt": false,
+            "marker": false,
+            "enabled": false,
+            "injection_position": 0,
+            "injection_depth": 4,
+            "injection_order": 100,
+            "forbid_overrides": false,
+            "injection_trigger": []
+        },
+        {
+            "identifier": "cb_notice",
+            "name": "📌 Callboard Notice",
+            "role": "user",
+            "content": "",
+            "system_prompt": false,
+            "marker": false,
+            "enabled": true,
+            "injection_position": 0,
+            "injection_depth": 4,
+            "injection_order": 100,
+            "forbid_overrides": false,
+            "injection_trigger": []
+        },
+        {
+            "identifier": "cb_fame_kpop",
+            "name": "  🫰 Fame · K-pop Idol (with Fame Engine)",
+            "role": "system",
+            "content": "<fame_flavor id=\"kpop\">\nK-POP IDOL. The idol system: years as a trainee—monthly evaluations, dorm life, the friends who never debuted—then a debut under an agency that owns the contract, the schedule, the image, and often the phone. Groups have positions (leader, main vocal, main dancer, rapper, visual, center, maknae) and the hierarchy inside the group is its own drama: line distribution, who gets the solo, who gets cast in the drama, who gets left out of the variety show. Comebacks run in cycles—teasers, concept photos, music-show weeks, the first win and the encore stage cried through, fansigns, then a cliff of exhaustion and the next concept already in practice rooms that smell of floor wax at 3 AM.\nTHE FANDOM has a name, a lightstick, an official color, and fan chants shouted between lines. Fans have biases and bias-wreckers, stream to the charts, fund birthday subway ads, and buy forty copies of an album for the photocards. Fan-platform livestreams, bubble-style paid messages, and \"airport fashion\" make the idol reachable and never off. Sasaeng fans cross every line—hotel floors, phone numbers, the taxi behind the van—and agencies treat it as weather.\nTHE RULES: dating bans written or unwritten; staff and managers everywhere; a tabloid's dating scoop can sink a comeback, and the fix is a handwritten apology letter. Netizens on online forums pick apart every expression; one clip can start a scandal. Seven-year contracts, renewal fights, members leaving, solo debuts. Korean men face mandatory military service, a two-year hole in a career and a relationship.\nTONGUE: the hierarchy shows in speech—sunbae and hoobae, hyung/oppa/noona/unnie, -ssi with strangers, formal speech dropped only when it means something. Konglish and English slip in on camera (\"fighting!\"). Idols perform warmth for the camera; the person underneath may be exhausted, homesick, or in love with someone they can't be seen with—write both, and treat their mental health with weight, never as spectacle.\nSTACKS with the Pop Star and Rockstar flavors: these rules belong to whichever character is the idol—{{user}}'s character, {{char}}, or both.\nEra-adjust if Y2K is lit: second-generation idols—fan cafés, CD singles, music-show wins voted by text, early variety shows, a much smaller overseas fandom, and no livestream platforms.\n</fame_flavor>",
+            "system_prompt": false,
+            "marker": false,
+            "enabled": true,
+            "injection_position": 0,
+            "injection_depth": 4,
+            "injection_order": 100,
+            "forbid_overrides": false,
+            "injection_trigger": []
+        },
+        {
+            "identifier": "cb_fanplatform_rx",
+            "name": "🫧 Fan Platform — idol chat & livestream (regex)",
+            "role": "system",
+            "content": "<visual id=\"fan_platform\">\nFAN PLATFORM. When an idol (or any star with a paid fan app) messages subscribers or goes live—or someone in the story reads it—show the screen. You write DATA LINES; the companion regex draws it. Never write the HTML yourself.\nChoose the shell: [[BUBBLE]] for the paid private-chat app · [[LIVE]] for a fan-platform livestream.\n[[BUBBLE]]\nFP> head|idol's display name|group or agency|subscription counter (e.g. D+412)\nFP> msg|time|a message from the idol\nFP> photo|time|what the selfie or photo shows\nFP> voice|time|duration (0:14)|what they say in the voice memo\nFP> reply|time|the subscriber's reply (only they can see it)\nFP> sys|system line (3 new messages · subscription renewed · read)\n[[/BUBBLE]]\n[[LIVE]]\nFP> live|idol or channel name|stream title|viewer count|hearts count\nFP> say|what the idol says on stream, as a caption\nFP> chat|username|comment\nFP> heart|username|what they sent (sent 100 hearts · a gift)\nFP> sys|system line (… joined · the stream will end soon)\n[[/LIVE]]\nDATA DISCIPLINE: head or live first, then 4–14 lines. Exact field counts; never a | inside a field. A bubble reply comes from the POV subscriber; in Story Mode, never write one for {{user}}'s character unless she wrote or asked for it.\nWRITE THE PARASOCIAL TRUTH: a paid message goes to thousands but is written to feel like it's for one—\"did you eat?\", the 2 AM \"can't sleep,\" the selfie from the practice room, the voice memo with background noise that gives away where they are. Fans read into every word; the one person who knows what a line really means is reading too. Lives go off-script: a member walks into frame, a manager cuts it short, chat floods with a name nobody was supposed to say. What's said on a live is clipped and translated within minutes and lands in the press. Use the idol's real speech register (honorifics, Konglish, aegyo where it fits). Modern wings only; in Y2K it's fan cafés and official homepage diaries instead.\nAfter the panel, return to prose—someone reacts.\n</visual>",
             "system_prompt": false,
             "marker": false,
             "enabled": true,
@@ -1569,6 +1639,10 @@
                 },
                 {
                     "identifier": "chatHistory",
+                    "enabled": true
+                },
+                {
+                    "identifier": "jailbreak",
                     "enabled": true
                 },
                 {
@@ -1716,6 +1790,10 @@
                     "enabled": false
                 },
                 {
+                    "identifier": "cb_fame_kpop",
+                    "enabled": false
+                },
+                {
                     "identifier": "div_content",
                     "enabled": true
                 },
@@ -1816,6 +1894,10 @@
                     "enabled": false
                 },
                 {
+                    "identifier": "cb_fanplatform_rx",
+                    "enabled": false
+                },
+                {
                     "identifier": "div_utils",
                     "enabled": true
                 },
@@ -1856,8 +1938,20 @@
                     "enabled": false
                 },
                 {
+                    "identifier": "cb_model_gemini",
+                    "enabled": false
+                },
+                {
+                    "identifier": "cb_model_gpt",
+                    "enabled": false
+                },
+                {
                     "identifier": "cb_callboard_cot",
                     "enabled": false
+                },
+                {
+                    "identifier": "cb_notice",
+                    "enabled": true
                 }
             ]
         }
@@ -1883,6 +1977,24 @@
     "request_image_resolution": "",
     "extensions": {
         "regex_scripts": [
+            {
+                "id": "f75fbadf-70f3-43e0-9e25-eff11c4e4282",
+                "scriptName": "CB · Data lines — drop a stray trailing |",
+                "findRegex": "/^((?:T|C|W|S|I|X|TW|DC|PR|AIM|FLIP|MS|XT|RD|DT|BR|IG|PX|CR|CUE|PG|FP)(?:&gt;|>)[^\\n]*?)[ \\t]*\\|[ \\t]*$/gm",
+                "replaceString": "$1",
+                "trimStrings": [],
+                "placement": [
+                    1,
+                    2
+                ],
+                "disabled": false,
+                "markdownOnly": true,
+                "promptOnly": false,
+                "runOnEdit": true,
+                "substituteRegex": 0,
+                "minDepth": null,
+                "maxDepth": null
+            },
             {
                 "id": "9083ae41-89de-457b-a005-f0e3a4d4dabb",
                 "scriptName": "CB · Divider — Act Break",
@@ -2012,7 +2124,7 @@
             {
                 "id": "0ec8f4b1-74b5-40f3-9941-10b90ae5f660",
                 "scriptName": "CB · Tracker row — reputation",
-                "findRegex": "/^T(?:&gt;|>)\\s*reputation\\s*\\|\\s*([^|\\n]+?)\\s*\\|\\s*([^|\\n]+?)\\s*$/gmi",
+                "findRegex": "/^T(?:&gt;|>)\\s*reputation\\s*\\|\\s*([^|\\n]+?)(?:\\s*\\|\\s*([^|\\n]*?))?\\s*$/gmi",
                 "replaceString": "<div style=\"padding:5px 2px;margin-top:2px;border-top:1px solid #2b2436;\"><span style=\"color:#c9a86a;font-size:10px;text-transform:uppercase;letter-spacing:1px;\">Reputation</span> <span style=\"color:#ff9db0;font-size:12px;\">$1</span><br><span style=\"color:#9a8fb0;font-size:11px;font-style:italic;\">$2</span></div>",
                 "trimStrings": [],
                 "placement": [
@@ -2084,7 +2196,7 @@
             {
                 "id": "06bde2b8-73db-421d-91b2-5c0e87cd04ea",
                 "scriptName": "CB · Board row — Inventory",
-                "findRegex": "/^I(?:&gt;|>)\\s*([^|\\n]+?)\\s*\\|\\s*([^|\\n]+?)\\s*\\|\\s*([^|\\n]+?)\\s*$/gm",
+                "findRegex": "/^I(?:&gt;|>)\\s*([^|\\n]+?)\\s*\\|\\s*([^|\\n]+?)(?:\\s*\\|\\s*([^|\\n]*?))?\\s*$/gm",
                 "replaceString": "<div style=\"display:flex;gap:8px;padding:6px 4px;border-bottom:1px solid #2b2436;\"><span style=\"color:#c9a86a;font-size:11px;min-width:64px;text-transform:uppercase;letter-spacing:1px;\">$2</span><div><b style=\"color:#e9e2f5;\">$1</b><br><span style=\"color:#9a8fb0;font-size:11px;font-style:italic;\">$3</span></div></div>",
                 "trimStrings": [],
                 "placement": [
@@ -2102,7 +2214,7 @@
             {
                 "id": "5b8a3fbe-d34e-4432-9b10-0fc56261fb9b",
                 "scriptName": "CB · Board row — Codex",
-                "findRegex": "/^X(?:&gt;|>)\\s*([^|\\n]+?)\\s*\\|\\s*([^|\\n]+?)\\s*\\|\\s*([^|\\n]+?)\\s*$/gm",
+                "findRegex": "/^X(?:&gt;|>)\\s*([^|\\n]+?)\\s*\\|\\s*([^|\\n]+?)(?:\\s*\\|\\s*([^|\\n]*?))?\\s*$/gm",
                 "replaceString": "<div style=\"padding:7px 4px;border-bottom:1px solid #2b2436;\"><span style=\"color:#c9a6ff;font-size:10px;text-transform:uppercase;letter-spacing:1px;\">◈ $2</span> <b style=\"color:#e9e2f5;\">$1</b><br><span style=\"color:#9a8fb0;font-size:11px;\">$3</span></div>",
                 "trimStrings": [],
                 "placement": [
@@ -2552,7 +2664,7 @@
             {
                 "id": "61568d91-7969-4936-84af-d0ddd2df72c8",
                 "scriptName": "CB · Discord row — place header",
-                "findRegex": "/^DC(?:&gt;|>)\\s*place\\s*\\|\\s*([^|\\n]+?)\\s*\\|\\s*([^|\\n]+?)\\s*$/gmi",
+                "findRegex": "/^DC(?:&gt;|>)\\s*place\\s*\\|\\s*([^|\\n]+?)(?:\\s*\\|\\s*([^|\\n]*?))?\\s*$/gmi",
                 "replaceString": "<div style=\"margin:-6px -14px 4px;padding:10px 14px;border-bottom:1px solid #1f2023;box-shadow:0 1px 2px rgba(0,0,0,.25);\"><div style=\"font-size:10.5px;color:#949ba4;text-transform:uppercase;letter-spacing:.7px;font-weight:700;\">$1</div><div style=\"font-size:15px;font-weight:600;color:#f2f3f5;margin-top:1px;\">$2</div></div><!--cbrow-->",
                 "trimStrings": [],
                 "placement": [
@@ -3164,7 +3276,7 @@
             {
                 "id": "f7752765-34c9-4dab-baee-c700b10b5d79",
                 "scriptName": "CB · X row — stats",
-                "findRegex": "/^XT(?:&gt;|>)\\s*stats\\s*\\|\\s*([^|\\n]+?)\\s*\\|\\s*([^|\\n]+?)\\s*\\|\\s*([^|\\n]+?)\\s*\\|\\s*([^|\\n]+?)\\s*$/gmi",
+                "findRegex": "/^XT(?:&gt;|>)\\s*stats\\s*\\|\\s*([^|\\n]+?)\\s*\\|\\s*([^|\\n]+?)\\s*\\|\\s*([^|\\n]+?)(?:\\s*\\|\\s*([^|\\n]*?))?\\s*$/gmi",
                 "replaceString": "<div style=\"display:flex;justify-content:space-between;max-width:420px;margin:8px 0 6px 50px;color:#71767b;font-size:13px;\"><span>💬 $1</span><span>🔁 $2</span><span style=\"color:#f91880;\">♥ $3</span><span>📊 $4</span></div><!--cbrow-->",
                 "trimStrings": [],
                 "placement": [
@@ -3272,7 +3384,7 @@
             {
                 "id": "6a61b4db-e05b-47e3-8652-e5b93c674d18",
                 "scriptName": "CB · Reddit row — stats",
-                "findRegex": "/^RD(?:&gt;|>)\\s*stats\\s*\\|\\s*([^|\\n]+?)\\s*\\|\\s*([^|\\n]+?)\\s*$/gmi",
+                "findRegex": "/^RD(?:&gt;|>)\\s*stats\\s*\\|\\s*([^|\\n]+?)(?:\\s*\\|\\s*([^|\\n]*?))?\\s*$/gmi",
                 "replaceString": "<div style=\"display:flex;gap:10px;align-items:center;padding:6px 0 10px;border-bottom:1px solid #343536;margin-bottom:4px;font-size:12.5px;font-weight:700;color:#818384;\"><span style=\"background:#272729;border-radius:16px;padding:4px 10px;\"><span style=\"color:#ff4500;\">⬆</span> <span style=\"color:#d7dadc;\">$1</span> <span style=\"color:#7193ff;\">⬇</span></span><span style=\"background:#272729;border-radius:16px;padding:4px 10px;\">💬 $2</span><span style=\"background:#272729;border-radius:16px;padding:4px 10px;\">↗ Share</span></div><!--cbrow-->",
                 "trimStrings": [],
                 "placement": [
@@ -3362,7 +3474,7 @@
             {
                 "id": "4a61c8ac-23df-4cde-9f49-e88653f590ba",
                 "scriptName": "CB · Dating row — app bar",
-                "findRegex": "/^DT(?:&gt;|>)[ \\t]*app[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*$/gmi",
+                "findRegex": "/^DT(?:&gt;|>)[ \\t]*app[ \\t]*\\|[ \\t]*([^|\\n]+?)(?:[ \\t]*\\|[ \\t]*([^|\\n]*?))?[ \\t]*$/gmi",
                 "replaceString": "<div style=\"display:flex;justify-content:space-between;align-items:center;padding:11px 16px;border-bottom:1px solid #f1e7ea;\"><b style=\"color:#ff4f6d;font-size:17px;letter-spacing:.3px;\">$1</b><span style=\"font-size:11px;color:#8a7f84;\">$2</span></div><!--cbrow-->",
                 "trimStrings": [],
                 "placement": [
@@ -3524,7 +3636,7 @@
             {
                 "id": "a6dc106f-b4fb-4e6b-b237-5561d605a4d5",
                 "scriptName": "CB · Browser row — address bar",
-                "findRegex": "/^BR(?:&gt;|>)[ \\t]*bar[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*$/gmi",
+                "findRegex": "/^BR(?:&gt;|>)[ \\t]*bar[ \\t]*\\|[ \\t]*([^|\\n]+?)(?:[ \\t]*\\|[ \\t]*([^|\\n]*?))?[ \\t]*$/gmi",
                 "replaceString": "<div style=\"padding:7px 8px 0;background:rgba(127,127,127,.12);\"><span style=\"display:inline-block;max-width:70%;padding:7px 14px;border-radius:9px 9px 0 0;background:rgba(127,127,127,.2);font-size:11.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;vertical-align:bottom;\">$2</span></div><div style=\"display:flex;gap:10px;align-items:center;padding:7px 10px;border-bottom:1px solid rgba(127,127,127,.25);font-size:12.5px;\"><span style=\"opacity:.55;letter-spacing:2px;\">←→↻</span><span style=\"flex:1;min-width:0;padding:6px 13px;border-radius:16px;background:rgba(127,127,127,.15);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;\">🔒 $1</span></div><!--cbrow-->",
                 "trimStrings": [],
                 "placement": [
@@ -3596,7 +3708,7 @@
             {
                 "id": "54698153-0548-437d-adf1-4b7759cfa0ae",
                 "scriptName": "CB · Browser row — result",
-                "findRegex": "/^BR(?:&gt;|>)[ \\t]*result[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*$/gmi",
+                "findRegex": "/^BR(?:&gt;|>)[ \\t]*result[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]+?)(?:[ \\t]*\\|[ \\t]*([^|\\n]*?))?[ \\t]*$/gmi",
                 "replaceString": "<div style=\"padding:10px 18px;\"><div style=\"font-size:11.5px;opacity:.6;\">$2</div><div style=\"font-size:16px;color:#4f7fe0;line-height:1.3;margin-top:1px;\">$1</div><div style=\"font-size:12.5px;opacity:.8;line-height:1.45;margin-top:3px;\">$3</div></div><!--cbrow-->",
                 "trimStrings": [],
                 "placement": [
@@ -3650,7 +3762,7 @@
             {
                 "id": "e0b939f9-7a0e-46f6-af57-f53731ae9043",
                 "scriptName": "CB · Browser row — history entry",
-                "findRegex": "/^BR(?:&gt;|>)[ \\t]*hist[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*$/gmi",
+                "findRegex": "/^BR(?:&gt;|>)[ \\t]*hist[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]+?)(?:[ \\t]*\\|[ \\t]*([^|\\n]*?))?[ \\t]*$/gmi",
                 "replaceString": "<div style=\"display:flex;gap:12px;padding:6px 18px;font-size:12.5px;align-items:baseline;\"><span style=\"opacity:.5;min-width:58px;font-variant-numeric:tabular-nums;font-size:11.5px;\">$1</span><span style=\"flex:1;min-width:0;line-height:1.4;\">$2 <span style=\"opacity:.45;font-size:11px;\">$3</span></span></div><!--cbrow-->",
                 "trimStrings": [],
                 "placement": [
@@ -3668,7 +3780,7 @@
             {
                 "id": "4648fde2-4a21-4374-aa4c-c0d674e74b3c",
                 "scriptName": "CB · Instagram row — profile",
-                "findRegex": "/^IG(?:&gt;|>)[ \\t]*profile[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]*?)[ \\t]*$/gmi",
+                "findRegex": "/^IG(?:&gt;|>)[ \\t]*profile[ \\t]*\\|[ \\t]*@?([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*(?:\\|[ \\t]*([^|\\n]*?)[ \\t]*)?[ \\t]*$/gmi",
                 "replaceString": "<div style=\"padding:14px 16px 10px;border-bottom:1px solid #efefef;\"><div style=\"display:flex;align-items:center;gap:18px;\"><span style=\"display:inline-block;flex:none;width:72px;height:72px;border-radius:50%;padding:2px;box-sizing:border-box;background:conic-gradient(#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5,#feda75);\"><span style=\"display:block;width:100%;height:100%;border-radius:50%;background:#e9e9ee;border:2px solid #fff;box-sizing:border-box;\"></span></span><div style=\"flex:1;display:flex;justify-content:space-around;text-align:center;font-size:12px;color:#262626;\"><div><b style=\"font-size:16px;\">$3</b><br>posts</div><div><b style=\"font-size:16px;\">$4</b><br>followers</div><div><b style=\"font-size:16px;\">$5</b><br>following</div></div></div><div style=\"margin-top:8px;font-size:13px;font-weight:700;color:#262626;\">$2</div><div style=\"font-size:11.5px;color:#737373;\">@$1</div><div style=\"font-size:13px;color:#262626;line-height:1.4;margin-top:3px;\">$6</div></div><!--cbrow-->",
                 "trimStrings": [],
                 "placement": [
@@ -3686,7 +3798,7 @@
             {
                 "id": "8c0a4ab9-1244-4799-aa60-f992c6369e66",
                 "scriptName": "CB · Instagram row — post header",
-                "findRegex": "/^IG(?:&gt;|>)[ \\t]*post[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]*?)[ \\t]*\\|[ \\t]*([^|\\n]*?)[ \\t]*$/gmi",
+                "findRegex": "/^IG(?:&gt;|>)[ \\t]*post[ \\t]*\\|[ \\t]*@?([^|\\n]+?)[ \\t]*(?:\\|[ \\t]*([^|\\n]*?)[ \\t]*(?:\\|[ \\t]*([^|\\n]*?)[ \\t]*)?)?[ \\t]*$/gmi",
                 "replaceString": "<div style=\"display:flex;align-items:center;gap:10px;padding:10px 12px;\"><span style=\"display:inline-block;flex:none;width:34px;height:34px;border-radius:50%;padding:2px;box-sizing:border-box;background:conic-gradient(#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5,#feda75);\"><span style=\"display:block;width:100%;height:100%;border-radius:50%;background:#e9e9ee;border:2px solid #fff;box-sizing:border-box;\"></span></span><div style=\"line-height:1.25;\"><div style=\"font-size:13px;font-weight:700;color:#262626;\">$1 <span style=\"color:#0095f6;\">$3</span></div><div style=\"font-size:11px;color:#737373;\">$2</div></div><span style=\"margin-left:auto;color:#262626;letter-spacing:1px;\">•••</span></div><!--cbrow-->",
                 "trimStrings": [],
                 "placement": [
@@ -3722,7 +3834,7 @@
             {
                 "id": "5fdf21bb-bd86-4149-8fbf-ada780ea9211",
                 "scriptName": "CB · Instagram row — stats",
-                "findRegex": "/^IG(?:&gt;|>)[ \\t]*stats[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*$/gmi",
+                "findRegex": "/^IG(?:&gt;|>)[ \\t]*stats[ \\t]*\\|[ \\t]*([^|\\n]+?)(?:[ \\t]*\\|[ \\t]*([^|\\n]*?))?[ \\t]*$/gmi",
                 "replaceString": "<div style=\"padding:9px 14px 2px;font-size:20px;color:#262626;letter-spacing:8px;\">♡💬➤<span style=\"float:right;letter-spacing:0;\">🔖</span></div><div style=\"padding:2px 14px;font-size:13px;font-weight:700;color:#262626;\">$1 likes</div><div style=\"padding:0 14px 4px;font-size:10px;color:#737373;text-transform:uppercase;letter-spacing:.3px;\">$2</div><!--cbrow-->",
                 "trimStrings": [],
                 "placement": [
@@ -3740,7 +3852,7 @@
             {
                 "id": "87f37c5c-bacb-41a3-9f24-7e68b9429274",
                 "scriptName": "CB · Instagram row — caption",
-                "findRegex": "/^IG(?:&gt;|>)[ \\t]*caption[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*$/gmi",
+                "findRegex": "/^IG(?:&gt;|>)[ \\t]*caption[ \\t]*\\|[ \\t]*@?([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*[ \\t]*$/gmi",
                 "replaceString": "<div style=\"padding:3px 14px;font-size:13px;color:#262626;line-height:1.45;\"><b>$1</b> $2</div><!--cbrow-->",
                 "trimStrings": [],
                 "placement": [
@@ -3758,7 +3870,7 @@
             {
                 "id": "94d2efe0-6056-4cf4-93ce-c54f8e61a372",
                 "scriptName": "CB · Instagram row — comment",
-                "findRegex": "/^IG(?:&gt;|>)[ \\t]*comment[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]*?)[ \\t]*$/gmi",
+                "findRegex": "/^IG(?:&gt;|>)[ \\t]*comment[ \\t]*\\|[ \\t]*@?([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*(?:\\|[ \\t]*([^|\\n]*?)[ \\t]*)?[ \\t]*$/gmi",
                 "replaceString": "<div style=\"display:flex;gap:8px;padding:4px 14px;font-size:12.5px;color:#262626;line-height:1.4;\"><span style=\"flex:1;\"><b>$1</b> $2</span><span style=\"color:#737373;font-size:11px;white-space:nowrap;\">♡ $3</span></div><!--cbrow-->",
                 "trimStrings": [],
                 "placement": [
@@ -3776,7 +3888,7 @@
             {
                 "id": "44c7aceb-55f4-406d-83d7-908ea6643603",
                 "scriptName": "CB · Instagram row — story",
-                "findRegex": "/^IG(?:&gt;|>)[ \\t]*story[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*$/gmi",
+                "findRegex": "/^IG(?:&gt;|>)[ \\t]*story[ \\t]*\\|[ \\t]*@?([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*(?:\\|[ \\t]*([^|\\n]*?)[ \\t]*)?[ \\t]*$/gmi",
                 "replaceString": "<div style=\"margin:10px auto;width:230px;height:380px;border-radius:14px;background:linear-gradient(170deg,#3a2a4f,#b4537a 55%,#f0a868);position:relative;overflow:hidden;color:#fff;font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;\"><div style=\"position:absolute;top:8px;left:8px;right:8px;height:2px;border-radius:2px;background:rgba(255,255,255,.35);\"><div style=\"width:45%;height:100%;background:#fff;border-radius:2px;\"></div></div><div style=\"position:absolute;top:18px;left:10px;display:flex;align-items:center;gap:7px;font-size:12px;font-weight:700;\"><span style=\"display:inline-block;flex:none;width:26px;height:26px;border-radius:50%;padding:2px;box-sizing:border-box;background:conic-gradient(#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5,#feda75);\"><span style=\"display:block;width:100%;height:100%;border-radius:50%;background:#e9e9ee;border:2px solid #fff;box-sizing:border-box;\"></span></span>$1 <span style=\"font-weight:400;opacity:.8;\">$3</span></div><div style=\"position:absolute;left:14px;right:14px;top:50%;transform:translateY(-50%);text-align:center;font-size:13.5px;line-height:1.5;text-shadow:0 1px 4px rgba(0,0,0,.6);\">$2</div><div style=\"position:absolute;bottom:10px;left:10px;right:10px;padding:7px 12px;border:1px solid rgba(255,255,255,.6);border-radius:20px;font-size:11.5px;opacity:.85;\">Send message</div></div><!--cbrow-->",
                 "trimStrings": [],
                 "placement": [
@@ -3812,8 +3924,8 @@
             {
                 "id": "e39c75bb-8ae1-4e46-b866-1cdf966feda2",
                 "scriptName": "CB · Private row — photo received",
-                "findRegex": "/^PX(?:&gt;|>)[ \\t]*pic[ \\t]*\\|[ \\t]*in[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]*?)[ \\t]*\\|[ \\t]*([^|\\n]*?)[ \\t]*$/gmi",
-                "replaceString": "<div style=\"display:flex;margin:6px 14px;\"><details style=\"max-width:78%;\"><summary style=\"list-style:none;cursor:pointer;width:210px;height:160px;border-radius:18px;background:repeating-linear-gradient(135deg,#4a3a5e 0 9px,#3b2e4c 9px 18px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;color:#fff;font-size:12.5px;box-shadow:inset 0 0 50px rgba(255,255,255,.18),0 4px 14px rgba(0,0,0,.35);\"><span style=\"font-size:28px;filter:drop-shadow(0 2px 4px rgba(0,0,0,.4));\">📸</span><b>Photo</b><span style=\"opacity:.75;font-size:10.5px;\">tap to view · $4</span><span style=\"opacity:.55;font-size:10px;\">$1</span></summary><div style=\"margin-top:6px;padding:10px 13px;border-radius:14px;background:#1f1a26;border:1px solid #3a2f45;color:#eee6f8;font-size:12.5px;line-height:1.55;font-style:italic;\">$2</div><div style=\"font-size:13px;color:#eee6f8;margin-top:5px;padding:0 4px;\">$3</div></details></div><!--cbrow-->",
+                "findRegex": "/^PX(?:&gt;|>)[ \\t]*pic[ \\t]*\\|[ \\t]*in[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*(?:\\|[ \\t]*([^|\\n]*?)[ \\t]*(?:\\|[ \\t]*([^|\\n]*?)[ \\t]*)?)?[ \\t]*$/gmi",
+                "replaceString": "<div style=\"display:flex;margin:6px 14px;\"><details style=\"max-width:78%;\"><summary style=\"list-style:none;cursor:pointer;width:210px;height:160px;border-radius:18px;background:repeating-linear-gradient(135deg,#4a3a5e 0 9px,#3b2e4c 9px 18px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;color:#fff;font-size:12.5px;box-shadow:inset 0 0 50px rgba(255,255,255,.18),0 4px 14px rgba(0,0,0,.35);\"><span style=\"font-size:28px;filter:drop-shadow(0 2px 4px rgba(0,0,0,.4));\">📸</span><b>Photo</b><span style=\"opacity:.75;font-size:10.5px;\">tap to view</span><span style=\"opacity:.75;font-size:10.5px;\">$4</span><span style=\"opacity:.55;font-size:10px;\">$1</span></summary><div style=\"margin-top:6px;padding:10px 13px;border-radius:14px;background:#1f1a26;border:1px solid #3a2f45;color:#eee6f8;font-size:12.5px;line-height:1.55;font-style:italic;\">$2</div><div style=\"font-size:13px;color:#eee6f8;margin-top:5px;padding:0 4px;\">$3</div></details></div><!--cbrow-->",
                 "trimStrings": [],
                 "placement": [
                     1,
@@ -3830,8 +3942,8 @@
             {
                 "id": "e96ddc12-6e26-431b-b07c-57225405b2c2",
                 "scriptName": "CB · Private row — photo sent",
-                "findRegex": "/^PX(?:&gt;|>)[ \\t]*pic[ \\t]*\\|[ \\t]*out[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]*?)[ \\t]*\\|[ \\t]*([^|\\n]*?)[ \\t]*$/gmi",
-                "replaceString": "<div style=\"display:flex;justify-content:flex-end;margin:6px 14px;\"><details style=\"max-width:78%;\"><summary style=\"list-style:none;cursor:pointer;width:210px;height:160px;border-radius:18px;background:repeating-linear-gradient(135deg,#a8436f 0 9px,#933a62 9px 18px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;color:#fff;font-size:12.5px;box-shadow:inset 0 0 50px rgba(255,255,255,.18),0 4px 14px rgba(0,0,0,.35);\"><span style=\"font-size:28px;filter:drop-shadow(0 2px 4px rgba(0,0,0,.4));\">📸</span><b>Photo</b><span style=\"opacity:.75;font-size:10.5px;\">tap to view · $4</span><span style=\"opacity:.55;font-size:10px;\">$1</span></summary><div style=\"margin-top:6px;padding:10px 13px;border-radius:14px;background:#1f1a26;border:1px solid #3a2f45;color:#eee6f8;font-size:12.5px;line-height:1.55;font-style:italic;\">$2</div><div style=\"font-size:13px;color:#eee6f8;margin-top:5px;padding:0 4px;\">$3</div></details></div><!--cbrow-->",
+                "findRegex": "/^PX(?:&gt;|>)[ \\t]*pic[ \\t]*\\|[ \\t]*out[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*(?:\\|[ \\t]*([^|\\n]*?)[ \\t]*(?:\\|[ \\t]*([^|\\n]*?)[ \\t]*)?)?[ \\t]*$/gmi",
+                "replaceString": "<div style=\"display:flex;justify-content:flex-end;margin:6px 14px;\"><details style=\"max-width:78%;\"><summary style=\"list-style:none;cursor:pointer;width:210px;height:160px;border-radius:18px;background:repeating-linear-gradient(135deg,#a8436f 0 9px,#933a62 9px 18px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;color:#fff;font-size:12.5px;box-shadow:inset 0 0 50px rgba(255,255,255,.18),0 4px 14px rgba(0,0,0,.35);\"><span style=\"font-size:28px;filter:drop-shadow(0 2px 4px rgba(0,0,0,.4));\">📸</span><b>Photo</b><span style=\"opacity:.75;font-size:10.5px;\">tap to view</span><span style=\"opacity:.75;font-size:10.5px;\">$4</span><span style=\"opacity:.55;font-size:10px;\">$1</span></summary><div style=\"margin-top:6px;padding:10px 13px;border-radius:14px;background:#1f1a26;border:1px solid #3a2f45;color:#eee6f8;font-size:12.5px;line-height:1.55;font-style:italic;\">$2</div><div style=\"font-size:13px;color:#eee6f8;margin-top:5px;padding:0 4px;\">$3</div></details></div><!--cbrow-->",
                 "trimStrings": [],
                 "placement": [
                     1,
@@ -3902,7 +4014,7 @@
             {
                 "id": "2e99e981-23ff-4591-9df0-d5a248166853",
                 "scriptName": "CB · Creator row — header",
-                "findRegex": "/^CR(?:&gt;|>)[ \\t]*head[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]*?)[ \\t]*$/gmi",
+                "findRegex": "/^CR(?:&gt;|>)[ \\t]*head[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*(?:\\|[ \\t]*([^|\\n]*?)[ \\t]*)?[ \\t]*$/gmi",
                 "replaceString": "<div style=\"height:78px;background:linear-gradient(135deg,#00aff0,#7b5cff 60%,#ff6fb5);\"></div><div style=\"padding:0 16px 14px;border-bottom:1px solid #eceef0;\"><div style=\"width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,#dfe7ee,#c9d4de);border:3px solid #fff;margin-top:-32px;\"></div><div style=\"font-size:18px;font-weight:800;color:#1b1b1f;margin-top:5px;\">$1 <span style=\"color:#00aff0;font-size:14px;\">✔</span></div><div style=\"font-size:12px;color:#8a8d91;\">$2 · $3 subscribers</div><div style=\"font-size:12.5px;color:#3a3b3f;margin-top:7px;line-height:1.45;\">$5</div><div style=\"margin-top:11px;padding:10px;border-radius:24px;background:#00aff0;color:#fff;text-align:center;font-weight:700;font-size:12.5px;letter-spacing:.6px;\">SUBSCRIBE · $4 / month</div></div><!--cbrow-->",
                 "trimStrings": [],
                 "placement": [
@@ -3956,7 +4068,7 @@
             {
                 "id": "e02b25d0-e41e-428b-b527-dc639c4888d9",
                 "scriptName": "CB · Creator row — tip",
-                "findRegex": "/^CR(?:&gt;|>)[ \\t]*tip[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]*?)[ \\t]*$/gmi",
+                "findRegex": "/^CR(?:&gt;|>)[ \\t]*tip[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*(?:\\|[ \\t]*([^|\\n]*?)[ \\t]*)?[ \\t]*$/gmi",
                 "replaceString": "<div style=\"margin:8px 16px;padding:9px 12px;border-radius:12px;background:#ecfbf2;border:1px solid #c8efd8;font-size:12.5px;color:#1f5e3a;line-height:1.45;\">💸 <b>$1</b> tipped <b>$2</b> <span style=\"font-style:italic;\">$3</span></div><!--cbrow-->",
                 "trimStrings": [],
                 "placement": [
@@ -4044,9 +4156,189 @@
                 "maxDepth": null
             },
             {
+                "id": "7d4b235d-0760-4e39-b428-61980c7c98d7",
+                "scriptName": "CB · Fan platform row — bubble header",
+                "findRegex": "/^FP(?:&gt;|>)[ \\t]*head[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*(?:\\|[ \\t]*([^|\\n]*?)[ \\t]*)?[ \\t]*$/gmi",
+                "replaceString": "<div style=\"display:flex;align-items:center;gap:11px;padding:13px 15px;border-bottom:1px solid #eee9f8;\"><span style=\"flex:none;width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#ffc6e5,#b9a6ff 60%,#8fd3ff);box-shadow:0 0 0 2px #fff,0 0 0 3.5px #b9a6ff;display:inline-block;\"></span><div style=\"flex:1;min-width:0;line-height:1.25;\"><div style=\"font-weight:800;color:#2a2340;font-size:15px;\">$1</div><div style=\"font-size:11px;color:#8b84a3;\">$2</div></div><span style=\"padding:4px 10px;border-radius:12px;background:#f3efff;color:#7b61ff;font-size:11px;font-weight:700;\">$3</span></div><!--cbrow-->",
+                "trimStrings": [],
+                "placement": [
+                    1,
+                    2
+                ],
+                "disabled": false,
+                "markdownOnly": true,
+                "promptOnly": false,
+                "runOnEdit": true,
+                "substituteRegex": 0,
+                "minDepth": null,
+                "maxDepth": null
+            },
+            {
+                "id": "fe53db23-1496-4926-8810-0fbeebd0a937",
+                "scriptName": "CB · Fan platform row — idol message",
+                "findRegex": "/^FP(?:&gt;|>)[ \\t]*msg[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*[ \\t]*$/gmi",
+                "replaceString": "<div style=\"display:flex;gap:8px;align-items:flex-end;margin:6px 14px;\"><span style=\"flex:none;width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,#ffc6e5,#b9a6ff 60%,#8fd3ff);box-shadow:0 0 0 2px #fff,0 0 0 3.5px #b9a6ff;display:inline-block;\"></span><div style=\"max-width:76%;padding:9px 13px;background:#f3efff;color:#2a2340;border-radius:18px 18px 18px 5px;font-size:13.5px;line-height:1.45;word-break:normal;overflow-wrap:break-word;\">$2</div><span style=\"font-size:9.5px;color:#a49dbb;white-space:nowrap;\">$1</span></div><!--cbrow-->",
+                "trimStrings": [],
+                "placement": [
+                    1,
+                    2
+                ],
+                "disabled": false,
+                "markdownOnly": true,
+                "promptOnly": false,
+                "runOnEdit": true,
+                "substituteRegex": 0,
+                "minDepth": null,
+                "maxDepth": null
+            },
+            {
+                "id": "f9da64a0-3f9a-45f8-a342-805989a470d6",
+                "scriptName": "CB · Fan platform row — idol photo",
+                "findRegex": "/^FP(?:&gt;|>)[ \\t]*photo[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*[ \\t]*$/gmi",
+                "replaceString": "<div style=\"display:flex;gap:8px;align-items:flex-end;margin:6px 14px;\"><span style=\"flex:none;width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,#ffc6e5,#b9a6ff 60%,#8fd3ff);box-shadow:0 0 0 2px #fff,0 0 0 3.5px #b9a6ff;display:inline-block;\"></span><div style=\"width:200px;min-height:150px;border-radius:16px;background:linear-gradient(160deg,#ffd9ec,#d9ccff 55%,#c7ecff);display:flex;align-items:flex-end;padding:9px;box-sizing:border-box;\"><span style=\"background:rgba(0,0,0,.45);color:#fff;font-size:11.5px;font-style:italic;padding:4px 8px;border-radius:8px;line-height:1.4;\">📷 $2</span></div><span style=\"font-size:9.5px;color:#a49dbb;white-space:nowrap;\">$1</span></div><!--cbrow-->",
+                "trimStrings": [],
+                "placement": [
+                    1,
+                    2
+                ],
+                "disabled": false,
+                "markdownOnly": true,
+                "promptOnly": false,
+                "runOnEdit": true,
+                "substituteRegex": 0,
+                "minDepth": null,
+                "maxDepth": null
+            },
+            {
+                "id": "825c2d0f-61df-47a2-80ce-faa1a711873b",
+                "scriptName": "CB · Fan platform row — voice memo",
+                "findRegex": "/^FP(?:&gt;|>)[ \\t]*voice[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*(?:\\|[ \\t]*([^|\\n]*?)[ \\t]*)?[ \\t]*$/gmi",
+                "replaceString": "<div style=\"display:flex;gap:8px;align-items:flex-end;margin:6px 14px;\"><span style=\"flex:none;width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,#ffc6e5,#b9a6ff 60%,#8fd3ff);box-shadow:0 0 0 2px #fff,0 0 0 3.5px #b9a6ff;display:inline-block;\"></span><div style=\"max-width:76%;\"><div style=\"display:flex;align-items:center;gap:9px;padding:8px 13px;background:#7b61ff;color:#fff;border-radius:18px 18px 18px 5px;font-size:12px;\"><span style=\"width:22px;height:22px;border-radius:50%;background:#fff;color:#7b61ff;display:inline-flex;align-items:center;justify-content:center;font-size:10px;\">▶</span><span style=\"letter-spacing:1px;opacity:.9;\">▁▃▅▂▆▃▇▂▅▁▃</span><b>$2</b></div><div style=\"font-size:12px;color:#5d5675;font-style:italic;margin:4px 4px 0;line-height:1.4;\">$3</div></div><span style=\"font-size:9.5px;color:#a49dbb;white-space:nowrap;\">$1</span></div><!--cbrow-->",
+                "trimStrings": [],
+                "placement": [
+                    1,
+                    2
+                ],
+                "disabled": false,
+                "markdownOnly": true,
+                "promptOnly": false,
+                "runOnEdit": true,
+                "substituteRegex": 0,
+                "minDepth": null,
+                "maxDepth": null
+            },
+            {
+                "id": "dca8c326-48d3-406e-8acf-9fd6471b7456",
+                "scriptName": "CB · Fan platform row — fan reply",
+                "findRegex": "/^FP(?:&gt;|>)[ \\t]*reply[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*[ \\t]*$/gmi",
+                "replaceString": "<div style=\"display:flex;justify-content:flex-end;align-items:flex-end;gap:6px;margin:6px 14px;\"><span style=\"font-size:9.5px;color:#a49dbb;white-space:nowrap;\">$1</span><div style=\"max-width:72%;padding:9px 13px;background:linear-gradient(135deg,#ff8fc7,#9b7bff);color:#fff;border-radius:18px 18px 5px 18px;font-size:13.5px;line-height:1.45;word-break:normal;overflow-wrap:break-word;\">$2</div></div><!--cbrow-->",
+                "trimStrings": [],
+                "placement": [
+                    1,
+                    2
+                ],
+                "disabled": false,
+                "markdownOnly": true,
+                "promptOnly": false,
+                "runOnEdit": true,
+                "substituteRegex": 0,
+                "minDepth": null,
+                "maxDepth": null
+            },
+            {
+                "id": "b20924ed-8ed0-4832-a846-b84acdcf66b0",
+                "scriptName": "CB · Fan platform row — live header",
+                "findRegex": "/^FP(?:&gt;|>)[ \\t]*live[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*(?:\\|[ \\t]*([^|\\n]*?)[ \\t]*)?[ \\t]*$/gmi",
+                "replaceString": "<div style=\"padding:12px 14px 10px;background:linear-gradient(180deg,rgba(0,0,0,.55),transparent);\"><div style=\"display:flex;align-items:center;gap:8px;\"><span style=\"flex:none;width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,#ffc6e5,#b9a6ff 60%,#8fd3ff);box-shadow:0 0 0 2px #fff,0 0 0 3.5px #b9a6ff;display:inline-block;\"></span><div style=\"flex:1;min-width:0;line-height:1.25;\"><div style=\"font-weight:800;font-size:14px;color:#fff;\">$1</div><div style=\"font-size:11.5px;color:#d9d3ef;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;\">$2</div></div><span style=\"padding:3px 8px;border-radius:6px;background:#ff2e63;color:#fff;font-size:10.5px;font-weight:800;letter-spacing:1px;\">● LIVE</span></div><div style=\"display:flex;gap:12px;margin-top:8px;font-size:11.5px;color:#e9e4ff;\"><span>👁 $3</span><span>💜 $4</span></div></div><!--cbrow-->",
+                "trimStrings": [],
+                "placement": [
+                    1,
+                    2
+                ],
+                "disabled": false,
+                "markdownOnly": true,
+                "promptOnly": false,
+                "runOnEdit": true,
+                "substituteRegex": 0,
+                "minDepth": null,
+                "maxDepth": null
+            },
+            {
+                "id": "cfda17c5-cbd4-4fa9-9b08-2aa33aa18ae4",
+                "scriptName": "CB · Fan platform row — idol speaking",
+                "findRegex": "/^FP(?:&gt;|>)[ \\t]*say[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*[ \\t]*$/gmi",
+                "replaceString": "<div style=\"margin:8px 14px;padding:9px 13px;border-radius:14px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.18);color:#fff;font-size:13.5px;line-height:1.45;\"><span style=\"font-size:9.5px;letter-spacing:1.5px;color:#ffc6e5;font-weight:800;\">🎙 SAYS</span><br>$1</div><!--cbrow-->",
+                "trimStrings": [],
+                "placement": [
+                    1,
+                    2
+                ],
+                "disabled": false,
+                "markdownOnly": true,
+                "promptOnly": false,
+                "runOnEdit": true,
+                "substituteRegex": 0,
+                "minDepth": null,
+                "maxDepth": null
+            },
+            {
+                "id": "3831e4a2-bffc-42e4-aa1a-c30dcee76d8a",
+                "scriptName": "CB · Fan platform row — live chat",
+                "findRegex": "/^FP(?:&gt;|>)[ \\t]*chat[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*[ \\t]*$/gmi",
+                "replaceString": "<div style=\"padding:3px 14px;font-size:12.5px;line-height:1.4;color:#f4f1ff;\"><b style=\"color:#b9a6ff;\">$1</b> $2</div><!--cbrow-->",
+                "trimStrings": [],
+                "placement": [
+                    1,
+                    2
+                ],
+                "disabled": false,
+                "markdownOnly": true,
+                "promptOnly": false,
+                "runOnEdit": true,
+                "substituteRegex": 0,
+                "minDepth": null,
+                "maxDepth": null
+            },
+            {
+                "id": "d5070ec0-7fc5-4683-8855-07c94bd5a2f3",
+                "scriptName": "CB · Fan platform row — hearts / gift",
+                "findRegex": "/^FP(?:&gt;|>)[ \\t]*heart[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*[ \\t]*$/gmi",
+                "replaceString": "<div style=\"margin:5px 14px;padding:6px 11px;border-radius:12px;background:linear-gradient(90deg,rgba(255,46,99,.35),rgba(155,123,255,.25));color:#fff;font-size:12px;\">💖 <b>$1</b> $2</div><!--cbrow-->",
+                "trimStrings": [],
+                "placement": [
+                    1,
+                    2
+                ],
+                "disabled": false,
+                "markdownOnly": true,
+                "promptOnly": false,
+                "runOnEdit": true,
+                "substituteRegex": 0,
+                "minDepth": null,
+                "maxDepth": null
+            },
+            {
+                "id": "d5029ea9-944d-494a-a823-5ae88ffc8963",
+                "scriptName": "CB · Fan platform row — system",
+                "findRegex": "/^FP(?:&gt;|>)[ \\t]*sys[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*[ \\t]*$/gmi",
+                "replaceString": "<div style=\"text-align:center;font-size:11px;opacity:.6;margin:8px 14px;\">$1</div><!--cbrow-->",
+                "trimStrings": [],
+                "placement": [
+                    1,
+                    2
+                ],
+                "disabled": false,
+                "markdownOnly": true,
+                "promptOnly": false,
+                "runOnEdit": true,
+                "substituteRegex": 0,
+                "minDepth": null,
+                "maxDepth": null
+            },
+            {
                 "id": "6a1f89e2-a8a4-4f9a-b761-f85c24ef5cd9",
                 "scriptName": "CB · Chat/Press row — catch-all (malformed lines)",
-                "findRegex": "/^(?:TW|DC|PR|AIM|FLIP|MS|XT|RD|DT|BR|IG|PX|CR)(?:&gt;|>)\\s*([^\\n]+?)\\s*$/gm",
+                "findRegex": "/^(?:TW|DC|PR|AIM|FLIP|MS|XT|RD|DT|BR|IG|PX|CR|FP)(?:&gt;|>)\\s*([^\\n]+?)\\s*$/gm",
                 "replaceString": "<div style=\"padding:3px 2px;opacity:.7;font-size:12px;line-height:1.4;color:inherit;\">$1</div><!--cbrow-->",
                 "trimStrings": [],
                 "placement": [
@@ -4548,9 +4840,45 @@
                 "maxDepth": null
             },
             {
+                "id": "eb33c723-06f3-4c8f-b627-87c549f26e81",
+                "scriptName": "CB · Shell — Fan platform chat (bubble)",
+                "findRegex": "/\\[\\[BUBBLE\\]\\]\\s*([\\s\\S]*?)\\s*\\[\\[\\/BUBBLE\\]\\]/g",
+                "replaceString": "<div style=\"clear:both;width:100%;max-width:380px;margin:14px auto;box-sizing:border-box;background:#fff;color:#2a2340;border-radius:24px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.45);font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;padding-bottom:10px;\">$1<div style=\"margin:10px 14px 0;padding:8px 14px;border-radius:20px;background:#f6f4fb;color:#a49dbb;font-size:12px;\">Reply to your artist… <span style=\"float:right;\">💜</span></div></div>",
+                "trimStrings": [],
+                "placement": [
+                    1,
+                    2
+                ],
+                "disabled": false,
+                "markdownOnly": true,
+                "promptOnly": false,
+                "runOnEdit": true,
+                "substituteRegex": 0,
+                "minDepth": null,
+                "maxDepth": null
+            },
+            {
+                "id": "2eacaaf8-c9ff-407d-b05f-9712d7761b15",
+                "scriptName": "CB · Shell — Fan platform livestream",
+                "findRegex": "/\\[\\[LIVE\\]\\]\\s*([\\s\\S]*?)\\s*\\[\\[\\/LIVE\\]\\]/g",
+                "replaceString": "<div style=\"clear:both;width:100%;max-width:380px;margin:14px auto;box-sizing:border-box;background:radial-gradient(120% 70% at 50% 0%,#5b3b8f,#241638 55%,#130c1f);color:#f4f1ff;border-radius:22px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.55);font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;padding-bottom:10px;\">$1<div style=\"margin:10px 14px 0;padding:8px 14px;border-radius:20px;border:1px solid rgba(255,255,255,.25);color:rgba(255,255,255,.6);font-size:12px;\">Say something… <span style=\"float:right;\">💜 ❤️ 🎁</span></div></div>",
+                "trimStrings": [],
+                "placement": [
+                    1,
+                    2
+                ],
+                "disabled": false,
+                "markdownOnly": true,
+                "promptOnly": false,
+                "runOnEdit": true,
+                "substituteRegex": 0,
+                "minDepth": null,
+                "maxDepth": null
+            },
+            {
                 "id": "5079657f-2dfc-4ef6-8dba-643e8b845ac2",
                 "scriptName": "CB · Visuals — collapse old chat/press blocks in prompt (optional)",
-                "findRegex": "/\\[\\[(TWITCH|DISCORD|TABLOID|BLOG|MAG|BLIND|AIM|FLIP|MYSPACE|X|REDDIT|PROGRAM|DATING|BROWSER|INCOGNITO|INSTA|PRIVATE|CREATOR)\\]\\][\\s\\S]*?\\[\\[\\/\\1\\]\\]/g",
+                "findRegex": "/\\[\\[(TWITCH|DISCORD|TABLOID|BLOG|MAG|BLIND|AIM|FLIP|MYSPACE|X|REDDIT|PROGRAM|DATING|BROWSER|INCOGNITO|INSTA|PRIVATE|CREATOR|BUBBLE|LIVE)\\]\\][\\s\\S]*?\\[\\[\\/\\1\\]\\]/g",
                 "replaceString": "[($1 panel shown to the reader)]",
                 "trimStrings": [],
                 "placement": [
@@ -4640,7 +4968,7 @@
                 "id": "5ef67c9a-e268-47a1-bc85-de513dacfa37",
                 "scriptName": "CB · Extreme — Pollinations image",
                 "findRegex": "/<cb_img>\\s*prompt:\\s*([^|]+?)\\s*\\|\\s*ar:\\s*([0-9]+):([0-9]+)\\s*<\\/cb_img>/g",
-                "replaceString": "<div style=\"clear:both;margin:12px auto;max-width:75%;\">\n  <img src=\"https://gen.pollinations.ai/image/$1?model=flux&width=1024&height=1024&seed=0&enhance=false&key=sk_tu3mMpFFgO1dU9hKk0hXPpEywJcxyT0g\"\n       alt=\"$1\"\n       loading=\"lazy\"\n       style=\"display:block;width:100%;aspect-ratio:$2 / $3;object-fit:cover;border-radius:14px;border:1px solid #2b2436;box-shadow:0 8px 26px rgba(0,0,0,.5);\">\n</div>",
+                "replaceString": "<div data-cb-img=\"1\" data-cb-ar=\"$2:$3\" style=\"clear:both;margin:12px auto;max-width:75%;\"><div style=\"aspect-ratio:$2 / $3;border-radius:14px;border:1px solid #2b2436;background:linear-gradient(160deg,#2a2036,#3b2a4f 55%,#1d2433);display:flex;align-items:flex-end;padding:12px;box-sizing:border-box;box-shadow:0 8px 26px rgba(0,0,0,.5);\"><span data-cb-prompt=\"1\" style=\"background:rgba(0,0,0,.5);color:#eee6f8;font-size:12px;font-style:italic;padding:6px 10px;border-radius:9px;line-height:1.45;\">🖼️ $1</span></div></div>",
                 "trimStrings": [],
                 "placement": [
                     2
