@@ -218,8 +218,8 @@
     </div>
   </section>
   <section class="preset" id="callboard">
-    <h2>📋 CALLBOARD<small>v1.5.0 · 167 scripts</small></h2>
-    <p class="intro">CALLBOARD writes data lines, like TW&gt; msg|… for a Twitch message, inside [[SHELL]] tags. Row regexes draw each line, and shell regexes draw the window around them. They ship inside the preset: allow them when SillyTavern asks, or import the bundle. CALLBOARD Lite v1.5.0 uses exactly the same regex. <a href="regex/CALLBOARD_regex_bundle.json" download>Download the bundle</a>.</p>
+    <h2>📋 CALLBOARD<small>v1.6.1 · 167 scripts</small></h2>
+    <p class="intro">CALLBOARD writes data lines, like TW&gt; msg|… for a Twitch message, inside [[SHELL]] tags. Row regexes draw each line, and shell regexes draw the window around them. They ship inside the preset: allow them when SillyTavern asks, or import the bundle. CALLBOARD Lite v1.6.1 uses exactly the same regex. <a href="regex/CALLBOARD_regex_bundle.json" download>Download the bundle</a>.</p>
     <div class="grp">
     <h3 class="group">Dividers</h3>
     <p class="group-intro">These also work in your own messages.</p>
@@ -485,7 +485,7 @@
       <li><div class="name">CB · Chat/Press row — catch-all (malformed lines)</div><p class="blurb">Catches chat, press, or app lines with the wrong number of fields and shows them as plain text instead of breaking the panel.</p><div class="badges"><span>Also runs on your messages</span></div></li>
       <li><div class="name">CB · Chat/Press — join rendered rows</div><p class="blurb">Removes the line breaks between drawn rows so panels don't get gaps.</p><div class="badges"><span>Also runs on your messages</span></div></li>
       <li><div class="name">CB · Visuals — collapse old chat/press blocks in prompt (optional)</div><p class="blurb">Swaps chat panels, press pages, app panels, and the Program for a short placeholder in what's sent to the model once they're six or more messages old, to save tokens. What you see doesn't change.</p><div class="badges"><span>Only changes what the model sees</span><span>Also runs on your messages</span></div></li>
-      <li><div class="name">CB · Extreme — Pollinations image</div><p class="blurb">Marks where a picture goes and shows its prompt. CALLBOARD Suite's 🎨 Studio turns the mark into a Pollinations image using a key saved only on your device, and adds reroll and fine-tune buttons. Images need &quot;Forbid External Media&quot; turned off.</p><code>&lt;cb_img&gt;prompt: … | ar: 16:9&lt;/cb_img&gt;</code></li>
+      <li><div class="name">CB · Extreme — Pollinations image</div><p class="blurb">Turns an image directive into a Pollinations picture (Flux, 1024×1024) using the preset's built-in key, so images work out of the box. CALLBOARD Suite's 🎨 Studio can use your own key instead and adds reroll and fine-tune buttons. Images need &quot;Forbid External Media&quot; turned off. (For images through Revamped Image Gen, use the 📸 Stills Department instead.)</p><code>&lt;cb_img&gt;prompt: … | ar: 16:9&lt;/cb_img&gt;</code></li>
     </ul>
     </div>
   </section>

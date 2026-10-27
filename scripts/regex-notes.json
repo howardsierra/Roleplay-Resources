@@ -1262,7 +1262,7 @@
           {
             "name": "CB · Extreme — Pollinations image",
             "syntax": "<cb_img>prompt: … | ar: 16:9</cb_img>",
-            "blurb": "Marks where a picture goes and shows its prompt. CALLBOARD Suite's 🎨 Studio turns the mark into a Pollinations image using a key saved only on your device, and adds reroll and fine-tune buttons. Images need \"Forbid External Media\" turned off."
+            "blurb": "Turns an image directive into a Pollinations picture (Flux, 1024×1024) using the preset's built-in key, so images work out of the box. CALLBOARD Suite's 🎨 Studio can use your own key instead and adds reroll and fine-tune buttons. Images need \"Forbid External Media\" turned off. (For images through Revamped Image Gen, use the 📸 Stills Department instead.)"
           }
         ]
       }

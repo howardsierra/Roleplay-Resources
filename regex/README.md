@@ -161,9 +161,9 @@ Turn on 📶 Signal Mode in the preset, and Juno writes these light tags instead
   `<think>…</think>`
 
 <a id="callboard"></a>
-## 📋 CALLBOARD v1.5.0
+## 📋 CALLBOARD v1.6.1
 
-CALLBOARD writes data lines, like TW> msg|… for a Twitch message, inside [[SHELL]] tags. Row regexes draw each line, and shell regexes draw the window around them. They ship inside the preset: allow them when SillyTavern asks, or import the bundle. CALLBOARD Lite v1.5.0 uses exactly the same regex. Bundle: [`CALLBOARD_regex_bundle.json`](CALLBOARD_regex_bundle.json).
+CALLBOARD writes data lines, like TW> msg|… for a Twitch message, inside [[SHELL]] tags. Row regexes draw each line, and shell regexes draw the window around them. They ship inside the preset: allow them when SillyTavern asks, or import the bundle. CALLBOARD Lite v1.6.1 uses exactly the same regex. Bundle: [`CALLBOARD_regex_bundle.json`](CALLBOARD_regex_bundle.json).
 
 ### Dividers
 
@@ -567,5 +567,5 @@ New in v1.5. Written inside [[BUBBLE]] for an idol's paid chat, or [[LIVE]] for 
 - **CB · Chat/Press row — catch-all (malformed lines)**: Catches chat, press, or app lines with the wrong number of fields and shows them as plain text instead of breaking the panel. _(Also runs on your messages)_
 - **CB · Chat/Press — join rendered rows**: Removes the line breaks between drawn rows so panels don't get gaps. _(Also runs on your messages)_
 - **CB · Visuals — collapse old chat/press blocks in prompt (optional)**: Swaps chat panels, press pages, app panels, and the Program for a short placeholder in what's sent to the model once they're six or more messages old, to save tokens. What you see doesn't change. _(Only changes what the model sees · Also runs on your messages)_
-- **CB · Extreme — Pollinations image**: Marks where a picture goes and shows its prompt. CALLBOARD Suite's 🎨 Studio turns the mark into a Pollinations image using a key saved only on your device, and adds reroll and fine-tune buttons. Images need "Forbid External Media" turned off.
+- **CB · Extreme — Pollinations image**: Turns an image directive into a Pollinations picture (Flux, 1024×1024) using the preset's built-in key, so images work out of the box. CALLBOARD Suite's 🎨 Studio can use your own key instead and adds reroll and fine-tune buttons. Images need "Forbid External Media" turned off. (For images through Revamped Image Gen, use the 📸 Stills Department instead.)
   `<cb_img>prompt: … | ar: 16:9</cb_img>`
