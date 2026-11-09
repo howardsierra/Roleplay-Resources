@@ -347,6 +347,21 @@
             "name": "CB · Divider — Timeskip (↷)",
             "syntax": "↷, »»», or →→→ on its own line",
             "blurb": "Turns it into a \"later\" timeskip divider."
+          },
+          {
+            "name": "CB · Divider — Act Break with caption",
+            "syntax": "--- Act Two · the wedding",
+            "blurb": "An act break with a caption in the middle."
+          },
+          {
+            "name": "CB · Divider — Scene Shift with caption (⁂)",
+            "syntax": "⁂ the next morning",
+            "blurb": "A scene-shift mark with a caption."
+          },
+          {
+            "name": "CB · Divider — Timeskip with caption (↷)",
+            "syntax": "↷ Three days later · the harbor",
+            "blurb": "A timeskip divider with a caption instead of \"later\"."
           }
         ]
       },
@@ -416,6 +431,16 @@
             "blurb": "Leaves Xavi's <think> notes out of what's sent back to the model on later turns, to save tokens. What you see doesn't change."
           },
           {
+            "name": "CB · Callboard — think foldout (missing opener)",
+            "syntax": "…</think>",
+            "blurb": "Some models close their reasoning with </think> but never open it. This folds that reasoning into Xavi's fold-out anyway."
+          },
+          {
+            "name": "CB · Callboard — hide think from prompt (missing opener)",
+            "syntax": "",
+            "blurb": "Keeps that unopened reasoning out of what's sent back to the model on later turns."
+          },
+          {
             "name": "CB · Xavi — curtain note (style)",
             "syntax": "<xavi>note</xavi>",
             "blurb": "Xavi's curtain note: a 🎧 card under the reply."
@@ -445,6 +470,31 @@
             "name": "CB · Tracker row — line",
             "syntax": "T> time|… · T> place|… · T> mood|…",
             "blurb": "A label-and-value line in the Status card for the time, place, or mood."
+          },
+          {
+            "name": "CB · Tracker — time-of-day icon (dawn)",
+            "syntax": "T> time|dawn, or 5–6 AM",
+            "blurb": "Puts 🌅 in front of a dawn time on the tracker."
+          },
+          {
+            "name": "CB · Tracker — time-of-day icon (morning)",
+            "syntax": "T> time|morning, or 7–11 AM",
+            "blurb": "Puts 🌤️ in front of a morning time."
+          },
+          {
+            "name": "CB · Tracker — time-of-day icon (midday)",
+            "syntax": "T> time|noon, afternoon, or 12–4 PM",
+            "blurb": "Puts ☀️ in front of a midday or afternoon time."
+          },
+          {
+            "name": "CB · Tracker — time-of-day icon (dusk)",
+            "syntax": "T> time|dusk, evening, or 5–7 PM",
+            "blurb": "Puts 🌇 in front of an evening time."
+          },
+          {
+            "name": "CB · Tracker — time-of-day icon (night)",
+            "syntax": "T> time|night, or 8 PM–4 AM",
+            "blurb": "Puts 🌙 in front of a night time."
           },
           {
             "name": "CB · Tracker row — affinity",
@@ -1236,6 +1286,22 @@
         ]
       },
       {
+        "title": "Colored dialogue",
+        "intro": "For 🎨 Colored Dialogue: each speaker gets one color for the whole chat.",
+        "scripts": [
+          {
+            "name": "CB · Colored dialogue — keep each speaker's color over quote styling",
+            "syntax": "<span style=\"color:…\">",
+            "blurb": "SillyTavern's quote color overrides a span's color, so speaker colors never showed. This turns those spans into <font color> tags, which win."
+          },
+          {
+            "name": "CB · Colored dialogue — drop old colors from the prompt",
+            "syntax": "",
+            "blurb": "Strips the color tags from messages six or more back in what's sent to the model, to save tokens. What you see doesn't change."
+          }
+        ]
+      },
+      {
         "title": "Plumbing and extras",
         "intro": "",
         "scripts": [
@@ -1243,6 +1309,1198 @@
             "name": "CB · Data lines — drop a stray trailing |",
             "syntax": "",
             "blurb": "Runs first. Removes a stray | that the model leaves at the end of any data line, so the line still draws as its card instead of falling back to raw text."
+          },
+          {
+            "name": "CB · Cleanup — unwrap state, panels and HTML from code fences",
+            "syntax": "",
+            "blurb": "If the model wraps its tracker, a panel, or HTML in a ``` code block, this unwraps it so it draws instead of showing as code."
+          },
+          {
+            "name": "CB · Chat/Press row — catch-all (malformed lines)",
+            "syntax": "",
+            "blurb": "Catches chat, press, or app lines with the wrong number of fields and shows them as plain text instead of breaking the panel."
+          },
+          {
+            "name": "CB · Chat/Press — join rendered rows",
+            "syntax": "",
+            "blurb": "Removes the line breaks between drawn rows so panels don't get gaps."
+          },
+          {
+            "name": "CB · Visuals — collapse old chat/press blocks in prompt (optional)",
+            "syntax": "",
+            "blurb": "Swaps chat panels, press pages, app panels, and the Program for a short placeholder in what's sent to the model once they're six or more messages old, to save tokens. What you see doesn't change."
+          },
+          {
+            "name": "CB · Extreme — Pollinations image",
+            "syntax": "<cb_img>prompt: … | ar: 16:9</cb_img>",
+            "blurb": "Turns an image directive into a Pollinations picture (Flux, 1024×1024) using the preset's built-in key, so images work out of the box. CALLBOARD Suite's 🎨 Studio can use your own key instead and adds reroll and fine-tune buttons. Images need \"Forbid External Media\" turned off. (For images through Revamped Image Gen, use the 📸 Stills Department instead.)"
+          }
+        ]
+      }
+    ]
+  },
+  "callboard-lab": {
+    "intro": "The Lab is CALLBOARD Full plus experiments. Its tracker and boards are drawn as one Board Console, and it adds on-screen effects, New Faces cards, Chance Dice, and context savers. Everything else works exactly like CALLBOARD, below.",
+    "groups": [
+      {
+        "title": "Board Console",
+        "intro": "The Lab draws the tracker and boards as one console. The model still writes the same T>, C>, W>, S>, I> and X> lines inside <cb_state>.",
+        "scripts": [
+          {
+            "name": "CB · Console — open (newest reply)",
+            "syntax": "<cb_state> … </cb_state>",
+            "blurb": "Opens the console on the newest reply: a digest bar with the time, place, mood, and focus affinity, with the drawers open below."
+          },
+          {
+            "name": "CB · Console — open (older replies, folded)",
+            "syntax": "",
+            "blurb": "On older replies, the console folds back to its digest bar."
+          },
+          {
+            "name": "CB · Console — close",
+            "syntax": "",
+            "blurb": "Closes the console at </cb_state>."
+          },
+          {
+            "name": "CB · Console — Tracker shell",
+            "syntax": "[[TRK]] … [[/TRK]]",
+            "blurb": "The 📊 Tracker drawer, open by default."
+          },
+          {
+            "name": "CB · Console — Board shell — Cast",
+            "syntax": "[[CAST]] … [[/CAST]]",
+            "blurb": "The 🪪 Cast drawer, open by default."
+          },
+          {
+            "name": "CB · Console — Board shell — Web",
+            "syntax": "[[WEB]] … [[/WEB]]",
+            "blurb": "The 💞 Relationships drawer, folded."
+          },
+          {
+            "name": "CB · Console — Board shell — Status",
+            "syntax": "[[STATUS]] … [[/STATUS]]",
+            "blurb": "The 🩹 Condition drawer, folded."
+          },
+          {
+            "name": "CB · Console — Board shell — Inventory",
+            "syntax": "[[INV]] … [[/INV]]",
+            "blurb": "The 🎒 Inventory drawer, folded."
+          },
+          {
+            "name": "CB · Console — Board shell — Codex",
+            "syntax": "[[CODEX]] … [[/CODEX]]",
+            "blurb": "The 📓 Codex drawer, folded."
+          },
+          {
+            "name": "CB · Console — Tracker row — time, place, mood",
+            "syntax": "T> time|… · T> place|… · T> mood|…",
+            "blurb": "A tile for the time, place, or mood."
+          },
+          {
+            "name": "CB · Console — Tracker row — affinity",
+            "syntax": "T> affinity|name|0–100|why",
+            "blurb": "An affinity meter with the reason underneath."
+          },
+          {
+            "name": "CB · Console — Tracker row — reputation (rung 1)",
+            "syntax": "T> reputation|Spotless or Under the radar|why",
+            "blurb": "Reputation on the first rung of a five-step ladder (Regency or Fame)."
+          },
+          {
+            "name": "CB · Console — Tracker row — reputation (rung 2)",
+            "syntax": "T> reputation|Whispered of or Buzzing|why",
+            "blurb": "Reputation on the second rung."
+          },
+          {
+            "name": "CB · Console — Tracker row — reputation (rung 3)",
+            "syntax": "T> reputation|Talked of or Trending|why",
+            "blurb": "Reputation on the third rung."
+          },
+          {
+            "name": "CB · Console — Tracker row — reputation (rung 4)",
+            "syntax": "T> reputation|Compromised or Front page|why",
+            "blurb": "Reputation on the fourth rung."
+          },
+          {
+            "name": "CB · Console — Tracker row — reputation (rung 5)",
+            "syntax": "T> reputation|Ruined or Scandal|why",
+            "blurb": "Reputation on the last rung."
+          },
+          {
+            "name": "CB · Console — Tracker row — reputation (other)",
+            "syntax": "T> reputation|standing|why",
+            "blurb": "Any other reputation wording, shown without the ladder."
+          },
+          {
+            "name": "CB · Console — Board row — Cast",
+            "syntax": "C> name|role|0–100|mood|status",
+            "blurb": "A person card with their mood and affinity bar. Tap it for their role and whereabouts."
+          },
+          {
+            "name": "CB · Console — Board row — Web",
+            "syntax": "W> A ↔ B|bond|0–100|note",
+            "blurb": "A pairing card. Tap it for the note."
+          },
+          {
+            "name": "CB · Console — Board row — Status",
+            "syntax": "S> name|health|energy|condition",
+            "blurb": "A condition card. Tap it for details."
+          },
+          {
+            "name": "CB · Console — Board row — Inventory",
+            "syntax": "I> item|type|note",
+            "blurb": "An item card with an icon for its kind. Tap it for the note."
+          },
+          {
+            "name": "CB · Console — Board row — Codex",
+            "syntax": "X> entry|type|note",
+            "blurb": "A codex card with an icon for its kind (quest, mystery, faction…). Tap it for the note."
+          },
+          {
+            "name": "CB · Console — Board row — catch-all (malformed lines)",
+            "syntax": "",
+            "blurb": "Shows board lines with the wrong number of fields as plain text."
+          },
+          {
+            "name": "CB · Console — join rows and drawers",
+            "syntax": "",
+            "blurb": "Removes the gaps between the console's rows and drawers."
+          },
+          {
+            "name": "CB · Console — stylesheet (keep after every console script)",
+            "syntax": "",
+            "blurb": "Adds the console's look, in the skin you pick in CALLBOARD Suite (Console, Minimal, Parchment, Neon, or Auto by wing). Keep it after every other console script."
+          }
+        ]
+      },
+      {
+        "title": "On-screen effects",
+        "intro": "Drawn for the 🔍 Hidden Layers, ⚡ Kinetic Type, and 📳 Push Notifications switches. Tags you type yourself work too.",
+        "scripts": [
+          {
+            "name": "CB LAB · Hidden layers — subtext",
+            "syntax": "<subtext thought=\"…\">line</subtext>",
+            "blurb": "Underlines the line. Tap it for a ☁ Unspoken card with what they're really thinking."
+          },
+          {
+            "name": "CB LAB · Hidden layers — tell",
+            "syntax": "<tell note=\"…\">action</tell>",
+            "blurb": "Tap for a ✋ Tell card: the body language giving them away."
+          },
+          {
+            "name": "CB LAB · Hidden layers — lore",
+            "syntax": "<lore entry=\"…\">name</lore>",
+            "blurb": "Tap for a 📜 Lore card."
+          },
+          {
+            "name": "CB LAB · Hidden layers — translate",
+            "syntax": "<translate meaning=\"…\">foreign words</translate>",
+            "blurb": "Tap for a 🗣 Meaning card with the translation."
+          },
+          {
+            "name": "CB LAB · Hidden layers — retract",
+            "syntax": "<retract>words</retract>",
+            "blurb": "Blurred words someone swallowed. They sharpen when tapped."
+          },
+          {
+            "name": "CB LAB · Kinetic type",
+            "syntax": "<shake>, <glitch>, <pulse>, <ember>, <drift>…",
+            "blurb": "Makes a few words slam, shake, glitch, pulse, glow, or drift. Animations stop if your device is set to reduce motion."
+          },
+          {
+            "name": "CB LAB · Kinetic type (nested)",
+            "syntax": "",
+            "blurb": "A second pass, so one effect inside another also works."
+          },
+          {
+            "name": "CB LAB · Push notification",
+            "syntax": "<notification app=\"…\" from=\"…\" time=\"…\">text</notification>",
+            "blurb": "A phone notification card."
+          },
+          {
+            "name": "CB LAB · Effects stylesheet (keep last of the LAB effects)",
+            "syntax": "",
+            "blurb": "Adds the effects' look, once per message. Keep it after the other Lab effects."
+          }
+        ]
+      },
+      {
+        "title": "New Faces and Chance Dice",
+        "intro": "",
+        "scripts": [
+          {
+            "name": "CB LAB · New face — card",
+            "syntax": "[[NEWFACE]] … [[/NEWFACE]]",
+            "blurb": "A 🆕 card for a newly introduced named character."
+          },
+          {
+            "name": "CB LAB · New face — name",
+            "syntax": "NF> name|name|tagline",
+            "blurb": "The card's name line."
+          },
+          {
+            "name": "CB LAB · New face — look",
+            "syntax": "NF> look|appearance|one striking detail",
+            "blurb": "How they look, with one detail that stands out."
+          },
+          {
+            "name": "CB LAB · New face — wants",
+            "syntax": "NF> wants|hobbies|goal|dream",
+            "blurb": "Their hobbies, goal, and dream."
+          },
+          {
+            "name": "CB LAB · New face — contradiction",
+            "syntax": "NF> contradiction|what they claim|what they do",
+            "blurb": "Where what they say and what they do don't match."
+          },
+          {
+            "name": "CB LAB · New face — other rows",
+            "syntax": "NF> stake|… · NF> ties|… · NF> voice|…",
+            "blurb": "Any other labeled row, such as their stake, ties, or voice."
+          },
+          {
+            "name": "CB LAB · New face — join rows",
+            "syntax": "",
+            "blurb": "Removes the gaps between the card's rows."
+          },
+          {
+            "name": "CB LAB · Chance dice slip",
+            "syntax": "DICE> roll|roll|area|result|what it nudges",
+            "blurb": "A small 🎲 slip for the turn's two dice and the one thing in the world they nudge."
+          }
+        ]
+      },
+      {
+        "title": "Context savers",
+        "intro": "On by default. They shrink what's sent to the model without changing your chat. Turn any off under Extensions → Regex → Preset scripts.",
+        "scripts": [
+          {
+            "name": "CB LAB · Context saver — old tracker & board cards",
+            "syntax": "",
+            "blurb": "Leaves <cb_state> blocks four or more messages old out of the prompt. The newest stay, so numbers carry on correctly."
+          },
+          {
+            "name": "CB LAB · Context saver — old cue legends",
+            "syntax": "",
+            "blurb": "Older cue lines keep their name and reason but drop the long legend."
+          },
+          {
+            "name": "CB LAB · Context saver — old HTML styles",
+            "syntax": "",
+            "blurb": "Leaves <style> blocks three or more messages old out of the prompt. The artifacts' text stays."
+          },
+          {
+            "name": "CB LAB · Context saver — old dice slips",
+            "syntax": "",
+            "blurb": "Leaves older 🎲 slips out of the prompt. The newest stays."
+          }
+        ]
+      },
+      {
+        "title": "Dividers",
+        "intro": "These also work in your own messages.",
+        "scripts": [
+          {
+            "name": "CB · Divider — Act Break",
+            "syntax": "a line of ---, ***, ===, or ~~~",
+            "blurb": "Turns the line into a ✦ ✦ ✦ act break."
+          },
+          {
+            "name": "CB · Divider — Scene Shift (⁂)",
+            "syntax": "⁂ on its own line",
+            "blurb": "Turns it into a centered scene-shift mark."
+          },
+          {
+            "name": "CB · Divider — Timeskip (↷)",
+            "syntax": "↷, »»», or →→→ on its own line",
+            "blurb": "Turns it into a \"later\" timeskip divider."
+          },
+          {
+            "name": "CB · Divider — Act Break with caption",
+            "syntax": "--- Act Two · the wedding",
+            "blurb": "An act break with a caption in the middle."
+          },
+          {
+            "name": "CB · Divider — Scene Shift with caption (⁂)",
+            "syntax": "⁂ the next morning",
+            "blurb": "A scene-shift mark with a caption."
+          },
+          {
+            "name": "CB · Divider — Timeskip with caption (↷)",
+            "syntax": "↷ Three days later · the harbor",
+            "blurb": "A timeskip divider with a caption instead of \"later\"."
+          }
+        ]
+      },
+      {
+        "title": "Cue Calls and The Program",
+        "intro": "New in v1.4: Xavi tells you what's about to appear, and what's lit tonight.",
+        "scripts": [
+          {
+            "name": "CB · Cue — standby slip (with legend)",
+            "syntax": "CUE> icon|what's coming|why now|what it means",
+            "blurb": "A gold ● STANDBY slip above whatever's about to appear, with a \"What it means\" legend. Xavi includes the legend the first time each kind of element shows up."
+          },
+          {
+            "name": "CB · Cue — standby slip",
+            "syntax": "CUE> icon|what's coming|why now|",
+            "blurb": "The same STANDBY slip without the legend, for elements you've already seen."
+          },
+          {
+            "name": "CB · Cue — catch-all (malformed lines)",
+            "syntax": "",
+            "blurb": "Catches cue lines with the wrong number of fields and shows them as a plain STANDBY line."
+          },
+          {
+            "name": "CB · Shell — The Program",
+            "syntax": "[[PROGRAM]] … [[/PROGRAM]]",
+            "blurb": "The theatre-program card listing everything that's lit. It appears on the first reply of a chat, and whenever you send [PROGRAM]."
+          },
+          {
+            "name": "CB · Program row — title",
+            "syntax": "PG> title|tonight's production",
+            "blurb": "The program's title: tonight's production in a phrase."
+          },
+          {
+            "name": "CB · Program row — cast line",
+            "syntax": "PG> cast|wing · mode · patter and mood",
+            "blurb": "The line under the title: the setting wing, mode, and Xavi's patter and mood."
+          },
+          {
+            "name": "CB · Program row — act",
+            "syntax": "PG> act|icon|module|what sets it off|what you'll see",
+            "blurb": "One lit module per line: what sets it off (CUE) and what you'll see."
+          },
+          {
+            "name": "CB · Program row — note from Xavi",
+            "syntax": "PG> note|line",
+            "blurb": "A closing note from Xavi to the director, signed — X."
+          },
+          {
+            "name": "CB · Program row — catch-all (malformed lines)",
+            "syntax": "",
+            "blurb": "Catches program lines with the wrong number of fields and shows them as plain text."
+          }
+        ]
+      },
+      {
+        "title": "Xavi",
+        "intro": "Your stage manager's notes and asides.",
+        "scripts": [
+          {
+            "name": "CB · Callboard — style think foldout",
+            "syntax": "<think>…</think>",
+            "blurb": "Shows Xavi's reasoning as a 🎧 \"Xavi at the board\" fold-out."
+          },
+          {
+            "name": "CB · Callboard — hide think from prompt",
+            "syntax": "",
+            "blurb": "Leaves Xavi's <think> notes out of what's sent back to the model on later turns, to save tokens. What you see doesn't change."
+          },
+          {
+            "name": "CB · Callboard — think foldout (missing opener)",
+            "syntax": "…</think>",
+            "blurb": "Some models close their reasoning with </think> but never open it. This folds that reasoning into Xavi's fold-out anyway."
+          },
+          {
+            "name": "CB · Callboard — hide think from prompt (missing opener)",
+            "syntax": "",
+            "blurb": "Keeps that unopened reasoning out of what's sent back to the model on later turns."
+          },
+          {
+            "name": "CB · Xavi — curtain note (style)",
+            "syntax": "<xavi>note</xavi>",
+            "blurb": "Xavi's curtain note: a 🎧 card under the reply."
+          },
+          {
+            "name": "CB · Xavi — curtain note (hide from prompt)",
+            "syntax": "",
+            "blurb": "Leaves Xavi's curtain notes out of what's sent back to the model, so they cost no tokens later."
+          },
+          {
+            "name": "CB · Xavi — OOC aside (style, AI output only)",
+            "syntax": "(OOC: aside)",
+            "blurb": "Styles Xavi's (OOC: …) asides as a \"from the wings\" note signed — X. It only touches the AI's replies, so your own OOC stays plain."
+          }
+        ]
+      },
+      {
+        "title": "Tracker and boards",
+        "intro": "Written inside one <cb_state> block. Shell regexes draw each card, and row regexes draw the lines inside it.",
+        "scripts": [
+          {
+            "name": "CB · Tracker — time-of-day icon (dawn)",
+            "syntax": "T> time|dawn, or 5–6 AM",
+            "blurb": "Puts 🌅 in front of a dawn time on the tracker."
+          },
+          {
+            "name": "CB · Tracker — time-of-day icon (morning)",
+            "syntax": "T> time|morning, or 7–11 AM",
+            "blurb": "Puts 🌤️ in front of a morning time."
+          },
+          {
+            "name": "CB · Tracker — time-of-day icon (midday)",
+            "syntax": "T> time|noon, afternoon, or 12–4 PM",
+            "blurb": "Puts ☀️ in front of a midday or afternoon time."
+          },
+          {
+            "name": "CB · Tracker — time-of-day icon (dusk)",
+            "syntax": "T> time|dusk, evening, or 5–7 PM",
+            "blurb": "Puts 🌇 in front of an evening time."
+          },
+          {
+            "name": "CB · Tracker — time-of-day icon (night)",
+            "syntax": "T> time|night, or 8 PM–4 AM",
+            "blurb": "Puts 🌙 in front of a night time."
+          }
+        ]
+      },
+      {
+        "title": "Twitch",
+        "intro": "Written inside [[TWITCH]] … [[/TWITCH]].",
+        "scripts": [
+          {
+            "name": "CB · Shell — Twitch chat",
+            "syntax": "[[TWITCH]] … [[/TWITCH]]",
+            "blurb": "The Twitch chat window that floats beside the prose, with its \"Send a message\" box."
+          },
+          {
+            "name": "CB · Twitch row — live header",
+            "syntax": "TW> live|channel|title|category|viewers|uptime",
+            "blurb": "The stream header: channel, LIVE badge, title, category, viewer count, and uptime."
+          },
+          {
+            "name": "CB · Twitch row — message",
+            "syntax": "TW> msg|#color|user|badges|message",
+            "blurb": "A chat message, with badges and the viewer's name color."
+          },
+          {
+            "name": "CB · Twitch row — sub / gift",
+            "syntax": "TW> sub|user|kind|message",
+            "blurb": "A highlighted sub or gift-sub alert."
+          },
+          {
+            "name": "CB · Twitch row — bits",
+            "syntax": "TW> bits|user|amount|message",
+            "blurb": "A cheer with bits."
+          },
+          {
+            "name": "CB · Twitch row — tip (TTS)",
+            "syntax": "TW> tip|user|$amount|message",
+            "blurb": "A TTS donation alert, the kind the streamer hears read out loud."
+          },
+          {
+            "name": "CB · Twitch row — raid",
+            "syntax": "TW> raid|channel|viewers",
+            "blurb": "A raid alert."
+          },
+          {
+            "name": "CB · Twitch row — follow",
+            "syntax": "TW> follow|user",
+            "blurb": "A new-follower line."
+          },
+          {
+            "name": "CB · Twitch row — mod action",
+            "syntax": "TW> mod|what happened",
+            "blurb": "A mod action, like a timeout."
+          },
+          {
+            "name": "CB · Twitch row — clip",
+            "syntax": "TW> clip|title|clipped by",
+            "blurb": "A ✂️ clip card."
+          },
+          {
+            "name": "CB · Twitch inline — @mention",
+            "syntax": "@username",
+            "blurb": "Highlights @mentions in Twitch chat."
+          }
+        ]
+      },
+      {
+        "title": "Discord",
+        "intro": "Written inside [[DISCORD]] … [[/DISCORD]].",
+        "scripts": [
+          {
+            "name": "CB · Shell — Discord window",
+            "syntax": "[[DISCORD]] … [[/DISCORD]]",
+            "blurb": "The Discord window around the messages, with its message box."
+          },
+          {
+            "name": "CB · Discord row — place header",
+            "syntax": "DC> place|server|#channel",
+            "blurb": "The server and channel header, or Direct Messages."
+          },
+          {
+            "name": "CB · Discord row — message (no tag)",
+            "syntax": "DC> msg|#color|name||time|message",
+            "blurb": "A message from someone without a role badge."
+          },
+          {
+            "name": "CB · Discord row — message (tagged)",
+            "syntax": "DC> msg|#color|name|tag|time|message",
+            "blurb": "A message with a role badge like MOD, or a joke role."
+          },
+          {
+            "name": "CB · Discord row — grouped follow-up",
+            "syntax": "DC> more|message",
+            "blurb": "A follow-up grouped under the same person's last message."
+          },
+          {
+            "name": "CB · Discord row — reply line",
+            "syntax": "DC> reply|name|snippet",
+            "blurb": "The small \"replying to\" line above a reply."
+          },
+          {
+            "name": "CB · Discord row — reactions",
+            "syntax": "DC> react|💀 4 · 😭 2",
+            "blurb": "Reaction pills under a message."
+          },
+          {
+            "name": "CB · Discord row — attachment",
+            "syntax": "DC> attach|what it is",
+            "blurb": "An image or file attachment."
+          },
+          {
+            "name": "CB · Discord row — system line",
+            "syntax": "DC> sys|line",
+            "blurb": "A system line, like a pinned message, a join, or a call."
+          },
+          {
+            "name": "CB · Discord row — typing",
+            "syntax": "DC> typing|Mara is typing…",
+            "blurb": "The typing indicator."
+          },
+          {
+            "name": "CB · Discord inline — @mention",
+            "syntax": "@name",
+            "blurb": "Highlights @mentions, Discord-style."
+          },
+          {
+            "name": "CB · Discord inline — (edited)",
+            "syntax": "(edited)",
+            "blurb": "Turns \"(edited)\" into Discord's small grey tag."
+          },
+          {
+            "name": "CB · Discord inline — split reactions",
+            "syntax": "",
+            "blurb": "Splits a reactions line into separate pills."
+          },
+          {
+            "name": "CB · Chat inline — emotes :Name: (Twitch/Discord)",
+            "syntax": ":KEKW:",
+            "blurb": "Turns emotes in Twitch and Discord lines into emote pills."
+          }
+        ]
+      },
+      {
+        "title": "Press clippings",
+        "intro": "Written inside [[TABLOID]], [[BLOG]], [[MAG]], or [[BLIND]].",
+        "scripts": [
+          {
+            "name": "CB · Shell — Press tabloid",
+            "syntax": "[[TABLOID]] … [[/TABLOID]]",
+            "blurb": "The red, loud tabloid page."
+          },
+          {
+            "name": "CB · Shell — Press blog",
+            "syntax": "[[BLOG]] … [[/BLOG]]",
+            "blurb": "The hot-pink gossip blog."
+          },
+          {
+            "name": "CB · Shell — Press mag",
+            "syntax": "[[MAG]] … [[/MAG]]",
+            "blurb": "The glossy magazine spread."
+          },
+          {
+            "name": "CB · Shell — Press blind",
+            "syntax": "[[BLIND]] … [[/BLIND]]",
+            "blurb": "The anonymous blind item."
+          },
+          {
+            "name": "CB · Press row — outlet masthead",
+            "syntax": "PR> outlet|name|date or section",
+            "blurb": "The outlet's masthead."
+          },
+          {
+            "name": "CB · Press row — headline",
+            "syntax": "PR> head|headline",
+            "blurb": "The headline."
+          },
+          {
+            "name": "CB · Press row — deck",
+            "syntax": "PR> deck|subhead",
+            "blurb": "The subhead under the headline."
+          },
+          {
+            "name": "CB · Press row — paparazzi photo",
+            "syntax": "PR> photo|what it shows|credit",
+            "blurb": "A 📸 EXCLUSIVE box describing the shot, with its credit."
+          },
+          {
+            "name": "CB · Press row — body",
+            "syntax": "PR> body|paragraph",
+            "blurb": "A paragraph of the story."
+          },
+          {
+            "name": "CB · Press row — pull quote",
+            "syntax": "PR> quote|quote|who said it",
+            "blurb": "A pull quote."
+          },
+          {
+            "name": "CB · Press row — stats / cover line",
+            "syntax": "PR> stats|line",
+            "blurb": "Views and comments, or a cover price and issue number."
+          },
+          {
+            "name": "CB · Press row — reader comment",
+            "syntax": "PR> comment|user|comment",
+            "blurb": "A reader comment."
+          }
+        ]
+      },
+      {
+        "title": "X / Twitter",
+        "intro": "Written inside [[X]] … [[/X]].",
+        "scripts": [
+          {
+            "name": "CB · Shell — X post",
+            "syntax": "[[X]] … [[/X]]",
+            "blurb": "The X card around the post."
+          },
+          {
+            "name": "CB · X row — post (no badge)",
+            "syntax": "XT> post|#avatar|name|@handle||time|text",
+            "blurb": "A post from an account without a badge."
+          },
+          {
+            "name": "CB · X row — post (badge)",
+            "syntax": "XT> post|#avatar|name|@handle|badge|time|text",
+            "blurb": "A post from an account with a badge."
+          },
+          {
+            "name": "CB · X row — reply (no badge)",
+            "syntax": "XT> reply|#avatar|name|@handle||time|text",
+            "blurb": "A reply from an account without a badge."
+          },
+          {
+            "name": "CB · X row — reply (badge)",
+            "syntax": "XT> reply|#avatar|name|@handle|badge|time|text",
+            "blurb": "A reply from an account with a badge."
+          },
+          {
+            "name": "CB · X row — media",
+            "syntax": "XT> media|what it shows",
+            "blurb": "A photo or video in the post."
+          },
+          {
+            "name": "CB · X row — quote",
+            "syntax": "XT> quote|name|@handle|text",
+            "blurb": "A quoted post."
+          },
+          {
+            "name": "CB · X row — stats",
+            "syntax": "XT> stats|replies|reposts|likes|views",
+            "blurb": "The engagement line."
+          },
+          {
+            "name": "CB · X inline — @mention / #hashtag (last field only)",
+            "syntax": "@handle · #hashtag",
+            "blurb": "Colors @handles and #hashtags in a post's text."
+          }
+        ]
+      },
+      {
+        "title": "Reddit",
+        "intro": "Written inside [[REDDIT]] … [[/REDDIT]].",
+        "scripts": [
+          {
+            "name": "CB · Shell — Reddit thread",
+            "syntax": "[[REDDIT]] … [[/REDDIT]]",
+            "blurb": "The Reddit thread around the post and comments."
+          },
+          {
+            "name": "CB · Reddit row — subreddit header",
+            "syntax": "RD> sub|r/name|tagline",
+            "blurb": "The subreddit header."
+          },
+          {
+            "name": "CB · Reddit row — post (no flair)",
+            "syntax": "RD> post|u/user|time||title",
+            "blurb": "A post title without flair."
+          },
+          {
+            "name": "CB · Reddit row — post (flair)",
+            "syntax": "RD> post|u/user|time|flair|title",
+            "blurb": "A post title with flair."
+          },
+          {
+            "name": "CB · Reddit row — body text",
+            "syntax": "RD> text|paragraph",
+            "blurb": "A paragraph of the post body."
+          },
+          {
+            "name": "CB · Reddit row — media",
+            "syntax": "RD> media|what it shows",
+            "blurb": "An image in the post."
+          },
+          {
+            "name": "CB · Reddit row — stats",
+            "syntax": "RD> stats|upvotes|comments",
+            "blurb": "Upvotes and the comment count."
+          },
+          {
+            "name": "CB · Reddit row — comment",
+            "syntax": "RD> comment|depth|u/user|points|text",
+            "blurb": "A comment, indented by its depth (0–3)."
+          },
+          {
+            "name": "CB · Reddit inline — (OP) tag",
+            "syntax": "(OP)",
+            "blurb": "Turns \"(OP)\" after a username into Reddit's OP badge."
+          },
+          {
+            "name": "CB · Reddit inline — EDIT:",
+            "syntax": "EDIT:",
+            "blurb": "Bolds \"EDIT:\" in posts and comments."
+          }
+        ]
+      },
+      {
+        "title": "Y2K comms",
+        "intro": "For the Y2K wing: AIM, flip phones, and MySpace.",
+        "scripts": [
+          {
+            "name": "CB · Shell — AIM window",
+            "syntax": "[[AIM]] … [[/AIM]]",
+            "blurb": "The AIM chat window."
+          },
+          {
+            "name": "CB · AIM row — window bar",
+            "syntax": "AIM> win|screen name|status",
+            "blurb": "The window's title bar, with the buddy's status."
+          },
+          {
+            "name": "CB · AIM row — red (you)",
+            "syntax": "AIM> red|ScreenName|time|message",
+            "blurb": "Your character's messages, in AIM red."
+          },
+          {
+            "name": "CB · AIM row — blue (them)",
+            "syntax": "AIM> blue|ScreenName|time|message",
+            "blurb": "The other person's messages, in AIM blue."
+          },
+          {
+            "name": "CB · AIM row — away message",
+            "syntax": "AIM> away|ScreenName|message",
+            "blurb": "An away message."
+          },
+          {
+            "name": "CB · AIM row — system",
+            "syntax": "AIM> sys|line",
+            "blurb": "A system line, like someone signing off."
+          },
+          {
+            "name": "CB · Shell — Flip phone",
+            "syntax": "[[FLIP]] … [[/FLIP]]",
+            "blurb": "The flip phone around the texts."
+          },
+          {
+            "name": "CB · Flip row — header",
+            "syntax": "FLIP> head|contact|carrier + time",
+            "blurb": "The phone's screen header."
+          },
+          {
+            "name": "CB · Flip row — received",
+            "syntax": "FLIP> in|text|time",
+            "blurb": "A received text."
+          },
+          {
+            "name": "CB · Flip row — sent",
+            "syntax": "FLIP> out|text|time",
+            "blurb": "A sent text."
+          },
+          {
+            "name": "CB · Shell — MySpace comments",
+            "syntax": "[[MYSPACE]] … [[/MYSPACE]]",
+            "blurb": "The MySpace comment wall."
+          },
+          {
+            "name": "CB · MySpace row — header",
+            "syntax": "MS> head|name|mood",
+            "blurb": "The profile header, with their mood."
+          },
+          {
+            "name": "CB · MySpace row — Top 8",
+            "syntax": "MS> top8|names, comma-separated",
+            "blurb": "The Top 8."
+          },
+          {
+            "name": "CB · MySpace row — comment",
+            "syntax": "MS> comment|name|date|comment",
+            "blurb": "A wall comment."
+          }
+        ]
+      },
+      {
+        "title": "Dating app",
+        "intro": "New in v1.5. Written inside [[DATING]] … [[/DATING]]. Every profile is an adult.",
+        "scripts": [
+          {
+            "name": "CB · Shell — Dating app",
+            "syntax": "[[DATING]] … [[/DATING]]",
+            "blurb": "The dating app's phone screen around everything."
+          },
+          {
+            "name": "CB · Dating row — app bar",
+            "syntax": "DT> app|app name|screen",
+            "blurb": "The app's top bar, with the screen you're on (Discover · 4 mi away, Matches)."
+          },
+          {
+            "name": "CB · Dating row — profile",
+            "syntax": "DT> profile|name|age|job or bio|distance",
+            "blurb": "The profile card's name and age, with 💼 job and 📍 distance."
+          },
+          {
+            "name": "CB · Dating row — photo",
+            "syntax": "DT> photo|what it shows",
+            "blurb": "A 📷 profile photo, described."
+          },
+          {
+            "name": "CB · Dating row — prompt",
+            "syntax": "DT> prompt|question|answer",
+            "blurb": "A prompt answer card with a ♡."
+          },
+          {
+            "name": "CB · Dating row — tags",
+            "syntax": "DT> tags|detail, detail, detail",
+            "blurb": "Detail chips like height, drinking, and what they're looking for."
+          },
+          {
+            "name": "CB · Dating inline — split tags",
+            "syntax": "",
+            "blurb": "Splits the comma-separated tags line into separate chips."
+          },
+          {
+            "name": "CB · Dating row — match",
+            "syntax": "DT> match|name|name",
+            "blurb": "The \"It's a Match!\" banner."
+          },
+          {
+            "name": "CB · Dating row — received",
+            "syntax": "DT> in|time|message",
+            "blurb": "A message from the match."
+          },
+          {
+            "name": "CB · Dating row — sent",
+            "syntax": "DT> out|time|message",
+            "blurb": "A message from your character."
+          },
+          {
+            "name": "CB · Dating row — system",
+            "syntax": "DT> sys|line",
+            "blurb": "A system line, like Liked your photo, Unmatched, or Seen 2h ago."
+          }
+        ]
+      },
+      {
+        "title": "Web browser",
+        "intro": "New in v1.5. Written inside [[BROWSER]] or [[INCOGNITO]].",
+        "scripts": [
+          {
+            "name": "CB · Shell — Browser",
+            "syntax": "[[BROWSER]] … [[/BROWSER]]",
+            "blurb": "The browser window."
+          },
+          {
+            "name": "CB · Shell — Browser (incognito)",
+            "syntax": "[[INCOGNITO]] … [[/INCOGNITO]]",
+            "blurb": "A dark incognito window: \"nothing here is saved to history.\""
+          },
+          {
+            "name": "CB · Browser row — address bar",
+            "syntax": "BR> bar|url|tab title",
+            "blurb": "The active tab and address bar."
+          },
+          {
+            "name": "CB · Browser row — open tabs",
+            "syntax": "BR> tabs|tab, tab, tab",
+            "blurb": "The other open tabs."
+          },
+          {
+            "name": "CB · Browser inline — split tabs",
+            "syntax": "",
+            "blurb": "Splits the comma-separated tabs line into separate tabs."
+          },
+          {
+            "name": "CB · Browser row — search box",
+            "syntax": "BR> search|what's typed",
+            "blurb": "The search box with what's being typed."
+          },
+          {
+            "name": "CB · Browser row — autocomplete",
+            "syntax": "BR> suggest|past search",
+            "blurb": "A 🕘 autocomplete suggestion from a past search, often a revealing one."
+          },
+          {
+            "name": "CB · Browser row — result",
+            "syntax": "BR> result|title|url|snippet",
+            "blurb": "A search result."
+          },
+          {
+            "name": "CB · Browser row — page",
+            "syntax": "BR> page|heading|paragraph",
+            "blurb": "An open page's heading and text."
+          },
+          {
+            "name": "CB · Browser row — history day",
+            "syntax": "BR> day|date",
+            "blurb": "A date header in the browsing history."
+          },
+          {
+            "name": "CB · Browser row — history entry",
+            "syntax": "BR> hist|time|title|url",
+            "blurb": "One browsing-history entry."
+          }
+        ]
+      },
+      {
+        "title": "Instagram",
+        "intro": "New in v1.5. Written inside [[INSTA]] … [[/INSTA]].",
+        "scripts": [
+          {
+            "name": "CB · Shell — Instagram",
+            "syntax": "[[INSTA]] … [[/INSTA]]",
+            "blurb": "The Instagram frame."
+          },
+          {
+            "name": "CB · Instagram row — profile",
+            "syntax": "IG> profile|username|display name|posts|followers|following|bio",
+            "blurb": "The profile header, with post, follower, and following counts and the bio."
+          },
+          {
+            "name": "CB · Instagram row — post header",
+            "syntax": "IG> post|username|location|✓",
+            "blurb": "A post's header, with the location and a verified check."
+          },
+          {
+            "name": "CB · Instagram row — photo",
+            "syntax": "IG> photo|what it shows",
+            "blurb": "A 📷 photo in the post. Repeat it for a carousel."
+          },
+          {
+            "name": "CB · Instagram row — stats",
+            "syntax": "IG> stats|likes|time",
+            "blurb": "The action row, like count, and time."
+          },
+          {
+            "name": "CB · Instagram row — caption",
+            "syntax": "IG> caption|username|text",
+            "blurb": "The caption."
+          },
+          {
+            "name": "CB · Instagram row — comment",
+            "syntax": "IG> comment|username|comment|likes",
+            "blurb": "A comment with its ♡ count."
+          },
+          {
+            "name": "CB · Instagram row — story",
+            "syntax": "IG> story|username|what it shows|time",
+            "blurb": "A story, with its text or stickers and a \"Send message\" bar."
+          },
+          {
+            "name": "CB · Instagram inline — @mention / #hashtag",
+            "syntax": "@handle · #hashtag",
+            "blurb": "Colors @mentions and #hashtags in captions and comments."
+          }
+        ]
+      },
+      {
+        "title": "Private photos",
+        "intro": "New in v1.5. Written inside [[PRIVATE]] … [[/PRIVATE]]. Everyone in a photo is an adult, and every photo is sent by choice.",
+        "scripts": [
+          {
+            "name": "CB · Shell — Private photos",
+            "syntax": "[[PRIVATE]] … [[/PRIVATE]]",
+            "blurb": "The private chat thread, with a \"Send a chat…\" box."
+          },
+          {
+            "name": "CB · Private row — header",
+            "syntax": "PX> head|thread name|contact",
+            "blurb": "The thread's header, marked 🔒 private."
+          },
+          {
+            "name": "CB · Private row — photo received",
+            "syntax": "PX> pic|in|time|what it shows|caption|view once / replay / saved",
+            "blurb": "A received photo as a frosted tile you tap to reveal, with its caption and view-once or replay status."
+          },
+          {
+            "name": "CB · Private row — photo sent",
+            "syntax": "PX> pic|out|time|what it shows|caption|view once / replay / saved",
+            "blurb": "A sent photo as a tap-to-reveal tile."
+          },
+          {
+            "name": "CB · Private row — received",
+            "syntax": "PX> in|time|message",
+            "blurb": "A received message."
+          },
+          {
+            "name": "CB · Private row — sent",
+            "syntax": "PX> out|time|message",
+            "blurb": "A sent message."
+          },
+          {
+            "name": "CB · Private row — system",
+            "syntax": "PX> sys|line",
+            "blurb": "A system line, like Opened, unsent a photo, or 📸 took a screenshot!"
+          }
+        ]
+      },
+      {
+        "title": "Creator page",
+        "intro": "New in v1.5. Written inside [[CREATOR]] … [[/CREATOR]]. The creator, and everyone in the content, is an adult.",
+        "scripts": [
+          {
+            "name": "CB · Shell — Creator page",
+            "syntax": "[[CREATOR]] … [[/CREATOR]]",
+            "blurb": "The subscription page."
+          },
+          {
+            "name": "CB · Creator row — header",
+            "syntax": "CR> head|name|@handle|subscribers|price per month|bio",
+            "blurb": "The page header: verified name, subscriber count, bio, and a Subscribe button with the monthly price."
+          },
+          {
+            "name": "CB · Creator row — free post",
+            "syntax": "CR> post|time|caption|free|what it shows",
+            "blurb": "A free post, with a Send Tip button."
+          },
+          {
+            "name": "CB · Creator row — locked post",
+            "syntax": "CR> post|time|teaser|$price|what it shows",
+            "blurb": "A 🔒 locked post with its unlock price. Tap to peek at what's behind it."
+          },
+          {
+            "name": "CB · Creator row — tip",
+            "syntax": "CR> tip|username|$amount|message",
+            "blurb": "A 💸 tip with its message."
+          },
+          {
+            "name": "CB · Creator row — fan message",
+            "syntax": "CR> fan|username|message",
+            "blurb": "A DM from a subscriber."
+          },
+          {
+            "name": "CB · Creator row — creator reply",
+            "syntax": "CR> reply|message",
+            "blurb": "The creator's reply."
+          },
+          {
+            "name": "CB · Creator row — pay-per-view message",
+            "syntax": "CR> ppv|$price|what it contains",
+            "blurb": "A 🔒 pay-per-view message. Tap to see what it holds."
+          },
+          {
+            "name": "CB · Creator row — dashboard",
+            "syntax": "CR> stats|line",
+            "blurb": "A 📈 earnings and subscriber line."
+          }
+        ]
+      },
+      {
+        "title": "Fan platform",
+        "intro": "New in v1.5. Written inside [[BUBBLE]] for an idol's paid chat, or [[LIVE]] for a fan livestream. Pairs with the K-pop Idol flavor.",
+        "scripts": [
+          {
+            "name": "CB · Shell — Fan platform chat (bubble)",
+            "syntax": "[[BUBBLE]] … [[/BUBBLE]]",
+            "blurb": "The idol's paid private chat, with a \"Reply to your artist…\" box."
+          },
+          {
+            "name": "CB · Shell — Fan platform livestream",
+            "syntax": "[[LIVE]] … [[/LIVE]]",
+            "blurb": "The fan livestream window, with a chat box and heart and gift buttons."
+          },
+          {
+            "name": "CB · Fan platform row — bubble header",
+            "syntax": "FP> head|idol|group or agency|D+ counter",
+            "blurb": "The chat header: the idol, their group or agency, and the D+ subscription counter."
+          },
+          {
+            "name": "CB · Fan platform row — idol message",
+            "syntax": "FP> msg|time|message",
+            "blurb": "A message from the idol."
+          },
+          {
+            "name": "CB · Fan platform row — idol photo",
+            "syntax": "FP> photo|time|what it shows",
+            "blurb": "A selfie or photo from the idol."
+          },
+          {
+            "name": "CB · Fan platform row — voice memo",
+            "syntax": "FP> voice|time|duration|what they say",
+            "blurb": "A voice memo with its length and a transcript."
+          },
+          {
+            "name": "CB · Fan platform row — fan reply",
+            "syntax": "FP> reply|time|message",
+            "blurb": "The subscriber's own reply, which only they can see."
+          },
+          {
+            "name": "CB · Fan platform row — live header",
+            "syntax": "FP> live|channel|title|viewers|hearts",
+            "blurb": "The ● LIVE header, with viewer and heart counts."
+          },
+          {
+            "name": "CB · Fan platform row — idol speaking",
+            "syntax": "FP> say|what they say",
+            "blurb": "What the idol says on stream, as a caption."
+          },
+          {
+            "name": "CB · Fan platform row — live chat",
+            "syntax": "FP> chat|username|comment",
+            "blurb": "A comment scrolling past in the live chat."
+          },
+          {
+            "name": "CB · Fan platform row — hearts / gift",
+            "syntax": "FP> heart|username|what they sent",
+            "blurb": "A heart or gift alert."
+          },
+          {
+            "name": "CB · Fan platform row — system",
+            "syntax": "FP> sys|line",
+            "blurb": "A system line, like new messages, a renewed subscription, or someone joining."
+          }
+        ]
+      },
+      {
+        "title": "Colored dialogue",
+        "intro": "For 🎨 Colored Dialogue: each speaker gets one color for the whole chat.",
+        "scripts": [
+          {
+            "name": "CB · Colored dialogue — keep each speaker's color over quote styling",
+            "syntax": "<span style=\"color:…\">",
+            "blurb": "SillyTavern's quote color overrides a span's color, so speaker colors never showed. This turns those spans into <font color> tags, which win."
+          },
+          {
+            "name": "CB · Colored dialogue — drop old colors from the prompt",
+            "syntax": "",
+            "blurb": "Strips the color tags from messages six or more back in what's sent to the model, to save tokens. What you see doesn't change."
+          }
+        ]
+      },
+      {
+        "title": "Plumbing and extras",
+        "intro": "",
+        "scripts": [
+          {
+            "name": "CB · Data lines — drop a stray trailing |",
+            "syntax": "",
+            "blurb": "Runs first. Removes a stray | that the model leaves at the end of any data line, so the line still draws as its card instead of falling back to raw text."
+          },
+          {
+            "name": "CB · Cleanup — unwrap state, panels and HTML from code fences",
+            "syntax": "",
+            "blurb": "If the model wraps its tracker, a panel, or HTML in a ``` code block, this unwraps it so it draws instead of showing as code."
           },
           {
             "name": "CB · Chat/Press row — catch-all (malformed lines)",

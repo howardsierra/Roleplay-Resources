@@ -436,6 +436,7 @@
   .bill .lite .btn { min-height: 38px; padding: 8px 14px; font-size: 13px; }
   .bill .lite-actions { display: flex; gap: 8px; flex-wrap: wrap; }
   .bill .lite .btn.preview { flex-basis: auto; }
+  .bill .lite a:not(.btn) { color: var(--acc); font-weight: 600; }
   .bill .pair { margin: -4px 0 0; font-size: 13.5px; color: var(--soft); }
   .bill .pair a { color: var(--acc); font-weight: 600; }
   .bill .guide-link { font: 600 13px var(--body); color: var(--acc); text-decoration: none; margin-top: -6px; }
@@ -543,7 +544,7 @@
     background: linear-gradient(90deg, #c9bbff, #8fe3f0);
   }
   .agents > p { margin: 0 0 20px; color: #cfc9ec; font-size: 15px; max-width: 680px; }
-  .agent-grid { display: grid; gap: 12px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 230px), 1fr)); list-style: none; margin: 0; padding: 0; }
+  .agent-grid { display: grid; gap: 12px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 270px), 1fr)); list-style: none; margin: 0; padding: 0; }
   .agent-grid li {
     padding: 14px 16px; border-radius: 16px;
     background: rgba(255, 255, 255, .06); border: 1px solid rgba(255, 255, 255, .1);
@@ -700,7 +701,7 @@
     </div>
     <div class="billing">
       <div><b>4</b>presets</div>
-      <div><b data-total="regex">221</b>regex scripts</div>
+      <div><b data-total="regex">444</b>regex scripts</div>
       <div><b>5</b>Janitor prompts</div>
       <div><b>14</b>extensions</div>
       <div><b>1</b>frontend</div>
@@ -808,7 +809,7 @@
 
         <article class="bill callboard reveal">
           <div class="pattern" aria-hidden="true"></div>
-          <div class="bill-top"><span class="now">Now playing</span><span class="ver" data-preset-ver="callboard">v1.6.1</span></div>
+          <div class="bill-top"><span class="now">Now playing</span><span class="ver" data-preset-ver="callboard">v1.6.8</span></div>
           <div class="title-row">
             <div class="seal" aria-hidden="true">📋</div>
             <div>
@@ -819,24 +820,31 @@
           <blockquote>“Pick-one bands are labeled. Two wings lit at once will fight.”</blockquote>
           <ul>
             <li>Fourteen setting wings, from Regency and Westeros to Wuxia, Cyberpunk, and Post-Apocalyptic</li>
-            <li>Cue Calls, The Program, and new in v1.6: 📸 Stills Department images through Revamped Image Gen, and 🖥️ Pure HTML replies told entirely through in-world objects</li>
+            <li>Cue Calls, The Program, 📸 Stills Department images through Revamped Image Gen, 🖥️ Pure HTML replies, and new since v1.6.2: Clover image orders, 🤫 Private Scenes secrets, captioned dividers, and working colored dialogue</li>
             <li>Panels for Twitch, Discord, X, Reddit, and the tabloids, and new in v1.5: a dating app, browser history, Instagram, private photos, a creator page, and a K-pop fan platform</li>
           </ul>
           <div class="stats">
-            <div><b data-preset-stat="callboard:prompts">160</b><span>prompts</span></div>
-            <div><b data-preset-stat="callboard:regex">167</b><span>regex</span></div>
+            <div><b data-preset-stat="callboard:prompts">164</b><span>prompts</span></div>
+            <div><b data-preset-stat="callboard:regex">180</b><span>regex</span></div>
             <div><b data-preset-stat="callboard:context">270k</b><span>context</span></div>
           </div>
           <div class="actions">
             <button class="btn line preview" type="button" data-preview="callboard">▶ See it in action</button>
-            <a class="btn solid" data-preset="callboard" data-kind="download" href="presets/CALLBOARD_v1.6.1.json" download>Download preset</a>
+            <a class="btn solid" data-preset="callboard" data-kind="download" href="presets/CALLBOARD_v1.6.8.json" download>Download preset</a>
             <a class="btn line" data-preset="callboard" data-kind="regex" href="regex/CALLBOARD_regex_bundle.json" download>Regex bundle</a>
           </div>
           <div class="lite">
-            <div><b>CALLBOARD Lite <span data-preset-ver="callboard-lite">v1.6.1</span></b>The same show in about 3k tokens instead of 14.2k, for cheaper models and long chats.</div>
+            <div><b>CALLBOARD Lite <span data-preset-ver="callboard-lite">v1.6.8</span></b>The same show in about 3k tokens instead of 14.2k, for cheaper models and long chats.</div>
             <div class="lite-actions">
               <button class="btn line preview" type="button" data-preview="callboard-lite">▶ Preview</button>
-              <a class="btn line" data-preset="callboard-lite" data-kind="download" href="presets/CALLBOARD_Lite_v1.6.1.json" download>Download Lite</a>
+              <a class="btn line" data-preset="callboard-lite" data-kind="download" href="presets/CALLBOARD_Lite_v1.6.8.json" download>Download Lite</a>
+            </div>
+          </div>
+          <div class="lite lab">
+            <div><b>🧪 CALLBOARD Lab <span data-preset-ver="callboard-lab">v0.9.1</span></b>An experimental copy for trying ideas first: about 30 switches, Assistant Mode, and the Board Console with skins. <a href="https://github.com/howardsierra/CALLBOARD/tree/HEAD/preset/lab#-callboard-lab">What's inside, and credits</a>.</div>
+            <div class="lite-actions">
+              <a class="btn line" data-preset="callboard-lab" data-kind="download" href="presets/CALLBOARD_Lab_v0.9.1.json" download>Download Lab</a>
+              <a class="btn line" data-preset="callboard-lab" data-kind="regex" href="regex/CALLBOARD_Lab_regex_bundle.json" download>Lab regex</a>
             </div>
           </div>
           <p class="pair">🎧 Pair it with <a href="#crew">CALLBOARD Suite</a>, the stage manager’s control board.</p>
@@ -1078,7 +1086,7 @@
           <div class="stub-head"><span class="role">The scenic painter</span><span class="ver" data-ext="revampedimagegen">v1.1.0</span></div>
           <div class="stub-body">
             <h3><span aria-hidden="true">🎨</span>Revamped Image Gen</h3>
-            <p>Inline image and video generation with a mobile-first Studio panel: a real queue, a gallery, character reference photos, a model picker, and a Diagnose tool. Powers CALLBOARD’s Stills Department. Based on notsosillynotsoimages by aceenvw.</p>
+            <p>Inline image and video generation with a mobile-first Studio panel: a real queue, a gallery, several reference photos per character, a model picker, and a Diagnose tool. Powers CALLBOARD’s Stills Department. Based on notsosillynotsoimages by aceenvw.</p>
             <div class="actions">
               <button class="btn copy" data-url="https://github.com/howardsierra/revampedimagegen">Copy install URL</button>
               <a class="btn line" href="https://github.com/howardsierra/revampedimagegen">GitHub ↗</a>
@@ -1090,7 +1098,7 @@
           <div class="stub-head"><span class="role">The stage manager’s board</span><span class="ver" data-ext="CALLBOARD">v0.10.1</span></div>
           <div class="stub-body">
             <h3><span aria-hidden="true">🎧</span>CALLBOARD Suite</h3>
-            <p>A control board for the CALLBOARD preset: pick-one bands, token costs per module, a checker with one-click fixes, 16 starter loadouts, per-chat pins, /cb commands, and a 🎨 Studio for Pollinations images with a key that stays on your device.</p>
+            <p>A control board for the CALLBOARD preset: pick-one bands, token costs per module, a checker with one-click fixes, 16 starter loadouts, per-chat pins, /cb commands, a 🎨 Studio for Pollinations images, and Clover image orders sent straight to Revamped Image Gen.</p>
             <div class="actions">
               <button class="btn copy" data-url="https://github.com/howardsierra/CALLBOARD">Copy install URL</button>
               <a class="btn line" href="https://github.com/howardsierra/CALLBOARD">GitHub ↗</a>
@@ -1193,11 +1201,11 @@
           <p class="lead">A self-hosted roleplay frontend that looks good on phones and computers and needs very little setup.</p>
           <ul class="perks">
             <li><span aria-hidden="true">📱</span><div><b>Phone-first</b>Works in a phone browser and installs to your home screen.</div></li>
-            <li><span aria-hidden="true">🎭</span><div><b>Brings your stuff</b>SillyTavern cards, presets, themes, lorebooks, regex, and extensions, plus Lumiverse Loom presets and extensions.</div></li>
+            <li><span aria-hidden="true">🎭</span><div><b>Brings your stuff</b>Cards, presets, lorebooks, chats, regex, themes, and extensions from SillyTavern, Lumiverse, and Marinara Engine, checked against their real code.</div></li>
             <li><span aria-hidden="true">✨</span><div><b>Live replies</b>HTML, CSS, JavaScript, and Python run inside messages as sandboxed mini-apps.</div></li>
             <li><span aria-hidden="true">🕯️</span><div><b>Story tools</b>Scene lighting that follows the story, and “Previously on…” recaps when you come back.</div></li>
             <li><span aria-hidden="true">🧑‍🚀</span><div><b>Personas, built in</b>The Persona Manager and Avatar Banner extensions, ported in and reading your existing data.</div></li>
-            <li><span aria-hidden="true">💾</span><div><b>Backups</b>One-file backups of everything, plus snapshots you can merge or restore.</div></li>
+            <li><span aria-hidden="true">💾</span><div><b>Long stories</b>A memory book that writes up older chapters, cheaper long chats that keep the prompt cache warm, and one-file backups.</div></li>
           </ul>
           <div class="actions">
             <a class="btn lilac" href="https://github.com/howardsierra/roleplay-frontend-personal">View on GitHub ↗</a>
@@ -1226,7 +1234,7 @@
         </div>
 
         <div class="agents">
-          <div class="agents-head"><h4>The agents</h4><span class="badge-new">New</span></div>
+          <div class="agents-head"><h4>The agents</h4><span class="badge-new">Nine of them</span></div>
           <p>Small helper AIs that work around your replies. Switch them on per story, and optionally give them their own cheaper model.</p>
           <ul class="agent-grid">
             <li><span class="ico" aria-hidden="true">🧭</span><b>Narrative Director</b>A “Push story” button that advances your threads or throws in a random event.</li>
@@ -1235,13 +1243,17 @@
             <li><span class="ico" aria-hidden="true">🧵</span><b>Continuity Checker</b>Lists slips with names, clothes, injuries, or time as a checklist. Apply the fixes you tick.</li>
             <li><span class="ico" aria-hidden="true">🗺️</span><b>Trackers</b>World, characters, quests, inventory, and relationships. Edit anything, or lock it so the AI can’t.</li>
             <li><span class="ico" aria-hidden="true">🔀</span><b>Choices</b>Tappable “what you do next” options under the newest reply.</li>
+            <li><span class="ico" aria-hidden="true">💞</span><b>Bonds &amp; Secrets</b>A bond meter for each character toward you that moves by fixed rules and unlocks milestones in order, plus goals and who knows which secrets.</li>
             <li><span class="ico" aria-hidden="true">📚</span><b>Lorebook Keeper</b>Suggests lore entries for new people, places, and facts, and adds the ones you approve.</li>
             <li><span class="ico" aria-hidden="true">📣</span><b>Echo Chamber</b>A pretend live audience in a floating feed: AO3 readers, Twitter, hype squad, or harbingers of doom.</li>
           </ul>
           <div class="also">
-            <span><b>Regenerate with a note:</b> “shorter,” “she wouldn’t forgive him that fast”</span>
-            <span><b>Branch &amp; send:</b> edit an earlier message and get a fresh reply on a new branch</span>
-            <span><b>Preset options:</b> <code style="font-size:12px">{{var::name}}</code> sliders, dropdowns, and switches</span>
+            <span><b>Enhance my reply:</b> turn a rough draft into a full reply</span>
+            <span><b>Memory book:</b> older chapters written up and recalled when they matter</span>
+            <span><b>What it costs:</b> the price of each reply on OpenRouter</span>
+            <span><b>Read aloud</b> with your device's voices</span>
+            <span><b>Search all stories</b>, and export one as a readable book</span>
+            <span><b>Regenerate with a note</b>, <b>Branch &amp; send</b>, and <b>preset options</b></span>
           </div>
           <p class="crewline">Your crew comes along: <a href="#crew">Offstage, Wardrobe, Surtitle, Context Lens, and Extension Organizer</a> are tested working, and Preset Organizer and Prompt Checkboxes are built right in.</p>
         </div>

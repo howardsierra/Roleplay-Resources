@@ -1,5 +1,22 @@
 [
     {
+        "trimStrings": [],
+        "placement": [
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null,
+        "id": "d74d1794-0571-415b-b3ed-de2418f524f1",
+        "scriptName": "CB · Cleanup — unwrap state, panels and HTML from code fences",
+        "findRegex": "/```[a-zA-Z]{0,12}[ \\t]*\\r?\\n((?:(?!```)[\\s\\S])*?(?:<cb_state>|\\[\\[[A-Z]+\\]\\]|<(?:div|details|section|table|blockquote|style)\\b)(?:(?!```)[\\s\\S])*?)\\r?\\n[ \\t]*```/g",
+        "replaceString": "$1"
+    },
+    {
         "id": "cec4eb2e-0530-4d70-bcc3-cc65ab565309",
         "scriptName": "CB · Data lines — drop a stray trailing |",
         "findRegex": "/^((?:T|C|W|S|I|X|TW|DC|PR|AIM|FLIP|MS|XT|RD|DT|BR|IG|PX|CR|CUE|PG|FP)(?:&gt;|>)[^\\n]*?)[ \\t]*\\|[ \\t]*$/gm",
@@ -16,6 +33,60 @@
         "substituteRegex": 0,
         "minDepth": null,
         "maxDepth": null
+    },
+    {
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null,
+        "id": "f02f6379-d22d-41d1-9e25-19ed94a3507d",
+        "scriptName": "CB · Divider — Act Break with caption",
+        "findRegex": "/^\\s*(?:---|\\*\\*\\*|===)[ \\t]+(\\S[^\\n]*?)[ \\t]*$/gm",
+        "replaceString": "<div style=\"display:flex;align-items:center;gap:12px;margin:26px 0;color:#b08d57;\"><span style=\"flex:1;height:1px;background:linear-gradient(90deg,transparent,#b08d57);\"></span><span style=\"display:inline-flex;align-items:center;gap:8px;padding:4px 14px;border:1px solid rgba(176,141,87,.55);border-radius:999px;background:rgba(20,15,26,.55);font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:700;\"><span style=\"letter-spacing:0;\">✦</span>$1</span><span style=\"flex:1;height:1px;background:linear-gradient(90deg,#b08d57,transparent);\"></span></div>"
+    },
+    {
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null,
+        "id": "a11edd14-ec6e-43a8-be97-e6d4269de243",
+        "scriptName": "CB · Divider — Scene Shift with caption (⁂)",
+        "findRegex": "/^\\s*⁂[ \\t]+(\\S[^\\n]*?)[ \\t]*$/gm",
+        "replaceString": "<div style=\"display:flex;align-items:center;gap:12px;margin:26px 0;color:#b08d57;\"><span style=\"flex:1;height:1px;background:linear-gradient(90deg,transparent,#b08d57);\"></span><span style=\"display:inline-flex;align-items:center;gap:8px;padding:4px 14px;border:1px solid rgba(176,141,87,.4);border-radius:999px;background:rgba(20,15,26,.55);font-size:11px;letter-spacing:2px;text-transform:uppercase;\"><span style=\"letter-spacing:0;\">⁂</span>$1</span><span style=\"flex:1;height:1px;background:linear-gradient(90deg,#b08d57,transparent);\"></span></div>"
+    },
+    {
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null,
+        "id": "b4e1e3c1-0449-4029-9e07-ff27fbc61909",
+        "scriptName": "CB · Divider — Timeskip with caption (↷)",
+        "findRegex": "/^\\s*(?:↷|»»»|→→→)[ \\t]+(\\S[^\\n]*?)[ \\t]*$/gm",
+        "replaceString": "<div style=\"display:flex;align-items:center;gap:12px;margin:26px 0;color:#a99cbd;\"><span style=\"flex:1;height:1px;background:repeating-linear-gradient(90deg,#8a7a9a 0 4px,transparent 4px 8px);\"></span><span style=\"display:inline-flex;align-items:center;gap:8px;padding:4px 14px;border:1px solid rgba(138,122,154,.5);border-radius:999px;background:rgba(20,15,26,.55);font-size:11px;letter-spacing:2px;text-transform:uppercase;font-style:italic;\"><span style=\"letter-spacing:0;\">↷</span>$1</span><span style=\"flex:1;height:1px;background:repeating-linear-gradient(90deg,#8a7a9a 0 4px,transparent 4px 8px);\"></span></div>"
     },
     {
         "id": "9083ae41-89de-457b-a005-f0e3a4d4dabb",
@@ -72,6 +143,23 @@
         "maxDepth": null
     },
     {
+        "trimStrings": [],
+        "placement": [
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": false,
+        "promptOnly": true,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": 1,
+        "maxDepth": null,
+        "id": "6d1bdfb0-cc28-414e-aa09-32bb45d3c21f",
+        "scriptName": "CB · Callboard — hide think from prompt (missing opener)",
+        "findRegex": "/^(?![\\s\\S]*?<think>)[\\s\\S]*?<\\/think>\\s*/",
+        "replaceString": ""
+    },
+    {
         "id": "a0c16267-058c-4ff3-942e-cf3b8104b25d",
         "scriptName": "CB · Callboard — hide think from prompt",
         "findRegex": "/<think>[\\s\\S]*?<\\/think>/g",
@@ -90,6 +178,23 @@
         "maxDepth": null
     },
     {
+        "trimStrings": [],
+        "placement": [
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null,
+        "id": "b993e141-ce4b-421c-a8cf-c3d79a0d40fa",
+        "scriptName": "CB · Callboard — think foldout (missing opener)",
+        "findRegex": "/^(?![\\s\\S]*?<think>)([\\s\\S]*?)<\\/think>/",
+        "replaceString": "<think>$1</think>"
+    },
+    {
         "id": "d57ab419-c6b2-4675-bbdd-44747d1901a1",
         "scriptName": "CB · Callboard — style think foldout",
         "findRegex": "/<think>([\\s\\S]*?)<\\/think>/g",
@@ -106,6 +211,91 @@
         "substituteRegex": 0,
         "minDepth": null,
         "maxDepth": null
+    },
+    {
+        "trimStrings": [],
+        "placement": [
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null,
+        "id": "92243411-da1f-484d-9f3b-4e81c2b48004",
+        "scriptName": "CB · Tracker — time-of-day icon (night)",
+        "findRegex": "/^(T(?:&gt;|>)\\s*time\\s*\\|\\s*)(?!🌙|🌇|🌅|☀|🌤)(?=[^|\\n]*(?:\\b(?:night|midnight|nighttime|late evening|small hours|moonrise)\\b|\\b(?:1[01]|[89]):\\d\\d\\s*PM\\b|\\b(?:12|[1-4]):\\d\\d\\s*AM\\b))/gmi",
+        "replaceString": "$1🌙 "
+    },
+    {
+        "trimStrings": [],
+        "placement": [
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null,
+        "id": "7034ddb3-413c-4c15-9658-c553c2d3df69",
+        "scriptName": "CB · Tracker — time-of-day icon (dusk)",
+        "findRegex": "/^(T(?:&gt;|>)\\s*time\\s*\\|\\s*)(?!🌙|🌇|🌅|☀|🌤)(?=[^|\\n]*(?:\\b(?:dusk|sunset|twilight|evening|nightfall)\\b|\\b[5-7]:\\d\\d\\s*PM\\b))/gmi",
+        "replaceString": "$1🌇 "
+    },
+    {
+        "trimStrings": [],
+        "placement": [
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null,
+        "id": "7350546c-b5e1-4697-b5f9-da95a66ac870",
+        "scriptName": "CB · Tracker — time-of-day icon (dawn)",
+        "findRegex": "/^(T(?:&gt;|>)\\s*time\\s*\\|\\s*)(?!🌙|🌇|🌅|☀|🌤)(?=[^|\\n]*(?:\\b(?:dawn|sunrise|daybreak|first light|early morning)\\b|\\b[5-6]:\\d\\d\\s*AM\\b))/gmi",
+        "replaceString": "$1🌅 "
+    },
+    {
+        "trimStrings": [],
+        "placement": [
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null,
+        "id": "ed1f54c2-9695-428c-b852-37e2cfc5e9ec",
+        "scriptName": "CB · Tracker — time-of-day icon (midday)",
+        "findRegex": "/^(T(?:&gt;|>)\\s*time\\s*\\|\\s*)(?!🌙|🌇|🌅|☀|🌤)(?=[^|\\n]*(?:\\b(?:noon|midday|afternoon)\\b|\\b12:\\d\\d\\s*PM\\b|\\b[1-4]:\\d\\d\\s*PM\\b))/gmi",
+        "replaceString": "$1☀️ "
+    },
+    {
+        "trimStrings": [],
+        "placement": [
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null,
+        "id": "7e3e8e63-1668-4ac4-913f-4b97a137fdb8",
+        "scriptName": "CB · Tracker — time-of-day icon (morning)",
+        "findRegex": "/^(T(?:&gt;|>)\\s*time\\s*\\|\\s*)(?!🌙|🌇|🌅|☀|🌤)(?=[^|\\n]*(?:\\b(?:morning|forenoon)\\b|\\b(?:[7-9]|1[01]):\\d\\d\\s*AM\\b))/gmi",
+        "replaceString": "$1🌤️ "
     },
     {
         "id": "4ce8ea1b-b954-4fc5-ad85-a7d625c4308e",
@@ -3002,5 +3192,39 @@
         "substituteRegex": 0,
         "minDepth": null,
         "maxDepth": null
+    },
+    {
+        "trimStrings": [],
+        "placement": [
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null,
+        "id": "158f4da7-af23-4431-a114-ba149716a420",
+        "scriptName": "CB · Colored dialogue — keep each speaker's color over quote styling",
+        "findRegex": "/<span\\s+style\\s*=\\s*([\"\\'])\\s*color\\s*:\\s*([#a-zA-Z0-9(),.%\\s]+?)\\s*;?\\s*\\1\\s*>((?:(?!<\\/?span\\b)[\\s\\S])*?)<\\/span>/gi",
+        "replaceString": "<font color=\"$2\">$3</font>"
+    },
+    {
+        "trimStrings": [],
+        "placement": [
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": false,
+        "promptOnly": true,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": 6,
+        "maxDepth": null,
+        "id": "a8730293-78f4-496b-8bce-4a3937fdea51",
+        "scriptName": "CB · Colored dialogue — drop old colors from the prompt",
+        "findRegex": "/<font\\b[^>]*\\bcolor\\s*=\\s*[\"\\']?[^\"\\'\\s>]+[\"\\']?[^>]*>([\\s\\S]*?)<\\/font\\s*>|<span\\s+style\\s*=\\s*([\"\\'])\\s*color\\s*:[^\"\\';]*;?\\s*\\2\\s*>((?:(?!<\\/?span\\b)[\\s\\S])*?)<\\/span>/gi",
+        "replaceString": "$1$3"
     }
 ]

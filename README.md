@@ -11,21 +11,23 @@ SillyTavern extensions, Chat Completion presets, and regex bundles by **Sierra**
 [**Reverie**](https://github.com/howardsierra/roleplay-frontend-personal) is a self-hosted roleplay frontend that looks good on phones and computers and needs very little setup.
 
 - **Phone-first.** Works in a phone browser and installs to your home screen.
-- **Compatible with what you already have.** SillyTavern character cards, chat-completion presets (including the ones below), themes, lorebooks, regex scripts, chats, and third-party extensions, plus Lumiverse "Loom" presets and extensions. Offstage, Wardrobe, Surtitle, Context Lens, and Extension Organizer are tested working, and Preset Organizer and Prompt Checkboxes are built in.
-- **Agents (new).** Helper AIs that run around your replies, switched on per story, optionally on their own cheaper model:
+- **Compatible with what you already have.** Character cards, chat-completion presets (including the ones below), lorebooks, chats, regex scripts, themes, and extensions from SillyTavern, Lumiverse, and Marinara Engine, audited against their real source. Offstage, Wardrobe, Surtitle, Context Lens, and Extension Organizer are tested working, and Preset Organizer and Prompt Checkboxes are built in.
+- **Nine agents.** Helper AIs that run around your replies, switched on per story, optionally on their own cheaper model:
   - **Narrative Director:** a 🧭 *Push story* button that advances the threads or adds a random event
   - **Secret Plot:** a hidden long-term arc it quietly steers toward, which you can peek at and edit
   - **Prose Guardian:** removes banned words, clichés, and repetition from each reply
   - **Continuity Checker:** lists slips as a checklist of fixes
   - **Trackers:** editable, lockable world, character, quest, inventory, and relationship state
   - **Choices:** tappable "what you do next" options
+  - **Bonds & Secrets:** a bond meter per character that moves by fixed rules and unlocks milestones in order, plus goals and who knows which secrets
   - **Lorebook Keeper:** suggests lore entries for you to approve
   - **Echo Chamber:** a pretend live audience in a floating feed
 - **Regenerate with a note, Branch & send, and preset options.** Tell a regeneration what to change, edit an earlier message onto a new branch, and expose `{{var::name}}` prompt variables as sliders, dropdowns, and switches.
 - **Live replies.** HTML, CSS, JavaScript, and Python blocks run inside messages as sandboxed mini-apps.
 - **Story tools.** Scene lighting that follows the story, and "Previously on…" recaps when you come back.
 - **Built-in Persona Manager and Avatar Banner,** ported from the SillyTavern extensions and reading their saved data.
-- **Backups.** One-file backups of everything, plus snapshots to merge or restore.
+- **Long stories.** A memory book that writes up older chapters and recalls them when they matter, cheaper long chats that keep the prompt cache warm, and one-file backups with snapshots.
+- **Writing and reading tools.** Enhance my reply turns a rough draft into a full reply, each reply shows its OpenRouter cost, replies can be read aloud, and you can search every story or export one as a readable book.
 - **Image generation.** Pollinations, NovelAI, ComfyUI, OpenAI, Gemini, and more, with inline `<pic>` tags the model can write.
 - **No database or build step.** Runs on Node.js 20+ and stores everything as plain files. Deploy it on Railway, with Docker, on your computer, or on an Android phone with Termux ([how to run it](https://github.com/howardsierra/roleplay-frontend-personal#run-it)).
 
@@ -65,13 +67,13 @@ Install any of these from SillyTavern: **Extensions → Install extension →** 
 | [**Guided Gens SI**](https://github.com/howardsierra/guidedgens-si) | Four in-character buttons: Impersonate, Respond, Swipe, and Correct. Steer the next message from your input box while keeping each speaker's voice. |
 | [**Surtitle**](https://github.com/howardsierra/SillyTavern-surtitle) | English surtitles under foreign-language lines (Japanese, Russian, Old Norse, even Runic) without replacing the original text. |
 | [**LoreLink**](https://github.com/howardsierra/LoreLink) | Pairs global lorebooks with specific characters, so your fantasy worldbook stops firing in your modern-day chats. |
-| [**Revamped Image Gen**](https://github.com/howardsierra/revampedimagegen) | Inline image and video generation with a mobile-first Studio panel: a real queue, a gallery, character reference photos, a model picker, and a Diagnose tool. Powers CALLBOARD's Stills Department. Based on notsosillynotsoimages by aceenvw. |
+| [**Revamped Image Gen**](https://github.com/howardsierra/revampedimagegen) | Inline image and video generation with a mobile-first Studio panel: a real queue, a gallery, several reference photos per character, a model picker, and a Diagnose tool. Powers CALLBOARD's Stills Department. Based on notsosillynotsoimages by aceenvw. |
 
 ### Prompt & preset tools
 
 | Extension | What it does |
 | --- | --- |
-| [**CALLBOARD Suite**](https://github.com/howardsierra/CALLBOARD) | A stage manager's control board for the CALLBOARD preset: pick-one bands, per-module token costs, a checker with one-click fixes, 16 starter loadouts, per-chat pins, `/cb` slash commands, and a 🎨 Studio for Pollinations images with a key that stays on your device. |
+| [**CALLBOARD Suite**](https://github.com/howardsierra/CALLBOARD) | A stage manager's control board for the CALLBOARD preset: pick-one bands, per-module token costs, a checker with one-click fixes, 16 starter loadouts, per-chat pins, `/cb` slash commands, a 🎨 Studio for Pollinations images, and Clover image orders sent straight to Revamped Image Gen. |
 | [**Preset Organizer**](https://github.com/howardsierra/preset-manager) | Collapsible sections, search, and bulk toggles for the Chat Completion prompt manager, plus a grid-style Preset Navigator. |
 | [**Prompt Checkboxes**](https://github.com/howardsierra/prompt-checkboxes) | Replaces the prompt manager's on/off toggle icon with a real checkbox. A UI-only swap. |
 | [**Context Lens**](https://github.com/howardsierra/contextlens) | A context-window dashboard: how much of the prompt budget is used (with a reply reserve), per-category token bars, the lorebook entries that fired, where truncation cut off, and a fill trend. Works on phones. |
@@ -96,8 +98,9 @@ Chat Completion presets, tuned for Claude. Each has a hostess character who narr
 | [**🌹 Rosie Full Bloom** v2.7](presets/Rosie_Full_Bloom_v2.7.json) | Rosie, a fangirly creative-writing mascot | Everything: romance, dark romance, horror, mystery, cozy. Prose Wardrobe styles, Writer's Room lenses, info boards and status reports. | 140 | [34 scripts](regex/Rosie_regex_bundle.json) |
 | [**🥀 The Velvet Vigil** v3.2.2](presets/The_Velvet_Vigil_v3.2.2.json) | Vesper, a night-archivist | Gothic and literary storytelling. Voice and genre picks, story systems, diegetic HTML visuals, and Loom Mode. | 107 | [8 scripts](regex/Velvet_Vigil_regex_bundle.json) |
 | [**💌 LOVESICK** v1.4.1](presets/LOVESICK_v1.4.1.json) | Juno, a romance editor with a matchmaker's god complex | Modern-day romance and heat. Trope picks, a heat dial, Screenlife visuals (texts, group chat, delulu meter), and an Assistant Mode. | 78 | [12 scripts](regex/LOVESICK_regex_bundle.json) |
-| [**📋 CALLBOARD** v1.6.1](presets/CALLBOARD_v1.6.1.json) | Xavi, your stage manager | Fourteen setting "wings" (Modern, Y2K, Regency, Westeros, Wuxia, Cyberpunk, Sci-Fi…), Cue Calls, The Program, trackers, model correction layers, the 📸 Stills Department and 🖥️ Pure HTML mode, and panels for Twitch, Discord, X, Reddit, the press, a dating app, a browser, Instagram, private photos, a creator page, and a K-pop fan platform. | 160 | [167 scripts](regex/CALLBOARD_regex_bundle.json) |
-| [**📋 CALLBOARD Lite** v1.6.1](presets/CALLBOARD_Lite_v1.6.1.json) | Xavi, your stage manager | The same show in about 3k tokens instead of 14.2k: every wing at full strength, merged charters, compact Cue Calls and Program, and the same panels, including the v1.5 apps. For cheaper models, small context windows, and long chats. | 110 | [167 scripts](regex/CALLBOARD_regex_bundle.json) |
+| [**📋 CALLBOARD** v1.6.8](presets/CALLBOARD_v1.6.8.json) | Xavi, your stage manager | Fourteen setting "wings" (Modern, Y2K, Regency, Westeros, Wuxia, Cyberpunk, Sci-Fi…), Cue Calls, The Program, trackers, model correction layers, the 📸 Stills Department, 🖥️ Pure HTML mode, Clover OOC image orders, Private Scenes support, and panels for Twitch, Discord, X, Reddit, the press, a dating app, a browser, Instagram, private photos, a creator page, and a K-pop fan platform. | 164 | [180 scripts](regex/CALLBOARD_regex_bundle.json) |
+| [**📋 CALLBOARD Lite** v1.6.8](presets/CALLBOARD_Lite_v1.6.8.json) | Xavi, your stage manager | The same show in about 3k tokens instead of 14.2k: every wing at full strength, merged charters, compact Cue Calls and Program, and the same panels, including the v1.5 apps. For cheaper models, small context windows, and long chats. | 114 | [180 scripts](regex/CALLBOARD_regex_bundle.json) |
+| [**🧪 CALLBOARD Lab** v0.9.1](presets/CALLBOARD_Lab_v0.9.1.json) | Xavi, your stage manager | An experimental copy of CALLBOARD Full for trying ideas before they reach the real preset: about 30 writing switches (all off), Assistant Mode, the Board Console with skins, on-screen effects, context savers, and four slots for your own rewrites. | 200 | [210 scripts](regex/CALLBOARD_Lab_regex_bundle.json) |
 <!-- presets:end -->
 
 Every preset ships a **Read Me** prompt at the top of its list (disabled, so it's never sent to the model) with a quick start.

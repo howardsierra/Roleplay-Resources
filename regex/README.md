@@ -7,7 +7,8 @@ Every preset ships with regex scripts that turn short tags into styled panels. H
 - [🌹 Rosie Full Bloom](#rosie) (34)
 - [🥀 The Velvet Vigil](#vigil) (8)
 - [💌 LOVESICK](#lovesick) (12)
-- [📋 CALLBOARD](#callboard) (167)
+- [📋 CALLBOARD](#callboard) (180)
+- [🧪 CALLBOARD Lab](#callboard-lab) (210)
 
 <a id="rosie"></a>
 ## 🌹 Rosie Full Bloom v2.7
@@ -161,9 +162,9 @@ Turn on 📶 Signal Mode in the preset, and Juno writes these light tags instead
   `<think>…</think>`
 
 <a id="callboard"></a>
-## 📋 CALLBOARD v1.6.1
+## 📋 CALLBOARD v1.6.8
 
-CALLBOARD writes data lines, like TW> msg|… for a Twitch message, inside [[SHELL]] tags. Row regexes draw each line, and shell regexes draw the window around them. They ship inside the preset: allow them when SillyTavern asks, or import the bundle. CALLBOARD Lite v1.6.1 uses exactly the same regex. Bundle: [`CALLBOARD_regex_bundle.json`](CALLBOARD_regex_bundle.json).
+CALLBOARD writes data lines, like TW> msg|… for a Twitch message, inside [[SHELL]] tags. Row regexes draw each line, and shell regexes draw the window around them. They ship inside the preset: allow them when SillyTavern asks, or import the bundle. CALLBOARD Lite v1.6.8 uses exactly the same regex. Bundle: [`CALLBOARD_regex_bundle.json`](CALLBOARD_regex_bundle.json).
 
 ### Dividers
 
@@ -175,6 +176,12 @@ These also work in your own messages.
   `⁂ on its own line`
 - **CB · Divider — Timeskip (↷)**: Turns it into a "later" timeskip divider. _(Also runs on your messages)_
   `↷, »»», or →→→ on its own line`
+- **CB · Divider — Act Break with caption**: An act break with a caption in the middle. _(Also runs on your messages)_
+  `--- Act Two · the wedding`
+- **CB · Divider — Scene Shift with caption (⁂)**: A scene-shift mark with a caption. _(Also runs on your messages)_
+  `⁂ the next morning`
+- **CB · Divider — Timeskip with caption (↷)**: A timeskip divider with a caption instead of "later". _(Also runs on your messages)_
+  `↷ Three days later · the harbor`
 
 ### Cue Calls and The Program
 
@@ -204,6 +211,9 @@ Your stage manager's notes and asides.
 - **CB · Callboard — style think foldout**: Shows Xavi's reasoning as a 🎧 "Xavi at the board" fold-out. _(Also runs on your messages)_
   `<think>…</think>`
 - **CB · Callboard — hide think from prompt**: Leaves Xavi's <think> notes out of what's sent back to the model on later turns, to save tokens. What you see doesn't change. _(Only changes what the model sees · Also runs on your messages)_
+- **CB · Callboard — think foldout (missing opener)**: Some models close their reasoning with </think> but never open it. This folds that reasoning into Xavi's fold-out anyway.
+  `…</think>`
+- **CB · Callboard — hide think from prompt (missing opener)**: Keeps that unopened reasoning out of what's sent back to the model on later turns. _(Only changes what the model sees)_
 - **CB · Xavi — curtain note (style)**: Xavi's curtain note: a 🎧 card under the reply. _(Also runs on your messages)_
   `<xavi>note</xavi>`
 - **CB · Xavi — curtain note (hide from prompt)**: Leaves Xavi's curtain notes out of what's sent back to the model, so they cost no tokens later. _(Only changes what the model sees · Also runs on your messages)_
@@ -218,6 +228,16 @@ Written inside one <cb_state> block. Shell regexes draw each card, and row regex
   `[[TRK]] … [[/TRK]]`
 - **CB · Tracker row — line**: A label-and-value line in the Status card for the time, place, or mood. _(Also runs on your messages)_
   `T> time|… · T> place|… · T> mood|…`
+- **CB · Tracker — time-of-day icon (dawn)**: Puts 🌅 in front of a dawn time on the tracker.
+  `T> time|dawn, or 5–6 AM`
+- **CB · Tracker — time-of-day icon (morning)**: Puts 🌤️ in front of a morning time.
+  `T> time|morning, or 7–11 AM`
+- **CB · Tracker — time-of-day icon (midday)**: Puts ☀️ in front of a midday or afternoon time.
+  `T> time|noon, afternoon, or 12–4 PM`
+- **CB · Tracker — time-of-day icon (dusk)**: Puts 🌇 in front of an evening time.
+  `T> time|dusk, evening, or 5–7 PM`
+- **CB · Tracker — time-of-day icon (night)**: Puts 🌙 in front of a night time.
+  `T> time|night, or 8 PM–4 AM`
 - **CB · Tracker row — affinity**: An affinity bar for the focus character, with the reason underneath. _(Also runs on your messages)_
   `T> affinity|name|0–100|why`
 - **CB · Tracker row — reputation**: A reputation line, with the reason underneath. _(Also runs on your messages)_
@@ -561,9 +581,523 @@ New in v1.5. Written inside [[BUBBLE]] for an idol's paid chat, or [[LIVE]] for 
 - **CB · Fan platform row — system**: A system line, like new messages, a renewed subscription, or someone joining. _(Also runs on your messages)_
   `FP> sys|line`
 
+### Colored dialogue
+
+For 🎨 Colored Dialogue: each speaker gets one color for the whole chat.
+
+- **CB · Colored dialogue — keep each speaker's color over quote styling**: SillyTavern's quote color overrides a span's color, so speaker colors never showed. This turns those spans into <font color> tags, which win.
+  `<span style="color:…">`
+- **CB · Colored dialogue — drop old colors from the prompt**: Strips the color tags from messages six or more back in what's sent to the model, to save tokens. What you see doesn't change. _(Only changes what the model sees)_
+
 ### Plumbing and extras
 
 - **CB · Data lines — drop a stray trailing |**: Runs first. Removes a stray | that the model leaves at the end of any data line, so the line still draws as its card instead of falling back to raw text. _(Also runs on your messages)_
+- **CB · Cleanup — unwrap state, panels and HTML from code fences**: If the model wraps its tracker, a panel, or HTML in a ``` code block, this unwraps it so it draws instead of showing as code.
+- **CB · Chat/Press row — catch-all (malformed lines)**: Catches chat, press, or app lines with the wrong number of fields and shows them as plain text instead of breaking the panel. _(Also runs on your messages)_
+- **CB · Chat/Press — join rendered rows**: Removes the line breaks between drawn rows so panels don't get gaps. _(Also runs on your messages)_
+- **CB · Visuals — collapse old chat/press blocks in prompt (optional)**: Swaps chat panels, press pages, app panels, and the Program for a short placeholder in what's sent to the model once they're six or more messages old, to save tokens. What you see doesn't change. _(Only changes what the model sees · Also runs on your messages)_
+- **CB · Extreme — Pollinations image**: Turns an image directive into a Pollinations picture (Flux, 1024×1024) using the preset's built-in key, so images work out of the box. CALLBOARD Suite's 🎨 Studio can use your own key instead and adds reroll and fine-tune buttons. Images need "Forbid External Media" turned off. (For images through Revamped Image Gen, use the 📸 Stills Department instead.)
+  `<cb_img>prompt: … | ar: 16:9</cb_img>`
+
+<a id="callboard-lab"></a>
+## 🧪 CALLBOARD Lab v0.9.1
+
+The Lab is CALLBOARD Full plus experiments. Its tracker and boards are drawn as one Board Console, and it adds on-screen effects, New Faces cards, Chance Dice, and context savers. Everything else works exactly like CALLBOARD, below. Bundle: [`CALLBOARD_Lab_regex_bundle.json`](CALLBOARD_Lab_regex_bundle.json).
+
+### Board Console
+
+The Lab draws the tracker and boards as one console. The model still writes the same T>, C>, W>, S>, I> and X> lines inside <cb_state>.
+
+- **CB · Console — open (newest reply)**: Opens the console on the newest reply: a digest bar with the time, place, mood, and focus affinity, with the drawers open below. _(Also runs on your messages)_
+  `<cb_state> … </cb_state>`
+- **CB · Console — open (older replies, folded)**: On older replies, the console folds back to its digest bar. _(Also runs on your messages)_
+- **CB · Console — close**: Closes the console at </cb_state>. _(Also runs on your messages)_
+- **CB · Console — Tracker shell**: The 📊 Tracker drawer, open by default. _(Also runs on your messages)_
+  `[[TRK]] … [[/TRK]]`
+- **CB · Console — Board shell — Cast**: The 🪪 Cast drawer, open by default. _(Also runs on your messages)_
+  `[[CAST]] … [[/CAST]]`
+- **CB · Console — Board shell — Web**: The 💞 Relationships drawer, folded. _(Also runs on your messages)_
+  `[[WEB]] … [[/WEB]]`
+- **CB · Console — Board shell — Status**: The 🩹 Condition drawer, folded. _(Also runs on your messages)_
+  `[[STATUS]] … [[/STATUS]]`
+- **CB · Console — Board shell — Inventory**: The 🎒 Inventory drawer, folded. _(Also runs on your messages)_
+  `[[INV]] … [[/INV]]`
+- **CB · Console — Board shell — Codex**: The 📓 Codex drawer, folded. _(Also runs on your messages)_
+  `[[CODEX]] … [[/CODEX]]`
+- **CB · Console — Tracker row — time, place, mood**: A tile for the time, place, or mood. _(Also runs on your messages)_
+  `T> time|… · T> place|… · T> mood|…`
+- **CB · Console — Tracker row — affinity**: An affinity meter with the reason underneath. _(Also runs on your messages)_
+  `T> affinity|name|0–100|why`
+- **CB · Console — Tracker row — reputation (rung 1)**: Reputation on the first rung of a five-step ladder (Regency or Fame). _(Also runs on your messages)_
+  `T> reputation|Spotless or Under the radar|why`
+- **CB · Console — Tracker row — reputation (rung 2)**: Reputation on the second rung. _(Also runs on your messages)_
+  `T> reputation|Whispered of or Buzzing|why`
+- **CB · Console — Tracker row — reputation (rung 3)**: Reputation on the third rung. _(Also runs on your messages)_
+  `T> reputation|Talked of or Trending|why`
+- **CB · Console — Tracker row — reputation (rung 4)**: Reputation on the fourth rung. _(Also runs on your messages)_
+  `T> reputation|Compromised or Front page|why`
+- **CB · Console — Tracker row — reputation (rung 5)**: Reputation on the last rung. _(Also runs on your messages)_
+  `T> reputation|Ruined or Scandal|why`
+- **CB · Console — Tracker row — reputation (other)**: Any other reputation wording, shown without the ladder. _(Also runs on your messages)_
+  `T> reputation|standing|why`
+- **CB · Console — Board row — Cast**: A person card with their mood and affinity bar. Tap it for their role and whereabouts. _(Also runs on your messages)_
+  `C> name|role|0–100|mood|status`
+- **CB · Console — Board row — Web**: A pairing card. Tap it for the note. _(Also runs on your messages)_
+  `W> A ↔ B|bond|0–100|note`
+- **CB · Console — Board row — Status**: A condition card. Tap it for details. _(Also runs on your messages)_
+  `S> name|health|energy|condition`
+- **CB · Console — Board row — Inventory**: An item card with an icon for its kind. Tap it for the note. _(Also runs on your messages)_
+  `I> item|type|note`
+- **CB · Console — Board row — Codex**: A codex card with an icon for its kind (quest, mystery, faction…). Tap it for the note. _(Also runs on your messages)_
+  `X> entry|type|note`
+- **CB · Console — Board row — catch-all (malformed lines)**: Shows board lines with the wrong number of fields as plain text. _(Also runs on your messages)_
+- **CB · Console — join rows and drawers**: Removes the gaps between the console's rows and drawers. _(Also runs on your messages)_
+- **CB · Console — stylesheet (keep after every console script)**: Adds the console's look, in the skin you pick in CALLBOARD Suite (Console, Minimal, Parchment, Neon, or Auto by wing). Keep it after every other console script. _(Also runs on your messages)_
+
+### On-screen effects
+
+Drawn for the 🔍 Hidden Layers, ⚡ Kinetic Type, and 📳 Push Notifications switches. Tags you type yourself work too.
+
+- **CB LAB · Hidden layers — subtext**: Underlines the line. Tap it for a ☁ Unspoken card with what they're really thinking. _(Also runs on your messages)_
+  `<subtext thought="…">line</subtext>`
+- **CB LAB · Hidden layers — tell**: Tap for a ✋ Tell card: the body language giving them away. _(Also runs on your messages)_
+  `<tell note="…">action</tell>`
+- **CB LAB · Hidden layers — lore**: Tap for a 📜 Lore card. _(Also runs on your messages)_
+  `<lore entry="…">name</lore>`
+- **CB LAB · Hidden layers — translate**: Tap for a 🗣 Meaning card with the translation. _(Also runs on your messages)_
+  `<translate meaning="…">foreign words</translate>`
+- **CB LAB · Hidden layers — retract**: Blurred words someone swallowed. They sharpen when tapped. _(Also runs on your messages)_
+  `<retract>words</retract>`
+- **CB LAB · Kinetic type**: Makes a few words slam, shake, glitch, pulse, glow, or drift. Animations stop if your device is set to reduce motion. _(Also runs on your messages)_
+  `<shake>, <glitch>, <pulse>, <ember>, <drift>…`
+- **CB LAB · Kinetic type (nested)**: A second pass, so one effect inside another also works. _(Also runs on your messages)_
+- **CB LAB · Push notification**: A phone notification card. _(Also runs on your messages)_
+  `<notification app="…" from="…" time="…">text</notification>`
+- **CB LAB · Effects stylesheet (keep last of the LAB effects)**: Adds the effects' look, once per message. Keep it after the other Lab effects. _(Also runs on your messages)_
+
+### New Faces and Chance Dice
+
+- **CB LAB · New face — card**: A 🆕 card for a newly introduced named character. _(Also runs on your messages)_
+  `[[NEWFACE]] … [[/NEWFACE]]`
+- **CB LAB · New face — name**: The card's name line. _(Also runs on your messages)_
+  `NF> name|name|tagline`
+- **CB LAB · New face — look**: How they look, with one detail that stands out. _(Also runs on your messages)_
+  `NF> look|appearance|one striking detail`
+- **CB LAB · New face — wants**: Their hobbies, goal, and dream. _(Also runs on your messages)_
+  `NF> wants|hobbies|goal|dream`
+- **CB LAB · New face — contradiction**: Where what they say and what they do don't match. _(Also runs on your messages)_
+  `NF> contradiction|what they claim|what they do`
+- **CB LAB · New face — other rows**: Any other labeled row, such as their stake, ties, or voice. _(Also runs on your messages)_
+  `NF> stake|… · NF> ties|… · NF> voice|…`
+- **CB LAB · New face — join rows**: Removes the gaps between the card's rows. _(Also runs on your messages)_
+- **CB LAB · Chance dice slip**: A small 🎲 slip for the turn's two dice and the one thing in the world they nudge. _(Also runs on your messages)_
+  `DICE> roll|roll|area|result|what it nudges`
+
+### Context savers
+
+On by default. They shrink what's sent to the model without changing your chat. Turn any off under Extensions → Regex → Preset scripts.
+
+- **CB LAB · Context saver — old tracker & board cards**: Leaves <cb_state> blocks four or more messages old out of the prompt. The newest stay, so numbers carry on correctly. _(Only changes what the model sees)_
+- **CB LAB · Context saver — old cue legends**: Older cue lines keep their name and reason but drop the long legend. _(Only changes what the model sees)_
+- **CB LAB · Context saver — old HTML styles**: Leaves <style> blocks three or more messages old out of the prompt. The artifacts' text stays. _(Only changes what the model sees)_
+- **CB LAB · Context saver — old dice slips**: Leaves older 🎲 slips out of the prompt. The newest stays. _(Only changes what the model sees)_
+
+### Dividers
+
+These also work in your own messages.
+
+- **CB · Divider — Act Break**: Turns the line into a ✦ ✦ ✦ act break. _(Also runs on your messages)_
+  `a line of ---, ***, ===, or ~~~`
+- **CB · Divider — Scene Shift (⁂)**: Turns it into a centered scene-shift mark. _(Also runs on your messages)_
+  `⁂ on its own line`
+- **CB · Divider — Timeskip (↷)**: Turns it into a "later" timeskip divider. _(Also runs on your messages)_
+  `↷, »»», or →→→ on its own line`
+- **CB · Divider — Act Break with caption**: An act break with a caption in the middle. _(Also runs on your messages)_
+  `--- Act Two · the wedding`
+- **CB · Divider — Scene Shift with caption (⁂)**: A scene-shift mark with a caption. _(Also runs on your messages)_
+  `⁂ the next morning`
+- **CB · Divider — Timeskip with caption (↷)**: A timeskip divider with a caption instead of "later". _(Also runs on your messages)_
+  `↷ Three days later · the harbor`
+
+### Cue Calls and The Program
+
+New in v1.4: Xavi tells you what's about to appear, and what's lit tonight.
+
+- **CB · Cue — standby slip (with legend)**: A gold ● STANDBY slip above whatever's about to appear, with a "What it means" legend. Xavi includes the legend the first time each kind of element shows up. _(Also runs on your messages)_
+  `CUE> icon|what's coming|why now|what it means`
+- **CB · Cue — standby slip**: The same STANDBY slip without the legend, for elements you've already seen. _(Also runs on your messages)_
+  `CUE> icon|what's coming|why now|`
+- **CB · Cue — catch-all (malformed lines)**: Catches cue lines with the wrong number of fields and shows them as a plain STANDBY line. _(Also runs on your messages)_
+- **CB · Shell — The Program**: The theatre-program card listing everything that's lit. It appears on the first reply of a chat, and whenever you send [PROGRAM]. _(Also runs on your messages)_
+  `[[PROGRAM]] … [[/PROGRAM]]`
+- **CB · Program row — title**: The program's title: tonight's production in a phrase. _(Also runs on your messages)_
+  `PG> title|tonight's production`
+- **CB · Program row — cast line**: The line under the title: the setting wing, mode, and Xavi's patter and mood. _(Also runs on your messages)_
+  `PG> cast|wing · mode · patter and mood`
+- **CB · Program row — act**: One lit module per line: what sets it off (CUE) and what you'll see. _(Also runs on your messages)_
+  `PG> act|icon|module|what sets it off|what you'll see`
+- **CB · Program row — note from Xavi**: A closing note from Xavi to the director, signed — X. _(Also runs on your messages)_
+  `PG> note|line`
+- **CB · Program row — catch-all (malformed lines)**: Catches program lines with the wrong number of fields and shows them as plain text. _(Also runs on your messages)_
+
+### Xavi
+
+Your stage manager's notes and asides.
+
+- **CB · Callboard — style think foldout**: Shows Xavi's reasoning as a 🎧 "Xavi at the board" fold-out. _(Also runs on your messages)_
+  `<think>…</think>`
+- **CB · Callboard — hide think from prompt**: Leaves Xavi's <think> notes out of what's sent back to the model on later turns, to save tokens. What you see doesn't change. _(Only changes what the model sees · Also runs on your messages)_
+- **CB · Callboard — think foldout (missing opener)**: Some models close their reasoning with </think> but never open it. This folds that reasoning into Xavi's fold-out anyway.
+  `…</think>`
+- **CB · Callboard — hide think from prompt (missing opener)**: Keeps that unopened reasoning out of what's sent back to the model on later turns. _(Only changes what the model sees)_
+- **CB · Xavi — curtain note (style)**: Xavi's curtain note: a 🎧 card under the reply. _(Also runs on your messages)_
+  `<xavi>note</xavi>`
+- **CB · Xavi — curtain note (hide from prompt)**: Leaves Xavi's curtain notes out of what's sent back to the model, so they cost no tokens later. _(Only changes what the model sees · Also runs on your messages)_
+- **CB · Xavi — OOC aside (style, AI output only)**: Styles Xavi's (OOC: …) asides as a "from the wings" note signed — X. It only touches the AI's replies, so your own OOC stays plain.
+  `(OOC: aside)`
+
+### Tracker and boards
+
+Written inside one <cb_state> block. Shell regexes draw each card, and row regexes draw the lines inside it.
+
+- **CB · Tracker — time-of-day icon (dawn)**: Puts 🌅 in front of a dawn time on the tracker.
+  `T> time|dawn, or 5–6 AM`
+- **CB · Tracker — time-of-day icon (morning)**: Puts 🌤️ in front of a morning time.
+  `T> time|morning, or 7–11 AM`
+- **CB · Tracker — time-of-day icon (midday)**: Puts ☀️ in front of a midday or afternoon time.
+  `T> time|noon, afternoon, or 12–4 PM`
+- **CB · Tracker — time-of-day icon (dusk)**: Puts 🌇 in front of an evening time.
+  `T> time|dusk, evening, or 5–7 PM`
+- **CB · Tracker — time-of-day icon (night)**: Puts 🌙 in front of a night time.
+  `T> time|night, or 8 PM–4 AM`
+
+### Twitch
+
+Written inside [[TWITCH]] … [[/TWITCH]].
+
+- **CB · Shell — Twitch chat**: The Twitch chat window that floats beside the prose, with its "Send a message" box. _(Also runs on your messages)_
+  `[[TWITCH]] … [[/TWITCH]]`
+- **CB · Twitch row — live header**: The stream header: channel, LIVE badge, title, category, viewer count, and uptime. _(Also runs on your messages)_
+  `TW> live|channel|title|category|viewers|uptime`
+- **CB · Twitch row — message**: A chat message, with badges and the viewer's name color. _(Also runs on your messages)_
+  `TW> msg|#color|user|badges|message`
+- **CB · Twitch row — sub / gift**: A highlighted sub or gift-sub alert. _(Also runs on your messages)_
+  `TW> sub|user|kind|message`
+- **CB · Twitch row — bits**: A cheer with bits. _(Also runs on your messages)_
+  `TW> bits|user|amount|message`
+- **CB · Twitch row — tip (TTS)**: A TTS donation alert, the kind the streamer hears read out loud. _(Also runs on your messages)_
+  `TW> tip|user|$amount|message`
+- **CB · Twitch row — raid**: A raid alert. _(Also runs on your messages)_
+  `TW> raid|channel|viewers`
+- **CB · Twitch row — follow**: A new-follower line. _(Also runs on your messages)_
+  `TW> follow|user`
+- **CB · Twitch row — mod action**: A mod action, like a timeout. _(Also runs on your messages)_
+  `TW> mod|what happened`
+- **CB · Twitch row — clip**: A ✂️ clip card. _(Also runs on your messages)_
+  `TW> clip|title|clipped by`
+- **CB · Twitch inline — @mention**: Highlights @mentions in Twitch chat. _(Also runs on your messages)_
+  `@username`
+
+### Discord
+
+Written inside [[DISCORD]] … [[/DISCORD]].
+
+- **CB · Shell — Discord window**: The Discord window around the messages, with its message box. _(Also runs on your messages)_
+  `[[DISCORD]] … [[/DISCORD]]`
+- **CB · Discord row — place header**: The server and channel header, or Direct Messages. _(Also runs on your messages)_
+  `DC> place|server|#channel`
+- **CB · Discord row — message (no tag)**: A message from someone without a role badge. _(Also runs on your messages)_
+  `DC> msg|#color|name||time|message`
+- **CB · Discord row — message (tagged)**: A message with a role badge like MOD, or a joke role. _(Also runs on your messages)_
+  `DC> msg|#color|name|tag|time|message`
+- **CB · Discord row — grouped follow-up**: A follow-up grouped under the same person's last message. _(Also runs on your messages)_
+  `DC> more|message`
+- **CB · Discord row — reply line**: The small "replying to" line above a reply. _(Also runs on your messages)_
+  `DC> reply|name|snippet`
+- **CB · Discord row — reactions**: Reaction pills under a message. _(Also runs on your messages)_
+  `DC> react|💀 4 · 😭 2`
+- **CB · Discord row — attachment**: An image or file attachment. _(Also runs on your messages)_
+  `DC> attach|what it is`
+- **CB · Discord row — system line**: A system line, like a pinned message, a join, or a call. _(Also runs on your messages)_
+  `DC> sys|line`
+- **CB · Discord row — typing**: The typing indicator. _(Also runs on your messages)_
+  `DC> typing|Mara is typing…`
+- **CB · Discord inline — @mention**: Highlights @mentions, Discord-style. _(Also runs on your messages)_
+  `@name`
+- **CB · Discord inline — (edited)**: Turns "(edited)" into Discord's small grey tag. _(Also runs on your messages)_
+  `(edited)`
+- **CB · Discord inline — split reactions**: Splits a reactions line into separate pills. _(Also runs on your messages)_
+- **CB · Chat inline — emotes :Name: (Twitch/Discord)**: Turns emotes in Twitch and Discord lines into emote pills. _(Also runs on your messages)_
+  `:KEKW:`
+
+### Press clippings
+
+Written inside [[TABLOID]], [[BLOG]], [[MAG]], or [[BLIND]].
+
+- **CB · Shell — Press tabloid**: The red, loud tabloid page. _(Also runs on your messages)_
+  `[[TABLOID]] … [[/TABLOID]]`
+- **CB · Shell — Press blog**: The hot-pink gossip blog. _(Also runs on your messages)_
+  `[[BLOG]] … [[/BLOG]]`
+- **CB · Shell — Press mag**: The glossy magazine spread. _(Also runs on your messages)_
+  `[[MAG]] … [[/MAG]]`
+- **CB · Shell — Press blind**: The anonymous blind item. _(Also runs on your messages)_
+  `[[BLIND]] … [[/BLIND]]`
+- **CB · Press row — outlet masthead**: The outlet's masthead. _(Also runs on your messages)_
+  `PR> outlet|name|date or section`
+- **CB · Press row — headline**: The headline. _(Also runs on your messages)_
+  `PR> head|headline`
+- **CB · Press row — deck**: The subhead under the headline. _(Also runs on your messages)_
+  `PR> deck|subhead`
+- **CB · Press row — paparazzi photo**: A 📸 EXCLUSIVE box describing the shot, with its credit. _(Also runs on your messages)_
+  `PR> photo|what it shows|credit`
+- **CB · Press row — body**: A paragraph of the story. _(Also runs on your messages)_
+  `PR> body|paragraph`
+- **CB · Press row — pull quote**: A pull quote. _(Also runs on your messages)_
+  `PR> quote|quote|who said it`
+- **CB · Press row — stats / cover line**: Views and comments, or a cover price and issue number. _(Also runs on your messages)_
+  `PR> stats|line`
+- **CB · Press row — reader comment**: A reader comment. _(Also runs on your messages)_
+  `PR> comment|user|comment`
+
+### X / Twitter
+
+Written inside [[X]] … [[/X]].
+
+- **CB · Shell — X post**: The X card around the post. _(Also runs on your messages)_
+  `[[X]] … [[/X]]`
+- **CB · X row — post (no badge)**: A post from an account without a badge. _(Also runs on your messages)_
+  `XT> post|#avatar|name|@handle||time|text`
+- **CB · X row — post (badge)**: A post from an account with a badge. _(Also runs on your messages)_
+  `XT> post|#avatar|name|@handle|badge|time|text`
+- **CB · X row — reply (no badge)**: A reply from an account without a badge. _(Also runs on your messages)_
+  `XT> reply|#avatar|name|@handle||time|text`
+- **CB · X row — reply (badge)**: A reply from an account with a badge. _(Also runs on your messages)_
+  `XT> reply|#avatar|name|@handle|badge|time|text`
+- **CB · X row — media**: A photo or video in the post. _(Also runs on your messages)_
+  `XT> media|what it shows`
+- **CB · X row — quote**: A quoted post. _(Also runs on your messages)_
+  `XT> quote|name|@handle|text`
+- **CB · X row — stats**: The engagement line. _(Also runs on your messages)_
+  `XT> stats|replies|reposts|likes|views`
+- **CB · X inline — @mention / #hashtag (last field only)**: Colors @handles and #hashtags in a post's text. _(Also runs on your messages)_
+  `@handle · #hashtag`
+
+### Reddit
+
+Written inside [[REDDIT]] … [[/REDDIT]].
+
+- **CB · Shell — Reddit thread**: The Reddit thread around the post and comments. _(Also runs on your messages)_
+  `[[REDDIT]] … [[/REDDIT]]`
+- **CB · Reddit row — subreddit header**: The subreddit header. _(Also runs on your messages)_
+  `RD> sub|r/name|tagline`
+- **CB · Reddit row — post (no flair)**: A post title without flair. _(Also runs on your messages)_
+  `RD> post|u/user|time||title`
+- **CB · Reddit row — post (flair)**: A post title with flair. _(Also runs on your messages)_
+  `RD> post|u/user|time|flair|title`
+- **CB · Reddit row — body text**: A paragraph of the post body. _(Also runs on your messages)_
+  `RD> text|paragraph`
+- **CB · Reddit row — media**: An image in the post. _(Also runs on your messages)_
+  `RD> media|what it shows`
+- **CB · Reddit row — stats**: Upvotes and the comment count. _(Also runs on your messages)_
+  `RD> stats|upvotes|comments`
+- **CB · Reddit row — comment**: A comment, indented by its depth (0–3). _(Also runs on your messages)_
+  `RD> comment|depth|u/user|points|text`
+- **CB · Reddit inline — (OP) tag**: Turns "(OP)" after a username into Reddit's OP badge. _(Also runs on your messages)_
+  `(OP)`
+- **CB · Reddit inline — EDIT:**: Bolds "EDIT:" in posts and comments. _(Also runs on your messages)_
+  `EDIT:`
+
+### Y2K comms
+
+For the Y2K wing: AIM, flip phones, and MySpace.
+
+- **CB · Shell — AIM window**: The AIM chat window. _(Also runs on your messages)_
+  `[[AIM]] … [[/AIM]]`
+- **CB · AIM row — window bar**: The window's title bar, with the buddy's status. _(Also runs on your messages)_
+  `AIM> win|screen name|status`
+- **CB · AIM row — red (you)**: Your character's messages, in AIM red. _(Also runs on your messages)_
+  `AIM> red|ScreenName|time|message`
+- **CB · AIM row — blue (them)**: The other person's messages, in AIM blue. _(Also runs on your messages)_
+  `AIM> blue|ScreenName|time|message`
+- **CB · AIM row — away message**: An away message. _(Also runs on your messages)_
+  `AIM> away|ScreenName|message`
+- **CB · AIM row — system**: A system line, like someone signing off. _(Also runs on your messages)_
+  `AIM> sys|line`
+- **CB · Shell — Flip phone**: The flip phone around the texts. _(Also runs on your messages)_
+  `[[FLIP]] … [[/FLIP]]`
+- **CB · Flip row — header**: The phone's screen header. _(Also runs on your messages)_
+  `FLIP> head|contact|carrier + time`
+- **CB · Flip row — received**: A received text. _(Also runs on your messages)_
+  `FLIP> in|text|time`
+- **CB · Flip row — sent**: A sent text. _(Also runs on your messages)_
+  `FLIP> out|text|time`
+- **CB · Shell — MySpace comments**: The MySpace comment wall. _(Also runs on your messages)_
+  `[[MYSPACE]] … [[/MYSPACE]]`
+- **CB · MySpace row — header**: The profile header, with their mood. _(Also runs on your messages)_
+  `MS> head|name|mood`
+- **CB · MySpace row — Top 8**: The Top 8. _(Also runs on your messages)_
+  `MS> top8|names, comma-separated`
+- **CB · MySpace row — comment**: A wall comment. _(Also runs on your messages)_
+  `MS> comment|name|date|comment`
+
+### Dating app
+
+New in v1.5. Written inside [[DATING]] … [[/DATING]]. Every profile is an adult.
+
+- **CB · Shell — Dating app**: The dating app's phone screen around everything. _(Also runs on your messages)_
+  `[[DATING]] … [[/DATING]]`
+- **CB · Dating row — app bar**: The app's top bar, with the screen you're on (Discover · 4 mi away, Matches). _(Also runs on your messages)_
+  `DT> app|app name|screen`
+- **CB · Dating row — profile**: The profile card's name and age, with 💼 job and 📍 distance. _(Also runs on your messages)_
+  `DT> profile|name|age|job or bio|distance`
+- **CB · Dating row — photo**: A 📷 profile photo, described. _(Also runs on your messages)_
+  `DT> photo|what it shows`
+- **CB · Dating row — prompt**: A prompt answer card with a ♡. _(Also runs on your messages)_
+  `DT> prompt|question|answer`
+- **CB · Dating row — tags**: Detail chips like height, drinking, and what they're looking for. _(Also runs on your messages)_
+  `DT> tags|detail, detail, detail`
+- **CB · Dating inline — split tags**: Splits the comma-separated tags line into separate chips. _(Also runs on your messages)_
+- **CB · Dating row — match**: The "It's a Match!" banner. _(Also runs on your messages)_
+  `DT> match|name|name`
+- **CB · Dating row — received**: A message from the match. _(Also runs on your messages)_
+  `DT> in|time|message`
+- **CB · Dating row — sent**: A message from your character. _(Also runs on your messages)_
+  `DT> out|time|message`
+- **CB · Dating row — system**: A system line, like Liked your photo, Unmatched, or Seen 2h ago. _(Also runs on your messages)_
+  `DT> sys|line`
+
+### Web browser
+
+New in v1.5. Written inside [[BROWSER]] or [[INCOGNITO]].
+
+- **CB · Shell — Browser**: The browser window. _(Also runs on your messages)_
+  `[[BROWSER]] … [[/BROWSER]]`
+- **CB · Shell — Browser (incognito)**: A dark incognito window: "nothing here is saved to history." _(Also runs on your messages)_
+  `[[INCOGNITO]] … [[/INCOGNITO]]`
+- **CB · Browser row — address bar**: The active tab and address bar. _(Also runs on your messages)_
+  `BR> bar|url|tab title`
+- **CB · Browser row — open tabs**: The other open tabs. _(Also runs on your messages)_
+  `BR> tabs|tab, tab, tab`
+- **CB · Browser inline — split tabs**: Splits the comma-separated tabs line into separate tabs. _(Also runs on your messages)_
+- **CB · Browser row — search box**: The search box with what's being typed. _(Also runs on your messages)_
+  `BR> search|what's typed`
+- **CB · Browser row — autocomplete**: A 🕘 autocomplete suggestion from a past search, often a revealing one. _(Also runs on your messages)_
+  `BR> suggest|past search`
+- **CB · Browser row — result**: A search result. _(Also runs on your messages)_
+  `BR> result|title|url|snippet`
+- **CB · Browser row — page**: An open page's heading and text. _(Also runs on your messages)_
+  `BR> page|heading|paragraph`
+- **CB · Browser row — history day**: A date header in the browsing history. _(Also runs on your messages)_
+  `BR> day|date`
+- **CB · Browser row — history entry**: One browsing-history entry. _(Also runs on your messages)_
+  `BR> hist|time|title|url`
+
+### Instagram
+
+New in v1.5. Written inside [[INSTA]] … [[/INSTA]].
+
+- **CB · Shell — Instagram**: The Instagram frame. _(Also runs on your messages)_
+  `[[INSTA]] … [[/INSTA]]`
+- **CB · Instagram row — profile**: The profile header, with post, follower, and following counts and the bio. _(Also runs on your messages)_
+  `IG> profile|username|display name|posts|followers|following|bio`
+- **CB · Instagram row — post header**: A post's header, with the location and a verified check. _(Also runs on your messages)_
+  `IG> post|username|location|✓`
+- **CB · Instagram row — photo**: A 📷 photo in the post. Repeat it for a carousel. _(Also runs on your messages)_
+  `IG> photo|what it shows`
+- **CB · Instagram row — stats**: The action row, like count, and time. _(Also runs on your messages)_
+  `IG> stats|likes|time`
+- **CB · Instagram row — caption**: The caption. _(Also runs on your messages)_
+  `IG> caption|username|text`
+- **CB · Instagram row — comment**: A comment with its ♡ count. _(Also runs on your messages)_
+  `IG> comment|username|comment|likes`
+- **CB · Instagram row — story**: A story, with its text or stickers and a "Send message" bar. _(Also runs on your messages)_
+  `IG> story|username|what it shows|time`
+- **CB · Instagram inline — @mention / #hashtag**: Colors @mentions and #hashtags in captions and comments. _(Also runs on your messages)_
+  `@handle · #hashtag`
+
+### Private photos
+
+New in v1.5. Written inside [[PRIVATE]] … [[/PRIVATE]]. Everyone in a photo is an adult, and every photo is sent by choice.
+
+- **CB · Shell — Private photos**: The private chat thread, with a "Send a chat…" box. _(Also runs on your messages)_
+  `[[PRIVATE]] … [[/PRIVATE]]`
+- **CB · Private row — header**: The thread's header, marked 🔒 private. _(Also runs on your messages)_
+  `PX> head|thread name|contact`
+- **CB · Private row — photo received**: A received photo as a frosted tile you tap to reveal, with its caption and view-once or replay status. _(Also runs on your messages)_
+  `PX> pic|in|time|what it shows|caption|view once / replay / saved`
+- **CB · Private row — photo sent**: A sent photo as a tap-to-reveal tile. _(Also runs on your messages)_
+  `PX> pic|out|time|what it shows|caption|view once / replay / saved`
+- **CB · Private row — received**: A received message. _(Also runs on your messages)_
+  `PX> in|time|message`
+- **CB · Private row — sent**: A sent message. _(Also runs on your messages)_
+  `PX> out|time|message`
+- **CB · Private row — system**: A system line, like Opened, unsent a photo, or 📸 took a screenshot! _(Also runs on your messages)_
+  `PX> sys|line`
+
+### Creator page
+
+New in v1.5. Written inside [[CREATOR]] … [[/CREATOR]]. The creator, and everyone in the content, is an adult.
+
+- **CB · Shell — Creator page**: The subscription page. _(Also runs on your messages)_
+  `[[CREATOR]] … [[/CREATOR]]`
+- **CB · Creator row — header**: The page header: verified name, subscriber count, bio, and a Subscribe button with the monthly price. _(Also runs on your messages)_
+  `CR> head|name|@handle|subscribers|price per month|bio`
+- **CB · Creator row — free post**: A free post, with a Send Tip button. _(Also runs on your messages)_
+  `CR> post|time|caption|free|what it shows`
+- **CB · Creator row — locked post**: A 🔒 locked post with its unlock price. Tap to peek at what's behind it. _(Also runs on your messages)_
+  `CR> post|time|teaser|$price|what it shows`
+- **CB · Creator row — tip**: A 💸 tip with its message. _(Also runs on your messages)_
+  `CR> tip|username|$amount|message`
+- **CB · Creator row — fan message**: A DM from a subscriber. _(Also runs on your messages)_
+  `CR> fan|username|message`
+- **CB · Creator row — creator reply**: The creator's reply. _(Also runs on your messages)_
+  `CR> reply|message`
+- **CB · Creator row — pay-per-view message**: A 🔒 pay-per-view message. Tap to see what it holds. _(Also runs on your messages)_
+  `CR> ppv|$price|what it contains`
+- **CB · Creator row — dashboard**: A 📈 earnings and subscriber line. _(Also runs on your messages)_
+  `CR> stats|line`
+
+### Fan platform
+
+New in v1.5. Written inside [[BUBBLE]] for an idol's paid chat, or [[LIVE]] for a fan livestream. Pairs with the K-pop Idol flavor.
+
+- **CB · Shell — Fan platform chat (bubble)**: The idol's paid private chat, with a "Reply to your artist…" box. _(Also runs on your messages)_
+  `[[BUBBLE]] … [[/BUBBLE]]`
+- **CB · Shell — Fan platform livestream**: The fan livestream window, with a chat box and heart and gift buttons. _(Also runs on your messages)_
+  `[[LIVE]] … [[/LIVE]]`
+- **CB · Fan platform row — bubble header**: The chat header: the idol, their group or agency, and the D+ subscription counter. _(Also runs on your messages)_
+  `FP> head|idol|group or agency|D+ counter`
+- **CB · Fan platform row — idol message**: A message from the idol. _(Also runs on your messages)_
+  `FP> msg|time|message`
+- **CB · Fan platform row — idol photo**: A selfie or photo from the idol. _(Also runs on your messages)_
+  `FP> photo|time|what it shows`
+- **CB · Fan platform row — voice memo**: A voice memo with its length and a transcript. _(Also runs on your messages)_
+  `FP> voice|time|duration|what they say`
+- **CB · Fan platform row — fan reply**: The subscriber's own reply, which only they can see. _(Also runs on your messages)_
+  `FP> reply|time|message`
+- **CB · Fan platform row — live header**: The ● LIVE header, with viewer and heart counts. _(Also runs on your messages)_
+  `FP> live|channel|title|viewers|hearts`
+- **CB · Fan platform row — idol speaking**: What the idol says on stream, as a caption. _(Also runs on your messages)_
+  `FP> say|what they say`
+- **CB · Fan platform row — live chat**: A comment scrolling past in the live chat. _(Also runs on your messages)_
+  `FP> chat|username|comment`
+- **CB · Fan platform row — hearts / gift**: A heart or gift alert. _(Also runs on your messages)_
+  `FP> heart|username|what they sent`
+- **CB · Fan platform row — system**: A system line, like new messages, a renewed subscription, or someone joining. _(Also runs on your messages)_
+  `FP> sys|line`
+
+### Colored dialogue
+
+For 🎨 Colored Dialogue: each speaker gets one color for the whole chat.
+
+- **CB · Colored dialogue — keep each speaker's color over quote styling**: SillyTavern's quote color overrides a span's color, so speaker colors never showed. This turns those spans into <font color> tags, which win.
+  `<span style="color:…">`
+- **CB · Colored dialogue — drop old colors from the prompt**: Strips the color tags from messages six or more back in what's sent to the model, to save tokens. What you see doesn't change. _(Only changes what the model sees)_
+
+### Plumbing and extras
+
+- **CB · Data lines — drop a stray trailing |**: Runs first. Removes a stray | that the model leaves at the end of any data line, so the line still draws as its card instead of falling back to raw text. _(Also runs on your messages)_
+- **CB · Cleanup — unwrap state, panels and HTML from code fences**: If the model wraps its tracker, a panel, or HTML in a ``` code block, this unwraps it so it draws instead of showing as code.
 - **CB · Chat/Press row — catch-all (malformed lines)**: Catches chat, press, or app lines with the wrong number of fields and shows them as plain text instead of breaking the panel. _(Also runs on your messages)_
 - **CB · Chat/Press — join rendered rows**: Removes the line breaks between drawn rows so panels don't get gaps. _(Also runs on your messages)_
 - **CB · Visuals — collapse old chat/press blocks in prompt (optional)**: Swaps chat panels, press pages, app panels, and the Program for a short placeholder in what's sent to the model once they're six or more messages old, to save tokens. What you see doesn't change. _(Only changes what the model sees · Also runs on your messages)_

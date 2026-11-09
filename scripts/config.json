@@ -48,7 +48,7 @@
       "bundle": "CALLBOARD_regex_bundle.json",
       "title": "📋 CALLBOARD",
       "host": "Xavi, your stage manager",
-      "bestFor": "Fourteen setting \"wings\" (Modern, Y2K, Regency, Westeros, Wuxia, Cyberpunk, Sci-Fi…), Cue Calls, The Program, trackers, model correction layers, the 📸 Stills Department and 🖥️ Pure HTML mode, and panels for Twitch, Discord, X, Reddit, the press, a dating app, a browser, Instagram, private photos, a creator page, and a K-pop fan platform.",
+      "bestFor": "Fourteen setting \"wings\" (Modern, Y2K, Regency, Westeros, Wuxia, Cyberpunk, Sci-Fi…), Cue Calls, The Program, trackers, model correction layers, the 📸 Stills Department, 🖥️ Pure HTML mode, Clover OOC image orders, Private Scenes support, and panels for Twitch, Discord, X, Reddit, the press, a dating app, a browser, Instagram, private photos, a creator page, and a K-pop fan platform.",
       "persona": {
         "name": "Xavi",
         "avatar": "📋",
@@ -70,6 +70,14 @@
         "user": "Eleanor",
         "char": "Lord Ravensworth"
       }
+    },
+    {
+      "key": "callboard-lab",
+      "prefix": "CALLBOARD_Lab",
+      "bundle": "CALLBOARD_Lab_regex_bundle.json",
+      "title": "🧪 CALLBOARD Lab",
+      "host": "Xavi, your stage manager",
+      "bestFor": "An experimental copy of CALLBOARD Full for trying ideas before they reach the real preset: about 30 writing switches (all off), Assistant Mode, the Board Console with skins, on-screen effects, context savers, and four slots for your own rewrites."
     }
   ],
   "extensions": [

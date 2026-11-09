@@ -82,16 +82,19 @@
   #vigil { --a: #8f3346; }
   #lovesick { --a: #c81d68; }
   #callboard { --a: #8a6a00; }
+  #callboard-lab { --a: #8f1d33; }
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) #rosie { --a: #f08bb8; }
     :root:not([data-theme="light"]) #vigil { --a: #e2b05a; }
     :root:not([data-theme="light"]) #lovesick { --a: #ff7fb0; }
     :root:not([data-theme="light"]) #callboard { --a: #f4c430; }
+    :root:not([data-theme="light"]) #callboard-lab { --a: #e8798f; }
   }
   :root[data-theme="dark"] #rosie { --a: #f08bb8; }
   :root[data-theme="dark"] #vigil { --a: #e2b05a; }
   :root[data-theme="dark"] #lovesick { --a: #ff7fb0; }
   :root[data-theme="dark"] #callboard { --a: #f4c430; }
+  :root[data-theme="dark"] #callboard-lab { --a: #e8798f; }
   @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 </style>
 </head>
@@ -106,7 +109,8 @@
     <a href="#rosie">🌹 Rosie Full Bloom <span style="opacity:.6">34</span></a>
     <a href="#vigil">🥀 The Velvet Vigil <span style="opacity:.6">8</span></a>
     <a href="#lovesick">💌 LOVESICK <span style="opacity:.6">12</span></a>
-    <a href="#callboard">📋 CALLBOARD <span style="opacity:.6">167</span></a>
+    <a href="#callboard">📋 CALLBOARD <span style="opacity:.6">180</span></a>
+    <a href="#callboard-lab">🧪 CALLBOARD Lab <span style="opacity:.6">210</span></a>
     <input type="search" id="find" placeholder="Search regexes…" aria-label="Search regexes">
   </div>
 </nav>
@@ -218,8 +222,8 @@
     </div>
   </section>
   <section class="preset" id="callboard">
-    <h2>📋 CALLBOARD<small>v1.6.1 · 167 scripts</small></h2>
-    <p class="intro">CALLBOARD writes data lines, like TW&gt; msg|… for a Twitch message, inside [[SHELL]] tags. Row regexes draw each line, and shell regexes draw the window around them. They ship inside the preset: allow them when SillyTavern asks, or import the bundle. CALLBOARD Lite v1.6.1 uses exactly the same regex. <a href="regex/CALLBOARD_regex_bundle.json" download>Download the bundle</a>.</p>
+    <h2>📋 CALLBOARD<small>v1.6.8 · 180 scripts</small></h2>
+    <p class="intro">CALLBOARD writes data lines, like TW&gt; msg|… for a Twitch message, inside [[SHELL]] tags. Row regexes draw each line, and shell regexes draw the window around them. They ship inside the preset: allow them when SillyTavern asks, or import the bundle. CALLBOARD Lite v1.6.8 uses exactly the same regex. <a href="regex/CALLBOARD_regex_bundle.json" download>Download the bundle</a>.</p>
     <div class="grp">
     <h3 class="group">Dividers</h3>
     <p class="group-intro">These also work in your own messages.</p>
@@ -227,6 +231,9 @@
       <li><div class="name">CB · Divider — Act Break</div><p class="blurb">Turns the line into a ✦ ✦ ✦ act break.</p><code>a line of ---, ***, ===, or ~~~</code><div class="badges"><span>Also runs on your messages</span></div></li>
       <li><div class="name">CB · Divider — Scene Shift (⁂)</div><p class="blurb">Turns it into a centered scene-shift mark.</p><code>⁂ on its own line</code><div class="badges"><span>Also runs on your messages</span></div></li>
       <li><div class="name">CB · Divider — Timeskip (↷)</div><p class="blurb">Turns it into a &quot;later&quot; timeskip divider.</p><code>↷, »»», or →→→ on its own line</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Divider — Act Break with caption</div><p class="blurb">An act break with a caption in the middle.</p><code>--- Act Two · the wedding</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Divider — Scene Shift with caption (⁂)</div><p class="blurb">A scene-shift mark with a caption.</p><code>⁂ the next morning</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Divider — Timeskip with caption (↷)</div><p class="blurb">A timeskip divider with a caption instead of &quot;later&quot;.</p><code>↷ Three days later · the harbor</code><div class="badges"><span>Also runs on your messages</span></div></li>
     </ul>
     </div>
     <div class="grp">
@@ -250,6 +257,8 @@
     <ul class="scripts">
       <li><div class="name">CB · Callboard — style think foldout</div><p class="blurb">Shows Xavi's reasoning as a 🎧 &quot;Xavi at the board&quot; fold-out.</p><code>&lt;think&gt;…&lt;/think&gt;</code><div class="badges"><span>Also runs on your messages</span></div></li>
       <li><div class="name">CB · Callboard — hide think from prompt</div><p class="blurb">Leaves Xavi's &lt;think&gt; notes out of what's sent back to the model on later turns, to save tokens. What you see doesn't change.</p><div class="badges"><span>Only changes what the model sees</span><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Callboard — think foldout (missing opener)</div><p class="blurb">Some models close their reasoning with &lt;/think&gt; but never open it. This folds that reasoning into Xavi's fold-out anyway.</p><code>…&lt;/think&gt;</code></li>
+      <li><div class="name">CB · Callboard — hide think from prompt (missing opener)</div><p class="blurb">Keeps that unopened reasoning out of what's sent back to the model on later turns.</p><div class="badges"><span>Only changes what the model sees</span></div></li>
       <li><div class="name">CB · Xavi — curtain note (style)</div><p class="blurb">Xavi's curtain note: a 🎧 card under the reply.</p><code>&lt;xavi&gt;note&lt;/xavi&gt;</code><div class="badges"><span>Also runs on your messages</span></div></li>
       <li><div class="name">CB · Xavi — curtain note (hide from prompt)</div><p class="blurb">Leaves Xavi's curtain notes out of what's sent back to the model, so they cost no tokens later.</p><div class="badges"><span>Only changes what the model sees</span><span>Also runs on your messages</span></div></li>
       <li><div class="name">CB · Xavi — OOC aside (style, AI output only)</div><p class="blurb">Styles Xavi's (OOC: …) asides as a &quot;from the wings&quot; note signed — X. It only touches the AI's replies, so your own OOC stays plain.</p><code>(OOC: aside)</code></li>
@@ -261,6 +270,11 @@
     <ul class="scripts">
       <li><div class="name">CB · Tracker shell</div><p class="blurb">Wraps the tracker lines in the 🎛️ Status card.</p><code>[[TRK]] … [[/TRK]]</code><div class="badges"><span>Also runs on your messages</span></div></li>
       <li><div class="name">CB · Tracker row — line</div><p class="blurb">A label-and-value line in the Status card for the time, place, or mood.</p><code>T&gt; time|… · T&gt; place|… · T&gt; mood|…</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Tracker — time-of-day icon (dawn)</div><p class="blurb">Puts 🌅 in front of a dawn time on the tracker.</p><code>T&gt; time|dawn, or 5–6 AM</code></li>
+      <li><div class="name">CB · Tracker — time-of-day icon (morning)</div><p class="blurb">Puts 🌤️ in front of a morning time.</p><code>T&gt; time|morning, or 7–11 AM</code></li>
+      <li><div class="name">CB · Tracker — time-of-day icon (midday)</div><p class="blurb">Puts ☀️ in front of a midday or afternoon time.</p><code>T&gt; time|noon, afternoon, or 12–4 PM</code></li>
+      <li><div class="name">CB · Tracker — time-of-day icon (dusk)</div><p class="blurb">Puts 🌇 in front of an evening time.</p><code>T&gt; time|dusk, evening, or 5–7 PM</code></li>
+      <li><div class="name">CB · Tracker — time-of-day icon (night)</div><p class="blurb">Puts 🌙 in front of a night time.</p><code>T&gt; time|night, or 8 PM–4 AM</code></li>
       <li><div class="name">CB · Tracker row — affinity</div><p class="blurb">An affinity bar for the focus character, with the reason underneath.</p><code>T&gt; affinity|name|0–100|why</code><div class="badges"><span>Also runs on your messages</span></div></li>
       <li><div class="name">CB · Tracker row — reputation</div><p class="blurb">A reputation line, with the reason underneath.</p><code>T&gt; reputation|standing|why</code><div class="badges"><span>Also runs on your messages</span></div></li>
       <li><div class="name">CB · Board shell — Cast</div><p class="blurb">Wraps Cast &amp; Affinity rows in their card.</p><code>[[CAST]] … [[/CAST]]</code><div class="badges"><span>Also runs on your messages</span></div></li>
@@ -479,9 +493,362 @@
     </ul>
     </div>
     <div class="grp">
+    <h3 class="group">Colored dialogue</h3>
+    <p class="group-intro">For 🎨 Colored Dialogue: each speaker gets one color for the whole chat.</p>
+    <ul class="scripts">
+      <li><div class="name">CB · Colored dialogue — keep each speaker's color over quote styling</div><p class="blurb">SillyTavern's quote color overrides a span's color, so speaker colors never showed. This turns those spans into &lt;font color&gt; tags, which win.</p><code>&lt;span style=&quot;color:…&quot;&gt;</code></li>
+      <li><div class="name">CB · Colored dialogue — drop old colors from the prompt</div><p class="blurb">Strips the color tags from messages six or more back in what's sent to the model, to save tokens. What you see doesn't change.</p><div class="badges"><span>Only changes what the model sees</span></div></li>
+    </ul>
+    </div>
+    <div class="grp">
     <h3 class="group">Plumbing and extras</h3>
     <ul class="scripts">
       <li><div class="name">CB · Data lines — drop a stray trailing |</div><p class="blurb">Runs first. Removes a stray | that the model leaves at the end of any data line, so the line still draws as its card instead of falling back to raw text.</p><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Cleanup — unwrap state, panels and HTML from code fences</div><p class="blurb">If the model wraps its tracker, a panel, or HTML in a ``` code block, this unwraps it so it draws instead of showing as code.</p></li>
+      <li><div class="name">CB · Chat/Press row — catch-all (malformed lines)</div><p class="blurb">Catches chat, press, or app lines with the wrong number of fields and shows them as plain text instead of breaking the panel.</p><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Chat/Press — join rendered rows</div><p class="blurb">Removes the line breaks between drawn rows so panels don't get gaps.</p><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Visuals — collapse old chat/press blocks in prompt (optional)</div><p class="blurb">Swaps chat panels, press pages, app panels, and the Program for a short placeholder in what's sent to the model once they're six or more messages old, to save tokens. What you see doesn't change.</p><div class="badges"><span>Only changes what the model sees</span><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Extreme — Pollinations image</div><p class="blurb">Turns an image directive into a Pollinations picture (Flux, 1024×1024) using the preset's built-in key, so images work out of the box. CALLBOARD Suite's 🎨 Studio can use your own key instead and adds reroll and fine-tune buttons. Images need &quot;Forbid External Media&quot; turned off. (For images through Revamped Image Gen, use the 📸 Stills Department instead.)</p><code>&lt;cb_img&gt;prompt: … | ar: 16:9&lt;/cb_img&gt;</code></li>
+    </ul>
+    </div>
+  </section>
+  <section class="preset" id="callboard-lab">
+    <h2>🧪 CALLBOARD Lab<small>v0.9.1 · 210 scripts</small></h2>
+    <p class="intro">The Lab is CALLBOARD Full plus experiments. Its tracker and boards are drawn as one Board Console, and it adds on-screen effects, New Faces cards, Chance Dice, and context savers. Everything else works exactly like CALLBOARD, below. <a href="regex/CALLBOARD_Lab_regex_bundle.json" download>Download the bundle</a>.</p>
+    <div class="grp">
+    <h3 class="group">Board Console</h3>
+    <p class="group-intro">The Lab draws the tracker and boards as one console. The model still writes the same T&gt;, C&gt;, W&gt;, S&gt;, I&gt; and X&gt; lines inside &lt;cb_state&gt;.</p>
+    <ul class="scripts">
+      <li><div class="name">CB · Console — open (newest reply)</div><p class="blurb">Opens the console on the newest reply: a digest bar with the time, place, mood, and focus affinity, with the drawers open below.</p><code>&lt;cb_state&gt; … &lt;/cb_state&gt;</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Console — open (older replies, folded)</div><p class="blurb">On older replies, the console folds back to its digest bar.</p><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Console — close</div><p class="blurb">Closes the console at &lt;/cb_state&gt;.</p><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Console — Tracker shell</div><p class="blurb">The 📊 Tracker drawer, open by default.</p><code>[[TRK]] … [[/TRK]]</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Console — Board shell — Cast</div><p class="blurb">The 🪪 Cast drawer, open by default.</p><code>[[CAST]] … [[/CAST]]</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Console — Board shell — Web</div><p class="blurb">The 💞 Relationships drawer, folded.</p><code>[[WEB]] … [[/WEB]]</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Console — Board shell — Status</div><p class="blurb">The 🩹 Condition drawer, folded.</p><code>[[STATUS]] … [[/STATUS]]</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Console — Board shell — Inventory</div><p class="blurb">The 🎒 Inventory drawer, folded.</p><code>[[INV]] … [[/INV]]</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Console — Board shell — Codex</div><p class="blurb">The 📓 Codex drawer, folded.</p><code>[[CODEX]] … [[/CODEX]]</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Console — Tracker row — time, place, mood</div><p class="blurb">A tile for the time, place, or mood.</p><code>T&gt; time|… · T&gt; place|… · T&gt; mood|…</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Console — Tracker row — affinity</div><p class="blurb">An affinity meter with the reason underneath.</p><code>T&gt; affinity|name|0–100|why</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Console — Tracker row — reputation (rung 1)</div><p class="blurb">Reputation on the first rung of a five-step ladder (Regency or Fame).</p><code>T&gt; reputation|Spotless or Under the radar|why</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Console — Tracker row — reputation (rung 2)</div><p class="blurb">Reputation on the second rung.</p><code>T&gt; reputation|Whispered of or Buzzing|why</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Console — Tracker row — reputation (rung 3)</div><p class="blurb">Reputation on the third rung.</p><code>T&gt; reputation|Talked of or Trending|why</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Console — Tracker row — reputation (rung 4)</div><p class="blurb">Reputation on the fourth rung.</p><code>T&gt; reputation|Compromised or Front page|why</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Console — Tracker row — reputation (rung 5)</div><p class="blurb">Reputation on the last rung.</p><code>T&gt; reputation|Ruined or Scandal|why</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Console — Tracker row — reputation (other)</div><p class="blurb">Any other reputation wording, shown without the ladder.</p><code>T&gt; reputation|standing|why</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Console — Board row — Cast</div><p class="blurb">A person card with their mood and affinity bar. Tap it for their role and whereabouts.</p><code>C&gt; name|role|0–100|mood|status</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Console — Board row — Web</div><p class="blurb">A pairing card. Tap it for the note.</p><code>W&gt; A ↔ B|bond|0–100|note</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Console — Board row — Status</div><p class="blurb">A condition card. Tap it for details.</p><code>S&gt; name|health|energy|condition</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Console — Board row — Inventory</div><p class="blurb">An item card with an icon for its kind. Tap it for the note.</p><code>I&gt; item|type|note</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Console — Board row — Codex</div><p class="blurb">A codex card with an icon for its kind (quest, mystery, faction…). Tap it for the note.</p><code>X&gt; entry|type|note</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Console — Board row — catch-all (malformed lines)</div><p class="blurb">Shows board lines with the wrong number of fields as plain text.</p><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Console — join rows and drawers</div><p class="blurb">Removes the gaps between the console's rows and drawers.</p><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Console — stylesheet (keep after every console script)</div><p class="blurb">Adds the console's look, in the skin you pick in CALLBOARD Suite (Console, Minimal, Parchment, Neon, or Auto by wing). Keep it after every other console script.</p><div class="badges"><span>Also runs on your messages</span></div></li>
+    </ul>
+    </div>
+    <div class="grp">
+    <h3 class="group">On-screen effects</h3>
+    <p class="group-intro">Drawn for the 🔍 Hidden Layers, ⚡ Kinetic Type, and 📳 Push Notifications switches. Tags you type yourself work too.</p>
+    <ul class="scripts">
+      <li><div class="name">CB LAB · Hidden layers — subtext</div><p class="blurb">Underlines the line. Tap it for a ☁ Unspoken card with what they're really thinking.</p><code>&lt;subtext thought=&quot;…&quot;&gt;line&lt;/subtext&gt;</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB LAB · Hidden layers — tell</div><p class="blurb">Tap for a ✋ Tell card: the body language giving them away.</p><code>&lt;tell note=&quot;…&quot;&gt;action&lt;/tell&gt;</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB LAB · Hidden layers — lore</div><p class="blurb">Tap for a 📜 Lore card.</p><code>&lt;lore entry=&quot;…&quot;&gt;name&lt;/lore&gt;</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB LAB · Hidden layers — translate</div><p class="blurb">Tap for a 🗣 Meaning card with the translation.</p><code>&lt;translate meaning=&quot;…&quot;&gt;foreign words&lt;/translate&gt;</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB LAB · Hidden layers — retract</div><p class="blurb">Blurred words someone swallowed. They sharpen when tapped.</p><code>&lt;retract&gt;words&lt;/retract&gt;</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB LAB · Kinetic type</div><p class="blurb">Makes a few words slam, shake, glitch, pulse, glow, or drift. Animations stop if your device is set to reduce motion.</p><code>&lt;shake&gt;, &lt;glitch&gt;, &lt;pulse&gt;, &lt;ember&gt;, &lt;drift&gt;…</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB LAB · Kinetic type (nested)</div><p class="blurb">A second pass, so one effect inside another also works.</p><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB LAB · Push notification</div><p class="blurb">A phone notification card.</p><code>&lt;notification app=&quot;…&quot; from=&quot;…&quot; time=&quot;…&quot;&gt;text&lt;/notification&gt;</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB LAB · Effects stylesheet (keep last of the LAB effects)</div><p class="blurb">Adds the effects' look, once per message. Keep it after the other Lab effects.</p><div class="badges"><span>Also runs on your messages</span></div></li>
+    </ul>
+    </div>
+    <div class="grp">
+    <h3 class="group">New Faces and Chance Dice</h3>
+    <ul class="scripts">
+      <li><div class="name">CB LAB · New face — card</div><p class="blurb">A 🆕 card for a newly introduced named character.</p><code>[[NEWFACE]] … [[/NEWFACE]]</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB LAB · New face — name</div><p class="blurb">The card's name line.</p><code>NF&gt; name|name|tagline</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB LAB · New face — look</div><p class="blurb">How they look, with one detail that stands out.</p><code>NF&gt; look|appearance|one striking detail</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB LAB · New face — wants</div><p class="blurb">Their hobbies, goal, and dream.</p><code>NF&gt; wants|hobbies|goal|dream</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB LAB · New face — contradiction</div><p class="blurb">Where what they say and what they do don't match.</p><code>NF&gt; contradiction|what they claim|what they do</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB LAB · New face — other rows</div><p class="blurb">Any other labeled row, such as their stake, ties, or voice.</p><code>NF&gt; stake|… · NF&gt; ties|… · NF&gt; voice|…</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB LAB · New face — join rows</div><p class="blurb">Removes the gaps between the card's rows.</p><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB LAB · Chance dice slip</div><p class="blurb">A small 🎲 slip for the turn's two dice and the one thing in the world they nudge.</p><code>DICE&gt; roll|roll|area|result|what it nudges</code><div class="badges"><span>Also runs on your messages</span></div></li>
+    </ul>
+    </div>
+    <div class="grp">
+    <h3 class="group">Context savers</h3>
+    <p class="group-intro">On by default. They shrink what's sent to the model without changing your chat. Turn any off under Extensions → Regex → Preset scripts.</p>
+    <ul class="scripts">
+      <li><div class="name">CB LAB · Context saver — old tracker &amp; board cards</div><p class="blurb">Leaves &lt;cb_state&gt; blocks four or more messages old out of the prompt. The newest stay, so numbers carry on correctly.</p><div class="badges"><span>Only changes what the model sees</span></div></li>
+      <li><div class="name">CB LAB · Context saver — old cue legends</div><p class="blurb">Older cue lines keep their name and reason but drop the long legend.</p><div class="badges"><span>Only changes what the model sees</span></div></li>
+      <li><div class="name">CB LAB · Context saver — old HTML styles</div><p class="blurb">Leaves &lt;style&gt; blocks three or more messages old out of the prompt. The artifacts' text stays.</p><div class="badges"><span>Only changes what the model sees</span></div></li>
+      <li><div class="name">CB LAB · Context saver — old dice slips</div><p class="blurb">Leaves older 🎲 slips out of the prompt. The newest stays.</p><div class="badges"><span>Only changes what the model sees</span></div></li>
+    </ul>
+    </div>
+    <div class="grp">
+    <h3 class="group">Dividers</h3>
+    <p class="group-intro">These also work in your own messages.</p>
+    <ul class="scripts">
+      <li><div class="name">CB · Divider — Act Break</div><p class="blurb">Turns the line into a ✦ ✦ ✦ act break.</p><code>a line of ---, ***, ===, or ~~~</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Divider — Scene Shift (⁂)</div><p class="blurb">Turns it into a centered scene-shift mark.</p><code>⁂ on its own line</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Divider — Timeskip (↷)</div><p class="blurb">Turns it into a &quot;later&quot; timeskip divider.</p><code>↷, »»», or →→→ on its own line</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Divider — Act Break with caption</div><p class="blurb">An act break with a caption in the middle.</p><code>--- Act Two · the wedding</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Divider — Scene Shift with caption (⁂)</div><p class="blurb">A scene-shift mark with a caption.</p><code>⁂ the next morning</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Divider — Timeskip with caption (↷)</div><p class="blurb">A timeskip divider with a caption instead of &quot;later&quot;.</p><code>↷ Three days later · the harbor</code><div class="badges"><span>Also runs on your messages</span></div></li>
+    </ul>
+    </div>
+    <div class="grp">
+    <h3 class="group">Cue Calls and The Program</h3>
+    <p class="group-intro">New in v1.4: Xavi tells you what's about to appear, and what's lit tonight.</p>
+    <ul class="scripts">
+      <li><div class="name">CB · Cue — standby slip (with legend)</div><p class="blurb">A gold ● STANDBY slip above whatever's about to appear, with a &quot;What it means&quot; legend. Xavi includes the legend the first time each kind of element shows up.</p><code>CUE&gt; icon|what's coming|why now|what it means</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Cue — standby slip</div><p class="blurb">The same STANDBY slip without the legend, for elements you've already seen.</p><code>CUE&gt; icon|what's coming|why now|</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Cue — catch-all (malformed lines)</div><p class="blurb">Catches cue lines with the wrong number of fields and shows them as a plain STANDBY line.</p><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Shell — The Program</div><p class="blurb">The theatre-program card listing everything that's lit. It appears on the first reply of a chat, and whenever you send [PROGRAM].</p><code>[[PROGRAM]] … [[/PROGRAM]]</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Program row — title</div><p class="blurb">The program's title: tonight's production in a phrase.</p><code>PG&gt; title|tonight's production</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Program row — cast line</div><p class="blurb">The line under the title: the setting wing, mode, and Xavi's patter and mood.</p><code>PG&gt; cast|wing · mode · patter and mood</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Program row — act</div><p class="blurb">One lit module per line: what sets it off (CUE) and what you'll see.</p><code>PG&gt; act|icon|module|what sets it off|what you'll see</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Program row — note from Xavi</div><p class="blurb">A closing note from Xavi to the director, signed — X.</p><code>PG&gt; note|line</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Program row — catch-all (malformed lines)</div><p class="blurb">Catches program lines with the wrong number of fields and shows them as plain text.</p><div class="badges"><span>Also runs on your messages</span></div></li>
+    </ul>
+    </div>
+    <div class="grp">
+    <h3 class="group">Xavi</h3>
+    <p class="group-intro">Your stage manager's notes and asides.</p>
+    <ul class="scripts">
+      <li><div class="name">CB · Callboard — style think foldout</div><p class="blurb">Shows Xavi's reasoning as a 🎧 &quot;Xavi at the board&quot; fold-out.</p><code>&lt;think&gt;…&lt;/think&gt;</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Callboard — hide think from prompt</div><p class="blurb">Leaves Xavi's &lt;think&gt; notes out of what's sent back to the model on later turns, to save tokens. What you see doesn't change.</p><div class="badges"><span>Only changes what the model sees</span><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Callboard — think foldout (missing opener)</div><p class="blurb">Some models close their reasoning with &lt;/think&gt; but never open it. This folds that reasoning into Xavi's fold-out anyway.</p><code>…&lt;/think&gt;</code></li>
+      <li><div class="name">CB · Callboard — hide think from prompt (missing opener)</div><p class="blurb">Keeps that unopened reasoning out of what's sent back to the model on later turns.</p><div class="badges"><span>Only changes what the model sees</span></div></li>
+      <li><div class="name">CB · Xavi — curtain note (style)</div><p class="blurb">Xavi's curtain note: a 🎧 card under the reply.</p><code>&lt;xavi&gt;note&lt;/xavi&gt;</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Xavi — curtain note (hide from prompt)</div><p class="blurb">Leaves Xavi's curtain notes out of what's sent back to the model, so they cost no tokens later.</p><div class="badges"><span>Only changes what the model sees</span><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Xavi — OOC aside (style, AI output only)</div><p class="blurb">Styles Xavi's (OOC: …) asides as a &quot;from the wings&quot; note signed — X. It only touches the AI's replies, so your own OOC stays plain.</p><code>(OOC: aside)</code></li>
+    </ul>
+    </div>
+    <div class="grp">
+    <h3 class="group">Tracker and boards</h3>
+    <p class="group-intro">Written inside one &lt;cb_state&gt; block. Shell regexes draw each card, and row regexes draw the lines inside it.</p>
+    <ul class="scripts">
+      <li><div class="name">CB · Tracker — time-of-day icon (dawn)</div><p class="blurb">Puts 🌅 in front of a dawn time on the tracker.</p><code>T&gt; time|dawn, or 5–6 AM</code></li>
+      <li><div class="name">CB · Tracker — time-of-day icon (morning)</div><p class="blurb">Puts 🌤️ in front of a morning time.</p><code>T&gt; time|morning, or 7–11 AM</code></li>
+      <li><div class="name">CB · Tracker — time-of-day icon (midday)</div><p class="blurb">Puts ☀️ in front of a midday or afternoon time.</p><code>T&gt; time|noon, afternoon, or 12–4 PM</code></li>
+      <li><div class="name">CB · Tracker — time-of-day icon (dusk)</div><p class="blurb">Puts 🌇 in front of an evening time.</p><code>T&gt; time|dusk, evening, or 5–7 PM</code></li>
+      <li><div class="name">CB · Tracker — time-of-day icon (night)</div><p class="blurb">Puts 🌙 in front of a night time.</p><code>T&gt; time|night, or 8 PM–4 AM</code></li>
+    </ul>
+    </div>
+    <div class="grp">
+    <h3 class="group">Twitch</h3>
+    <p class="group-intro">Written inside [[TWITCH]] … [[/TWITCH]].</p>
+    <ul class="scripts">
+      <li><div class="name">CB · Shell — Twitch chat</div><p class="blurb">The Twitch chat window that floats beside the prose, with its &quot;Send a message&quot; box.</p><code>[[TWITCH]] … [[/TWITCH]]</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Twitch row — live header</div><p class="blurb">The stream header: channel, LIVE badge, title, category, viewer count, and uptime.</p><code>TW&gt; live|channel|title|category|viewers|uptime</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Twitch row — message</div><p class="blurb">A chat message, with badges and the viewer's name color.</p><code>TW&gt; msg|#color|user|badges|message</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Twitch row — sub / gift</div><p class="blurb">A highlighted sub or gift-sub alert.</p><code>TW&gt; sub|user|kind|message</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Twitch row — bits</div><p class="blurb">A cheer with bits.</p><code>TW&gt; bits|user|amount|message</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Twitch row — tip (TTS)</div><p class="blurb">A TTS donation alert, the kind the streamer hears read out loud.</p><code>TW&gt; tip|user|$amount|message</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Twitch row — raid</div><p class="blurb">A raid alert.</p><code>TW&gt; raid|channel|viewers</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Twitch row — follow</div><p class="blurb">A new-follower line.</p><code>TW&gt; follow|user</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Twitch row — mod action</div><p class="blurb">A mod action, like a timeout.</p><code>TW&gt; mod|what happened</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Twitch row — clip</div><p class="blurb">A ✂️ clip card.</p><code>TW&gt; clip|title|clipped by</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Twitch inline — @mention</div><p class="blurb">Highlights @mentions in Twitch chat.</p><code>@username</code><div class="badges"><span>Also runs on your messages</span></div></li>
+    </ul>
+    </div>
+    <div class="grp">
+    <h3 class="group">Discord</h3>
+    <p class="group-intro">Written inside [[DISCORD]] … [[/DISCORD]].</p>
+    <ul class="scripts">
+      <li><div class="name">CB · Shell — Discord window</div><p class="blurb">The Discord window around the messages, with its message box.</p><code>[[DISCORD]] … [[/DISCORD]]</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Discord row — place header</div><p class="blurb">The server and channel header, or Direct Messages.</p><code>DC&gt; place|server|#channel</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Discord row — message (no tag)</div><p class="blurb">A message from someone without a role badge.</p><code>DC&gt; msg|#color|name||time|message</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Discord row — message (tagged)</div><p class="blurb">A message with a role badge like MOD, or a joke role.</p><code>DC&gt; msg|#color|name|tag|time|message</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Discord row — grouped follow-up</div><p class="blurb">A follow-up grouped under the same person's last message.</p><code>DC&gt; more|message</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Discord row — reply line</div><p class="blurb">The small &quot;replying to&quot; line above a reply.</p><code>DC&gt; reply|name|snippet</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Discord row — reactions</div><p class="blurb">Reaction pills under a message.</p><code>DC&gt; react|💀 4 · 😭 2</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Discord row — attachment</div><p class="blurb">An image or file attachment.</p><code>DC&gt; attach|what it is</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Discord row — system line</div><p class="blurb">A system line, like a pinned message, a join, or a call.</p><code>DC&gt; sys|line</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Discord row — typing</div><p class="blurb">The typing indicator.</p><code>DC&gt; typing|Mara is typing…</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Discord inline — @mention</div><p class="blurb">Highlights @mentions, Discord-style.</p><code>@name</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Discord inline — (edited)</div><p class="blurb">Turns &quot;(edited)&quot; into Discord's small grey tag.</p><code>(edited)</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Discord inline — split reactions</div><p class="blurb">Splits a reactions line into separate pills.</p><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Chat inline — emotes :Name: (Twitch/Discord)</div><p class="blurb">Turns emotes in Twitch and Discord lines into emote pills.</p><code>:KEKW:</code><div class="badges"><span>Also runs on your messages</span></div></li>
+    </ul>
+    </div>
+    <div class="grp">
+    <h3 class="group">Press clippings</h3>
+    <p class="group-intro">Written inside [[TABLOID]], [[BLOG]], [[MAG]], or [[BLIND]].</p>
+    <ul class="scripts">
+      <li><div class="name">CB · Shell — Press tabloid</div><p class="blurb">The red, loud tabloid page.</p><code>[[TABLOID]] … [[/TABLOID]]</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Shell — Press blog</div><p class="blurb">The hot-pink gossip blog.</p><code>[[BLOG]] … [[/BLOG]]</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Shell — Press mag</div><p class="blurb">The glossy magazine spread.</p><code>[[MAG]] … [[/MAG]]</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Shell — Press blind</div><p class="blurb">The anonymous blind item.</p><code>[[BLIND]] … [[/BLIND]]</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Press row — outlet masthead</div><p class="blurb">The outlet's masthead.</p><code>PR&gt; outlet|name|date or section</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Press row — headline</div><p class="blurb">The headline.</p><code>PR&gt; head|headline</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Press row — deck</div><p class="blurb">The subhead under the headline.</p><code>PR&gt; deck|subhead</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Press row — paparazzi photo</div><p class="blurb">A 📸 EXCLUSIVE box describing the shot, with its credit.</p><code>PR&gt; photo|what it shows|credit</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Press row — body</div><p class="blurb">A paragraph of the story.</p><code>PR&gt; body|paragraph</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Press row — pull quote</div><p class="blurb">A pull quote.</p><code>PR&gt; quote|quote|who said it</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Press row — stats / cover line</div><p class="blurb">Views and comments, or a cover price and issue number.</p><code>PR&gt; stats|line</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Press row — reader comment</div><p class="blurb">A reader comment.</p><code>PR&gt; comment|user|comment</code><div class="badges"><span>Also runs on your messages</span></div></li>
+    </ul>
+    </div>
+    <div class="grp">
+    <h3 class="group">X / Twitter</h3>
+    <p class="group-intro">Written inside [[X]] … [[/X]].</p>
+    <ul class="scripts">
+      <li><div class="name">CB · Shell — X post</div><p class="blurb">The X card around the post.</p><code>[[X]] … [[/X]]</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · X row — post (no badge)</div><p class="blurb">A post from an account without a badge.</p><code>XT&gt; post|#avatar|name|@handle||time|text</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · X row — post (badge)</div><p class="blurb">A post from an account with a badge.</p><code>XT&gt; post|#avatar|name|@handle|badge|time|text</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · X row — reply (no badge)</div><p class="blurb">A reply from an account without a badge.</p><code>XT&gt; reply|#avatar|name|@handle||time|text</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · X row — reply (badge)</div><p class="blurb">A reply from an account with a badge.</p><code>XT&gt; reply|#avatar|name|@handle|badge|time|text</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · X row — media</div><p class="blurb">A photo or video in the post.</p><code>XT&gt; media|what it shows</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · X row — quote</div><p class="blurb">A quoted post.</p><code>XT&gt; quote|name|@handle|text</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · X row — stats</div><p class="blurb">The engagement line.</p><code>XT&gt; stats|replies|reposts|likes|views</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · X inline — @mention / #hashtag (last field only)</div><p class="blurb">Colors @handles and #hashtags in a post's text.</p><code>@handle · #hashtag</code><div class="badges"><span>Also runs on your messages</span></div></li>
+    </ul>
+    </div>
+    <div class="grp">
+    <h3 class="group">Reddit</h3>
+    <p class="group-intro">Written inside [[REDDIT]] … [[/REDDIT]].</p>
+    <ul class="scripts">
+      <li><div class="name">CB · Shell — Reddit thread</div><p class="blurb">The Reddit thread around the post and comments.</p><code>[[REDDIT]] … [[/REDDIT]]</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Reddit row — subreddit header</div><p class="blurb">The subreddit header.</p><code>RD&gt; sub|r/name|tagline</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Reddit row — post (no flair)</div><p class="blurb">A post title without flair.</p><code>RD&gt; post|u/user|time||title</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Reddit row — post (flair)</div><p class="blurb">A post title with flair.</p><code>RD&gt; post|u/user|time|flair|title</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Reddit row — body text</div><p class="blurb">A paragraph of the post body.</p><code>RD&gt; text|paragraph</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Reddit row — media</div><p class="blurb">An image in the post.</p><code>RD&gt; media|what it shows</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Reddit row — stats</div><p class="blurb">Upvotes and the comment count.</p><code>RD&gt; stats|upvotes|comments</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Reddit row — comment</div><p class="blurb">A comment, indented by its depth (0–3).</p><code>RD&gt; comment|depth|u/user|points|text</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Reddit inline — (OP) tag</div><p class="blurb">Turns &quot;(OP)&quot; after a username into Reddit's OP badge.</p><code>(OP)</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Reddit inline — EDIT:</div><p class="blurb">Bolds &quot;EDIT:&quot; in posts and comments.</p><code>EDIT:</code><div class="badges"><span>Also runs on your messages</span></div></li>
+    </ul>
+    </div>
+    <div class="grp">
+    <h3 class="group">Y2K comms</h3>
+    <p class="group-intro">For the Y2K wing: AIM, flip phones, and MySpace.</p>
+    <ul class="scripts">
+      <li><div class="name">CB · Shell — AIM window</div><p class="blurb">The AIM chat window.</p><code>[[AIM]] … [[/AIM]]</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · AIM row — window bar</div><p class="blurb">The window's title bar, with the buddy's status.</p><code>AIM&gt; win|screen name|status</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · AIM row — red (you)</div><p class="blurb">Your character's messages, in AIM red.</p><code>AIM&gt; red|ScreenName|time|message</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · AIM row — blue (them)</div><p class="blurb">The other person's messages, in AIM blue.</p><code>AIM&gt; blue|ScreenName|time|message</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · AIM row — away message</div><p class="blurb">An away message.</p><code>AIM&gt; away|ScreenName|message</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · AIM row — system</div><p class="blurb">A system line, like someone signing off.</p><code>AIM&gt; sys|line</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Shell — Flip phone</div><p class="blurb">The flip phone around the texts.</p><code>[[FLIP]] … [[/FLIP]]</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Flip row — header</div><p class="blurb">The phone's screen header.</p><code>FLIP&gt; head|contact|carrier + time</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Flip row — received</div><p class="blurb">A received text.</p><code>FLIP&gt; in|text|time</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Flip row — sent</div><p class="blurb">A sent text.</p><code>FLIP&gt; out|text|time</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Shell — MySpace comments</div><p class="blurb">The MySpace comment wall.</p><code>[[MYSPACE]] … [[/MYSPACE]]</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · MySpace row — header</div><p class="blurb">The profile header, with their mood.</p><code>MS&gt; head|name|mood</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · MySpace row — Top 8</div><p class="blurb">The Top 8.</p><code>MS&gt; top8|names, comma-separated</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · MySpace row — comment</div><p class="blurb">A wall comment.</p><code>MS&gt; comment|name|date|comment</code><div class="badges"><span>Also runs on your messages</span></div></li>
+    </ul>
+    </div>
+    <div class="grp">
+    <h3 class="group">Dating app</h3>
+    <p class="group-intro">New in v1.5. Written inside [[DATING]] … [[/DATING]]. Every profile is an adult.</p>
+    <ul class="scripts">
+      <li><div class="name">CB · Shell — Dating app</div><p class="blurb">The dating app's phone screen around everything.</p><code>[[DATING]] … [[/DATING]]</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Dating row — app bar</div><p class="blurb">The app's top bar, with the screen you're on (Discover · 4 mi away, Matches).</p><code>DT&gt; app|app name|screen</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Dating row — profile</div><p class="blurb">The profile card's name and age, with 💼 job and 📍 distance.</p><code>DT&gt; profile|name|age|job or bio|distance</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Dating row — photo</div><p class="blurb">A 📷 profile photo, described.</p><code>DT&gt; photo|what it shows</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Dating row — prompt</div><p class="blurb">A prompt answer card with a ♡.</p><code>DT&gt; prompt|question|answer</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Dating row — tags</div><p class="blurb">Detail chips like height, drinking, and what they're looking for.</p><code>DT&gt; tags|detail, detail, detail</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Dating inline — split tags</div><p class="blurb">Splits the comma-separated tags line into separate chips.</p><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Dating row — match</div><p class="blurb">The &quot;It's a Match!&quot; banner.</p><code>DT&gt; match|name|name</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Dating row — received</div><p class="blurb">A message from the match.</p><code>DT&gt; in|time|message</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Dating row — sent</div><p class="blurb">A message from your character.</p><code>DT&gt; out|time|message</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Dating row — system</div><p class="blurb">A system line, like Liked your photo, Unmatched, or Seen 2h ago.</p><code>DT&gt; sys|line</code><div class="badges"><span>Also runs on your messages</span></div></li>
+    </ul>
+    </div>
+    <div class="grp">
+    <h3 class="group">Web browser</h3>
+    <p class="group-intro">New in v1.5. Written inside [[BROWSER]] or [[INCOGNITO]].</p>
+    <ul class="scripts">
+      <li><div class="name">CB · Shell — Browser</div><p class="blurb">The browser window.</p><code>[[BROWSER]] … [[/BROWSER]]</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Shell — Browser (incognito)</div><p class="blurb">A dark incognito window: &quot;nothing here is saved to history.&quot;</p><code>[[INCOGNITO]] … [[/INCOGNITO]]</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Browser row — address bar</div><p class="blurb">The active tab and address bar.</p><code>BR&gt; bar|url|tab title</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Browser row — open tabs</div><p class="blurb">The other open tabs.</p><code>BR&gt; tabs|tab, tab, tab</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Browser inline — split tabs</div><p class="blurb">Splits the comma-separated tabs line into separate tabs.</p><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Browser row — search box</div><p class="blurb">The search box with what's being typed.</p><code>BR&gt; search|what's typed</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Browser row — autocomplete</div><p class="blurb">A 🕘 autocomplete suggestion from a past search, often a revealing one.</p><code>BR&gt; suggest|past search</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Browser row — result</div><p class="blurb">A search result.</p><code>BR&gt; result|title|url|snippet</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Browser row — page</div><p class="blurb">An open page's heading and text.</p><code>BR&gt; page|heading|paragraph</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Browser row — history day</div><p class="blurb">A date header in the browsing history.</p><code>BR&gt; day|date</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Browser row — history entry</div><p class="blurb">One browsing-history entry.</p><code>BR&gt; hist|time|title|url</code><div class="badges"><span>Also runs on your messages</span></div></li>
+    </ul>
+    </div>
+    <div class="grp">
+    <h3 class="group">Instagram</h3>
+    <p class="group-intro">New in v1.5. Written inside [[INSTA]] … [[/INSTA]].</p>
+    <ul class="scripts">
+      <li><div class="name">CB · Shell — Instagram</div><p class="blurb">The Instagram frame.</p><code>[[INSTA]] … [[/INSTA]]</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Instagram row — profile</div><p class="blurb">The profile header, with post, follower, and following counts and the bio.</p><code>IG&gt; profile|username|display name|posts|followers|following|bio</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Instagram row — post header</div><p class="blurb">A post's header, with the location and a verified check.</p><code>IG&gt; post|username|location|✓</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Instagram row — photo</div><p class="blurb">A 📷 photo in the post. Repeat it for a carousel.</p><code>IG&gt; photo|what it shows</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Instagram row — stats</div><p class="blurb">The action row, like count, and time.</p><code>IG&gt; stats|likes|time</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Instagram row — caption</div><p class="blurb">The caption.</p><code>IG&gt; caption|username|text</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Instagram row — comment</div><p class="blurb">A comment with its ♡ count.</p><code>IG&gt; comment|username|comment|likes</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Instagram row — story</div><p class="blurb">A story, with its text or stickers and a &quot;Send message&quot; bar.</p><code>IG&gt; story|username|what it shows|time</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Instagram inline — @mention / #hashtag</div><p class="blurb">Colors @mentions and #hashtags in captions and comments.</p><code>@handle · #hashtag</code><div class="badges"><span>Also runs on your messages</span></div></li>
+    </ul>
+    </div>
+    <div class="grp">
+    <h3 class="group">Private photos</h3>
+    <p class="group-intro">New in v1.5. Written inside [[PRIVATE]] … [[/PRIVATE]]. Everyone in a photo is an adult, and every photo is sent by choice.</p>
+    <ul class="scripts">
+      <li><div class="name">CB · Shell — Private photos</div><p class="blurb">The private chat thread, with a &quot;Send a chat…&quot; box.</p><code>[[PRIVATE]] … [[/PRIVATE]]</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Private row — header</div><p class="blurb">The thread's header, marked 🔒 private.</p><code>PX&gt; head|thread name|contact</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Private row — photo received</div><p class="blurb">A received photo as a frosted tile you tap to reveal, with its caption and view-once or replay status.</p><code>PX&gt; pic|in|time|what it shows|caption|view once / replay / saved</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Private row — photo sent</div><p class="blurb">A sent photo as a tap-to-reveal tile.</p><code>PX&gt; pic|out|time|what it shows|caption|view once / replay / saved</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Private row — received</div><p class="blurb">A received message.</p><code>PX&gt; in|time|message</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Private row — sent</div><p class="blurb">A sent message.</p><code>PX&gt; out|time|message</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Private row — system</div><p class="blurb">A system line, like Opened, unsent a photo, or 📸 took a screenshot!</p><code>PX&gt; sys|line</code><div class="badges"><span>Also runs on your messages</span></div></li>
+    </ul>
+    </div>
+    <div class="grp">
+    <h3 class="group">Creator page</h3>
+    <p class="group-intro">New in v1.5. Written inside [[CREATOR]] … [[/CREATOR]]. The creator, and everyone in the content, is an adult.</p>
+    <ul class="scripts">
+      <li><div class="name">CB · Shell — Creator page</div><p class="blurb">The subscription page.</p><code>[[CREATOR]] … [[/CREATOR]]</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Creator row — header</div><p class="blurb">The page header: verified name, subscriber count, bio, and a Subscribe button with the monthly price.</p><code>CR&gt; head|name|@handle|subscribers|price per month|bio</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Creator row — free post</div><p class="blurb">A free post, with a Send Tip button.</p><code>CR&gt; post|time|caption|free|what it shows</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Creator row — locked post</div><p class="blurb">A 🔒 locked post with its unlock price. Tap to peek at what's behind it.</p><code>CR&gt; post|time|teaser|$price|what it shows</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Creator row — tip</div><p class="blurb">A 💸 tip with its message.</p><code>CR&gt; tip|username|$amount|message</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Creator row — fan message</div><p class="blurb">A DM from a subscriber.</p><code>CR&gt; fan|username|message</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Creator row — creator reply</div><p class="blurb">The creator's reply.</p><code>CR&gt; reply|message</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Creator row — pay-per-view message</div><p class="blurb">A 🔒 pay-per-view message. Tap to see what it holds.</p><code>CR&gt; ppv|$price|what it contains</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Creator row — dashboard</div><p class="blurb">A 📈 earnings and subscriber line.</p><code>CR&gt; stats|line</code><div class="badges"><span>Also runs on your messages</span></div></li>
+    </ul>
+    </div>
+    <div class="grp">
+    <h3 class="group">Fan platform</h3>
+    <p class="group-intro">New in v1.5. Written inside [[BUBBLE]] for an idol's paid chat, or [[LIVE]] for a fan livestream. Pairs with the K-pop Idol flavor.</p>
+    <ul class="scripts">
+      <li><div class="name">CB · Shell — Fan platform chat (bubble)</div><p class="blurb">The idol's paid private chat, with a &quot;Reply to your artist…&quot; box.</p><code>[[BUBBLE]] … [[/BUBBLE]]</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Shell — Fan platform livestream</div><p class="blurb">The fan livestream window, with a chat box and heart and gift buttons.</p><code>[[LIVE]] … [[/LIVE]]</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Fan platform row — bubble header</div><p class="blurb">The chat header: the idol, their group or agency, and the D+ subscription counter.</p><code>FP&gt; head|idol|group or agency|D+ counter</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Fan platform row — idol message</div><p class="blurb">A message from the idol.</p><code>FP&gt; msg|time|message</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Fan platform row — idol photo</div><p class="blurb">A selfie or photo from the idol.</p><code>FP&gt; photo|time|what it shows</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Fan platform row — voice memo</div><p class="blurb">A voice memo with its length and a transcript.</p><code>FP&gt; voice|time|duration|what they say</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Fan platform row — fan reply</div><p class="blurb">The subscriber's own reply, which only they can see.</p><code>FP&gt; reply|time|message</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Fan platform row — live header</div><p class="blurb">The ● LIVE header, with viewer and heart counts.</p><code>FP&gt; live|channel|title|viewers|hearts</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Fan platform row — idol speaking</div><p class="blurb">What the idol says on stream, as a caption.</p><code>FP&gt; say|what they say</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Fan platform row — live chat</div><p class="blurb">A comment scrolling past in the live chat.</p><code>FP&gt; chat|username|comment</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Fan platform row — hearts / gift</div><p class="blurb">A heart or gift alert.</p><code>FP&gt; heart|username|what they sent</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Fan platform row — system</div><p class="blurb">A system line, like new messages, a renewed subscription, or someone joining.</p><code>FP&gt; sys|line</code><div class="badges"><span>Also runs on your messages</span></div></li>
+    </ul>
+    </div>
+    <div class="grp">
+    <h3 class="group">Colored dialogue</h3>
+    <p class="group-intro">For 🎨 Colored Dialogue: each speaker gets one color for the whole chat.</p>
+    <ul class="scripts">
+      <li><div class="name">CB · Colored dialogue — keep each speaker's color over quote styling</div><p class="blurb">SillyTavern's quote color overrides a span's color, so speaker colors never showed. This turns those spans into &lt;font color&gt; tags, which win.</p><code>&lt;span style=&quot;color:…&quot;&gt;</code></li>
+      <li><div class="name">CB · Colored dialogue — drop old colors from the prompt</div><p class="blurb">Strips the color tags from messages six or more back in what's sent to the model, to save tokens. What you see doesn't change.</p><div class="badges"><span>Only changes what the model sees</span></div></li>
+    </ul>
+    </div>
+    <div class="grp">
+    <h3 class="group">Plumbing and extras</h3>
+    <ul class="scripts">
+      <li><div class="name">CB · Data lines — drop a stray trailing |</div><p class="blurb">Runs first. Removes a stray | that the model leaves at the end of any data line, so the line still draws as its card instead of falling back to raw text.</p><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Cleanup — unwrap state, panels and HTML from code fences</div><p class="blurb">If the model wraps its tracker, a panel, or HTML in a ``` code block, this unwraps it so it draws instead of showing as code.</p></li>
       <li><div class="name">CB · Chat/Press row — catch-all (malformed lines)</div><p class="blurb">Catches chat, press, or app lines with the wrong number of fields and shows them as plain text instead of breaking the panel.</p><div class="badges"><span>Also runs on your messages</span></div></li>
       <li><div class="name">CB · Chat/Press — join rendered rows</div><p class="blurb">Removes the line breaks between drawn rows so panels don't get gaps.</p><div class="badges"><span>Also runs on your messages</span></div></li>
       <li><div class="name">CB · Visuals — collapse old chat/press blocks in prompt (optional)</div><p class="blurb">Swaps chat panels, press pages, app panels, and the Program for a short placeholder in what's sent to the model once they're six or more messages old, to save tokens. What you see doesn't change.</p><div class="badges"><span>Only changes what the model sees</span><span>Also runs on your messages</span></div></li>

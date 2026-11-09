@@ -1,0 +1,3766 @@
+[
+    {
+        "trimStrings": [],
+        "placement": [
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null,
+        "id": "262f9999-6987-43be-b815-a24011c1b1c3",
+        "scriptName": "CB · Cleanup — unwrap state, panels and HTML from code fences",
+        "findRegex": "/```[a-zA-Z]{0,12}[ \\t]*\\r?\\n((?:(?!```)[\\s\\S])*?(?:<cb_state>|\\[\\[[A-Z]+\\]\\]|<(?:div|details|section|table|blockquote|style)\\b)(?:(?!```)[\\s\\S])*?)\\r?\\n[ \\t]*```/g",
+        "replaceString": "$1"
+    },
+    {
+        "id": "cec4eb2e-0530-4d70-bcc3-cc65ab565309",
+        "scriptName": "CB · Data lines — drop a stray trailing |",
+        "findRegex": "/^((?:T|C|W|S|I|X|TW|DC|PR|AIM|FLIP|MS|XT|RD|DT|BR|IG|PX|CR|CUE|PG|FP)(?:&gt;|>)[^\\n]*?)[ \\t]*\\|[ \\t]*$/gm",
+        "replaceString": "$1",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null,
+        "id": "27e94061-4909-408d-8907-676146402942",
+        "scriptName": "CB · Divider — Act Break with caption",
+        "findRegex": "/^\\s*(?:---|\\*\\*\\*|===)[ \\t]+(\\S[^\\n]*?)[ \\t]*$/gm",
+        "replaceString": "<div style=\"display:flex;align-items:center;gap:12px;margin:26px 0;color:#b08d57;\"><span style=\"flex:1;height:1px;background:linear-gradient(90deg,transparent,#b08d57);\"></span><span style=\"display:inline-flex;align-items:center;gap:8px;padding:4px 14px;border:1px solid rgba(176,141,87,.55);border-radius:999px;background:rgba(20,15,26,.55);font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:700;\"><span style=\"letter-spacing:0;\">✦</span>$1</span><span style=\"flex:1;height:1px;background:linear-gradient(90deg,#b08d57,transparent);\"></span></div>"
+    },
+    {
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null,
+        "id": "665aa63f-912b-452e-9cc8-d525ac42f1be",
+        "scriptName": "CB · Divider — Scene Shift with caption (⁂)",
+        "findRegex": "/^\\s*⁂[ \\t]+(\\S[^\\n]*?)[ \\t]*$/gm",
+        "replaceString": "<div style=\"display:flex;align-items:center;gap:12px;margin:26px 0;color:#b08d57;\"><span style=\"flex:1;height:1px;background:linear-gradient(90deg,transparent,#b08d57);\"></span><span style=\"display:inline-flex;align-items:center;gap:8px;padding:4px 14px;border:1px solid rgba(176,141,87,.4);border-radius:999px;background:rgba(20,15,26,.55);font-size:11px;letter-spacing:2px;text-transform:uppercase;\"><span style=\"letter-spacing:0;\">⁂</span>$1</span><span style=\"flex:1;height:1px;background:linear-gradient(90deg,#b08d57,transparent);\"></span></div>"
+    },
+    {
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null,
+        "id": "74759307-342c-4a9c-a770-fdaa0bb00fd5",
+        "scriptName": "CB · Divider — Timeskip with caption (↷)",
+        "findRegex": "/^\\s*(?:↷|»»»|→→→)[ \\t]+(\\S[^\\n]*?)[ \\t]*$/gm",
+        "replaceString": "<div style=\"display:flex;align-items:center;gap:12px;margin:26px 0;color:#a99cbd;\"><span style=\"flex:1;height:1px;background:repeating-linear-gradient(90deg,#8a7a9a 0 4px,transparent 4px 8px);\"></span><span style=\"display:inline-flex;align-items:center;gap:8px;padding:4px 14px;border:1px solid rgba(138,122,154,.5);border-radius:999px;background:rgba(20,15,26,.55);font-size:11px;letter-spacing:2px;text-transform:uppercase;font-style:italic;\"><span style=\"letter-spacing:0;\">↷</span>$1</span><span style=\"flex:1;height:1px;background:repeating-linear-gradient(90deg,#8a7a9a 0 4px,transparent 4px 8px);\"></span></div>"
+    },
+    {
+        "id": "9083ae41-89de-457b-a005-f0e3a4d4dabb",
+        "scriptName": "CB · Divider — Act Break",
+        "findRegex": "/^\\s*(---|\\*\\*\\*|===|~~~)\\s*$/gm",
+        "replaceString": "<div style=\"display:flex;align-items:center;gap:12px;margin:26px 0;color:#b08d57;font-size:13px;letter-spacing:3px;\"><span style=\"flex:1;height:1px;background:linear-gradient(90deg,transparent,#b08d57);\"></span>✦ ✦ ✦<span style=\"flex:1;height:1px;background:linear-gradient(90deg,#b08d57,transparent);\"></span></div>",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "dc90abe2-47a2-47da-a2f3-b8adbb8e5b78",
+        "scriptName": "CB · Divider — Scene Shift (⁂)",
+        "findRegex": "/^\\s*⁂\\s*$/gm",
+        "replaceString": "<div style=\"text-align:center;margin:22px 0;color:#b08d57;letter-spacing:6px;font-size:15px;\">⁂</div>",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "75d7f004-6ed7-45b9-8c51-c71d444d3f0d",
+        "scriptName": "CB · Divider — Timeskip (↷)",
+        "findRegex": "/^\\s*(↷|»»»|→→→)\\s*$/gm",
+        "replaceString": "<div style=\"display:flex;align-items:center;gap:10px;margin:24px 0;color:#8a7a9a;font-size:12px;font-style:italic;letter-spacing:2px;\"><span style=\"flex:1;height:1px;background:repeating-linear-gradient(90deg,#8a7a9a 0 4px,transparent 4px 8px);\"></span>later<span style=\"flex:1;height:1px;background:repeating-linear-gradient(90deg,#8a7a9a 0 4px,transparent 4px 8px);\"></span></div>",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "trimStrings": [],
+        "placement": [
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": false,
+        "promptOnly": true,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": 1,
+        "maxDepth": null,
+        "id": "05aa841d-da82-465b-ad38-14e51d03b04d",
+        "scriptName": "CB · Callboard — hide think from prompt (missing opener)",
+        "findRegex": "/^(?![\\s\\S]*?<think>)[\\s\\S]*?<\\/think>\\s*/",
+        "replaceString": ""
+    },
+    {
+        "id": "a0c16267-058c-4ff3-942e-cf3b8104b25d",
+        "scriptName": "CB · Callboard — hide think from prompt",
+        "findRegex": "/<think>[\\s\\S]*?<\\/think>/g",
+        "replaceString": "",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": false,
+        "promptOnly": true,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": 1,
+        "maxDepth": null
+    },
+    {
+        "trimStrings": [],
+        "placement": [
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null,
+        "id": "ccf4ca09-f5f2-4a53-bc16-ddd8be77462b",
+        "scriptName": "CB · Callboard — think foldout (missing opener)",
+        "findRegex": "/^(?![\\s\\S]*?<think>)([\\s\\S]*?)<\\/think>/",
+        "replaceString": "<think>$1</think>"
+    },
+    {
+        "id": "d57ab419-c6b2-4675-bbdd-44747d1901a1",
+        "scriptName": "CB · Callboard — style think foldout",
+        "findRegex": "/<think>([\\s\\S]*?)<\\/think>/g",
+        "replaceString": "<details style=\"margin:6px 0;border:1px solid #2a2233;border-radius:10px;background:#140f1a;\"><summary style=\"cursor:pointer;padding:8px 12px;color:#c9a6ff;font-size:12px;letter-spacing:1px;\">🎧 Xavi at the board</summary><div style=\"padding:4px 14px 12px;color:#a99bbf;font-size:12px;line-height:1.55;font-style:italic;white-space:pre-wrap;\">$1</div></details>",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "trimStrings": [],
+        "placement": [
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null,
+        "id": "7892f01f-618c-4551-8425-1be387c3e43a",
+        "scriptName": "CB · Tracker — time-of-day icon (night)",
+        "findRegex": "/^(T(?:&gt;|>)\\s*time\\s*\\|\\s*)(?!🌙|🌇|🌅|☀|🌤)(?=[^|\\n]*(?:\\b(?:night|midnight|nighttime|late evening|small hours|moonrise)\\b|\\b(?:1[01]|[89]):\\d\\d\\s*PM\\b|\\b(?:12|[1-4]):\\d\\d\\s*AM\\b))/gmi",
+        "replaceString": "$1🌙 "
+    },
+    {
+        "trimStrings": [],
+        "placement": [
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null,
+        "id": "3e98b357-3d87-4581-be4c-f81c223cb7a7",
+        "scriptName": "CB · Tracker — time-of-day icon (dusk)",
+        "findRegex": "/^(T(?:&gt;|>)\\s*time\\s*\\|\\s*)(?!🌙|🌇|🌅|☀|🌤)(?=[^|\\n]*(?:\\b(?:dusk|sunset|twilight|evening|nightfall)\\b|\\b[5-7]:\\d\\d\\s*PM\\b))/gmi",
+        "replaceString": "$1🌇 "
+    },
+    {
+        "trimStrings": [],
+        "placement": [
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null,
+        "id": "e111798e-c040-4e59-bfcb-054d21663e24",
+        "scriptName": "CB · Tracker — time-of-day icon (dawn)",
+        "findRegex": "/^(T(?:&gt;|>)\\s*time\\s*\\|\\s*)(?!🌙|🌇|🌅|☀|🌤)(?=[^|\\n]*(?:\\b(?:dawn|sunrise|daybreak|first light|early morning)\\b|\\b[5-6]:\\d\\d\\s*AM\\b))/gmi",
+        "replaceString": "$1🌅 "
+    },
+    {
+        "trimStrings": [],
+        "placement": [
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null,
+        "id": "1abbd66e-f6d0-4ddd-a13a-0d39b9f8e12a",
+        "scriptName": "CB · Tracker — time-of-day icon (midday)",
+        "findRegex": "/^(T(?:&gt;|>)\\s*time\\s*\\|\\s*)(?!🌙|🌇|🌅|☀|🌤)(?=[^|\\n]*(?:\\b(?:noon|midday|afternoon)\\b|\\b12:\\d\\d\\s*PM\\b|\\b[1-4]:\\d\\d\\s*PM\\b))/gmi",
+        "replaceString": "$1☀️ "
+    },
+    {
+        "trimStrings": [],
+        "placement": [
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null,
+        "id": "7bf45a23-6037-4d56-b2ae-a98dd90c19af",
+        "scriptName": "CB · Tracker — time-of-day icon (morning)",
+        "findRegex": "/^(T(?:&gt;|>)\\s*time\\s*\\|\\s*)(?!🌙|🌇|🌅|☀|🌤)(?=[^|\\n]*(?:\\b(?:morning|forenoon)\\b|\\b(?:[7-9]|1[01]):\\d\\d\\s*AM\\b))/gmi",
+        "replaceString": "$1🌤️ "
+    },
+    {
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": 0,
+        "id": "a0cf1330-71e1-49bd-9211-0b1ab2f2b564",
+        "scriptName": "CB · Console — open (newest reply)",
+        "findRegex": "/<cb_state>(?=(?:(?:(?!<\\/cb_state>)[\\s\\S])*?^T(?:&gt;|>)[ \\t]*time[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*$)|)(?=(?:(?:(?!<\\/cb_state>)[\\s\\S])*?^T(?:&gt;|>)[ \\t]*place[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*$)|)(?=(?:(?:(?!<\\/cb_state>)[\\s\\S])*?^T(?:&gt;|>)[ \\t]*mood[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*$)|)(?=(?:(?:(?!<\\/cb_state>)[\\s\\S])*?^T(?:&gt;|>)[ \\t]*affinity[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*[^\\d|\\n]*?(\\d{1,3}))|)/mi",
+        "replaceString": "<details class=\"cbh\" open><summary><span class=\"cbh-led\"></span><span class=\"cbh-title\">Board</span><span class=\"cbh-chip cbh-chip-time\">$1</span><span class=\"cbh-chip cbh-chip-place\">$2</span><span class=\"cbh-chip cbh-chip-mood\">$3</span><span class=\"cbh-chip cbh-chip-aff\">$4</span><span class=\"cbh-chip cbh-chip-num\">$5</span><span class=\"cbh-hint\">tap to open</span><span class=\"cbh-chev\">▾</span></summary><div class=\"cbh-body\"><!--cbh-->"
+    },
+    {
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": 1,
+        "maxDepth": null,
+        "id": "63ec96db-44a4-4ef9-8d24-4bb6403c32fd",
+        "scriptName": "CB · Console — open (older replies, folded)",
+        "findRegex": "/<cb_state>(?=(?:(?:(?!<\\/cb_state>)[\\s\\S])*?^T(?:&gt;|>)[ \\t]*time[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*$)|)(?=(?:(?:(?!<\\/cb_state>)[\\s\\S])*?^T(?:&gt;|>)[ \\t]*place[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*$)|)(?=(?:(?:(?!<\\/cb_state>)[\\s\\S])*?^T(?:&gt;|>)[ \\t]*mood[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*$)|)(?=(?:(?:(?!<\\/cb_state>)[\\s\\S])*?^T(?:&gt;|>)[ \\t]*affinity[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*[^\\d|\\n]*?(\\d{1,3}))|)/mi",
+        "replaceString": "<details class=\"cbh\"><summary><span class=\"cbh-led\"></span><span class=\"cbh-title\">Board</span><span class=\"cbh-chip cbh-chip-time\">$1</span><span class=\"cbh-chip cbh-chip-place\">$2</span><span class=\"cbh-chip cbh-chip-mood\">$3</span><span class=\"cbh-chip cbh-chip-aff\">$4</span><span class=\"cbh-chip cbh-chip-num\">$5</span><span class=\"cbh-hint\">tap to open</span><span class=\"cbh-chev\">▾</span></summary><div class=\"cbh-body\"><!--cbh-->"
+    },
+    {
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null,
+        "id": "78725e89-bfd4-4b09-8594-0f98a818e36b",
+        "scriptName": "CB · Console — Tracker row — time, place, mood",
+        "findRegex": "/^T(?:&gt;|>)\\s*(time|place|mood)\\s*\\|\\s*([^|\\n]+?)\\s*\\s*\\|?\\s*$/gmi",
+        "replaceString": "<div class=\"cbh-tile cbh-tile-$1\"><span class=\"cbh-k\">$1</span><span class=\"cbh-v\">$2</span></div><!--cbh-->"
+    },
+    {
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null,
+        "id": "0444ef4e-7986-4f5c-b80c-c7408effd984",
+        "scriptName": "CB · Console — Tracker row — affinity",
+        "findRegex": "/^T(?:&gt;|>)\\s*affinity\\s*\\|\\s*([^|\\n]+?)\\s*\\|\\s*(?:[^\\d|\\n]*?)(\\d{1,3})(?:\\s*%)?\\s*\\|\\s*([^|\\n]*?)\\s*\\|?\\s*$/gmi",
+        "replaceString": "<div class=\"cbh-meter\"><div class=\"cbh-mrow\"><span class=\"cbh-k\">affinity · $1</span><span class=\"cbh-num\">$2</span></div><span class=\"cbh-track\"><i style=\"width:$2%\"></i></span><div class=\"cbh-why\">$3</div></div><!--cbh-->"
+    },
+    {
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null,
+        "id": "93838a94-c9bc-4229-9aae-3870bc59aa6b",
+        "scriptName": "CB · Console — Tracker row — reputation (rung 1)",
+        "findRegex": "/^T(?:&gt;|>)\\s*reputation\\s*\\|\\s*((?:spotless|under the radar)[^|\\n]*?)\\s*(?:\\|\\s*([^|\\n]*?))?\\s*\\|?\\s*$/gmi",
+        "replaceString": "<div class=\"cbh-meter cbh-rep\"><div class=\"cbh-mrow\"><span class=\"cbh-k\">reputation</span><span class=\"cbh-num\">$1</span></div><span class=\"cbh-pips cbh-lv-1\"><i></i><i></i><i></i><i></i><i></i></span><div class=\"cbh-why\">$2</div></div><!--cbh-->"
+    },
+    {
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null,
+        "id": "158599df-733c-45b8-97da-f9ce5a61d5c4",
+        "scriptName": "CB · Console — Tracker row — reputation (rung 2)",
+        "findRegex": "/^T(?:&gt;|>)\\s*reputation\\s*\\|\\s*((?:whispered of|buzzing)[^|\\n]*?)\\s*(?:\\|\\s*([^|\\n]*?))?\\s*\\|?\\s*$/gmi",
+        "replaceString": "<div class=\"cbh-meter cbh-rep\"><div class=\"cbh-mrow\"><span class=\"cbh-k\">reputation</span><span class=\"cbh-num\">$1</span></div><span class=\"cbh-pips cbh-lv-2\"><i></i><i></i><i></i><i></i><i></i></span><div class=\"cbh-why\">$2</div></div><!--cbh-->"
+    },
+    {
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null,
+        "id": "2938b557-3461-4933-8d5f-4744e4b3e5c9",
+        "scriptName": "CB · Console — Tracker row — reputation (rung 3)",
+        "findRegex": "/^T(?:&gt;|>)\\s*reputation\\s*\\|\\s*((?:talked of|trending)[^|\\n]*?)\\s*(?:\\|\\s*([^|\\n]*?))?\\s*\\|?\\s*$/gmi",
+        "replaceString": "<div class=\"cbh-meter cbh-rep\"><div class=\"cbh-mrow\"><span class=\"cbh-k\">reputation</span><span class=\"cbh-num\">$1</span></div><span class=\"cbh-pips cbh-lv-3\"><i></i><i></i><i></i><i></i><i></i></span><div class=\"cbh-why\">$2</div></div><!--cbh-->"
+    },
+    {
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null,
+        "id": "f8cec08b-6e19-4d41-8b12-e3c5fc3e56c8",
+        "scriptName": "CB · Console — Tracker row — reputation (rung 4)",
+        "findRegex": "/^T(?:&gt;|>)\\s*reputation\\s*\\|\\s*((?:compromised|front page)[^|\\n]*?)\\s*(?:\\|\\s*([^|\\n]*?))?\\s*\\|?\\s*$/gmi",
+        "replaceString": "<div class=\"cbh-meter cbh-rep\"><div class=\"cbh-mrow\"><span class=\"cbh-k\">reputation</span><span class=\"cbh-num\">$1</span></div><span class=\"cbh-pips cbh-lv-4\"><i></i><i></i><i></i><i></i><i></i></span><div class=\"cbh-why\">$2</div></div><!--cbh-->"
+    },
+    {
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null,
+        "id": "9c3408d9-797d-4115-aa43-9a5ca85ee46e",
+        "scriptName": "CB · Console — Tracker row — reputation (rung 5)",
+        "findRegex": "/^T(?:&gt;|>)\\s*reputation\\s*\\|\\s*((?:ruined|scandal)[^|\\n]*?)\\s*(?:\\|\\s*([^|\\n]*?))?\\s*\\|?\\s*$/gmi",
+        "replaceString": "<div class=\"cbh-meter cbh-rep\"><div class=\"cbh-mrow\"><span class=\"cbh-k\">reputation</span><span class=\"cbh-num\">$1</span></div><span class=\"cbh-pips cbh-lv-5\"><i></i><i></i><i></i><i></i><i></i></span><div class=\"cbh-why\">$2</div></div><!--cbh-->"
+    },
+    {
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null,
+        "id": "a5551433-d08e-41a5-8ed7-ea44d0cb8ae0",
+        "scriptName": "CB · Console — Tracker row — reputation (other)",
+        "findRegex": "/^T(?:&gt;|>)\\s*reputation\\s*\\|\\s*([^|\\n]+?)\\s*(?:\\|\\s*([^|\\n]*?))?\\s*\\|?\\s*$/gmi",
+        "replaceString": "<div class=\"cbh-meter cbh-rep\"><div class=\"cbh-mrow\"><span class=\"cbh-k\">reputation</span><span class=\"cbh-num\">$1</span></div><div class=\"cbh-why\">$2</div></div><!--cbh-->"
+    },
+    {
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null,
+        "id": "4148aabb-2d45-4c64-a49c-49c9c788d9d0",
+        "scriptName": "CB · Console — Board row — Cast",
+        "findRegex": "/^C(?:&gt;|>)\\s*([^|\\n]+?)\\s*\\|\\s*([^|\\n]+?)\\s*\\|\\s*(?:[^\\d|\\n]*?)(\\d{1,3})(?:\\s*%)?\\s*\\|\\s*([^|\\n]+?)\\s*(?:\\|\\s*([^|\\n]*?))?\\s*\\|?\\s*$/gm",
+        "replaceString": "<details class=\"cbh-card cbh-person\"><summary><span class=\"cbh-name\">$1</span><span class=\"cbh-line\"><span class=\"cbh-tag\">$4</span><span class=\"cbh-track\"><i style=\"width:$3%\"></i></span><span class=\"cbh-num\">$3</span></span></summary><div class=\"cbh-more\"><div><span class=\"cbh-k\">role</span>$2</div><div><span class=\"cbh-k\">now</span>$5</div></div></details><!--cbh-->"
+    },
+    {
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null,
+        "id": "3cbcdc22-968d-4e44-928e-4045dca28620",
+        "scriptName": "CB · Console — Board row — Web",
+        "findRegex": "/^W(?:&gt;|>)\\s*([^|\\n]+?)\\s*\\|\\s*([^|\\n]+?)\\s*\\|\\s*(?:[^\\d|\\n]*?)(\\d{1,3})(?:\\s*%)?\\s*(?:\\|\\s*([^|\\n]*?))?\\s*\\|?\\s*$/gm",
+        "replaceString": "<details class=\"cbh-card cbh-pair\"><summary><span class=\"cbh-name\">$1</span><span class=\"cbh-line\"><span class=\"cbh-tag\">$2</span><span class=\"cbh-track cbh-heat\"><i style=\"width:$3%\"></i></span><span class=\"cbh-num\">$3</span></span></summary><div class=\"cbh-more\"><div><span class=\"cbh-k\">now</span>$4</div></div></details><!--cbh-->"
+    },
+    {
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null,
+        "id": "48e2b8fd-0ddf-4110-b574-0bcff6a36315",
+        "scriptName": "CB · Console — Board row — Status",
+        "findRegex": "/^S(?:&gt;|>)\\s*([^|\\n]+?)\\s*\\|\\s*([^|\\n]+?)\\s*\\|\\s*([^|\\n]+?)\\s*(?:\\|\\s*([^|\\n]*?))?\\s*\\|?\\s*$/gm",
+        "replaceString": "<details class=\"cbh-card cbh-cond\"><summary><span class=\"cbh-name\">$1</span><span class=\"cbh-line\"><span class=\"cbh-tag cbh-hp cbh-hp-$2\">$2</span><span class=\"cbh-tag cbh-en cbh-en-$3\">$3</span></span></summary><div class=\"cbh-more\"><div><span class=\"cbh-k\">condition</span>$4</div></div></details><!--cbh-->"
+    },
+    {
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null,
+        "id": "6c4c9442-b31c-4ecb-9da7-71396551af3c",
+        "scriptName": "CB · Console — Board row — Inventory",
+        "findRegex": "/^I(?:&gt;|>)\\s*([^|\\n]+?)\\s*\\|\\s*([^|\\n]+?)\\s*(?:\\|\\s*([^|\\n]*?))?\\s*\\|?\\s*$/gm",
+        "replaceString": "<details class=\"cbh-card cbh-item cbh-kind-$2\"><summary><span class=\"cbh-name\">$1</span><span class=\"cbh-sub\">$2</span></summary><div class=\"cbh-more\">$3</div></details><!--cbh-->"
+    },
+    {
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null,
+        "id": "1c2142f7-2696-48fb-b865-8c26679e930e",
+        "scriptName": "CB · Console — Board row — Codex",
+        "findRegex": "/^X(?:&gt;|>)\\s*([^|\\n]+?)\\s*\\|\\s*([^|\\n]+?)\\s*(?:\\|\\s*([^|\\n]*?))?\\s*\\|?\\s*$/gm",
+        "replaceString": "<details class=\"cbh-card cbh-entry cbh-cat-$2\"><summary><span class=\"cbh-name\">$1</span><span class=\"cbh-sub\">$2</span></summary><div class=\"cbh-more\">$3</div></details><!--cbh-->"
+    },
+    {
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null,
+        "id": "eb7eec51-6069-4ab2-ae09-f95f7fa8888a",
+        "scriptName": "CB · Console — Board row — catch-all (malformed lines)",
+        "findRegex": "/^[TCWSIX](?:&gt;|>)\\s*([^\\n]+?)\\s*$/gm",
+        "replaceString": "<div class=\"cbh-odd\">$1</div><!--cbh-->"
+    },
+    {
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null,
+        "id": "76bde1e7-4587-404f-8413-2b6fe4a0b502",
+        "scriptName": "CB · Console — Tracker shell",
+        "findRegex": "/\\[\\[TRK\\]\\]\\s*([\\s\\S]*?)\\s*\\[\\[\\/TRK\\]\\]/g",
+        "replaceString": "<details class=\"cbh-drawer cbh-d-trk\" open><summary>📊 Tracker</summary><div class=\"cbh-dbody\">$1</div></details><!--cbh-->"
+    },
+    {
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null,
+        "id": "e704d5e8-2904-41dc-8289-63ec27eea9d8",
+        "scriptName": "CB · Console — Board shell — Cast",
+        "findRegex": "/\\[\\[CAST\\]\\]\\s*([\\s\\S]*?)\\s*\\[\\[\\/CAST\\]\\]/g",
+        "replaceString": "<details class=\"cbh-drawer cbh-d-cast\" open><summary>🪪 Cast</summary><div class=\"cbh-dbody\">$1</div></details><!--cbh-->"
+    },
+    {
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null,
+        "id": "9e66f5f5-38ac-4daf-a06b-fe0c6fa8330d",
+        "scriptName": "CB · Console — Board shell — Web",
+        "findRegex": "/\\[\\[WEB\\]\\]\\s*([\\s\\S]*?)\\s*\\[\\[\\/WEB\\]\\]/g",
+        "replaceString": "<details class=\"cbh-drawer cbh-d-web\"><summary>💞 Relationships</summary><div class=\"cbh-dbody\">$1</div></details><!--cbh-->"
+    },
+    {
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null,
+        "id": "3b4e6ad1-13c0-4ef1-a3e5-092636d76b2b",
+        "scriptName": "CB · Console — Board shell — Status",
+        "findRegex": "/\\[\\[STATUS\\]\\]\\s*([\\s\\S]*?)\\s*\\[\\[\\/STATUS\\]\\]/g",
+        "replaceString": "<details class=\"cbh-drawer cbh-d-status\"><summary>🩹 Condition</summary><div class=\"cbh-dbody\">$1</div></details><!--cbh-->"
+    },
+    {
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null,
+        "id": "da9052bb-f0e2-4ab0-beeb-d9ee8716661b",
+        "scriptName": "CB · Console — Board shell — Inventory",
+        "findRegex": "/\\[\\[INV\\]\\]\\s*([\\s\\S]*?)\\s*\\[\\[\\/INV\\]\\]/g",
+        "replaceString": "<details class=\"cbh-drawer cbh-d-inv\"><summary>🎒 Inventory</summary><div class=\"cbh-dbody\">$1</div></details><!--cbh-->"
+    },
+    {
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null,
+        "id": "54d5b903-7568-40cf-af1a-ba745fdb58ca",
+        "scriptName": "CB · Console — Board shell — Codex",
+        "findRegex": "/\\[\\[CODEX\\]\\]\\s*([\\s\\S]*?)\\s*\\[\\[\\/CODEX\\]\\]/g",
+        "replaceString": "<details class=\"cbh-drawer cbh-d-codex\"><summary>📓 Codex</summary><div class=\"cbh-dbody\">$1</div></details><!--cbh-->"
+    },
+    {
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null,
+        "id": "c0552785-f2c6-459d-bb0b-27fe7e931609",
+        "scriptName": "CB · Console — join rows and drawers",
+        "findRegex": "/<!--cbh-->\\s*/g",
+        "replaceString": ""
+    },
+    {
+        "id": "e4a678d2-3daa-4b3b-81c0-d1ded1a35b3b",
+        "scriptName": "CB · Chat inline — emotes :Name: (Twitch/Discord)",
+        "findRegex": "/(?<=^(?:TW|DC)(?:&gt;|>)[^\\n]*?):([A-Za-z][A-Za-z0-9_]{1,24}):/gm",
+        "replaceString": "<span style=\"display:inline-block;padding:0 5px;margin:0 1px;border-radius:4px;background:rgba(145,71,255,.24);color:#e6d9ff;font-size:11px;font-weight:700;line-height:17px;vertical-align:1px;letter-spacing:.2px;\">$1</span>",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "d5b104f8-6ad7-41de-99c2-76175063b80f",
+        "scriptName": "CB · Twitch inline — @mention",
+        "findRegex": "/(?<=^TW(?:&gt;|>)[^\\n]*?[\\s|])@([A-Za-z0-9_]{2,25})/gm",
+        "replaceString": "<b style=\"color:#efeff1;background:rgba(255,255,255,.09);border-radius:3px;padding:0 3px;\">@$1</b>",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "35acf103-e929-460f-b8ac-6d441cacfc54",
+        "scriptName": "CB · Discord inline — @mention",
+        "findRegex": "/(?<=^DC(?:&gt;|>)[^\\n]*?[\\s|])@([A-Za-z0-9_.]{2,32})/gm",
+        "replaceString": "<span style=\"color:#c9cdfb;background:rgba(88,101,242,.3);border-radius:3px;padding:0 2px;font-weight:500;\">@$1</span>",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "ef1c338b-11f0-4111-b245-4a9056ec242c",
+        "scriptName": "CB · Discord inline — (edited)",
+        "findRegex": "/(?<=^DC(?:&gt;|>)[^\\n]*?)\\s*\\(edited\\)/gm",
+        "replaceString": "<span style=\"color:#949ba4;font-size:10.5px;margin-left:4px;\">(edited)</span>",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "baac2896-142a-48e5-afaa-65f2f344b2d2",
+        "scriptName": "CB · Discord inline — split reactions",
+        "findRegex": "/(?<=^DC(?:&gt;|>)\\s*react\\s*\\|[^\\n]*?)\\s+[·•]\\s+/gm",
+        "replaceString": "</span><span style=\"display:inline-block;background:#2b2d31;border:1px solid #3f4147;border-radius:8px;padding:1px 8px;margin:0 4px 0 0;font-size:13px;color:#dbdee1;line-height:20px;\">",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "64769d8f-2f04-44f8-be34-04c9afe35a4a",
+        "scriptName": "CB · X inline — @mention / #hashtag (last field only)",
+        "findRegex": "/(?<=^XT(?:&gt;|>)[^\\n]*?[\\s|])([@#][A-Za-z_][A-Za-z0-9_]{1,30})(?=[^|\\n]*$)/gm",
+        "replaceString": "<span style=\"color:#1d9bf0;\">$1</span>",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "d3193a42-689a-46e8-a3bc-64d555f3be00",
+        "scriptName": "CB · Reddit inline — (OP) tag",
+        "findRegex": "/(?<=^RD(?:&gt;|>)[^\\n]*?)\\s*\\(OP\\)/gm",
+        "replaceString": " <span style=\"color:#0079d3;font-weight:700;font-size:11px;\">OP</span>",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "abd34e0d-c674-47fb-8c79-0ccb54f27c69",
+        "scriptName": "CB · Reddit inline — EDIT:",
+        "findRegex": "/(?<=^RD(?:&gt;|>)[^\\n]*?)(EDIT\\s*\\d*:)/gm",
+        "replaceString": "<b style=\"color:#ffb000;\">$1</b>",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "07d2b1b8-bccf-448e-9f9a-7cb20b996454",
+        "scriptName": "CB · Twitch row — live header",
+        "findRegex": "/^TW(?:&gt;|>)\\s*live\\s*\\|\\s*([^|\\n]+?)\\s*\\|\\s*([^|\\n]+?)\\s*\\|\\s*([^|\\n]+?)\\s*\\|\\s*([^|\\n]+?)\\s*\\|\\s*([^|\\n]+?)\\s*$/gmi",
+        "replaceString": "<div style=\"margin:-8px -10px 6px;padding:10px 12px;background:linear-gradient(135deg,#18181b,#21163a);border-bottom:1px solid #2f2f35;\"><div style=\"display:flex;align-items:center;gap:8px;\"><span style=\"flex:0 0 30px;width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,#9147ff,#ff75e6);display:inline-flex;align-items:center;justify-content:center;font-size:14px;box-shadow:0 0 0 2px #0e0e10,0 0 0 4px #e91916;\">🎥</span><span style=\"font-weight:700;color:#efeff1;font-size:14px;\">$1</span><span style=\"background:#e91916;color:#fff;font-size:10px;font-weight:800;border-radius:4px;padding:1px 5px;letter-spacing:.6px;\">LIVE</span></div><div style=\"margin-top:7px;color:#efeff1;font-size:12.5px;font-weight:600;line-height:1.35;\">$2</div><div style=\"margin-top:2px;color:#bf94ff;font-size:12px;\">$3</div><div style=\"margin-top:5px;display:flex;gap:14px;font-size:11.5px;color:#adadb8;\"><span><span style=\"color:#e91916;\">●</span> $4</span><span>⏱ $5</span></div></div><!--cbrow-->",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "555f805a-8c6b-4f9b-963c-28c9ac91796b",
+        "scriptName": "CB · Twitch row — message",
+        "findRegex": "/^TW(?:&gt;|>)\\s*msg\\s*\\|\\s*([^|\\n]+?)\\s*\\|\\s*([^|\\n]+?)\\s*\\|\\s*([^|\\n]*?)\\s*\\|\\s*([^|\\n]+?)\\s*$/gmi",
+        "replaceString": "<div style=\"padding:3px 2px;word-wrap:break-word;line-height:1.5;\"><span style=\"margin-right:3px;font-size:12px;\">$3</span><span style=\"color:$1;font-weight:700;\">$2</span><span style=\"color:#efeff1;\">: $4</span></div><!--cbrow-->",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "ccc0c3b1-2aaf-48c1-8257-c4c3371d8949",
+        "scriptName": "CB · Twitch row — sub / gift",
+        "findRegex": "/^TW(?:&gt;|>)\\s*sub\\s*\\|\\s*([^|\\n]+?)\\s*\\|\\s*([^|\\n]+?)(?:\\s*\\|\\s*([^|\\n]*?))?\\s*$/gmi",
+        "replaceString": "<div style=\"margin:6px 0;padding:7px 9px;border-left:3px solid #9147ff;background:#1f1f23;border-radius:4px;\"><div style=\"font-size:12px;\"><b style=\"color:#bf94ff;\">⭐ $1</b> <span style=\"color:#adadb8;\">$2</span></div><div style=\"color:#efeff1;font-size:12.5px;margin-top:2px;\">$3</div></div><!--cbrow-->",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "4b065ef9-3420-4d34-b967-6a4c3412acd9",
+        "scriptName": "CB · Twitch row — bits",
+        "findRegex": "/^TW(?:&gt;|>)\\s*bits\\s*\\|\\s*([^|\\n]+?)\\s*\\|\\s*([^|\\n]+?)(?:\\s*\\|\\s*([^|\\n]*?))?\\s*$/gmi",
+        "replaceString": "<div style=\"margin:6px 0;padding:7px 9px;border:1.5px solid transparent;border-radius:6px;background:linear-gradient(#1f1f23,#1f1f23) padding-box,linear-gradient(90deg,#ff75e6,#9147ff,#00f593) border-box;\"><div style=\"font-size:12px;\"><b style=\"color:#ff75e6;\">💎 $1</b> <span style=\"color:#adadb8;\">cheered</span> <b style=\"color:#00f593;\">$2 bits</b></div><div style=\"color:#efeff1;font-size:12.5px;margin-top:2px;\">$3</div></div><!--cbrow-->",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "75aadc6c-0295-4847-ba24-ab34588163f1",
+        "scriptName": "CB · Twitch row — tip (TTS)",
+        "findRegex": "/^TW(?:&gt;|>)\\s*tip\\s*\\|\\s*([^|\\n]+?)\\s*\\|\\s*([^|\\n]+?)(?:\\s*\\|\\s*([^|\\n]*?))?\\s*$/gmi",
+        "replaceString": "<div style=\"margin:6px 0;padding:8px 9px;border-left:3px solid #ff75e6;background:rgba(255,117,230,.1);border-radius:4px;\"><div style=\"display:flex;justify-content:space-between;align-items:center;font-size:12px;\"><span><b style=\"color:#ff75e6;\">💸 $1</b> <span style=\"color:#adadb8;\">tipped</span> <b style=\"color:#efeff1;\">$2</b></span><span style=\"font-size:9.5px;color:#0e0e10;background:#ff75e6;border-radius:3px;padding:0 4px;font-weight:800;\">🔊 TTS</span></div><div style=\"color:#efeff1;font-size:12.5px;margin-top:3px;font-style:italic;\">$3</div></div><!--cbrow-->",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "2b8a7db6-ab36-406c-a833-607007d5ec73",
+        "scriptName": "CB · Twitch row — raid",
+        "findRegex": "/^TW(?:&gt;|>)\\s*raid\\s*\\|\\s*([^|\\n]+?)\\s*\\|\\s*([^|\\n]+?)\\s*$/gmi",
+        "replaceString": "<div style=\"margin:7px 0;padding:8px 10px;border-radius:6px;background:linear-gradient(90deg,#9147ff,#e91916);color:#fff;font-size:12.5px;font-weight:700;text-align:center;box-shadow:0 0 14px rgba(145,71,255,.5);\">🚨 $1 is raiding with $2 viewers!</div><!--cbrow-->",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "3966ccdb-9a86-4a69-a8e4-cbb3f71c4a49",
+        "scriptName": "CB · Twitch row — follow",
+        "findRegex": "/^TW(?:&gt;|>)\\s*follow\\s*\\|\\s*([^|\\n]+?)\\s*$/gmi",
+        "replaceString": "<div style=\"padding:3px 2px;font-size:12px;color:#00f593;\">💚 <b>$1</b> just followed</div><!--cbrow-->",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "269fdce4-8005-455b-8e68-e2af8cb789ab",
+        "scriptName": "CB · Twitch row — mod action",
+        "findRegex": "/^TW(?:&gt;|>)\\s*mod\\s*\\|\\s*([^|\\n]+?)\\s*$/gmi",
+        "replaceString": "<div style=\"padding:3px 2px;font-size:11.5px;color:#7b7b85;font-style:italic;\">🗡️ $1</div><!--cbrow-->",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "1b531a05-6aae-4b60-a85e-85f4ce501b53",
+        "scriptName": "CB · Twitch row — clip",
+        "findRegex": "/^TW(?:&gt;|>)\\s*clip\\s*\\|\\s*([^|\\n]+?)\\s*\\|\\s*([^|\\n]+?)\\s*$/gmi",
+        "replaceString": "<div style=\"margin:6px 0;padding:7px;background:#18181b;border:1px solid #3a3a3d;border-radius:6px;display:flex;gap:9px;align-items:center;\"><span style=\"flex:0 0 54px;height:32px;border-radius:4px;background:linear-gradient(135deg,#3a2a5a,#0e0e10);display:inline-flex;align-items:center;justify-content:center;color:#efeff1;font-size:12px;\">✂️</span><span style=\"font-size:12px;line-height:1.35;\"><b style=\"color:#efeff1;\">$1</b><br><span style=\"color:#adadb8;\">Clipped by $2</span></span></div><!--cbrow-->",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "61568d91-7969-4936-84af-d0ddd2df72c8",
+        "scriptName": "CB · Discord row — place header",
+        "findRegex": "/^DC(?:&gt;|>)\\s*place\\s*\\|\\s*([^|\\n]+?)(?:\\s*\\|\\s*([^|\\n]*?))?\\s*$/gmi",
+        "replaceString": "<div style=\"margin:-6px -14px 4px;padding:10px 14px;border-bottom:1px solid #1f2023;box-shadow:0 1px 2px rgba(0,0,0,.25);\"><div style=\"font-size:10.5px;color:#949ba4;text-transform:uppercase;letter-spacing:.7px;font-weight:700;\">$1</div><div style=\"font-size:15px;font-weight:600;color:#f2f3f5;margin-top:1px;\">$2</div></div><!--cbrow-->",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "8cd9c4ff-8015-4330-8a27-e2b47c217d5f",
+        "scriptName": "CB · Discord row — message (no tag)",
+        "findRegex": "/^DC(?:&gt;|>)\\s*msg\\s*\\|\\s*([^|\\n]+?)\\s*\\|\\s*([^|\\n]+?)\\s*\\|\\s*\\|\\s*([^|\\n]+?)\\s*\\|\\s*([^|\\n]+?)\\s*$/gmi",
+        "replaceString": "<div style=\"display:flex;gap:14px;margin-top:14px;\"><span style=\"flex:0 0 38px;width:38px;height:38px;border-radius:50%;background:$1;box-shadow:inset 0 -8px 14px rgba(0,0,0,.28),0 0 0 1px rgba(255,255,255,.06);\"></span><div style=\"min-width:0;flex:1;\"><div style=\"line-height:1.3;\"><span style=\"color:$1;font-weight:600;\">$2</span><span style=\"color:#949ba4;font-size:11.5px;margin-left:7px;\">$3</span></div><div style=\"color:#dbdee1;word-wrap:break-word;\">$4</div></div></div><!--cbrow-->",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "2e159215-b511-41c5-bbd0-a20cba7b5a1b",
+        "scriptName": "CB · Discord row — message (tagged)",
+        "findRegex": "/^DC(?:&gt;|>)\\s*msg\\s*\\|\\s*([^|\\n]+?)\\s*\\|\\s*([^|\\n]+?)\\s*\\|\\s*([^|\\n]+?)\\s*\\|\\s*([^|\\n]+?)\\s*\\|\\s*([^|\\n]+?)\\s*$/gmi",
+        "replaceString": "<div style=\"display:flex;gap:14px;margin-top:14px;\"><span style=\"flex:0 0 38px;width:38px;height:38px;border-radius:50%;background:$1;box-shadow:inset 0 -8px 14px rgba(0,0,0,.28),0 0 0 1px rgba(255,255,255,.06);\"></span><div style=\"min-width:0;flex:1;\"><div style=\"line-height:1.3;\"><span style=\"color:$1;font-weight:600;\">$2</span><span style=\"background:#5865f2;color:#fff;font-size:10px;font-weight:700;border-radius:4px;padding:1px 5px;margin-left:5px;vertical-align:1px;\">$3</span><span style=\"color:#949ba4;font-size:11.5px;margin-left:7px;\">$4</span></div><div style=\"color:#dbdee1;word-wrap:break-word;\">$5</div></div></div><!--cbrow-->",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "7d2ee1fe-2e6a-490b-8dde-f21fb6fd59cf",
+        "scriptName": "CB · Discord row — grouped follow-up",
+        "findRegex": "/^DC(?:&gt;|>)\\s*more\\s*\\|\\s*([^|\\n]+?)\\s*$/gmi",
+        "replaceString": "<div style=\"padding-left:52px;color:#dbdee1;margin-top:3px;word-wrap:break-word;\">$1</div><!--cbrow-->",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "c13ce81f-8755-4e9d-a775-7bafe646853d",
+        "scriptName": "CB · Discord row — reply line",
+        "findRegex": "/^DC(?:&gt;|>)\\s*reply\\s*\\|\\s*([^|\\n]+?)\\s*\\|\\s*([^|\\n]+?)\\s*$/gmi",
+        "replaceString": "<div style=\"position:relative;margin:14px 0 -11px;padding-left:52px;font-size:12.5px;color:#949ba4;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;\"><span style=\"position:absolute;left:18px;top:9px;width:28px;height:10px;border-left:2px solid #4e5058;border-top:2px solid #4e5058;border-top-left-radius:6px;\"></span><span style=\"color:#c4c9ce;font-weight:600;\">@$1</span> $2</div><!--cbrow-->",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "994161e4-8544-4328-8c83-f6629f89c12b",
+        "scriptName": "CB · Discord row — reactions",
+        "findRegex": "/^DC(?:&gt;|>)\\s*react\\s*\\|\\s*([^|\\n]+?)\\s*$/gmi",
+        "replaceString": "<div style=\"padding-left:52px;margin-top:5px;\"><span style=\"display:inline-block;background:#2b2d31;border:1px solid #3f4147;border-radius:8px;padding:1px 8px;margin:0 4px 0 0;font-size:13px;color:#dbdee1;line-height:20px;\">$1</span></div><!--cbrow-->",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "cbc3ea0a-b21d-4721-b75d-920be44706c2",
+        "scriptName": "CB · Discord row — attachment",
+        "findRegex": "/^DC(?:&gt;|>)\\s*attach\\s*\\|\\s*([^|\\n]+?)\\s*$/gmi",
+        "replaceString": "<div style=\"padding-left:52px;margin-top:6px;\"><div style=\"display:inline-block;max-width:100%;box-sizing:border-box;background:#2b2d31;border:1px solid #1e1f22;border-radius:8px;padding:12px 14px;color:#b5bac1;font-size:13px;\">🖼️ $1</div></div><!--cbrow-->",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "8be08af1-281c-4366-b6aa-d41b1ccc46e7",
+        "scriptName": "CB · Discord row — system line",
+        "findRegex": "/^DC(?:&gt;|>)\\s*sys\\s*\\|\\s*([^|\\n]+?)\\s*$/gmi",
+        "replaceString": "<div style=\"display:flex;gap:14px;margin-top:12px;color:#949ba4;font-size:13.5px;\"><span style=\"flex:0 0 38px;text-align:center;color:#23a55a;font-weight:700;\">→</span><span>$1</span></div><!--cbrow-->",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "9b0d60bb-f34b-40c3-8fe8-31ee38853add",
+        "scriptName": "CB · Discord row — typing",
+        "findRegex": "/^DC(?:&gt;|>)\\s*typing\\s*\\|\\s*([^|\\n]+?)\\s*$/gmi",
+        "replaceString": "<div style=\"margin-top:12px;font-size:12px;color:#b5bac1;\"><span style=\"letter-spacing:1px;color:#dbdee1;\">•••</span> <b style=\"color:#dbdee1;\">$1</b></div><!--cbrow-->",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "d33573ab-460a-49c2-80d5-983fa7cccd00",
+        "scriptName": "CB · Press row — outlet masthead",
+        "findRegex": "/^PR(?:&gt;|>)\\s*outlet\\s*\\|\\s*([^|\\n]+?)(?:\\s*\\|\\s*([^|\\n]*?))?\\s*$/gmi",
+        "replaceString": "<div style=\"margin:-14px -16px 12px;padding:9px 16px;background:var(--acc);color:var(--on);display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap;\"><span style=\"font-family:var(--hf);font-size:21px;letter-spacing:1px;text-transform:var(--tt);font-weight:900;line-height:1.1;\">$1</span><span style=\"font-family:Arial,Helvetica,sans-serif;font-size:10.5px;opacity:.85;text-transform:uppercase;letter-spacing:1.2px;\">$2</span></div><!--cbrow-->",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "cc7ac391-b0ea-4107-9bde-b71a415323ee",
+        "scriptName": "CB · Press row — headline",
+        "findRegex": "/^PR(?:&gt;|>)\\s*head\\s*\\|\\s*([^|\\n]+?)\\s*$/gmi",
+        "replaceString": "<div style=\"font-family:var(--hf);font-size:26px;line-height:1.08;text-transform:var(--tt);color:var(--hc);margin:2px 0 9px;font-weight:900;font-style:var(--hs);\">$1</div><!--cbrow-->",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "4b138cf7-ed9a-43d1-af3a-1d09d60f61b7",
+        "scriptName": "CB · Press row — deck",
+        "findRegex": "/^PR(?:&gt;|>)\\s*deck\\s*\\|\\s*([^|\\n]+?)\\s*$/gmi",
+        "replaceString": "<div style=\"margin:0 0 10px;line-height:1.75;\"><span style=\"background:var(--deck);color:var(--deckfg);font-family:var(--bf);font-size:14px;font-weight:var(--dw);font-style:var(--ds);padding:2px 5px;-webkit-box-decoration-break:clone;box-decoration-break:clone;\">$1</span></div><!--cbrow-->",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "4308edbc-ff6c-45db-9aa6-959072f25c08",
+        "scriptName": "CB · Press row — paparazzi photo",
+        "findRegex": "/^PR(?:&gt;|>)\\s*photo\\s*\\|\\s*([^|\\n]+?)(?:\\s*\\|\\s*([^|\\n]*?))?\\s*$/gmi",
+        "replaceString": "<div style=\"margin:10px 0;\"><div style=\"position:relative;min-height:170px;aspect-ratio:16/10;border-radius:3px;overflow:hidden;background:radial-gradient(ellipse at 35% 40%,#7a7a7a,#262626 60%,#111),#222;filter:var(--pf);\"><span style=\"position:absolute;top:8px;left:10px;font-family:Arial,sans-serif;font-size:10px;font-weight:700;letter-spacing:2px;color:#fff;background:var(--acc);padding:2px 6px;\">📸 EXCLUSIVE</span><span style=\"position:absolute;left:0;right:0;bottom:0;padding:26px 12px 10px;background:linear-gradient(transparent,rgba(0,0,0,.8));color:#f4f4f4;font-family:var(--bf);font-size:13px;font-style:italic;line-height:1.4;\">$1</span></div><div style=\"font-family:Arial,sans-serif;font-size:9.5px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-top:4px;text-align:right;\">$2</div></div><!--cbrow-->",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "e9c62f4e-ffd3-4354-8772-d2dbe8f6fcd4",
+        "scriptName": "CB · Press row — body",
+        "findRegex": "/^PR(?:&gt;|>)\\s*body\\s*\\|\\s*([^|\\n]+?)\\s*$/gmi",
+        "replaceString": "<p style=\"font-family:var(--bf);font-size:14px;line-height:1.6;margin:8px 0;color:var(--fg);\">$1</p><!--cbrow-->",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "777bf7bb-7e18-4af9-94eb-d3f8cdf0d01f",
+        "scriptName": "CB · Press row — pull quote",
+        "findRegex": "/^PR(?:&gt;|>)\\s*quote\\s*\\|\\s*([^|\\n]+?)\\s*\\|\\s*([^|\\n]+?)\\s*$/gmi",
+        "replaceString": "<div style=\"margin:12px 0;padding:4px 0 4px 14px;border-left:4px solid var(--acc);font-family:var(--bf);\"><div style=\"font-size:16.5px;font-style:italic;line-height:1.4;color:var(--fg);\">“$1”</div><div style=\"font-family:Arial,sans-serif;font-size:10.5px;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin-top:5px;\">— $2</div></div><!--cbrow-->",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "1caf9577-59fc-472e-a660-d5a8566f0122",
+        "scriptName": "CB · Press row — stats / cover line",
+        "findRegex": "/^PR(?:&gt;|>)\\s*stats\\s*\\|\\s*([^|\\n]+?)\\s*$/gmi",
+        "replaceString": "<div style=\"margin-top:10px;padding-top:8px;border-top:1px solid var(--rule);font-family:Arial,Helvetica,sans-serif;font-size:11.5px;color:var(--muted);letter-spacing:.3px;\">$1</div><!--cbrow-->",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "e20dbc87-de92-4760-8d53-8ec80974ec76",
+        "scriptName": "CB · Press row — reader comment",
+        "findRegex": "/^PR(?:&gt;|>)\\s*comment\\s*\\|\\s*([^|\\n]+?)\\s*\\|\\s*([^|\\n]+?)\\s*$/gmi",
+        "replaceString": "<div style=\"margin-top:7px;padding:8px 10px;background:var(--cbg);border-radius:6px;font-family:Arial,Helvetica,sans-serif;font-size:12.5px;line-height:1.45;\"><b style=\"color:var(--acc2);\">$1</b> <span style=\"color:var(--fg);\">$2</span></div><!--cbrow-->",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "d2072192-6996-4f7f-bd66-2c11bcc7a89d",
+        "scriptName": "CB · AIM row — window bar",
+        "findRegex": "/^AIM(?:&gt;|>)\\s*win\\s*\\|\\s*([^|\\n]+?)(?:\\s*\\|\\s*([^|\\n]*?))?\\s*$/gmi",
+        "replaceString": "<div style=\"margin:-6px -8px 6px;padding:4px 8px;background:#f4f3ee;border-bottom:1px solid #d6d3c4;font-family:Tahoma,Verdana,sans-serif;font-size:11px;color:#222;\">🏃 <b>$1</b> <span style=\"color:#7a7a7a;\">$2</span></div><!--cbrow-->",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "b070d22b-15e3-4587-951a-2e2af27affae",
+        "scriptName": "CB · AIM row — red (you)",
+        "findRegex": "/^AIM(?:&gt;|>)\\s*red\\s*\\|\\s*([^|\\n]+?)\\s*\\|\\s*([^|\\n]+?)\\s*\\|\\s*([^|\\n]+?)\\s*$/gmi",
+        "replaceString": "<div style=\"margin:1px 0;line-height:1.4;\"><b style=\"color:#ff0000;\">$1</b> <span style=\"color:#8a8a8a;font-size:10px;\">($2)</span><b style=\"color:#ff0000;\">:</b> <span style=\"color:#000;\">$3</span></div><!--cbrow-->",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "f4b4a5cf-9b5a-4ebc-984f-ea541c0ad7be",
+        "scriptName": "CB · AIM row — blue (them)",
+        "findRegex": "/^AIM(?:&gt;|>)\\s*blue\\s*\\|\\s*([^|\\n]+?)\\s*\\|\\s*([^|\\n]+?)\\s*\\|\\s*([^|\\n]+?)\\s*$/gmi",
+        "replaceString": "<div style=\"margin:1px 0;line-height:1.4;\"><b style=\"color:#0000ff;\">$1</b> <span style=\"color:#8a8a8a;font-size:10px;\">($2)</span><b style=\"color:#0000ff;\">:</b> <span style=\"color:#000;\">$3</span></div><!--cbrow-->",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "57ea5f01-ba45-48f5-a516-d55197ef5135",
+        "scriptName": "CB · AIM row — away message",
+        "findRegex": "/^AIM(?:&gt;|>)\\s*away\\s*\\|\\s*([^|\\n]+?)\\s*\\|\\s*([^|\\n]+?)\\s*$/gmi",
+        "replaceString": "<div style=\"margin:6px 0;padding:6px 8px;background:#fffbcc;border:1px solid #e0d070;font-family:Tahoma,Verdana,sans-serif;font-size:11.5px;color:#333;\"><b>Away message from $1:</b><br><i style=\"color:#000080;\">$2</i></div><!--cbrow-->",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "73345494-f4eb-48b8-9c2c-e069508fd38a",
+        "scriptName": "CB · AIM row — system",
+        "findRegex": "/^AIM(?:&gt;|>)\\s*sys\\s*\\|\\s*([^|\\n]+?)\\s*$/gmi",
+        "replaceString": "<div style=\"color:#808080;font-size:11.5px;font-style:italic;margin:3px 0;\">$1</div><!--cbrow-->",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "4b2a34db-7266-4f80-9de3-c5ba63a0ab56",
+        "scriptName": "CB · Flip row — header",
+        "findRegex": "/^FLIP(?:&gt;|>)\\s*head\\s*\\|\\s*([^|\\n]+?)(?:\\s*\\|\\s*([^|\\n]*?))?\\s*$/gmi",
+        "replaceString": "<div style=\"display:flex;justify-content:space-between;font-size:9.5px;border-bottom:1px solid #6d8fb8;padding-bottom:3px;margin-bottom:5px;color:#0d1b2a;\"><span>▂▄▆█ $2</span><span>▮▮▮▯</span></div><div style=\"font-weight:700;margin-bottom:4px;color:#0d1b2a;\">✉ $1</div><!--cbrow-->",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "4969b5ec-a85b-49e0-b2dc-0514803248d9",
+        "scriptName": "CB · Flip row — received",
+        "findRegex": "/^FLIP(?:&gt;|>)\\s*in\\s*\\|\\s*([^|\\n]+?)(?:\\s*\\|\\s*([^|\\n]*?))?\\s*$/gmi",
+        "replaceString": "<div style=\"margin:4px 0;padding:4px 5px;background:rgba(255,255,255,.7);border:1px solid #8fb0d6;border-radius:3px;color:#0d1b2a;\"><div>$1</div><div style=\"font-size:9px;color:#4a6585;text-align:right;\">$2</div></div><!--cbrow-->",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "cdd4b7cf-343c-417b-8bac-201914b4e05e",
+        "scriptName": "CB · Flip row — sent",
+        "findRegex": "/^FLIP(?:&gt;|>)\\s*out\\s*\\|\\s*([^|\\n]+?)(?:\\s*\\|\\s*([^|\\n]*?))?\\s*$/gmi",
+        "replaceString": "<div style=\"margin:4px 0 4px 16px;padding:4px 5px;background:#fff9d6;border:1px solid #c9b76a;border-radius:3px;color:#2a2410;\"><div>$1</div><div style=\"font-size:9px;color:#7a6a2a;text-align:right;\">Sent $2</div></div><!--cbrow-->",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "76c14f0f-94b7-4563-8241-ded499cdd0a6",
+        "scriptName": "CB · MySpace row — header",
+        "findRegex": "/^MS(?:&gt;|>)\\s*head\\s*\\|\\s*([^|\\n]+?)(?:\\s*\\|\\s*([^|\\n]*?))?\\s*$/gmi",
+        "replaceString": "<div style=\"background:#ffcc99;padding:5px 8px;font-weight:700;color:#ff6600;font-size:12px;\">$1's Friends Comments</div><div style=\"padding:3px 8px;font-size:10px;color:#333;background:#fff3e6;\">Mood: <i>$2</i></div><!--cbrow-->",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "23ca35bd-c7eb-4ea3-a370-0d42a297abad",
+        "scriptName": "CB · MySpace row — Top 8",
+        "findRegex": "/^MS(?:&gt;|>)\\s*top8\\s*\\|\\s*([^|\\n]+?)\\s*$/gmi",
+        "replaceString": "<div style=\"padding:6px 8px;border-top:1px solid #6698cb;background:#fff;\"><div style=\"color:#ff6600;font-weight:700;margin-bottom:3px;\">Top 8 Friends</div><div style=\"color:#003399;line-height:1.6;text-decoration:underline;\">$1</div></div><!--cbrow-->",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "d6cef3c9-960e-49f0-8019-b9b3e5e2e9b1",
+        "scriptName": "CB · MySpace row — comment",
+        "findRegex": "/^MS(?:&gt;|>)\\s*comment\\s*\\|\\s*([^|\\n]+?)\\s*\\|\\s*([^|\\n]+?)\\s*\\|\\s*([^|\\n]+?)\\s*$/gmi",
+        "replaceString": "<div style=\"display:flex;border-top:1px solid #6698cb;\"><div style=\"flex:0 0 92px;background:#d5e8fb;padding:6px;text-align:center;\"><div style=\"width:54px;height:54px;margin:0 auto 4px;background:linear-gradient(135deg,#bcd6f2,#5d8fcf);border:1px solid #6698cb;\"></div><span style=\"color:#003399;font-weight:700;text-decoration:underline;word-break:break-word;\">$1</span></div><div style=\"flex:1;padding:6px 8px;background:#fff;min-width:0;\"><div style=\"color:#333;font-weight:700;font-size:10px;margin-bottom:4px;\">$2</div><div style=\"color:#000;word-wrap:break-word;\">$3</div></div></div><!--cbrow-->",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "05dd8ca5-cbdf-488f-8e8f-6b72934ff94d",
+        "scriptName": "CB · X row — post (no badge)",
+        "findRegex": "/^XT(?:&gt;|>)\\s*post\\s*\\|\\s*([^|\\n]+?)\\s*\\|\\s*([^|\\n]+?)\\s*\\|\\s*([^|\\n]+?)\\s*\\|\\s*\\|\\s*([^|\\n]+?)\\s*\\|\\s*([^|\\n]+?)\\s*$/gmi",
+        "replaceString": "<div style=\"display:flex;gap:10px;padding:12px 0 4px;\"><span style=\"flex:0 0 40px;width:40px;height:40px;border-radius:50%;background:$1;box-shadow:inset 0 -8px 14px rgba(0,0,0,.25);\"></span><div style=\"min-width:0;flex:1;\"><div style=\"line-height:1.3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;\"><b style=\"color:#e7e9ea;\">$2</b><span style=\"color:#71767b;\"> $3 · $4</span></div><div style=\"color:#e7e9ea;white-space:pre-wrap;word-wrap:break-word;margin-top:2px;\">$5</div></div></div><!--cbrow-->",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "309305fd-2309-4724-88c4-e07f4a64f4f1",
+        "scriptName": "CB · X row — post (badge)",
+        "findRegex": "/^XT(?:&gt;|>)\\s*post\\s*\\|\\s*([^|\\n]+?)\\s*\\|\\s*([^|\\n]+?)\\s*\\|\\s*([^|\\n]+?)\\s*\\|\\s*([^|\\n]+?)\\s*\\|\\s*([^|\\n]+?)\\s*\\|\\s*([^|\\n]+?)\\s*$/gmi",
+        "replaceString": "<div style=\"display:flex;gap:10px;padding:12px 0 4px;\"><span style=\"flex:0 0 40px;width:40px;height:40px;border-radius:50%;background:$1;box-shadow:inset 0 -8px 14px rgba(0,0,0,.25);\"></span><div style=\"min-width:0;flex:1;\"><div style=\"line-height:1.3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;\"><b style=\"color:#e7e9ea;\">$2</b><span style=\"display:inline-flex;align-items:center;justify-content:center;width:15px;height:15px;border-radius:50%;background:#1d9bf0;color:#fff;font-size:9px;font-weight:900;margin-left:3px;vertical-align:-2px;\">$4</span><span style=\"color:#71767b;\"> $3 · $5</span></div><div style=\"color:#e7e9ea;white-space:pre-wrap;word-wrap:break-word;margin-top:2px;\">$6</div></div></div><!--cbrow-->",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "d608a7c2-9808-4f8e-ac33-1153634e197e",
+        "scriptName": "CB · X row — reply (no badge)",
+        "findRegex": "/^XT(?:&gt;|>)\\s*reply\\s*\\|\\s*([^|\\n]+?)\\s*\\|\\s*([^|\\n]+?)\\s*\\|\\s*([^|\\n]+?)\\s*\\|\\s*\\|\\s*([^|\\n]+?)\\s*\\|\\s*([^|\\n]+?)\\s*$/gmi",
+        "replaceString": "<div style=\"display:flex;gap:10px;padding:12px 0 10px;border-top:1px solid #2f3336;\"><span style=\"flex:0 0 40px;width:40px;height:40px;border-radius:50%;background:$1;box-shadow:inset 0 -8px 14px rgba(0,0,0,.25);\"></span><div style=\"min-width:0;flex:1;\"><div style=\"line-height:1.3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;\"><b style=\"color:#e7e9ea;\">$2</b><span style=\"color:#71767b;\"> $3 · $4</span></div><div style=\"color:#e7e9ea;white-space:pre-wrap;word-wrap:break-word;margin-top:2px;\">$5</div></div></div><!--cbrow-->",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "72c4710c-825e-4e3e-8cdc-460c7f689381",
+        "scriptName": "CB · X row — reply (badge)",
+        "findRegex": "/^XT(?:&gt;|>)\\s*reply\\s*\\|\\s*([^|\\n]+?)\\s*\\|\\s*([^|\\n]+?)\\s*\\|\\s*([^|\\n]+?)\\s*\\|\\s*([^|\\n]+?)\\s*\\|\\s*([^|\\n]+?)\\s*\\|\\s*([^|\\n]+?)\\s*$/gmi",
+        "replaceString": "<div style=\"display:flex;gap:10px;padding:12px 0 10px;border-top:1px solid #2f3336;\"><span style=\"flex:0 0 40px;width:40px;height:40px;border-radius:50%;background:$1;box-shadow:inset 0 -8px 14px rgba(0,0,0,.25);\"></span><div style=\"min-width:0;flex:1;\"><div style=\"line-height:1.3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;\"><b style=\"color:#e7e9ea;\">$2</b><span style=\"display:inline-flex;align-items:center;justify-content:center;width:15px;height:15px;border-radius:50%;background:#1d9bf0;color:#fff;font-size:9px;font-weight:900;margin-left:3px;vertical-align:-2px;\">$4</span><span style=\"color:#71767b;\"> $3 · $5</span></div><div style=\"color:#e7e9ea;white-space:pre-wrap;word-wrap:break-word;margin-top:2px;\">$6</div></div></div><!--cbrow-->",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "4ab827c8-404d-4863-b8a3-931ae15f11c1",
+        "scriptName": "CB · X row — media",
+        "findRegex": "/^XT(?:&gt;|>)\\s*media\\s*\\|\\s*([^|\\n]+?)\\s*$/gmi",
+        "replaceString": "<div style=\"margin:8px 0 4px 50px;border:1px solid #2f3336;border-radius:16px;min-height:140px;background:radial-gradient(ellipse at 40% 35%,#3a3f47,#16181c 70%);display:flex;align-items:flex-end;overflow:hidden;\"><span style=\"padding:10px 12px;color:#e7e9ea;font-size:13px;font-style:italic;background:linear-gradient(transparent,rgba(0,0,0,.7));width:100%;\">📷 $1</span></div><!--cbrow-->",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "04660946-8e16-452a-be48-06e7f630173f",
+        "scriptName": "CB · X row — quote",
+        "findRegex": "/^XT(?:&gt;|>)\\s*quote\\s*\\|\\s*([^|\\n]+?)\\s*\\|\\s*([^|\\n]+?)\\s*\\|\\s*([^|\\n]+?)\\s*$/gmi",
+        "replaceString": "<div style=\"margin:8px 0 4px 50px;border:1px solid #2f3336;border-radius:16px;padding:10px 12px;\"><div style=\"font-size:13.5px;\"><b style=\"color:#e7e9ea;\">$1</b> <span style=\"color:#71767b;\">$2</span></div><div style=\"color:#e7e9ea;font-size:14px;margin-top:2px;\">$3</div></div><!--cbrow-->",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "f7752765-34c9-4dab-baee-c700b10b5d79",
+        "scriptName": "CB · X row — stats",
+        "findRegex": "/^XT(?:&gt;|>)\\s*stats\\s*\\|\\s*([^|\\n]+?)\\s*\\|\\s*([^|\\n]+?)\\s*\\|\\s*([^|\\n]+?)(?:\\s*\\|\\s*([^|\\n]*?))?\\s*$/gmi",
+        "replaceString": "<div style=\"display:flex;justify-content:space-between;max-width:420px;margin:8px 0 6px 50px;color:#71767b;font-size:13px;\"><span>💬 $1</span><span>🔁 $2</span><span style=\"color:#f91880;\">♥ $3</span><span>📊 $4</span></div><!--cbrow-->",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "e1276885-0ea7-4286-a23e-f61cf4a435cd",
+        "scriptName": "CB · Reddit row — subreddit header",
+        "findRegex": "/^RD(?:&gt;|>)\\s*sub\\s*\\|\\s*([^|\\n]+?)(?:\\s*\\|\\s*([^|\\n]*?))?\\s*$/gmi",
+        "replaceString": "<div style=\"margin:-12px -14px 10px;padding:10px 14px;background:linear-gradient(90deg,#ff4500,#ff6a33);display:flex;align-items:center;gap:9px;\"><span style=\"flex:0 0 28px;height:28px;border-radius:50%;background:#fff;color:#ff4500;display:inline-flex;align-items:center;justify-content:center;font-weight:900;font-size:13px;\">r/</span><span><b style=\"color:#fff;font-size:14px;\">$1</b><br><span style=\"color:rgba(255,255,255,.85);font-size:11.5px;\">$2</span></span></div><!--cbrow-->",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "25b4c512-2f8b-4aa6-b7d1-908640f5c712",
+        "scriptName": "CB · Reddit row — post (no flair)",
+        "findRegex": "/^RD(?:&gt;|>)\\s*post\\s*\\|\\s*([^|\\n]+?)\\s*\\|\\s*([^|\\n]+?)\\s*\\|\\s*\\|\\s*([^|\\n]+?)\\s*$/gmi",
+        "replaceString": "<div style=\"font-size:12px;color:#818384;\">Posted by <span style=\"color:#d7dadc;\">$1</span> · $2</div><div style=\"font-size:18px;font-weight:600;color:#d7dadc;line-height:1.3;margin:4px 0 8px;\">$3</div><!--cbrow-->",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "dfec938f-4050-474e-8a2e-6be4ac1c75b8",
+        "scriptName": "CB · Reddit row — post (flair)",
+        "findRegex": "/^RD(?:&gt;|>)\\s*post\\s*\\|\\s*([^|\\n]+?)\\s*\\|\\s*([^|\\n]+?)\\s*\\|\\s*([^|\\n]+?)\\s*\\|\\s*([^|\\n]+?)\\s*$/gmi",
+        "replaceString": "<div style=\"font-size:12px;color:#818384;\">Posted by <span style=\"color:#d7dadc;\">$1</span> · $2</div><div style=\"font-size:18px;font-weight:600;color:#d7dadc;line-height:1.3;margin:4px 0 8px;\">$4 <span style=\"display:inline-block;vertical-align:3px;font-size:11px;font-weight:600;background:#0079d3;color:#fff;border-radius:10px;padding:1px 8px;\">$3</span></div><!--cbrow-->",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "e3b0966f-eb9f-4d91-9d6d-12c45cc0f032",
+        "scriptName": "CB · Reddit row — body text",
+        "findRegex": "/^RD(?:&gt;|>)\\s*text\\s*\\|\\s*([^|\\n]+?)\\s*$/gmi",
+        "replaceString": "<p style=\"margin:0 0 9px;color:#d7dadc;font-size:14px;line-height:1.55;font-family:'Noto Sans',Arial,sans-serif;\">$1</p><!--cbrow-->",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "dd3ed053-1a1d-4780-9c93-4d2e92feb442",
+        "scriptName": "CB · Reddit row — media",
+        "findRegex": "/^RD(?:&gt;|>)\\s*media\\s*\\|\\s*([^|\\n]+?)\\s*$/gmi",
+        "replaceString": "<div style=\"margin:6px 0 10px;border-radius:8px;min-height:150px;background:radial-gradient(ellipse at 40% 35%,#4a4a4c,#1a1a1b 70%);display:flex;align-items:flex-end;overflow:hidden;\"><span style=\"padding:10px 12px;color:#d7dadc;font-size:13px;font-style:italic;background:linear-gradient(transparent,rgba(0,0,0,.7));width:100%;\">🖼️ $1</span></div><!--cbrow-->",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "6a61b4db-e05b-47e3-8652-e5b93c674d18",
+        "scriptName": "CB · Reddit row — stats",
+        "findRegex": "/^RD(?:&gt;|>)\\s*stats\\s*\\|\\s*([^|\\n]+?)(?:\\s*\\|\\s*([^|\\n]*?))?\\s*$/gmi",
+        "replaceString": "<div style=\"display:flex;gap:10px;align-items:center;padding:6px 0 10px;border-bottom:1px solid #343536;margin-bottom:4px;font-size:12.5px;font-weight:700;color:#818384;\"><span style=\"background:#272729;border-radius:16px;padding:4px 10px;\"><span style=\"color:#ff4500;\">⬆</span> <span style=\"color:#d7dadc;\">$1</span> <span style=\"color:#7193ff;\">⬇</span></span><span style=\"background:#272729;border-radius:16px;padding:4px 10px;\">💬 $2</span><span style=\"background:#272729;border-radius:16px;padding:4px 10px;\">↗ Share</span></div><!--cbrow-->",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "f00dba6d-6fe7-4ad4-85fd-c5a51f1d6689",
+        "scriptName": "CB · Reddit row — comment",
+        "findRegex": "/^RD(?:&gt;|>)\\s*comment\\s*\\|\\s*([0-3])\\s*\\|\\s*([^|\\n]+?)\\s*\\|\\s*([^|\\n]+?)\\s*\\|\\s*([^|\\n]+?)\\s*$/gmi",
+        "replaceString": "<div style=\"margin:10px 0 0 calc($1 * 18px);padding-left:10px;border-left:2px solid #343536;\"><div style=\"font-size:12px;\"><b style=\"color:#d7dadc;\">$2</b> <span style=\"color:#818384;\">· $3 points</span></div><div style=\"color:#d7dadc;font-size:13.5px;line-height:1.5;margin-top:2px;word-wrap:break-word;\">$4</div><div style=\"font-size:11.5px;color:#818384;font-weight:700;margin-top:3px;\">⬆ ⬇ &nbsp;💬 Reply &nbsp;Share</div></div><!--cbrow-->",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "16649cb6-d308-4c5f-b6e8-bd9af16242c8",
+        "scriptName": "CB · Dating inline — split tags",
+        "findRegex": "/(?<=^DT(?:&gt;|>)[ \\t]*tags[ \\t]*\\|[^\\n]*?),[ \\t]*/gmi",
+        "replaceString": "</span><span style=\"padding:5px 11px;border-radius:14px;background:#f6f0f2;border:1px solid #eadfe3;color:#3d3539;font-size:12px;\">",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "aa0980e8-e009-4ce9-91a4-0cfccb8791b9",
+        "scriptName": "CB · Browser inline — split tabs",
+        "findRegex": "/(?<=^BR(?:&gt;|>)[ \\t]*tabs[ \\t]*\\|[^\\n]*?),[ \\t]*/gmi",
+        "replaceString": "</span><span style=\"padding:4px 10px;border-radius:8px;background:rgba(127,127,127,.16);font-size:11px;max-width:150px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;\">",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "0deead0a-9876-4759-acbb-0439c85c00de",
+        "scriptName": "CB · Instagram inline — @mention / #hashtag",
+        "findRegex": "/(?<=^IG(?:&gt;|>)[ \\t]*(?:caption|comment)[ \\t]*\\|[^|\\n]*\\|[^|\\n]*?)(?<![A-Za-z0-9_&])([@#][A-Za-z0-9_.]{2,30})/gmi",
+        "replaceString": "<span style=\"color:#00376b;\">$1</span>",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "4a61c8ac-23df-4cde-9f49-e88653f590ba",
+        "scriptName": "CB · Dating row — app bar",
+        "findRegex": "/^DT(?:&gt;|>)[ \\t]*app[ \\t]*\\|[ \\t]*([^|\\n]+?)(?:[ \\t]*\\|[ \\t]*([^|\\n]*?))?[ \\t]*$/gmi",
+        "replaceString": "<div style=\"display:flex;justify-content:space-between;align-items:center;padding:11px 16px;border-bottom:1px solid #f1e7ea;\"><b style=\"color:#ff4f6d;font-size:17px;letter-spacing:.3px;\">$1</b><span style=\"font-size:11px;color:#8a7f84;\">$2</span></div><!--cbrow-->",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "970bb045-ebe1-4d29-aa73-67bab1dd1d41",
+        "scriptName": "CB · Dating row — profile",
+        "findRegex": "/^DT(?:&gt;|>)[ \\t]*profile[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*$/gmi",
+        "replaceString": "<div style=\"padding:14px 16px 4px;\"><div style=\"font-size:23px;font-weight:800;color:#1d1a1c;line-height:1.1;\">$1 <span style=\"font-weight:400;\">$2</span></div><div style=\"font-size:13px;color:#4a4246;margin-top:4px;\">💼 $3</div><div style=\"font-size:11.5px;color:#8a7f84;margin-top:2px;\">📍 $4</div></div><!--cbrow-->",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "18e8040d-9b8a-44b0-a23d-4a8d6541e775",
+        "scriptName": "CB · Dating row — photo",
+        "findRegex": "/^DT(?:&gt;|>)[ \\t]*photo[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*$/gmi",
+        "replaceString": "<div style=\"margin:8px 14px;min-height:150px;border-radius:16px;background:linear-gradient(135deg,#ffd1dc,#ffb199 55%,#d7b8ff);display:flex;align-items:flex-end;padding:10px;box-sizing:border-box;\"><span style=\"background:rgba(0,0,0,.5);color:#fff;font-size:12px;font-style:italic;padding:5px 9px;border-radius:9px;line-height:1.4;\">📷 $1</span></div><!--cbrow-->",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "34c01e5f-2099-4462-a43f-29cf490833fa",
+        "scriptName": "CB · Dating row — prompt",
+        "findRegex": "/^DT(?:&gt;|>)[ \\t]*prompt[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*$/gmi",
+        "replaceString": "<div style=\"margin:8px 14px;padding:13px 15px;border-radius:16px;background:#fff6f7;border:1px solid #ffe1e7;\"><div style=\"font-size:11.5px;font-weight:700;color:#8a7f84;\">$1</div><div style=\"font-size:18px;font-family:Georgia,serif;color:#1d1a1c;margin-top:5px;line-height:1.3;\">$2</div><div style=\"text-align:right;color:#ff4f6d;font-size:18px;margin-top:2px;\">♡</div></div><!--cbrow-->",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "de97fabd-dd0a-405c-9cb2-ee0f66a69aea",
+        "scriptName": "CB · Dating row — tags",
+        "findRegex": "/^DT(?:&gt;|>)[ \\t]*tags[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*$/gmi",
+        "replaceString": "<div style=\"margin:8px 14px;display:flex;flex-wrap:wrap;gap:6px;\"><span style=\"padding:5px 11px;border-radius:14px;background:#f6f0f2;border:1px solid #eadfe3;color:#3d3539;font-size:12px;\">$1</span></div><!--cbrow-->",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "dfa21e88-24d7-492a-b19d-df38c5423a1c",
+        "scriptName": "CB · Dating row — match",
+        "findRegex": "/^DT(?:&gt;|>)[ \\t]*match[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*$/gmi",
+        "replaceString": "<div style=\"margin:10px 14px;padding:18px 14px;border-radius:18px;background:linear-gradient(135deg,#ff4f6d,#ff9a5a);text-align:center;color:#fff;\"><div style=\"font-family:Georgia,serif;font-style:italic;font-size:26px;font-weight:700;\">It's a Match!</div><div style=\"font-size:12.5px;margin-top:4px;opacity:.95;\">$1 and $2 liked each other</div></div><!--cbrow-->",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "84f559d5-4cb9-4c2a-9065-6ac0c90f0a77",
+        "scriptName": "CB · Dating row — received",
+        "findRegex": "/^DT(?:&gt;|>)[ \\t]*in[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*$/gmi",
+        "replaceString": "<div style=\"display:flex;margin:4px 14px;\"><div style=\"max-width:75%;padding:8px 12px;font-size:13.5px;line-height:1.4;background:#f1eef0;color:#1d1a1c;border-radius:18px 18px 18px 5px;\">$2<div style=\"font-size:9.5px;color:#9a8f94;margin-top:2px;\">$1</div></div></div><!--cbrow-->",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "45ef8210-4f20-4370-9395-2b1b76439c34",
+        "scriptName": "CB · Dating row — sent",
+        "findRegex": "/^DT(?:&gt;|>)[ \\t]*out[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*$/gmi",
+        "replaceString": "<div style=\"display:flex;justify-content:flex-end;margin:4px 14px;\"><div style=\"max-width:75%;padding:8px 12px;font-size:13.5px;line-height:1.4;background:#ff4f6d;color:#fff;border-radius:18px 18px 5px 18px;\">$2<div style=\"font-size:9.5px;color:#ffe1e7;margin-top:2px;text-align:right;\">$1</div></div></div><!--cbrow-->",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "01d96e9f-7631-46da-81d1-1628024b57f7",
+        "scriptName": "CB · Dating row — system",
+        "findRegex": "/^DT(?:&gt;|>)[ \\t]*sys[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*$/gmi",
+        "replaceString": "<div style=\"text-align:center;font-size:11px;color:#9a8f94;margin:8px 14px;\">$1</div><!--cbrow-->",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "a6dc106f-b4fb-4e6b-b237-5561d605a4d5",
+        "scriptName": "CB · Browser row — address bar",
+        "findRegex": "/^BR(?:&gt;|>)[ \\t]*bar[ \\t]*\\|[ \\t]*([^|\\n]+?)(?:[ \\t]*\\|[ \\t]*([^|\\n]*?))?[ \\t]*$/gmi",
+        "replaceString": "<div style=\"padding:7px 8px 0;background:rgba(127,127,127,.12);\"><span style=\"display:inline-block;max-width:70%;padding:7px 14px;border-radius:9px 9px 0 0;background:rgba(127,127,127,.2);font-size:11.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;vertical-align:bottom;\">$2</span></div><div style=\"display:flex;gap:10px;align-items:center;padding:7px 10px;border-bottom:1px solid rgba(127,127,127,.25);font-size:12.5px;\"><span style=\"opacity:.55;letter-spacing:2px;\">←→↻</span><span style=\"flex:1;min-width:0;padding:6px 13px;border-radius:16px;background:rgba(127,127,127,.15);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;\">🔒 $1</span></div><!--cbrow-->",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "8522178f-eca8-4086-bb4a-c1deb672582e",
+        "scriptName": "CB · Browser row — open tabs",
+        "findRegex": "/^BR(?:&gt;|>)[ \\t]*tabs[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*$/gmi",
+        "replaceString": "<div style=\"display:flex;flex-wrap:wrap;gap:5px;padding:7px 12px;border-bottom:1px solid rgba(127,127,127,.18);\"><span style=\"padding:4px 10px;border-radius:8px;background:rgba(127,127,127,.16);font-size:11px;max-width:150px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;\">$1</span></div><!--cbrow-->",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "3ad93a21-1607-4b07-bf34-31b4a8ae8955",
+        "scriptName": "CB · Browser row — search box",
+        "findRegex": "/^BR(?:&gt;|>)[ \\t]*search[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*$/gmi",
+        "replaceString": "<div style=\"margin:14px 14px 4px;padding:10px 16px;border:1px solid rgba(127,127,127,.4);border-radius:24px;font-size:14px;box-shadow:0 1px 6px rgba(0,0,0,.12);\">🔍 $1<span style=\"opacity:.5;\">|</span></div><!--cbrow-->",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "3921501d-e06c-4107-8e8b-86129c7e8a74",
+        "scriptName": "CB · Browser row — autocomplete",
+        "findRegex": "/^BR(?:&gt;|>)[ \\t]*suggest[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*$/gmi",
+        "replaceString": "<div style=\"margin:0 14px;padding:6px 16px 6px 38px;font-size:13px;opacity:.82;\">🕘 $1</div><!--cbrow-->",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "54698153-0548-437d-adf1-4b7759cfa0ae",
+        "scriptName": "CB · Browser row — result",
+        "findRegex": "/^BR(?:&gt;|>)[ \\t]*result[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]+?)(?:[ \\t]*\\|[ \\t]*([^|\\n]*?))?[ \\t]*$/gmi",
+        "replaceString": "<div style=\"padding:10px 18px;\"><div style=\"font-size:11.5px;opacity:.6;\">$2</div><div style=\"font-size:16px;color:#4f7fe0;line-height:1.3;margin-top:1px;\">$1</div><div style=\"font-size:12.5px;opacity:.8;line-height:1.45;margin-top:3px;\">$3</div></div><!--cbrow-->",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "3f9c227a-9da1-472a-a594-ee2e362f219d",
+        "scriptName": "CB · Browser row — page",
+        "findRegex": "/^BR(?:&gt;|>)[ \\t]*page[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*$/gmi",
+        "replaceString": "<div style=\"padding:16px 20px;\"><div style=\"font-family:Georgia,serif;font-size:20px;font-weight:700;line-height:1.25;\">$1</div><div style=\"font-size:13px;line-height:1.65;margin-top:8px;opacity:.88;\">$2</div></div><!--cbrow-->",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "9bec0432-dfe0-499e-9c45-c58289544b16",
+        "scriptName": "CB · Browser row — history day",
+        "findRegex": "/^BR(?:&gt;|>)[ \\t]*day[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*$/gmi",
+        "replaceString": "<div style=\"padding:12px 18px 5px;font-size:12px;font-weight:700;opacity:.75;border-top:1px solid rgba(127,127,127,.15);\">$1</div><!--cbrow-->",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "e0b939f9-7a0e-46f6-af57-f53731ae9043",
+        "scriptName": "CB · Browser row — history entry",
+        "findRegex": "/^BR(?:&gt;|>)[ \\t]*hist[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]+?)(?:[ \\t]*\\|[ \\t]*([^|\\n]*?))?[ \\t]*$/gmi",
+        "replaceString": "<div style=\"display:flex;gap:12px;padding:6px 18px;font-size:12.5px;align-items:baseline;\"><span style=\"opacity:.5;min-width:58px;font-variant-numeric:tabular-nums;font-size:11.5px;\">$1</span><span style=\"flex:1;min-width:0;line-height:1.4;\">$2 <span style=\"opacity:.45;font-size:11px;\">$3</span></span></div><!--cbrow-->",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "4648fde2-4a21-4374-aa4c-c0d674e74b3c",
+        "scriptName": "CB · Instagram row — profile",
+        "findRegex": "/^IG(?:&gt;|>)[ \\t]*profile[ \\t]*\\|[ \\t]*@?([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*(?:\\|[ \\t]*([^|\\n]*?)[ \\t]*)?[ \\t]*$/gmi",
+        "replaceString": "<div style=\"padding:14px 16px 10px;border-bottom:1px solid #efefef;\"><div style=\"display:flex;align-items:center;gap:18px;\"><span style=\"display:inline-block;flex:none;width:72px;height:72px;border-radius:50%;padding:2px;box-sizing:border-box;background:conic-gradient(#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5,#feda75);\"><span style=\"display:block;width:100%;height:100%;border-radius:50%;background:#e9e9ee;border:2px solid #fff;box-sizing:border-box;\"></span></span><div style=\"flex:1;display:flex;justify-content:space-around;text-align:center;font-size:12px;color:#262626;\"><div><b style=\"font-size:16px;\">$3</b><br>posts</div><div><b style=\"font-size:16px;\">$4</b><br>followers</div><div><b style=\"font-size:16px;\">$5</b><br>following</div></div></div><div style=\"margin-top:8px;font-size:13px;font-weight:700;color:#262626;\">$2</div><div style=\"font-size:11.5px;color:#737373;\">@$1</div><div style=\"font-size:13px;color:#262626;line-height:1.4;margin-top:3px;\">$6</div></div><!--cbrow-->",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "8c0a4ab9-1244-4799-aa60-f992c6369e66",
+        "scriptName": "CB · Instagram row — post header",
+        "findRegex": "/^IG(?:&gt;|>)[ \\t]*post[ \\t]*\\|[ \\t]*@?([^|\\n]+?)[ \\t]*(?:\\|[ \\t]*([^|\\n]*?)[ \\t]*(?:\\|[ \\t]*([^|\\n]*?)[ \\t]*)?)?[ \\t]*$/gmi",
+        "replaceString": "<div style=\"display:flex;align-items:center;gap:10px;padding:10px 12px;\"><span style=\"display:inline-block;flex:none;width:34px;height:34px;border-radius:50%;padding:2px;box-sizing:border-box;background:conic-gradient(#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5,#feda75);\"><span style=\"display:block;width:100%;height:100%;border-radius:50%;background:#e9e9ee;border:2px solid #fff;box-sizing:border-box;\"></span></span><div style=\"line-height:1.25;\"><div style=\"font-size:13px;font-weight:700;color:#262626;\">$1 <span style=\"color:#0095f6;\">$3</span></div><div style=\"font-size:11px;color:#737373;\">$2</div></div><span style=\"margin-left:auto;color:#262626;letter-spacing:1px;\">•••</span></div><!--cbrow-->",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "44211dc0-10ea-428f-9d6e-bf1ab8e0f730",
+        "scriptName": "CB · Instagram row — photo",
+        "findRegex": "/^IG(?:&gt;|>)[ \\t]*photo[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*$/gmi",
+        "replaceString": "<div style=\"aspect-ratio:1/1;max-height:340px;width:100%;background:linear-gradient(160deg,#f9d9c4,#e7b7d0 45%,#a9b7ec);display:flex;align-items:flex-end;padding:12px;box-sizing:border-box;margin-bottom:1px;\"><span style=\"background:rgba(0,0,0,.5);color:#fff;font-size:12px;font-style:italic;padding:5px 9px;border-radius:9px;line-height:1.4;\">📷 $1</span></div><!--cbrow-->",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "5fdf21bb-bd86-4149-8fbf-ada780ea9211",
+        "scriptName": "CB · Instagram row — stats",
+        "findRegex": "/^IG(?:&gt;|>)[ \\t]*stats[ \\t]*\\|[ \\t]*([^|\\n]+?)(?:[ \\t]*\\|[ \\t]*([^|\\n]*?))?[ \\t]*$/gmi",
+        "replaceString": "<div style=\"padding:9px 14px 2px;font-size:20px;color:#262626;letter-spacing:8px;\">♡💬➤<span style=\"float:right;letter-spacing:0;\">🔖</span></div><div style=\"padding:2px 14px;font-size:13px;font-weight:700;color:#262626;\">$1 likes</div><div style=\"padding:0 14px 4px;font-size:10px;color:#737373;text-transform:uppercase;letter-spacing:.3px;\">$2</div><!--cbrow-->",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "87f37c5c-bacb-41a3-9f24-7e68b9429274",
+        "scriptName": "CB · Instagram row — caption",
+        "findRegex": "/^IG(?:&gt;|>)[ \\t]*caption[ \\t]*\\|[ \\t]*@?([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*[ \\t]*$/gmi",
+        "replaceString": "<div style=\"padding:3px 14px;font-size:13px;color:#262626;line-height:1.45;\"><b>$1</b> $2</div><!--cbrow-->",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "94d2efe0-6056-4cf4-93ce-c54f8e61a372",
+        "scriptName": "CB · Instagram row — comment",
+        "findRegex": "/^IG(?:&gt;|>)[ \\t]*comment[ \\t]*\\|[ \\t]*@?([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*(?:\\|[ \\t]*([^|\\n]*?)[ \\t]*)?[ \\t]*$/gmi",
+        "replaceString": "<div style=\"display:flex;gap:8px;padding:4px 14px;font-size:12.5px;color:#262626;line-height:1.4;\"><span style=\"flex:1;\"><b>$1</b> $2</span><span style=\"color:#737373;font-size:11px;white-space:nowrap;\">♡ $3</span></div><!--cbrow-->",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "44c7aceb-55f4-406d-83d7-908ea6643603",
+        "scriptName": "CB · Instagram row — story",
+        "findRegex": "/^IG(?:&gt;|>)[ \\t]*story[ \\t]*\\|[ \\t]*@?([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*(?:\\|[ \\t]*([^|\\n]*?)[ \\t]*)?[ \\t]*$/gmi",
+        "replaceString": "<div style=\"margin:10px auto;width:230px;height:380px;border-radius:14px;background:linear-gradient(170deg,#3a2a4f,#b4537a 55%,#f0a868);position:relative;overflow:hidden;color:#fff;font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;\"><div style=\"position:absolute;top:8px;left:8px;right:8px;height:2px;border-radius:2px;background:rgba(255,255,255,.35);\"><div style=\"width:45%;height:100%;background:#fff;border-radius:2px;\"></div></div><div style=\"position:absolute;top:18px;left:10px;display:flex;align-items:center;gap:7px;font-size:12px;font-weight:700;\"><span style=\"display:inline-block;flex:none;width:26px;height:26px;border-radius:50%;padding:2px;box-sizing:border-box;background:conic-gradient(#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5,#feda75);\"><span style=\"display:block;width:100%;height:100%;border-radius:50%;background:#e9e9ee;border:2px solid #fff;box-sizing:border-box;\"></span></span>$1 <span style=\"font-weight:400;opacity:.8;\">$3</span></div><div style=\"position:absolute;left:14px;right:14px;top:50%;transform:translateY(-50%);text-align:center;font-size:13.5px;line-height:1.5;text-shadow:0 1px 4px rgba(0,0,0,.6);\">$2</div><div style=\"position:absolute;bottom:10px;left:10px;right:10px;padding:7px 12px;border:1px solid rgba(255,255,255,.6);border-radius:20px;font-size:11.5px;opacity:.85;\">Send message</div></div><!--cbrow-->",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "9bf2198c-49e2-4fe3-9af4-1ae773b93d39",
+        "scriptName": "CB · Private row — header",
+        "findRegex": "/^PX(?:&gt;|>)[ \\t]*head[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*$/gmi",
+        "replaceString": "<div style=\"display:flex;align-items:center;gap:11px;padding:12px 14px;border-bottom:1px solid #2a2233;\"><span style=\"width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#ff7aa8,#c9a6ff);display:inline-flex;align-items:center;justify-content:center;font-size:15px;\">🔒</span><div style=\"line-height:1.3;\"><div style=\"font-weight:700;color:#f4ecff;font-size:14.5px;\">$2</div><div style=\"font-size:10px;color:#a99bbf;letter-spacing:1.5px;text-transform:uppercase;\">$1 · private</div></div></div><!--cbrow-->",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "e39c75bb-8ae1-4e46-b866-1cdf966feda2",
+        "scriptName": "CB · Private row — photo received",
+        "findRegex": "/^PX(?:&gt;|>)[ \\t]*pic[ \\t]*\\|[ \\t]*in[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*(?:\\|[ \\t]*([^|\\n]*?)[ \\t]*(?:\\|[ \\t]*([^|\\n]*?)[ \\t]*)?)?[ \\t]*$/gmi",
+        "replaceString": "<div style=\"display:flex;margin:6px 14px;\"><details style=\"max-width:78%;\"><summary style=\"list-style:none;cursor:pointer;width:210px;height:160px;border-radius:18px;background:repeating-linear-gradient(135deg,#4a3a5e 0 9px,#3b2e4c 9px 18px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;color:#fff;font-size:12.5px;box-shadow:inset 0 0 50px rgba(255,255,255,.18),0 4px 14px rgba(0,0,0,.35);\"><span style=\"font-size:28px;filter:drop-shadow(0 2px 4px rgba(0,0,0,.4));\">📸</span><b>Photo</b><span style=\"opacity:.75;font-size:10.5px;\">tap to view</span><span style=\"opacity:.75;font-size:10.5px;\">$4</span><span style=\"opacity:.55;font-size:10px;\">$1</span></summary><div style=\"margin-top:6px;padding:10px 13px;border-radius:14px;background:#1f1a26;border:1px solid #3a2f45;color:#eee6f8;font-size:12.5px;line-height:1.55;font-style:italic;\">$2</div><div style=\"font-size:13px;color:#eee6f8;margin-top:5px;padding:0 4px;\">$3</div></details></div><!--cbrow-->",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "e96ddc12-6e26-431b-b07c-57225405b2c2",
+        "scriptName": "CB · Private row — photo sent",
+        "findRegex": "/^PX(?:&gt;|>)[ \\t]*pic[ \\t]*\\|[ \\t]*out[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*(?:\\|[ \\t]*([^|\\n]*?)[ \\t]*(?:\\|[ \\t]*([^|\\n]*?)[ \\t]*)?)?[ \\t]*$/gmi",
+        "replaceString": "<div style=\"display:flex;justify-content:flex-end;margin:6px 14px;\"><details style=\"max-width:78%;\"><summary style=\"list-style:none;cursor:pointer;width:210px;height:160px;border-radius:18px;background:repeating-linear-gradient(135deg,#a8436f 0 9px,#933a62 9px 18px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;color:#fff;font-size:12.5px;box-shadow:inset 0 0 50px rgba(255,255,255,.18),0 4px 14px rgba(0,0,0,.35);\"><span style=\"font-size:28px;filter:drop-shadow(0 2px 4px rgba(0,0,0,.4));\">📸</span><b>Photo</b><span style=\"opacity:.75;font-size:10.5px;\">tap to view</span><span style=\"opacity:.75;font-size:10.5px;\">$4</span><span style=\"opacity:.55;font-size:10px;\">$1</span></summary><div style=\"margin-top:6px;padding:10px 13px;border-radius:14px;background:#1f1a26;border:1px solid #3a2f45;color:#eee6f8;font-size:12.5px;line-height:1.55;font-style:italic;\">$2</div><div style=\"font-size:13px;color:#eee6f8;margin-top:5px;padding:0 4px;\">$3</div></details></div><!--cbrow-->",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "df03d833-be4c-4eb9-ab2b-03fdd17e8703",
+        "scriptName": "CB · Private row — received",
+        "findRegex": "/^PX(?:&gt;|>)[ \\t]*in[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*$/gmi",
+        "replaceString": "<div style=\"display:flex;margin:4px 14px;\"><div style=\"max-width:75%;padding:8px 13px;font-size:13.5px;line-height:1.4;background:#2a2433;color:#eee6f8;border-radius:18px 18px 18px 5px;\">$2<div style=\"font-size:9.5px;color:#8f84a3;margin-top:2px;\">$1</div></div></div><!--cbrow-->",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "2f9c3cd2-f887-447e-82a7-da6566491187",
+        "scriptName": "CB · Private row — sent",
+        "findRegex": "/^PX(?:&gt;|>)[ \\t]*out[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*$/gmi",
+        "replaceString": "<div style=\"display:flex;justify-content:flex-end;margin:4px 14px;\"><div style=\"max-width:75%;padding:8px 13px;font-size:13.5px;line-height:1.4;background:linear-gradient(135deg,#d6457e,#a24bd6);color:#fff;border-radius:18px 18px 5px 18px;\">$2<div style=\"font-size:9.5px;color:#f6d7ea;margin-top:2px;text-align:right;\">$1</div></div></div><!--cbrow-->",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "00b832bd-07c1-49b4-b9e7-ccfa1dde35bd",
+        "scriptName": "CB · Private row — system",
+        "findRegex": "/^PX(?:&gt;|>)[ \\t]*sys[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*$/gmi",
+        "replaceString": "<div style=\"text-align:center;font-size:11px;color:#c9a6ff;margin:8px 14px;letter-spacing:.3px;\">$1</div><!--cbrow-->",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "2e99e981-23ff-4591-9df0-d5a248166853",
+        "scriptName": "CB · Creator row — header",
+        "findRegex": "/^CR(?:&gt;|>)[ \\t]*head[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*(?:\\|[ \\t]*([^|\\n]*?)[ \\t]*)?[ \\t]*$/gmi",
+        "replaceString": "<div style=\"height:78px;background:linear-gradient(135deg,#00aff0,#7b5cff 60%,#ff6fb5);\"></div><div style=\"padding:0 16px 14px;border-bottom:1px solid #eceef0;\"><div style=\"width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,#dfe7ee,#c9d4de);border:3px solid #fff;margin-top:-32px;\"></div><div style=\"font-size:18px;font-weight:800;color:#1b1b1f;margin-top:5px;\">$1 <span style=\"color:#00aff0;font-size:14px;\">✔</span></div><div style=\"font-size:12px;color:#8a8d91;\">$2 · $3 subscribers</div><div style=\"font-size:12.5px;color:#3a3b3f;margin-top:7px;line-height:1.45;\">$5</div><div style=\"margin-top:11px;padding:10px;border-radius:24px;background:#00aff0;color:#fff;text-align:center;font-weight:700;font-size:12.5px;letter-spacing:.6px;\">SUBSCRIBE · $4 / month</div></div><!--cbrow-->",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "32f663f7-d6d2-4c07-b02f-74f4ba2bc658",
+        "scriptName": "CB · Creator row — free post",
+        "findRegex": "/^CR(?:&gt;|>)[ \\t]*post[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*free[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*$/gmi",
+        "replaceString": "<div style=\"padding:12px 16px 6px;\"><div style=\"font-size:11px;color:#8a8d91;\">$1</div><div style=\"font-size:13px;color:#1b1b1f;line-height:1.45;margin-top:3px;\">$2</div></div><div style=\"margin:4px 16px 8px;min-height:150px;border-radius:12px;background:linear-gradient(150deg,#ffe0ec,#e3d6ff 55%,#cdeeff);display:flex;align-items:flex-end;padding:10px;box-sizing:border-box;\"><span style=\"background:rgba(0,0,0,.5);color:#fff;font-size:12px;font-style:italic;padding:5px 9px;border-radius:9px;line-height:1.4;\">📷 $3</span></div><div style=\"padding:0 16px 10px;font-size:12px;color:#8a8d91;border-bottom:1px solid #eceef0;letter-spacing:2px;\">♡ 💬 <span style=\"letter-spacing:0;color:#00aff0;font-weight:700;\">$ SEND TIP</span></div><!--cbrow-->",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "1522cf0e-4dd4-4284-ba2c-351346aa9b6b",
+        "scriptName": "CB · Creator row — locked post",
+        "findRegex": "/^CR(?:&gt;|>)[ \\t]*post[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*$/gmi",
+        "replaceString": "<div style=\"padding:12px 16px 6px;\"><div style=\"font-size:11px;color:#8a8d91;\">$1</div><div style=\"font-size:13px;color:#1b1b1f;line-height:1.45;margin-top:3px;\">$2</div></div><details style=\"margin:4px 16px 12px;\"><summary style=\"list-style:none;cursor:pointer;min-height:150px;border-radius:12px;background:repeating-linear-gradient(135deg,#e9edf1 0 10px,#dfe4ea 10px 20px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;color:#5b6168;\"><span style=\"font-size:26px;\">🔒</span><span style=\"padding:8px 16px;border-radius:20px;background:#00aff0;color:#fff;font-weight:700;font-size:12px;letter-spacing:.5px;\">UNLOCK · $3</span><span style=\"font-size:10px;opacity:.7;\">tap to peek</span></summary><div style=\"margin-top:6px;padding:9px 12px;border-radius:10px;background:#f4f6f8;color:#3a3b3f;font-size:12.5px;font-style:italic;line-height:1.5;\">$4</div></details><!--cbrow-->",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "e02b25d0-e41e-428b-b527-dc639c4888d9",
+        "scriptName": "CB · Creator row — tip",
+        "findRegex": "/^CR(?:&gt;|>)[ \\t]*tip[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*(?:\\|[ \\t]*([^|\\n]*?)[ \\t]*)?[ \\t]*$/gmi",
+        "replaceString": "<div style=\"margin:8px 16px;padding:9px 12px;border-radius:12px;background:#ecfbf2;border:1px solid #c8efd8;font-size:12.5px;color:#1f5e3a;line-height:1.45;\">💸 <b>$1</b> tipped <b>$2</b> <span style=\"font-style:italic;\">$3</span></div><!--cbrow-->",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "1d923a1f-d5cb-4ec1-8238-df1c107571c5",
+        "scriptName": "CB · Creator row — fan message",
+        "findRegex": "/^CR(?:&gt;|>)[ \\t]*fan[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*$/gmi",
+        "replaceString": "<div style=\"display:flex;margin:5px 16px;\"><div style=\"max-width:78%;padding:8px 12px;background:#f1f3f5;color:#1b1b1f;border-radius:16px 16px 16px 5px;font-size:13px;line-height:1.4;\"><div style=\"font-size:10.5px;font-weight:700;color:#8a8d91;margin-bottom:2px;\">$1</div>$2</div></div><!--cbrow-->",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "2a6707cf-086e-4885-b20a-bb200ba7f15f",
+        "scriptName": "CB · Creator row — creator reply",
+        "findRegex": "/^CR(?:&gt;|>)[ \\t]*reply[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*$/gmi",
+        "replaceString": "<div style=\"display:flex;justify-content:flex-end;margin:5px 16px;\"><div style=\"max-width:78%;padding:8px 12px;background:#00aff0;color:#fff;border-radius:16px 16px 5px 16px;font-size:13px;line-height:1.4;\">$1</div></div><!--cbrow-->",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "ec32fde4-9d3f-47d5-bca3-7ff374dad939",
+        "scriptName": "CB · Creator row — pay-per-view message",
+        "findRegex": "/^CR(?:&gt;|>)[ \\t]*ppv[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*$/gmi",
+        "replaceString": "<div style=\"display:flex;justify-content:flex-end;margin:5px 16px;\"><details style=\"max-width:78%;\"><summary style=\"list-style:none;cursor:pointer;padding:10px 14px;border-radius:16px 16px 5px 16px;background:repeating-linear-gradient(135deg,#0090c7 0 8px,#009fdc 8px 16px);color:#fff;font-size:12.5px;font-weight:700;\">🔒 Locked message · $1</summary><div style=\"margin-top:5px;padding:8px 11px;border-radius:10px;background:#f4f6f8;color:#3a3b3f;font-size:12px;font-style:italic;line-height:1.5;\">$2</div></details></div><!--cbrow-->",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "cc044ab4-bbbf-4c13-b64e-e18e00d6a22c",
+        "scriptName": "CB · Creator row — dashboard",
+        "findRegex": "/^CR(?:&gt;|>)[ \\t]*stats[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*$/gmi",
+        "replaceString": "<div style=\"margin:10px 16px 4px;padding:10px 12px;border-radius:10px;background:#1b1b1f;color:#e9f6fd;font-size:12px;letter-spacing:.3px;\">📈 $1</div><!--cbrow-->",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "7d4b235d-0760-4e39-b428-61980c7c98d7",
+        "scriptName": "CB · Fan platform row — bubble header",
+        "findRegex": "/^FP(?:&gt;|>)[ \\t]*head[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*(?:\\|[ \\t]*([^|\\n]*?)[ \\t]*)?[ \\t]*$/gmi",
+        "replaceString": "<div style=\"display:flex;align-items:center;gap:11px;padding:13px 15px;border-bottom:1px solid #eee9f8;\"><span style=\"flex:none;width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#ffc6e5,#b9a6ff 60%,#8fd3ff);box-shadow:0 0 0 2px #fff,0 0 0 3.5px #b9a6ff;display:inline-block;\"></span><div style=\"flex:1;min-width:0;line-height:1.25;\"><div style=\"font-weight:800;color:#2a2340;font-size:15px;\">$1</div><div style=\"font-size:11px;color:#8b84a3;\">$2</div></div><span style=\"padding:4px 10px;border-radius:12px;background:#f3efff;color:#7b61ff;font-size:11px;font-weight:700;\">$3</span></div><!--cbrow-->",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "fe53db23-1496-4926-8810-0fbeebd0a937",
+        "scriptName": "CB · Fan platform row — idol message",
+        "findRegex": "/^FP(?:&gt;|>)[ \\t]*msg[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*[ \\t]*$/gmi",
+        "replaceString": "<div style=\"display:flex;gap:8px;align-items:flex-end;margin:6px 14px;\"><span style=\"flex:none;width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,#ffc6e5,#b9a6ff 60%,#8fd3ff);box-shadow:0 0 0 2px #fff,0 0 0 3.5px #b9a6ff;display:inline-block;\"></span><div style=\"max-width:76%;padding:9px 13px;background:#f3efff;color:#2a2340;border-radius:18px 18px 18px 5px;font-size:13.5px;line-height:1.45;word-break:normal;overflow-wrap:break-word;\">$2</div><span style=\"font-size:9.5px;color:#a49dbb;white-space:nowrap;\">$1</span></div><!--cbrow-->",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "f9da64a0-3f9a-45f8-a342-805989a470d6",
+        "scriptName": "CB · Fan platform row — idol photo",
+        "findRegex": "/^FP(?:&gt;|>)[ \\t]*photo[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*[ \\t]*$/gmi",
+        "replaceString": "<div style=\"display:flex;gap:8px;align-items:flex-end;margin:6px 14px;\"><span style=\"flex:none;width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,#ffc6e5,#b9a6ff 60%,#8fd3ff);box-shadow:0 0 0 2px #fff,0 0 0 3.5px #b9a6ff;display:inline-block;\"></span><div style=\"width:200px;min-height:150px;border-radius:16px;background:linear-gradient(160deg,#ffd9ec,#d9ccff 55%,#c7ecff);display:flex;align-items:flex-end;padding:9px;box-sizing:border-box;\"><span style=\"background:rgba(0,0,0,.45);color:#fff;font-size:11.5px;font-style:italic;padding:4px 8px;border-radius:8px;line-height:1.4;\">📷 $2</span></div><span style=\"font-size:9.5px;color:#a49dbb;white-space:nowrap;\">$1</span></div><!--cbrow-->",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "825c2d0f-61df-47a2-80ce-faa1a711873b",
+        "scriptName": "CB · Fan platform row — voice memo",
+        "findRegex": "/^FP(?:&gt;|>)[ \\t]*voice[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*(?:\\|[ \\t]*([^|\\n]*?)[ \\t]*)?[ \\t]*$/gmi",
+        "replaceString": "<div style=\"display:flex;gap:8px;align-items:flex-end;margin:6px 14px;\"><span style=\"flex:none;width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,#ffc6e5,#b9a6ff 60%,#8fd3ff);box-shadow:0 0 0 2px #fff,0 0 0 3.5px #b9a6ff;display:inline-block;\"></span><div style=\"max-width:76%;\"><div style=\"display:flex;align-items:center;gap:9px;padding:8px 13px;background:#7b61ff;color:#fff;border-radius:18px 18px 18px 5px;font-size:12px;\"><span style=\"width:22px;height:22px;border-radius:50%;background:#fff;color:#7b61ff;display:inline-flex;align-items:center;justify-content:center;font-size:10px;\">▶</span><span style=\"letter-spacing:1px;opacity:.9;\">▁▃▅▂▆▃▇▂▅▁▃</span><b>$2</b></div><div style=\"font-size:12px;color:#5d5675;font-style:italic;margin:4px 4px 0;line-height:1.4;\">$3</div></div><span style=\"font-size:9.5px;color:#a49dbb;white-space:nowrap;\">$1</span></div><!--cbrow-->",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "dca8c326-48d3-406e-8acf-9fd6471b7456",
+        "scriptName": "CB · Fan platform row — fan reply",
+        "findRegex": "/^FP(?:&gt;|>)[ \\t]*reply[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*[ \\t]*$/gmi",
+        "replaceString": "<div style=\"display:flex;justify-content:flex-end;align-items:flex-end;gap:6px;margin:6px 14px;\"><span style=\"font-size:9.5px;color:#a49dbb;white-space:nowrap;\">$1</span><div style=\"max-width:72%;padding:9px 13px;background:linear-gradient(135deg,#ff8fc7,#9b7bff);color:#fff;border-radius:18px 18px 5px 18px;font-size:13.5px;line-height:1.45;word-break:normal;overflow-wrap:break-word;\">$2</div></div><!--cbrow-->",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "b20924ed-8ed0-4832-a846-b84acdcf66b0",
+        "scriptName": "CB · Fan platform row — live header",
+        "findRegex": "/^FP(?:&gt;|>)[ \\t]*live[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*(?:\\|[ \\t]*([^|\\n]*?)[ \\t]*)?[ \\t]*$/gmi",
+        "replaceString": "<div style=\"padding:12px 14px 10px;background:linear-gradient(180deg,rgba(0,0,0,.55),transparent);\"><div style=\"display:flex;align-items:center;gap:8px;\"><span style=\"flex:none;width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,#ffc6e5,#b9a6ff 60%,#8fd3ff);box-shadow:0 0 0 2px #fff,0 0 0 3.5px #b9a6ff;display:inline-block;\"></span><div style=\"flex:1;min-width:0;line-height:1.25;\"><div style=\"font-weight:800;font-size:14px;color:#fff;\">$1</div><div style=\"font-size:11.5px;color:#d9d3ef;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;\">$2</div></div><span style=\"padding:3px 8px;border-radius:6px;background:#ff2e63;color:#fff;font-size:10.5px;font-weight:800;letter-spacing:1px;\">● LIVE</span></div><div style=\"display:flex;gap:12px;margin-top:8px;font-size:11.5px;color:#e9e4ff;\"><span>👁 $3</span><span>💜 $4</span></div></div><!--cbrow-->",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "cfda17c5-cbd4-4fa9-9b08-2aa33aa18ae4",
+        "scriptName": "CB · Fan platform row — idol speaking",
+        "findRegex": "/^FP(?:&gt;|>)[ \\t]*say[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*[ \\t]*$/gmi",
+        "replaceString": "<div style=\"margin:8px 14px;padding:9px 13px;border-radius:14px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.18);color:#fff;font-size:13.5px;line-height:1.45;\"><span style=\"font-size:9.5px;letter-spacing:1.5px;color:#ffc6e5;font-weight:800;\">🎙 SAYS</span><br>$1</div><!--cbrow-->",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "3831e4a2-bffc-42e4-aa1a-c30dcee76d8a",
+        "scriptName": "CB · Fan platform row — live chat",
+        "findRegex": "/^FP(?:&gt;|>)[ \\t]*chat[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*[ \\t]*$/gmi",
+        "replaceString": "<div style=\"padding:3px 14px;font-size:12.5px;line-height:1.4;color:#f4f1ff;\"><b style=\"color:#b9a6ff;\">$1</b> $2</div><!--cbrow-->",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "d5070ec0-7fc5-4683-8855-07c94bd5a2f3",
+        "scriptName": "CB · Fan platform row — hearts / gift",
+        "findRegex": "/^FP(?:&gt;|>)[ \\t]*heart[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*[ \\t]*$/gmi",
+        "replaceString": "<div style=\"margin:5px 14px;padding:6px 11px;border-radius:12px;background:linear-gradient(90deg,rgba(255,46,99,.35),rgba(155,123,255,.25));color:#fff;font-size:12px;\">💖 <b>$1</b> $2</div><!--cbrow-->",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "d5029ea9-944d-494a-a823-5ae88ffc8963",
+        "scriptName": "CB · Fan platform row — system",
+        "findRegex": "/^FP(?:&gt;|>)[ \\t]*sys[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*[ \\t]*$/gmi",
+        "replaceString": "<div style=\"text-align:center;font-size:11px;opacity:.6;margin:8px 14px;\">$1</div><!--cbrow-->",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "6a1f89e2-a8a4-4f9a-b761-f85c24ef5cd9",
+        "scriptName": "CB · Chat/Press row — catch-all (malformed lines)",
+        "findRegex": "/^(?:TW|DC|PR|AIM|FLIP|MS|XT|RD|DT|BR|IG|PX|CR|FP)(?:&gt;|>)\\s*([^\\n]+?)\\s*$/gm",
+        "replaceString": "<div style=\"padding:3px 2px;opacity:.7;font-size:12px;line-height:1.4;color:inherit;\">$1</div><!--cbrow-->",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "fa8449cf-bbdd-49bd-a414-ce337b2f4b75",
+        "scriptName": "CB · Cue — standby slip (with legend)",
+        "findRegex": "/^CUE(?:&gt;|>)[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*$/gmi",
+        "replaceString": "<details open style=\"margin:12px 0 8px;border:1px solid #3d3122;border-left:3px solid #e8b04a;border-radius:0 10px 10px 0;background:linear-gradient(90deg,rgba(232,176,74,.11),rgba(232,176,74,.02));font-size:12.5px;\"><summary style=\"cursor:pointer;padding:7px 12px;color:#eadfca;display:flex;align-items:center;gap:8px;flex-wrap:wrap;\"><span style=\"font-size:9.5px;letter-spacing:3px;font-weight:700;color:#e8b04a;\">● STANDBY</span><span>$1 <b>$2</b></span><span style=\"color:#a99c87;font-style:italic;\">$3</span></summary><div style=\"padding:0 14px 10px;color:#d3c6ae;line-height:1.55;\"><span style=\"font-size:9.5px;letter-spacing:2px;font-weight:700;color:#e8b04a;\">WHAT IT MEANS · </span>$4</div></details>",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "d94ef766-9ccc-4409-9777-58035a076ad9",
+        "scriptName": "CB · Cue — standby slip",
+        "findRegex": "/^CUE(?:&gt;|>)[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*(?:\\|[ \\t]*)?$/gmi",
+        "replaceString": "<div style=\"margin:12px 0 8px;padding:6px 12px;border:1px solid #3d3122;border-left:3px solid #e8b04a;border-radius:0 10px 10px 0;background:linear-gradient(90deg,rgba(232,176,74,.09),transparent);font-size:12.5px;color:#eadfca;display:flex;align-items:center;gap:8px;flex-wrap:wrap;\"><span style=\"font-size:9.5px;letter-spacing:3px;font-weight:700;color:#e8b04a;\">● STANDBY</span><span>$1 <b>$2</b></span><span style=\"color:#a99c87;font-style:italic;\">$3</span></div>",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "5f9aa1ad-68ad-4e2a-9fc8-86c12388389b",
+        "scriptName": "CB · Cue — catch-all (malformed lines)",
+        "findRegex": "/^CUE(?:&gt;|>)[ \\t]*([^\\n]+?)[ \\t]*$/gm",
+        "replaceString": "<div style=\"margin:10px 0 6px;padding:5px 12px;border-left:3px solid #e8b04a;font-size:12px;color:#cdbfa8;opacity:.85;\"><span style=\"font-size:9.5px;letter-spacing:3px;font-weight:700;color:#e8b04a;\">● STANDBY </span>$1</div>",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "6e5aa2fd-91ae-4eaa-99be-7e0c3452df47",
+        "scriptName": "CB · Program row — title",
+        "findRegex": "/^PG(?:&gt;|>)[ \\t]*title[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*$/gmi",
+        "replaceString": "<div style=\"text-align:center;font-family:Georgia,'Times New Roman',serif;font-size:19px;font-weight:700;color:#1a1a1a;padding:14px 16px 3px;line-height:1.25;\">$1</div><!--cbrow-->",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "3da90199-ddbf-4009-a905-9ec86fa50fd2",
+        "scriptName": "CB · Program row — cast line",
+        "findRegex": "/^PG(?:&gt;|>)[ \\t]*cast[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*$/gmi",
+        "replaceString": "<div style=\"text-align:center;font-size:11.5px;color:#5b5548;font-style:italic;padding:0 16px 12px;border-bottom:1px solid #d9d1bd;\">$1</div><!--cbrow-->",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "7fce9786-9aea-4621-87b9-22c7d256686c",
+        "scriptName": "CB · Program row — act",
+        "findRegex": "/^PG(?:&gt;|>)[ \\t]*act[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*$/gmi",
+        "replaceString": "<div style=\"display:flex;gap:11px;padding:9px 16px;border-bottom:1px dotted #d9d1bd;\"><div style=\"font-size:19px;line-height:1.15;width:24px;text-align:center;\">$1</div><div style=\"flex:1;min-width:0;\"><div style=\"font-weight:700;color:#1a1a1a;font-size:13px;margin-bottom:2px;\">$2</div><div style=\"font-size:11.5px;color:#5b5548;line-height:1.4;\"><span style=\"font-size:9.5px;letter-spacing:1.5px;font-weight:700;color:#9a7b2f;\">CUE </span>$3</div><div style=\"font-size:11.5px;color:#2f2c26;line-height:1.4;\"><span style=\"font-size:9.5px;letter-spacing:1.5px;font-weight:700;color:#9a7b2f;\">YOU'LL SEE </span>$4</div></div></div><!--cbrow-->",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "40116630-1d12-4366-b80c-2b3b42de9e2a",
+        "scriptName": "CB · Program row — note from Xavi",
+        "findRegex": "/^PG(?:&gt;|>)[ \\t]*note[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*$/gmi",
+        "replaceString": "<div style=\"padding:11px 16px 13px;font-style:italic;color:#4a3f5c;font-size:12.5px;line-height:1.5;\">🎧 $1 <span style=\"color:#7a6a95;font-style:normal;\">— X</span></div><!--cbrow-->",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "99e7f037-f77b-490e-873c-7396b19cc572",
+        "scriptName": "CB · Program row — catch-all (malformed lines)",
+        "findRegex": "/^PG(?:&gt;|>)[ \\t]*([^\\n]+?)[ \\t]*$/gm",
+        "replaceString": "<div style=\"padding:6px 16px;font-size:12px;color:#5b5548;border-bottom:1px dotted #d9d1bd;\">$1</div><!--cbrow-->",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "2a43302c-5dd1-4e2c-b93d-9de42ae0c9e4",
+        "scriptName": "CB · Chat/Press — join rendered rows",
+        "findRegex": "/<!--cbrow-->\\s*?\\n?/g",
+        "replaceString": "",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "384aa806-827f-4cc6-b17f-6985ffe10142",
+        "scriptName": "CB · Shell — Twitch chat",
+        "findRegex": "/\\[\\[TWITCH\\]\\]\\s*([\\s\\S]*?)\\s*\\[\\[\\/TWITCH\\]\\]/g",
+        "replaceString": "<div style=\"float:right;width:min(330px,calc(100% - 12px));margin:4px 0 12px 12px;background:#0e0e10;border:1px solid #2f2f35;border-radius:10px;box-shadow:0 6px 24px rgba(145,71,255,.25);font-family:Inter,Roobert,'Helvetica Neue',Arial,sans-serif;color:#efeff1;font-size:13px;line-height:1.45;overflow:hidden;\"><div style=\"max-height:460px;overflow-y:auto;padding:8px 10px 6px;\">$1</div><div style=\"padding:8px 10px;border-top:1px solid #2f2f35;\"><div style=\"background:#18181b;border:1px solid #3a3a3d;border-radius:6px;padding:7px 10px;color:#77777f;font-size:12px;\">Send a message</div><div style=\"display:flex;justify-content:space-between;align-items:center;margin-top:6px;font-size:11px;color:#adadb8;\"><span>💎 0 · ⚙️</span><span style=\"background:#9147ff;color:#fff;border-radius:4px;padding:3px 11px;font-weight:700;\">Chat</span></div></div></div>",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "4ca7b4f7-5674-4ee8-9a3e-0a29606aa693",
+        "scriptName": "CB · Shell — Discord window",
+        "findRegex": "/\\[\\[DISCORD\\]\\]\\s*([\\s\\S]*?)\\s*\\[\\[\\/DISCORD\\]\\]/g",
+        "replaceString": "<div style=\"clear:both;max-width:600px;margin:14px auto;background:#313338;border:1px solid #1e1f22;border-radius:10px;overflow:hidden;font-family:'gg sans','Noto Sans','Helvetica Neue',Helvetica,Arial,sans-serif;color:#dbdee1;font-size:14px;line-height:1.375;box-shadow:0 8px 28px rgba(0,0,0,.45);\"><div style=\"padding:6px 14px 12px;\">$1</div><div style=\"padding:0 14px 14px;\"><div style=\"background:#383a40;border-radius:8px;padding:10px 14px;color:#6d6f78;font-size:14px;display:flex;justify-content:space-between;\"><span>⊕&nbsp; Message</span><span>🎁 GIF 🙂</span></div></div></div>",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "05e80798-d26c-45bd-8852-fe1836ffd5d2",
+        "scriptName": "CB · Shell — Press tabloid",
+        "findRegex": "/\\[\\[TABLOID\\]\\]\\s*([\\s\\S]*?)\\s*\\[\\[\\/TABLOID\\]\\]/g",
+        "replaceString": "<div style=\"--bg:#ffffff;--fg:#151515;--hc:#151515;--acc:#e1001a;--acc2:#e1001a;--on:#ffffff;--hf:Impact,'Haettenschweiler','Arial Narrow Bold','Arial Black',sans-serif;--tt:uppercase;--hs:normal;--bf:Arial,Helvetica,sans-serif;--deck:#ffe600;--deckfg:#151515;--dw:700;--ds:normal;--muted:#6b6b6b;--rule:#e1e1e1;--cbg:#f3f3f3;--pf:contrast(1.15) saturate(.9);border:3px solid #e1001a;border-radius:2px;clear:both;max-width:560px;margin:16px auto;padding:14px 16px 16px;box-sizing:border-box;overflow:hidden;background:var(--bg);color:var(--fg);box-shadow:0 10px 30px rgba(0,0,0,.4);\">$1</div>",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "b81b892e-06d3-4589-88a7-921320b301db",
+        "scriptName": "CB · Shell — Press blog",
+        "findRegex": "/\\[\\[BLOG\\]\\]\\s*([\\s\\S]*?)\\s*\\[\\[\\/BLOG\\]\\]/g",
+        "replaceString": "<div style=\"--bg:#fff4f9;--fg:#2b1020;--hc:#ff1f8e;--acc:#ff1f8e;--acc2:#c2006a;--on:#ffffff;--hf:'Arial Black','Trebuchet MS',sans-serif;--tt:none;--hs:normal;--bf:'Trebuchet MS',Verdana,sans-serif;--deck:#ffd1e8;--deckfg:#5a0f35;--dw:700;--ds:normal;--muted:#a0607f;--rule:#f5c3dc;--cbg:#ffe3f0;--pf:saturate(1.2) hue-rotate(-8deg);border:2px dashed #ff8cc6;border-radius:14px;clear:both;max-width:560px;margin:16px auto;padding:14px 16px 16px;box-sizing:border-box;overflow:hidden;background:var(--bg);color:var(--fg);box-shadow:0 10px 30px rgba(0,0,0,.4);\">$1</div>",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "91c49361-06ae-47f4-814e-59aa681bc4a4",
+        "scriptName": "CB · Shell — Press mag",
+        "findRegex": "/\\[\\[MAG\\]\\]\\s*([\\s\\S]*?)\\s*\\[\\[\\/MAG\\]\\]/g",
+        "replaceString": "<div style=\"--bg:#faf7f2;--fg:#1a1a1a;--hc:#111111;--acc:#111111;--acc2:#7a5c2e;--on:#faf7f2;--hf:Didot,'Bodoni 72','Bodoni MT','Playfair Display',Georgia,serif;--tt:none;--hs:italic;--bf:Georgia,'Times New Roman',serif;--deck:transparent;--deckfg:#4a4a4a;--dw:400;--ds:italic;--muted:#857b6c;--rule:#d8d0c2;--cbg:#f0ebe2;--pf:grayscale(1) contrast(1.1);border:1px solid #d8d0c2;border-radius:2px;clear:both;max-width:560px;margin:16px auto;padding:14px 16px 16px;box-sizing:border-box;overflow:hidden;background:var(--bg);color:var(--fg);box-shadow:0 10px 30px rgba(0,0,0,.4);\">$1</div>",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "4a3a6158-e8af-4bcb-b629-c89b765055d9",
+        "scriptName": "CB · Shell — Press blind",
+        "findRegex": "/\\[\\[BLIND\\]\\]\\s*([\\s\\S]*?)\\s*\\[\\[\\/BLIND\\]\\]/g",
+        "replaceString": "<div style=\"--bg:#f1f0ec;--fg:#1d1d1d;--hc:#1d1d1d;--acc:#2f2f2f;--acc2:#2f2f2f;--on:#f1f0ec;--hf:'Courier New',Courier,monospace;--tt:uppercase;--hs:normal;--bf:'Courier New',Courier,monospace;--deck:#e0ddd3;--deckfg:#333333;--dw:700;--ds:normal;--muted:#777777;--rule:#cfccc2;--cbg:#e7e5de;--pf:blur(3px) grayscale(1);border:1px dashed #9a978e;border-radius:3px;clear:both;max-width:560px;margin:16px auto;padding:14px 16px 16px;box-sizing:border-box;overflow:hidden;background:var(--bg);color:var(--fg);box-shadow:0 10px 30px rgba(0,0,0,.4);\">$1</div>",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "a613f33b-f242-4fe6-b977-bc94b2d5136f",
+        "scriptName": "CB · Shell — AIM window",
+        "findRegex": "/\\[\\[AIM\\]\\]\\s*([\\s\\S]*?)\\s*\\[\\[\\/AIM\\]\\]/g",
+        "replaceString": "<div style=\"clear:both;max-width:420px;margin:14px auto;border:1px solid #0a246a;border-radius:7px 7px 3px 3px;overflow:hidden;background:#ece9d8;box-shadow:2px 5px 16px rgba(0,0,0,.45);font-family:Tahoma,'Segoe UI',Verdana,sans-serif;font-size:12px;color:#000;\"><div style=\"background:linear-gradient(180deg,#2a7bea,#0a52c6 55%,#0a3c96);color:#fff;font-weight:700;padding:4px 8px;display:flex;justify-content:space-between;align-items:center;text-shadow:0 1px 1px rgba(0,0,0,.4);\"><span>🏃 Instant Message</span><span style=\"letter-spacing:5px;font-size:10px;\">▁▢✕</span></div><div style=\"padding:2px 8px;font-size:11px;color:#333;border-bottom:1px solid #aca899;\">File&nbsp;&nbsp; Edit&nbsp;&nbsp; Insert&nbsp;&nbsp; People</div><div style=\"margin:6px;background:#fff;border:1px solid #7f9db9;padding:6px 8px;max-height:300px;overflow-y:auto;font-family:Arial,Helvetica,sans-serif;font-size:13px;\">$1</div><div style=\"margin:0 6px 6px;display:flex;gap:6px;\"><div style=\"flex:1;background:#fff;border:1px solid #7f9db9;height:34px;\"></div><div style=\"align-self:flex-end;background:linear-gradient(#ffffff,#e3e0d0);border:1px solid #003c74;border-radius:3px;padding:4px 12px;font-weight:700;color:#000;\">Send</div></div></div>",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "bd7a5e67-a30f-4537-a530-6aea3fd56246",
+        "scriptName": "CB · Shell — Flip phone",
+        "findRegex": "/\\[\\[FLIP\\]\\]\\s*([\\s\\S]*?)\\s*\\[\\[\\/FLIP\\]\\]/g",
+        "replaceString": "<div style=\"clear:both;width:232px;max-width:100%;margin:14px auto;padding:16px 14px 18px;border-radius:26px;background:linear-gradient(160deg,#dfe3e8,#949aa3 55%,#5d636b);box-shadow:0 10px 24px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.6);box-sizing:border-box;\"><div style=\"text-align:center;font-family:Arial,sans-serif;font-size:8px;letter-spacing:3px;color:#3a3f46;margin-bottom:6px;\">● ● ● ● ●</div><div style=\"background:linear-gradient(180deg,#bcd6f4,#e8f1fb);border:3px solid #23272d;border-radius:6px;padding:6px 7px;min-height:150px;font-family:'Lucida Console','Courier New',monospace;font-size:11.5px;color:#0d1b2a;line-height:1.35;\">$1</div><div style=\"display:flex;justify-content:space-between;align-items:center;margin-top:9px;font-family:Arial,sans-serif;font-size:10px;font-weight:700;color:#23272d;padding:0 6px;\"><span>Reply</span><span style=\"width:28px;height:16px;border-radius:50%;background:#3a3f46;display:inline-block;box-shadow:inset 0 1px 2px rgba(255,255,255,.3);\"></span><span>Options</span></div></div>",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "946ee4ea-559a-4b97-9e38-c0c403df87d3",
+        "scriptName": "CB · Shell — MySpace comments",
+        "findRegex": "/\\[\\[MYSPACE\\]\\]\\s*([\\s\\S]*?)\\s*\\[\\[\\/MYSPACE\\]\\]/g",
+        "replaceString": "<div style=\"clear:both;max-width:440px;margin:14px auto;background:#fff;border:1px solid #6698cb;font-family:Verdana,Arial,sans-serif;font-size:11px;color:#000;box-shadow:0 4px 14px rgba(0,0,0,.35);\">$1</div>",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "65d2176c-8a14-441b-acbf-c20b151efa9d",
+        "scriptName": "CB · Shell — X post",
+        "findRegex": "/\\[\\[X\\]\\]\\s*([\\s\\S]*?)\\s*\\[\\[\\/X\\]\\]/g",
+        "replaceString": "<div style=\"clear:both;max-width:560px;margin:14px auto;background:#000;border:1px solid #2f3336;border-radius:16px;padding:2px 16px 6px;box-sizing:border-box;font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;font-size:15px;line-height:1.35;color:#e7e9ea;box-shadow:0 8px 26px rgba(0,0,0,.5);\">$1</div>",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "71f9cccf-7bbc-4622-b5fc-0456f7be6e5e",
+        "scriptName": "CB · Shell — Reddit thread",
+        "findRegex": "/\\[\\[REDDIT\\]\\]\\s*([\\s\\S]*?)\\s*\\[\\[\\/REDDIT\\]\\]/g",
+        "replaceString": "<div style=\"clear:both;max-width:600px;margin:14px auto;background:#1a1a1b;border:1px solid #343536;border-radius:10px;padding:12px 14px 14px;box-sizing:border-box;overflow:hidden;font-family:'Noto Sans','IBM Plex Sans',Arial,sans-serif;color:#d7dadc;font-size:14px;box-shadow:0 8px 26px rgba(0,0,0,.45);\">$1</div>",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "1901fb19-3dd1-4606-9dbb-cf83b29fc806",
+        "scriptName": "CB · Shell — The Program",
+        "findRegex": "/\\[\\[PROGRAM\\]\\]\\s*([\\s\\S]*?)\\s*\\[\\[\\/PROGRAM\\]\\]/g",
+        "replaceString": "<div style=\"clear:both;max-width:400px;margin:14px auto 18px;background:#fbf8ef;border:1px solid #cfc6ae;box-shadow:0 8px 26px rgba(0,0,0,.45);font-family:'Helvetica Neue',Arial,sans-serif;color:#1a1a1a;\"><div style=\"background:#f3c623;padding:9px 16px 7px;border-bottom:3px solid #1a1a1a;\"><div style=\"font-family:Georgia,serif;font-weight:900;font-size:25px;letter-spacing:1px;line-height:1;color:#1a1a1a;\">THE PROGRAM</div><div style=\"font-size:9px;letter-spacing:3px;color:#1a1a1a;margin-top:4px;\">THE CALLBOARD THEATRE · TONIGHT'S PERFORMANCE</div></div>$1<div style=\"text-align:center;font-size:9px;letter-spacing:3px;color:#8a826f;padding:8px;background:#f1ecdd;\">SEND [PROGRAM] ANY TIME TO SEE THIS AGAIN</div></div>",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "8aeb4bcb-063d-4558-a2fa-00736026d13a",
+        "scriptName": "CB · Shell — Dating app",
+        "findRegex": "/\\[\\[DATING\\]\\]\\s*([\\s\\S]*?)\\s*\\[\\[\\/DATING\\]\\]/g",
+        "replaceString": "<div style=\"clear:both;max-width:360px;margin:14px auto;background:#fff;border-radius:24px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.45);font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;padding-bottom:10px;\">$1</div>",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "c7f56552-4e46-41f3-8786-482c33136958",
+        "scriptName": "CB · Shell — Browser",
+        "findRegex": "/\\[\\[BROWSER\\]\\]\\s*([\\s\\S]*?)\\s*\\[\\[\\/BROWSER\\]\\]/g",
+        "replaceString": "<div style=\"clear:both;max-width:520px;margin:14px auto;background:#fff;color:#202124;border:1px solid #c9ccd1;border-radius:10px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.4);font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;padding-bottom:8px;\">$1</div>",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "18a843de-b39f-45bb-82f6-a97673f6ce35",
+        "scriptName": "CB · Shell — Browser (incognito)",
+        "findRegex": "/\\[\\[INCOGNITO\\]\\]\\s*([\\s\\S]*?)\\s*\\[\\[\\/INCOGNITO\\]\\]/g",
+        "replaceString": "<div style=\"clear:both;max-width:520px;margin:14px auto;background:#202124;color:#e8eaed;border:1px solid #3c4043;border-radius:10px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.5);font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;padding-bottom:8px;\"><div style=\"padding:6px 12px;background:#35363a;font-size:11px;letter-spacing:1px;color:#bdc1c6;\">🕶️ INCOGNITO — nothing here is saved to history</div>$1</div>",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "cb51d632-10e1-4b36-bd28-b3ff04d0185f",
+        "scriptName": "CB · Shell — Instagram",
+        "findRegex": "/\\[\\[INSTA\\]\\]\\s*([\\s\\S]*?)\\s*\\[\\[\\/INSTA\\]\\]/g",
+        "replaceString": "<div style=\"clear:both;max-width:380px;margin:14px auto;background:#fff;border:1px solid #dbdbdb;border-radius:12px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.4);font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;padding-bottom:10px;\"><div style=\"padding:10px 14px;border-bottom:1px solid #efefef;font-family:'Brush Script MT','Segoe Script',cursive;font-size:24px;color:#262626;\">Instagram</div>$1</div>",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "2b634f5d-e7a0-409b-9283-0383ea439aea",
+        "scriptName": "CB · Shell — Private photos",
+        "findRegex": "/\\[\\[PRIVATE\\]\\]\\s*([\\s\\S]*?)\\s*\\[\\[\\/PRIVATE\\]\\]/g",
+        "replaceString": "<div style=\"clear:both;max-width:380px;margin:14px auto;background:#141018;border:1px solid #2a2233;border-radius:24px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.55);font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;padding-bottom:10px;\">$1<div style=\"margin:10px 14px 0;padding:8px 14px;border-radius:20px;border:1px solid #3a2f45;color:#6f6482;font-size:12px;\">Send a chat… <span style=\"float:right;\">📷</span></div></div>",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "267315da-2b47-4f9c-b85a-52515a6000fa",
+        "scriptName": "CB · Shell — Creator page",
+        "findRegex": "/\\[\\[CREATOR\\]\\]\\s*([\\s\\S]*?)\\s*\\[\\[\\/CREATOR\\]\\]/g",
+        "replaceString": "<div style=\"clear:both;max-width:400px;margin:14px auto;background:#fff;border:1px solid #e3e6ea;border-radius:16px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.4);font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;padding-bottom:8px;\">$1</div>",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "eb33c723-06f3-4c8f-b627-87c549f26e81",
+        "scriptName": "CB · Shell — Fan platform chat (bubble)",
+        "findRegex": "/\\[\\[BUBBLE\\]\\]\\s*([\\s\\S]*?)\\s*\\[\\[\\/BUBBLE\\]\\]/g",
+        "replaceString": "<div style=\"clear:both;width:100%;max-width:380px;margin:14px auto;box-sizing:border-box;background:#fff;color:#2a2340;border-radius:24px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.45);font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;padding-bottom:10px;\">$1<div style=\"margin:10px 14px 0;padding:8px 14px;border-radius:20px;background:#f6f4fb;color:#a49dbb;font-size:12px;\">Reply to your artist… <span style=\"float:right;\">💜</span></div></div>",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "2eacaaf8-c9ff-407d-b05f-9712d7761b15",
+        "scriptName": "CB · Shell — Fan platform livestream",
+        "findRegex": "/\\[\\[LIVE\\]\\]\\s*([\\s\\S]*?)\\s*\\[\\[\\/LIVE\\]\\]/g",
+        "replaceString": "<div style=\"clear:both;width:100%;max-width:380px;margin:14px auto;box-sizing:border-box;background:radial-gradient(120% 70% at 50% 0%,#5b3b8f,#241638 55%,#130c1f);color:#f4f1ff;border-radius:22px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.55);font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;padding-bottom:10px;\">$1<div style=\"margin:10px 14px 0;padding:8px 14px;border-radius:20px;border:1px solid rgba(255,255,255,.25);color:rgba(255,255,255,.6);font-size:12px;\">Say something… <span style=\"float:right;\">💜 ❤️ 🎁</span></div></div>",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "5079657f-2dfc-4ef6-8dba-643e8b845ac2",
+        "scriptName": "CB · Visuals — collapse old chat/press blocks in prompt (optional)",
+        "findRegex": "/\\[\\[(TWITCH|DISCORD|TABLOID|BLOG|MAG|BLIND|AIM|FLIP|MYSPACE|X|REDDIT|PROGRAM|DATING|BROWSER|INCOGNITO|INSTA|PRIVATE|CREATOR|BUBBLE|LIVE)\\]\\][\\s\\S]*?\\[\\[\\/\\1\\]\\]/g",
+        "replaceString": "[($1 panel shown to the reader)]",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": false,
+        "promptOnly": true,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": 6,
+        "maxDepth": null
+    },
+    {
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null,
+        "id": "ffe6cdbc-0139-462b-a6c3-6848bab8462d",
+        "scriptName": "CB · Console — close",
+        "findRegex": "/\\s*<\\/cb_state>/g",
+        "replaceString": "</div></details>"
+    },
+    {
+        "id": "e9d71a93-9852-4bd5-9579-8561b8a554a0",
+        "scriptName": "CB · Xavi — OOC aside (style, AI output only)",
+        "findRegex": "/\\(\\s*OOC:\\s*([\\s\\S]*?)(?:\\s*[—–-]\\s*X\\.?)?\\s*\\)(?=\\s*(?:\\n|$))/g",
+        "replaceString": "<div style=\"margin:14px 0 6px;padding:10px 14px;border:1px solid #2b2436;border-left:3px solid #c9a6ff;border-radius:0 12px 12px 0;background:linear-gradient(90deg,rgba(201,166,255,.08),transparent);\"><div style=\"font-size:10px;letter-spacing:3px;color:#c9a6ff;text-transform:uppercase;margin-bottom:4px;\">🎧 Xavi · from the wings</div><div style=\"color:#cfc3e6;font-size:13px;font-style:italic;line-height:1.55;\">$1</div><div style=\"text-align:right;color:#c9a6ff;font-size:11px;letter-spacing:2px;margin-top:6px;\">— X</div></div>",
+        "trimStrings": [],
+        "placement": [
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "95adf7c3-7603-4494-b191-2de2dc4b4d97",
+        "scriptName": "CB · Xavi — curtain note (style)",
+        "findRegex": "/<xavi>([\\s\\S]*?)<\\/xavi>/g",
+        "replaceString": "<div style=\"margin:16px 0 4px;padding:10px 14px;border:1px solid #2b2436;border-left:3px solid #c9a6ff;border-radius:0 12px 12px 0;background:linear-gradient(90deg,rgba(201,166,255,.08),transparent);\"><div style=\"font-size:10px;letter-spacing:3px;color:#c9a6ff;text-transform:uppercase;margin-bottom:4px;\">🎧 Xavi · curtain</div><div style=\"color:#cfc3e6;font-size:13px;font-style:italic;line-height:1.55;white-space:pre-wrap;\">$1</div></div>",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "263348b2-77a7-4434-a8ed-275d9a8cad2a",
+        "scriptName": "CB · Xavi — curtain note (hide from prompt)",
+        "findRegex": "/<xavi>[\\s\\S]*?<\\/xavi>/g",
+        "replaceString": "",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": false,
+        "promptOnly": true,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "id": "5ef67c9a-e268-47a1-bc85-de513dacfa37",
+        "scriptName": "CB · Extreme — Pollinations image",
+        "findRegex": "/<cb_img>\\s*prompt:\\s*([^|]+?)\\s*\\|\\s*ar:\\s*([0-9]+):([0-9]+)\\s*<\\/cb_img>/g",
+        "replaceString": "<div style=\"clear:both;margin:12px auto;max-width:75%;\">\n  <img src=\"https://gen.pollinations.ai/image/$1?model=flux&width=1024&height=1024&seed=0&enhance=false&key=sk_tu3mMpFFgO1dU9hKk0hXPpEywJcxyT0g\"\n       alt=\"$1\"\n       loading=\"lazy\"\n       style=\"display:block;width:100%;aspect-ratio:$2 / $3;object-fit:cover;border-radius:14px;border:1px solid #2b2436;box-shadow:0 8px 26px rgba(0,0,0,.5);\">\n</div>",
+        "trimStrings": [],
+        "placement": [
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null
+    },
+    {
+        "trimStrings": [],
+        "placement": [
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null,
+        "id": "b654c7d6-3b51-47f9-a1ae-e4c4a3ba6083",
+        "scriptName": "CB · Colored dialogue — keep each speaker's color over quote styling",
+        "findRegex": "/<span\\s+style\\s*=\\s*([\"\\'])\\s*color\\s*:\\s*([#a-zA-Z0-9(),.%\\s]+?)\\s*;?\\s*\\1\\s*>((?:(?!<\\/?span\\b)[\\s\\S])*?)<\\/span>/gi",
+        "replaceString": "<font color=\"$2\">$3</font>"
+    },
+    {
+        "trimStrings": [],
+        "placement": [
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": false,
+        "promptOnly": true,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": 6,
+        "maxDepth": null,
+        "id": "7dd76705-a42b-4a5f-a48a-36b1aae07738",
+        "scriptName": "CB · Colored dialogue — drop old colors from the prompt",
+        "findRegex": "/<font\\b[^>]*\\bcolor\\s*=\\s*[\"\\']?[^\"\\'\\s>]+[\"\\']?[^>]*>([\\s\\S]*?)<\\/font\\s*>|<span\\s+style\\s*=\\s*([\"\\'])\\s*color\\s*:[^\"\\';]*;?\\s*\\2\\s*>((?:(?!<\\/?span\\b)[\\s\\S])*?)<\\/span>/gi",
+        "replaceString": "$1$3"
+    },
+    {
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null,
+        "id": "ca13105d-406c-43a7-9c69-69cf5714e48b",
+        "scriptName": "CB · Console — stylesheet (keep after every console script)",
+        "findRegex": "/^(?=[\\s\\S]*class=\"cbh)([\\s\\S]*)$/",
+        "replaceString": "$1\n\n<style>.cbh,.cbh-drawer{--cbh-bg:linear-gradient(160deg,#171221,#1e1830);--cbh-bg2:rgba(255,255,255,.035);--cbh-line:#2b2436;--cbh-ink:#e9e2f5;--cbh-dim:#9a8fb0;--cbh-acc:#c9a86a;--cbh-acc2:#c9a6ff;--cbh-meter:linear-gradient(90deg,#ff5d8f,#c9a6ff);--cbh-heat:linear-gradient(90deg,#e8b04a,#ff5d6f);--cbh-font:inherit;color:var(--cbh-ink);font-family:var(--cbh-font);}.cbh{margin:10px 0 14px;border:1px solid var(--cbh-line);border-radius:16px;background:var(--cbh-bg);color:var(--cbh-ink);font-family:var(--cbh-font);box-shadow:0 6px 22px rgba(0,0,0,.35);overflow:hidden;}.cbh summary{list-style:none;cursor:pointer;}.cbh summary::-webkit-details-marker{display:none;}.cbh>summary{display:flex;flex-wrap:wrap;align-items:center;gap:6px 7px;padding:9px 12px;}.cbh-led{width:8px;height:8px;border-radius:50%;background:var(--cbh-acc2);box-shadow:0 0 8px var(--cbh-acc2);}.cbh-title{font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--cbh-acc);margin-right:2px;}.cbh-chip{max-width:100%;padding:2px 9px;border:1px solid var(--cbh-line);border-radius:99px;background:var(--cbh-bg2);font-size:11.5px;line-height:1.5;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}.cbh-chip:empty{display:none;}.cbh-chip-place::before{content:\"📍 \";}.cbh-chip-mood::before{content:\"✦ \";color:var(--cbh-acc);}.cbh-chip-aff::before{content:\"💞 \";}.cbh-chip-num{color:var(--cbh-acc2);font-weight:700;font-variant-numeric:tabular-nums;}.cbh-hint{font-size:10px;color:var(--cbh-dim);}.cbh[open] .cbh-hint{display:none;}.cbh-chev{margin-left:auto;font-size:11px;color:var(--cbh-dim);transition:transform .2s;}.cbh[open]>summary .cbh-chev{transform:rotate(180deg);}.cbh-body{display:flex;flex-direction:column;gap:8px;padding:0 10px 10px;}.cbh-drawer{border:1px solid var(--cbh-line);border-radius:12px;background:var(--cbh-bg2);overflow:hidden;}.cbh-drawer>summary{display:flex;align-items:center;gap:8px;padding:8px 12px;font-size:10.5px;letter-spacing:2.5px;text-transform:uppercase;color:var(--cbh-acc2);}.cbh-drawer>summary::after{content:\"▾\";margin-left:auto;color:var(--cbh-dim);transition:transform .2s;}.cbh-drawer[open]>summary::after{transform:rotate(180deg);}.cbh-dbody{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));align-items:start;gap:8px;padding:2px 12px 12px;}.cbh-tile{padding:7px 10px;border:1px solid var(--cbh-line);border-radius:10px;}.cbh-k{display:block;font-size:9.5px;letter-spacing:2px;text-transform:uppercase;color:var(--cbh-acc);}.cbh-v{font-size:13px;line-height:1.4;}.cbh-meter{grid-column:1/-1;padding:7px 10px;border:1px solid var(--cbh-line);border-radius:10px;}.cbh-mrow{display:flex;justify-content:space-between;align-items:baseline;gap:8px;}.cbh-num{font-size:12px;font-weight:700;color:var(--cbh-acc2);font-variant-numeric:tabular-nums;}.cbh-track{display:block;flex:1;height:7px;margin:4px 0;border-radius:99px;background:rgba(127,127,127,.22);overflow:hidden;}.cbh-track>i{display:block;height:100%;border-radius:99px;background:var(--cbh-meter);}.cbh-heat>i{background:var(--cbh-heat);}.cbh-why{font-size:11px;font-style:italic;color:var(--cbh-dim);}.cbh-why:empty{display:none;}.cbh-pips{display:flex;gap:3px;margin:5px 0 3px;}.cbh-pips>i{flex:1;height:5px;border-radius:3px;background:rgba(127,127,127,.22);}.cbh-lv-1>i:nth-child(-n+1){background:var(--cbh-heat);}.cbh-lv-2>i:nth-child(-n+2){background:var(--cbh-heat);}.cbh-lv-3>i:nth-child(-n+3){background:var(--cbh-heat);}.cbh-lv-4>i:nth-child(-n+4){background:var(--cbh-heat);}.cbh-lv-5>i:nth-child(-n+5){background:var(--cbh-heat);}.cbh-card{border:1px solid var(--cbh-line);border-radius:10px;background:var(--cbh-bg2);transition:border-color .2s;}.cbh-card[open]{border-color:var(--cbh-acc2);}.cbh-card>summary{display:flex;flex-direction:column;gap:4px;padding:7px 10px;}.cbh-name{font-size:13px;font-weight:700;line-height:1.3;}.cbh-sub{font-size:11px;color:var(--cbh-dim);}.cbh-line{display:flex;flex-wrap:wrap;align-items:center;gap:6px 7px;}.cbh-line .cbh-track{flex:1 1 64px;min-width:64px;margin:0;}.cbh-tag{display:inline-block;padding:1px 7px;border:1px solid var(--cbh-line);border-radius:99px;font-size:10.5px;color:var(--cbh-dim);white-space:nowrap;}.cbh-more{padding:0 10px 9px;font-size:12px;line-height:1.45;}.cbh-more .cbh-k{display:inline;margin-right:6px;}.cbh-hp-hale,.cbh-hp-Hale{color:#7fd38a;border-color:#7fd38a;}.cbh-hp-hurt,.cbh-hp-Hurt{color:#e8b04a;border-color:#e8b04a;}.cbh-hp-grave,.cbh-hp-Grave{color:#ff6f7d;border-color:#ff6f7d;}.cbh-en-high,.cbh-en-High{color:#7fd38a;}.cbh-en-low,.cbh-en-spent,.cbh-en-Low,.cbh-en-Spent{color:#ff9f8a;}.cbh-kind-weapon .cbh-name::before,.cbh-kind-Weapon .cbh-name::before{content:\"🗡️ \";}.cbh-kind-tool .cbh-name::before,.cbh-kind-Tool .cbh-name::before{content:\"🔧 \";}.cbh-kind-coin .cbh-name::before,.cbh-kind-Coin .cbh-name::before{content:\"🪙 \";}.cbh-kind-keepsake .cbh-name::before,.cbh-kind-Keepsake .cbh-name::before{content:\"💠 \";}.cbh-kind-quest .cbh-name::before,.cbh-kind-Quest .cbh-name::before{content:\"📜 \";}.cbh-cat-lore .cbh-name::before,.cbh-cat-Lore .cbh-name::before{content:\"📖 \";}.cbh-cat-faction .cbh-name::before,.cbh-cat-Faction .cbh-name::before{content:\"🏛️ \";}.cbh-cat-rule .cbh-name::before,.cbh-cat-Rule .cbh-name::before{content:\"⚖️ \";}.cbh-cat-clue .cbh-name::before,.cbh-cat-Clue .cbh-name::before{content:\"🔎 \";}.cbh-cat-mystery .cbh-name::before,.cbh-cat-Mystery .cbh-name::before{content:\"❓ \";}.cbh-odd{grid-column:1/-1;padding:5px 2px;border-bottom:1px dashed var(--cbh-line);font-size:11.5px;color:var(--cbh-dim);}@media (max-width:480px){.cbh-dbody{grid-template-columns:1fr 1fr;}}</style>"
+    },
+    {
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null,
+        "id": "e3760cdc-147c-4a02-bd43-c8d3b0d236b2",
+        "scriptName": "CB LAB · Hidden layers — subtext",
+        "findRegex": "/<(?:subtext)\\b[^>]*?\\b(?:thought|text|note)\\s*=\\s*([\"\\'])([\\s\\S]*?)\\1[^>]*>([\\s\\S]*?)<\\/(?:subtext)\\s*>/gi",
+        "replaceString": "<span tabindex=\"0\" class=\"cbx-pop cbx-sub\"><span class=\"cbx-trig\">$3</span><span class=\"cbx-card\"><span class=\"cbx-badge\">☁ Unspoken</span>$2</span></span>"
+    },
+    {
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null,
+        "id": "82107adc-da7a-4722-8656-b5bd46961074",
+        "scriptName": "CB LAB · Hidden layers — tell",
+        "findRegex": "/<(?:tell)\\b[^>]*?\\b(?:note|tell)\\s*=\\s*([\"\\'])([\\s\\S]*?)\\1[^>]*>([\\s\\S]*?)<\\/(?:tell)\\s*>/gi",
+        "replaceString": "<span tabindex=\"0\" class=\"cbx-pop cbx-tell\"><span class=\"cbx-trig\">$3</span><span class=\"cbx-card\"><span class=\"cbx-badge\">✋ Tell</span>$2</span></span>"
+    },
+    {
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null,
+        "id": "3fb22a2a-6d98-4c60-836c-d3376ed744b3",
+        "scriptName": "CB LAB · Hidden layers — lore",
+        "findRegex": "/<(?:lore|codex)\\b[^>]*?\\b(?:entry|lore|desc)\\s*=\\s*([\"\\'])([\\s\\S]*?)\\1[^>]*>([\\s\\S]*?)<\\/(?:lore|codex)\\s*>/gi",
+        "replaceString": "<span tabindex=\"0\" class=\"cbx-pop cbx-lore\"><span class=\"cbx-trig\">$3</span><span class=\"cbx-card\"><span class=\"cbx-badge\">📜 Lore</span>$2</span></span>"
+    },
+    {
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null,
+        "id": "dd2b490f-f8bc-4c9a-8cc7-d18613c7bbe6",
+        "scriptName": "CB LAB · Hidden layers — translate",
+        "findRegex": "/<(?:translate|cipher)\\b[^>]*?\\b(?:meaning|trans|text)\\s*=\\s*([\"\\'])([\\s\\S]*?)\\1[^>]*>([\\s\\S]*?)<\\/(?:translate|cipher)\\s*>/gi",
+        "replaceString": "<span tabindex=\"0\" class=\"cbx-pop cbx-trans\"><span class=\"cbx-trig\">$3</span><span class=\"cbx-card\"><span class=\"cbx-badge\">🗣 Meaning</span>$2</span></span>"
+    },
+    {
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null,
+        "id": "ab1c98be-fb76-42e8-ad41-a1011e155a1f",
+        "scriptName": "CB LAB · Hidden layers — retract",
+        "findRegex": "/<(retract|swallow)\\s*>([\\s\\S]*?)<\\/\\1\\s*>/gi",
+        "replaceString": "<span tabindex=\"0\" class=\"cbx-retract\">$2</span>"
+    },
+    {
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null,
+        "id": "772e28a7-0ff0-4555-9068-91a27afdf667",
+        "scriptName": "CB LAB · Kinetic type",
+        "findRegex": "/<(heavy|stretch|tilt|crush|fracture|echo|shake|glitch|pulse|thump|ember|breathe|drift|float)\\s*>([\\s\\S]*?)<\\/\\1\\s*>/gi",
+        "replaceString": "<span class=\"cbx-k cbx-$1\">$2</span>"
+    },
+    {
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null,
+        "id": "a1e1a1f1-6d97-46a1-a3ce-fed6781ea3f9",
+        "scriptName": "CB LAB · Kinetic type (nested)",
+        "findRegex": "/<(heavy|stretch|tilt|crush|fracture|echo|shake|glitch|pulse|thump|ember|breathe|drift|float)\\s*>([\\s\\S]*?)<\\/\\1\\s*>/gi",
+        "replaceString": "<span class=\"cbx-k cbx-$1\">$2</span>"
+    },
+    {
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null,
+        "id": "9271c88e-0c94-4d4e-8654-29a883b551a8",
+        "scriptName": "CB LAB · Push notification",
+        "findRegex": "/<notification(?:\\s+app\\s*=\\s*\"([^\"]*)\")?(?:\\s+from\\s*=\\s*\"([^\"]*)\")?(?:\\s+time\\s*=\\s*\"([^\"]*)\")?\\s*>([\\s\\S]*?)<\\/notification\\s*>/gi",
+        "replaceString": "<div style=\"margin:10px auto;max-width:360px;padding:9px 12px;border-radius:14px;background:rgba(24,18,30,.95);border:1px solid rgba(201,166,255,.28);box-shadow:0 6px 18px rgba(0,0,0,.35);color:#efe6d8;font-family:ui-sans-serif,system-ui,sans-serif;\"><div style=\"display:flex;align-items:center;gap:6px;font-size:.72em;letter-spacing:.06em;text-transform:uppercase;opacity:.75;\"><span style=\"font-size:1.2em;\">📳</span><b style=\"font-weight:700;\">$1</b><span style=\"margin-left:auto;text-transform:none;letter-spacing:0;\">$3</span></div><div style=\"margin-top:3px;font-size:.92em;font-weight:700;\">$2</div><div style=\"margin-top:1px;font-size:.9em;line-height:1.4;opacity:.9;\">$4</div></div>"
+    },
+    {
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null,
+        "id": "10038683-3dc0-4cb2-bb57-9bc7e25f6d84",
+        "scriptName": "CB LAB · Chance dice slip",
+        "findRegex": "/^DICE(?:&gt;|>)[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*([^\\n]*?)[ \\t]*\\|?[ \\t]*$/gmi",
+        "replaceString": "<div style=\"margin:10px 0 8px;padding:6px 12px;border:1px solid #23362a;border-left:3px solid #9ce07a;border-radius:0 10px 10px 0;background:linear-gradient(90deg,rgba(156,224,122,.10),transparent);font-size:12.5px;color:#dcead5;display:flex;align-items:center;gap:8px;flex-wrap:wrap;\"><span style=\"font-size:9.5px;letter-spacing:3px;font-weight:700;color:#9ce07a;\">🎲 CHANCE</span><span style=\"font-family:ui-monospace,monospace;padding:1px 6px;border:1px solid #3a5a44;border-radius:5px;\">$1</span><span style=\"font-family:ui-monospace,monospace;padding:1px 6px;border:1px solid #3a5a44;border-radius:5px;\">$2</span><span style=\"opacity:.8;\">$3 · <b style=\"color:#c9f0b4;\">$4</b></span><span style=\"opacity:.85;font-style:italic;\">— $5</span></div>"
+    },
+    {
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null,
+        "id": "256b75d1-0bbe-4efc-a3e4-8a029e6126bb",
+        "scriptName": "CB LAB · New face — name",
+        "findRegex": "/^NF(?:&gt;|>)[ \\t]*name[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*(?:\\|[ \\t]*([^|\\n]*?))?[ \\t]*\\|?[ \\t]*$/gmi",
+        "replaceString": "<div style=\"padding:2px 14px 9px;\"><span style=\"font-size:17px;font-weight:700;color:#f3ecff;\">$1</span> <span style=\"font-size:12px;color:#a99cbd;\">$2</span></div><!--cbnf-->"
+    },
+    {
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null,
+        "id": "d8300971-8dfe-41b8-8175-fd2cbe47c129",
+        "scriptName": "CB LAB · New face — look",
+        "findRegex": "/^NF(?:&gt;|>)[ \\t]*look[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*(?:\\|[ \\t]*([^|\\n]*?))?[ \\t]*\\|?[ \\t]*$/gmi",
+        "replaceString": "<div style=\"display:flex;gap:10px;padding:7px 14px;border-top:1px solid #2b2436;font-size:12.5px;line-height:1.45;color:#ddd3ea;\"><span style=\"flex:0 0 74px;font-size:9.5px;letter-spacing:2px;text-transform:uppercase;color:#9ce07a;padding-top:2px;\">Look</span><span style=\"flex:1;\">$1<br><span style=\"color:#9ce07a;\">✦ $2</span></span></div><!--cbnf-->"
+    },
+    {
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null,
+        "id": "d4feb2b0-6e05-4d98-980a-9cb06df5f2fd",
+        "scriptName": "CB LAB · New face — wants",
+        "findRegex": "/^NF(?:&gt;|>)[ \\t]*wants[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*(?:\\|[ \\t]*([^|\\n]*?))?[ \\t]*\\|?[ \\t]*$/gmi",
+        "replaceString": "<div style=\"display:flex;gap:10px;padding:7px 14px;border-top:1px solid #2b2436;font-size:12.5px;line-height:1.45;color:#ddd3ea;\"><span style=\"flex:0 0 74px;font-size:9.5px;letter-spacing:2px;text-transform:uppercase;color:#9ce07a;padding-top:2px;\">Wants</span><span style=\"flex:1;\"><i>Hobbies:</i> $1<br><i>Goal:</i> $2<br><i>Dream:</i> $3</span></div><!--cbnf-->"
+    },
+    {
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null,
+        "id": "ba7239b3-93dc-403d-92e4-74ce602b9785",
+        "scriptName": "CB LAB · New face — contradiction",
+        "findRegex": "/^NF(?:&gt;|>)[ \\t]*contradiction[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*(?:\\|[ \\t]*([^|\\n]*?))?[ \\t]*\\|?[ \\t]*$/gmi",
+        "replaceString": "<div style=\"display:flex;gap:10px;padding:7px 14px;border-top:1px solid #2b2436;font-size:12.5px;line-height:1.45;color:#ddd3ea;\"><span style=\"flex:0 0 74px;font-size:9.5px;letter-spacing:2px;text-transform:uppercase;color:#9ce07a;padding-top:2px;\">Says / does</span><span style=\"flex:1;\"><i>Claims:</i> $1<br><i>But:</i> $2</span></div><!--cbnf-->"
+    },
+    {
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null,
+        "id": "9936f249-f229-4338-8a83-ac6087de0f88",
+        "scriptName": "CB LAB · New face — other rows",
+        "findRegex": "/^NF(?:&gt;|>)[ \\t]*(stake|ties|voice|[a-z]+)[ \\t]*\\|[ \\t]*([^\\n]+?)[ \\t]*\\|?[ \\t]*$/gmi",
+        "replaceString": "<div style=\"display:flex;gap:10px;padding:7px 14px;border-top:1px solid #2b2436;font-size:12.5px;line-height:1.45;color:#ddd3ea;\"><span style=\"flex:0 0 74px;font-size:9.5px;letter-spacing:2px;text-transform:uppercase;color:#9ce07a;padding-top:2px;\">$1</span><span style=\"flex:1;\">$2</span></div><!--cbnf-->"
+    },
+    {
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null,
+        "id": "3637f72d-6c9b-4856-ab17-2e7c130e9225",
+        "scriptName": "CB LAB · New face — join rows",
+        "findRegex": "/<!--cbnf-->\\s*/g",
+        "replaceString": ""
+    },
+    {
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null,
+        "id": "24438ec1-0d3d-439f-bfa9-62f71907af9b",
+        "scriptName": "CB LAB · New face — card",
+        "findRegex": "/\\[\\[NEWFACE\\]\\]\\s*([\\s\\S]*?)\\s*\\[\\[\\/NEWFACE\\]\\]/g",
+        "replaceString": "<div style=\"margin:10px 0 12px;border:1px solid #2b2436;border-left:3px solid #9ce07a;border-radius:14px;overflow:hidden;background:linear-gradient(160deg,#171221,#1b2019);box-shadow:0 6px 22px rgba(0,0,0,.4);\"><div style=\"padding:8px 14px 2px;font-size:9.5px;letter-spacing:3px;font-weight:700;color:#9ce07a;\">🆕 NEW FACE</div>$1</div>"
+    },
+    {
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null,
+        "id": "1d28ba6f-089b-4c55-89f3-0e7d997cc1a7",
+        "scriptName": "CB LAB · Effects stylesheet (keep last of the LAB effects)",
+        "findRegex": "/^(?=[\\s\\S]*class=\"cbx-)([\\s\\S]*)$/",
+        "replaceString": "$1\n\n<style>.cbx-pop{position:relative;cursor:pointer;outline:none;-webkit-tap-highlight-color:transparent;}.cbx-trig{border-bottom:1.5px dotted var(--cbx-acc);padding-bottom:1px;}.cbx-pop:is(:hover,:focus,:focus-within)>.cbx-trig{color:var(--cbx-acc);}.cbx-card{display:none;}.cbx-pop:is(:hover,:focus,:focus-within)>.cbx-card{display:block;margin:6px 0 8px;padding:8px 12px;border-left:3px solid var(--cbx-acc);border-radius:8px;background:rgba(22,15,28,.94);color:#efe6d8;font-size:.9em;font-style:italic;font-weight:400;line-height:1.45;text-align:left;white-space:normal;box-shadow:0 4px 14px rgba(0,0,0,.35);}.cbx-badge{display:block;margin-bottom:2px;font-style:normal;font-size:.72em;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--cbx-acc);}.cbx-sub{--cbx-acc:#c9a6ff;}.cbx-tell{--cbx-acc:#ff9f8a;}.cbx-lore{--cbx-acc:#e0b46c;}.cbx-trans{--cbx-acc:#8fb4ff;}.cbx-retract{cursor:pointer;outline:none;font-style:italic;filter:blur(3.5px);opacity:.8;border-bottom:1.5px dotted #c9a6ff;transition:filter .4s,opacity .4s;}.cbx-retract:is(:hover,:focus){filter:none;opacity:1;}.cbx-k{display:inline-block;}.cbx-heavy{font-weight:900;font-size:1.15em;letter-spacing:.03em;}.cbx-stretch{display:inline;letter-spacing:.28em;font-weight:300;opacity:.85;}.cbx-tilt{transform:rotate(-3.5deg);font-style:italic;margin:0 2px;}.cbx-crush{font-weight:800;letter-spacing:-.05em;transform:scaleX(.9);}.cbx-fracture{transform:skew(-6deg);letter-spacing:.12em;font-weight:700;}.cbx-echo{display:inline;opacity:.6;letter-spacing:.1em;text-shadow:0 0 6px currentColor;}.cbx-shake{animation:cbx-shake .35s linear infinite;}.cbx-glitch{animation:cbx-glitch 1.2s steps(2) infinite;}.cbx-pulse,.cbx-thump{animation:cbx-pulse 1.4s ease-in-out infinite;}.cbx-ember,.cbx-breathe{animation:cbx-ember 2.6s ease-in-out infinite;}.cbx-drift,.cbx-float{opacity:.85;animation:cbx-drift 3.5s ease-in-out infinite;}@keyframes cbx-shake{0%,100%{transform:translate(0,0)}25%{transform:translate(-1.2px,.8px) rotate(-.6deg)}50%{transform:translate(1.2px,-.8px)}75%{transform:translate(-.8px,-.6px) rotate(.6deg)}}@keyframes cbx-glitch{0%,100%{text-shadow:1.5px 0 rgba(255,95,109,.8),-1.5px 0 rgba(111,208,255,.8);transform:skew(0)}50%{text-shadow:-2px 0 rgba(255,95,109,.9),2px 0 rgba(111,208,255,.9);transform:skew(-3deg) translateX(-1px)}}@keyframes cbx-pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.08)}}@keyframes cbx-ember{0%,100%{text-shadow:0 0 4px rgba(255,140,60,.35)}50%{text-shadow:0 0 10px rgba(255,140,60,.9),0 0 18px rgba(255,90,40,.5)}}@keyframes cbx-drift{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}@media (prefers-reduced-motion:reduce){.cbx-k{animation:none!important}}</style>"
+    },
+    {
+        "trimStrings": [],
+        "placement": [
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": false,
+        "promptOnly": true,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": 4,
+        "maxDepth": null,
+        "id": "29190905-b186-451e-9c56-e0143952adaa",
+        "scriptName": "CB LAB · Context saver — old tracker & board cards",
+        "findRegex": "/<cb_state>[\\s\\S]*?<\\/cb_state>/g",
+        "replaceString": ""
+    },
+    {
+        "trimStrings": [],
+        "placement": [
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": false,
+        "promptOnly": true,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": 2,
+        "maxDepth": null,
+        "id": "d84d8b83-e738-42ba-84c9-cca837a16ec2",
+        "scriptName": "CB LAB · Context saver — old cue legends",
+        "findRegex": "/^([ \\t]*CUE>[^|\\n]*\\|[^|\\n]*\\|[^|\\n]*\\|)[^\\n]+$/gm",
+        "replaceString": "$1"
+    },
+    {
+        "trimStrings": [],
+        "placement": [
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": false,
+        "promptOnly": true,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": 3,
+        "maxDepth": null,
+        "id": "f9b864e7-3861-4163-a9de-91b1bc910960",
+        "scriptName": "CB LAB · Context saver — old HTML styles",
+        "findRegex": "/<style\\b[^>]*>[\\s\\S]*?<\\/style>/gi",
+        "replaceString": ""
+    },
+    {
+        "trimStrings": [],
+        "placement": [
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": false,
+        "promptOnly": true,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": 2,
+        "maxDepth": null,
+        "id": "99f5a7ee-fe58-4e6d-8709-f24405d0e552",
+        "scriptName": "CB LAB · Context saver — old dice slips",
+        "findRegex": "/^[ \\t]*DICE(?:&gt;|>)[^\\n]*\\n?/gm",
+        "replaceString": ""
+    }
+]
