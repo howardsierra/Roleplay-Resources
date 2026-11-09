@@ -8,7 +8,7 @@ Every preset ships with regex scripts that turn short tags into styled panels. H
 - [🥀 The Velvet Vigil](#vigil) (8)
 - [💌 LOVESICK](#lovesick) (12)
 - [📋 CALLBOARD](#callboard) (180)
-- [🧪 CALLBOARD Lab](#callboard-lab) (210)
+- [🧪 CALLBOARD Lab](#callboard-lab) (237)
 
 <a id="rosie"></a>
 ## 🌹 Rosie Full Bloom v2.7
@@ -600,9 +600,9 @@ For 🎨 Colored Dialogue: each speaker gets one color for the whole chat.
   `<cb_img>prompt: … | ar: 16:9</cb_img>`
 
 <a id="callboard-lab"></a>
-## 🧪 CALLBOARD Lab v0.9.1
+## 🧪 CALLBOARD Lab v0.11
 
-The Lab is CALLBOARD Full plus experiments. Its tracker and boards are drawn as one Board Console, and it adds on-screen effects, New Faces cards, Chance Dice, and context savers. Everything else works exactly like CALLBOARD, below. Bundle: [`CALLBOARD_Lab_regex_bundle.json`](CALLBOARD_Lab_regex_bundle.json).
+The Lab is CALLBOARD Full plus experiments. Its tracker and boards are drawn as one Board Console, Xavi's notes and the Program become drawers in the same look, and it adds on-screen effects, scene headers, letters and terminals, the Thought Cabinet, New Faces cards, Chance Dice, and context savers. Everything else works exactly like CALLBOARD, below. Bundle: [`CALLBOARD_Lab_regex_bundle.json`](CALLBOARD_Lab_regex_bundle.json).
 
 ### Board Console
 
@@ -651,8 +651,73 @@ The Lab draws the tracker and boards as one console. The model still writes the 
 - **CB · Console — Board row — Codex**: A codex card with an icon for its kind (quest, mystery, faction…). Tap it for the note. _(Also runs on your messages)_
   `X> entry|type|note`
 - **CB · Console — Board row — catch-all (malformed lines)**: Shows board lines with the wrong number of fields as plain text. _(Also runs on your messages)_
+- **CB · Console — Board shell — Heart check**: The 🫀 Heart check drawer, for the Heart Check switch. _(Also runs on your messages)_
+  `[[HEART]] … [[/HEART]]`
+- **CB · Console — Board row — Heart check**: A strained character's 🎭 ego, ⚡ nerve, 🫀 body, and 🌙 psyche. _(Also runs on your messages)_
+  `HT> name|ego|nerve|body|psyche`
+- **CB · Console — Board shell — Wardrobe**: The 🧥 Wardrobe drawer, for the Wardrobe switch. _(Also runs on your messages)_
+  `[[WARDROBE]] … [[/WARDROBE]]`
+- **CB · Console — Board row — Wardrobe**: What someone is wearing and what state it's in, so clothes don't vanish or change on their own. _(Also runs on your messages)_
+  `WR> name|outfit|condition`
+- **CB · Console — Board shell — Xavi's notebook**: The 📓 Xavi's notebook drawer: his private continuity. _(Also runs on your messages)_
+  `[[NOTES]] … [[/NOTES]]`
+- **CB · Console — Board row — Xavi's notebook**: One of Xavi's open 🧵 threads, 🌱 seeds, 🗝️ motives, or ⏳ horizons. _(Also runs on your messages)_
+  `NB> thread|… · NB> seed|… · NB> motive|… · NB> horizon|…`
+- **CB · Console — Board row — catch-all for Lab boards (malformed lines)**: Shows Heart check, Wardrobe, or notebook lines with the wrong number of fields as plain text. _(Also runs on your messages)_
 - **CB · Console — join rows and drawers**: Removes the gaps between the console's rows and drawers. _(Also runs on your messages)_
 - **CB · Console — stylesheet (keep after every console script)**: Adds the console's look, in the skin you pick in CALLBOARD Suite (Console, Minimal, Parchment, Neon, or Auto by wing). Keep it after every other console script. _(Also runs on your messages)_
+
+### Xavi's drawers
+
+Xavi's own pieces in the console's look; they change with the skin too. The model writes exactly what it did before.
+
+- **CB · Callboard — style think foldout**: Xavi's plan as a 🎧 "Xavi at the board" drawer, folded. Tap to read. _(Also runs on your messages)_
+  `<think>…</think>`
+- **CB · Xavi — OOC aside (style, AI output only)**: Xavi's aside as a 🎧 "from the wings" drawer, left open so you don't miss a question.
+  `(OOC: aside — X)`
+- **CB · Cue — standby slip (with legend)**: A ● STANDBY drawer with the cue and its reason. Tap it for what it means. _(Also runs on your messages)_
+  `CUE> icon|what's coming|why now|what it means`
+- **CB · Cue — standby slip**: A ● STANDBY slip with nothing to open. _(Also runs on your messages)_
+  `CUE> icon|what's coming|why now|`
+- **CB · Cue — catch-all (malformed lines)**: Shows cue lines with the wrong number of fields as a plain STANDBY line. _(Also runs on your messages)_
+- **CB · Xavi — curtain note (style) — newest reply**: Xavi's 🎧 curtain drawer, open on the newest reply. _(Also runs on your messages)_
+  `<xavi>note</xavi>`
+- **CB · Xavi — curtain note (style) — older replies, folded**: The curtain drawer on older replies, folded. With CALLBOARD Suite installed, the previous one folds as soon as you send. _(Also runs on your messages)_
+- **CB · Shell — The Program — newest reply**: 🎟️ The Program as a drawer with the paper program inside, open on the newest reply. _(Also runs on your messages)_
+  `[[PROGRAM]] … [[/PROGRAM]]`
+- **CB · Shell — The Program — older replies, folded**: The Program on older replies, folded. _(Also runs on your messages)_
+- **CB LAB · Your OOC note**: Your own OOC note, shown as a 🎬 "Note to Xavi" card. _(Also runs on your messages)_
+  `(OOC: note) in your message`
+
+### More from Sola
+
+New in v0.11, adapted from Sola V4 Flame. Each switch is off to start.
+
+- **CB LAB · Scene header — sky chosen by the model**: A sky banner when a scene opens, with the time, the place in capitals, and a line of atmosphere. Here the model picks the sky. _(Also runs on your messages)_
+  `<scene_header location="…" time="…" atmosphere="…" sky="dusk" />`
+- **CB LAB · Scene header — noir (rain, storm, fog)**: A noir sky with falling rain. _(Also runs on your messages)_
+  `atmosphere with rain, storm, or fog`
+- **CB LAB · Scene header — night by the clock**: A night sky with stars and a crescent moon, from the time. _(Also runs on your messages)_
+- **CB LAB · Scene header — dusk by the clock**: A dusk sky, from the time. _(Also runs on your messages)_
+- **CB LAB · Scene header — dawn by the clock**: A dawn sky, from the time. _(Also runs on your messages)_
+- **CB LAB · Scene header — midday by the clock**: A daytime sky for noon and the afternoon. _(Also runs on your messages)_
+- **CB LAB · Scene header — morning by the clock**: A daytime sky for the morning. _(Also runs on your messages)_
+- **CB LAB · Scene header — day (fallback)**: A daytime sky when the time doesn't say. _(Also runs on your messages)_
+- **CB LAB · Voice tone**: Soft and italic, heavy and sharp, quivering, or deliberate words. Works inside Colored Dialogue, so each speaker keeps their color. _(Also runs on your messages)_
+  `<whisper>, <bite>, <tremble>, <steady>`
+- **CB LAB · Gradient line**: A line that glows in a two-color gradient, for confessions, oaths, and closing images. _(Also runs on your messages)_
+  `<dusk>, <solstice>, <eclipse>, <wildwood>, <hearth>, <mistveil>`
+- **CB LAB · Letter (sealed)**: A letter sealed with red wax. Tap to break the seal and read it on lined paper. _(Also runs on your messages)_
+  `<letter from="…">text</letter>`
+- **CB LAB · Terminal**: A glowing terminal screen with a blinking cursor. _(Also runs on your messages)_
+  `<terminal title="…">text</terminal>`
+- **CB LAB · Thought Cabinet — drawer**: Xavi pulls one character backstage for five quick questions, shown as a folded 💭 drawer. Nobody in the story knows it happened.
+  `<cabinet char="Name"> … </cabinet>`
+- **CB LAB · Thought Cabinet — question**: One question and the character's answer.
+  `Q> question|answer`
+- **CB LAB · Thought Cabinet — unspoken**: The last answer: what they'd say if nobody could hear.
+  `QU> question|answer`
+- **CB LAB · Thought Cabinet — join rows**: Removes the gaps between the cabinet's rows.
 
 ### On-screen effects
 
@@ -701,6 +766,7 @@ On by default. They shrink what's sent to the model without changing your chat. 
 - **CB LAB · Context saver — old cue legends**: Older cue lines keep their name and reason but drop the long legend. _(Only changes what the model sees)_
 - **CB LAB · Context saver — old HTML styles**: Leaves <style> blocks three or more messages old out of the prompt. The artifacts' text stays. _(Only changes what the model sees)_
 - **CB LAB · Context saver — old dice slips**: Leaves older 🎲 slips out of the prompt. The newest stays. _(Only changes what the model sees)_
+- **CB LAB · Context saver — old Thought Cabinets**: Leaves Thought Cabinets three or more messages old out of the prompt. _(Only changes what the model sees)_
 
 ### Dividers
 
@@ -723,13 +789,6 @@ These also work in your own messages.
 
 New in v1.4: Xavi tells you what's about to appear, and what's lit tonight.
 
-- **CB · Cue — standby slip (with legend)**: A gold ● STANDBY slip above whatever's about to appear, with a "What it means" legend. Xavi includes the legend the first time each kind of element shows up. _(Also runs on your messages)_
-  `CUE> icon|what's coming|why now|what it means`
-- **CB · Cue — standby slip**: The same STANDBY slip without the legend, for elements you've already seen. _(Also runs on your messages)_
-  `CUE> icon|what's coming|why now|`
-- **CB · Cue — catch-all (malformed lines)**: Catches cue lines with the wrong number of fields and shows them as a plain STANDBY line. _(Also runs on your messages)_
-- **CB · Shell — The Program**: The theatre-program card listing everything that's lit. It appears on the first reply of a chat, and whenever you send [PROGRAM]. _(Also runs on your messages)_
-  `[[PROGRAM]] … [[/PROGRAM]]`
 - **CB · Program row — title**: The program's title: tonight's production in a phrase. _(Also runs on your messages)_
   `PG> title|tonight's production`
 - **CB · Program row — cast line**: The line under the title: the setting wing, mode, and Xavi's patter and mood. _(Also runs on your messages)_
@@ -744,17 +803,11 @@ New in v1.4: Xavi tells you what's about to appear, and what's lit tonight.
 
 Your stage manager's notes and asides.
 
-- **CB · Callboard — style think foldout**: Shows Xavi's reasoning as a 🎧 "Xavi at the board" fold-out. _(Also runs on your messages)_
-  `<think>…</think>`
 - **CB · Callboard — hide think from prompt**: Leaves Xavi's <think> notes out of what's sent back to the model on later turns, to save tokens. What you see doesn't change. _(Only changes what the model sees · Also runs on your messages)_
 - **CB · Callboard — think foldout (missing opener)**: Some models close their reasoning with </think> but never open it. This folds that reasoning into Xavi's fold-out anyway.
   `…</think>`
 - **CB · Callboard — hide think from prompt (missing opener)**: Keeps that unopened reasoning out of what's sent back to the model on later turns. _(Only changes what the model sees)_
-- **CB · Xavi — curtain note (style)**: Xavi's curtain note: a 🎧 card under the reply. _(Also runs on your messages)_
-  `<xavi>note</xavi>`
 - **CB · Xavi — curtain note (hide from prompt)**: Leaves Xavi's curtain notes out of what's sent back to the model, so they cost no tokens later. _(Only changes what the model sees · Also runs on your messages)_
-- **CB · Xavi — OOC aside (style, AI output only)**: Styles Xavi's (OOC: …) asides as a "from the wings" note signed — X. It only touches the AI's replies, so your own OOC stays plain.
-  `(OOC: aside)`
 
 ### Tracker and boards
 

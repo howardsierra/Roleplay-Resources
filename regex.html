@@ -110,7 +110,7 @@
     <a href="#vigil">🥀 The Velvet Vigil <span style="opacity:.6">8</span></a>
     <a href="#lovesick">💌 LOVESICK <span style="opacity:.6">12</span></a>
     <a href="#callboard">📋 CALLBOARD <span style="opacity:.6">180</span></a>
-    <a href="#callboard-lab">🧪 CALLBOARD Lab <span style="opacity:.6">210</span></a>
+    <a href="#callboard-lab">🧪 CALLBOARD Lab <span style="opacity:.6">237</span></a>
     <input type="search" id="find" placeholder="Search regexes…" aria-label="Search regexes">
   </div>
 </nav>
@@ -513,8 +513,8 @@
     </div>
   </section>
   <section class="preset" id="callboard-lab">
-    <h2>🧪 CALLBOARD Lab<small>v0.9.1 · 210 scripts</small></h2>
-    <p class="intro">The Lab is CALLBOARD Full plus experiments. Its tracker and boards are drawn as one Board Console, and it adds on-screen effects, New Faces cards, Chance Dice, and context savers. Everything else works exactly like CALLBOARD, below. <a href="regex/CALLBOARD_Lab_regex_bundle.json" download>Download the bundle</a>.</p>
+    <h2>🧪 CALLBOARD Lab<small>v0.11 · 237 scripts</small></h2>
+    <p class="intro">The Lab is CALLBOARD Full plus experiments. Its tracker and boards are drawn as one Board Console, Xavi's notes and the Program become drawers in the same look, and it adds on-screen effects, scene headers, letters and terminals, the Thought Cabinet, New Faces cards, Chance Dice, and context savers. Everything else works exactly like CALLBOARD, below. <a href="regex/CALLBOARD_Lab_regex_bundle.json" download>Download the bundle</a>.</p>
     <div class="grp">
     <h3 class="group">Board Console</h3>
     <p class="group-intro">The Lab draws the tracker and boards as one console. The model still writes the same T&gt;, C&gt;, W&gt;, S&gt;, I&gt; and X&gt; lines inside &lt;cb_state&gt;.</p>
@@ -542,8 +542,53 @@
       <li><div class="name">CB · Console — Board row — Inventory</div><p class="blurb">An item card with an icon for its kind. Tap it for the note.</p><code>I&gt; item|type|note</code><div class="badges"><span>Also runs on your messages</span></div></li>
       <li><div class="name">CB · Console — Board row — Codex</div><p class="blurb">A codex card with an icon for its kind (quest, mystery, faction…). Tap it for the note.</p><code>X&gt; entry|type|note</code><div class="badges"><span>Also runs on your messages</span></div></li>
       <li><div class="name">CB · Console — Board row — catch-all (malformed lines)</div><p class="blurb">Shows board lines with the wrong number of fields as plain text.</p><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Console — Board shell — Heart check</div><p class="blurb">The 🫀 Heart check drawer, for the Heart Check switch.</p><code>[[HEART]] … [[/HEART]]</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Console — Board row — Heart check</div><p class="blurb">A strained character's 🎭 ego, ⚡ nerve, 🫀 body, and 🌙 psyche.</p><code>HT&gt; name|ego|nerve|body|psyche</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Console — Board shell — Wardrobe</div><p class="blurb">The 🧥 Wardrobe drawer, for the Wardrobe switch.</p><code>[[WARDROBE]] … [[/WARDROBE]]</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Console — Board row — Wardrobe</div><p class="blurb">What someone is wearing and what state it's in, so clothes don't vanish or change on their own.</p><code>WR&gt; name|outfit|condition</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Console — Board shell — Xavi's notebook</div><p class="blurb">The 📓 Xavi's notebook drawer: his private continuity.</p><code>[[NOTES]] … [[/NOTES]]</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Console — Board row — Xavi's notebook</div><p class="blurb">One of Xavi's open 🧵 threads, 🌱 seeds, 🗝️ motives, or ⏳ horizons.</p><code>NB&gt; thread|… · NB&gt; seed|… · NB&gt; motive|… · NB&gt; horizon|…</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Console — Board row — catch-all for Lab boards (malformed lines)</div><p class="blurb">Shows Heart check, Wardrobe, or notebook lines with the wrong number of fields as plain text.</p><div class="badges"><span>Also runs on your messages</span></div></li>
       <li><div class="name">CB · Console — join rows and drawers</div><p class="blurb">Removes the gaps between the console's rows and drawers.</p><div class="badges"><span>Also runs on your messages</span></div></li>
       <li><div class="name">CB · Console — stylesheet (keep after every console script)</div><p class="blurb">Adds the console's look, in the skin you pick in CALLBOARD Suite (Console, Minimal, Parchment, Neon, or Auto by wing). Keep it after every other console script.</p><div class="badges"><span>Also runs on your messages</span></div></li>
+    </ul>
+    </div>
+    <div class="grp">
+    <h3 class="group">Xavi's drawers</h3>
+    <p class="group-intro">Xavi's own pieces in the console's look; they change with the skin too. The model writes exactly what it did before.</p>
+    <ul class="scripts">
+      <li><div class="name">CB · Callboard — style think foldout</div><p class="blurb">Xavi's plan as a 🎧 &quot;Xavi at the board&quot; drawer, folded. Tap to read.</p><code>&lt;think&gt;…&lt;/think&gt;</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Xavi — OOC aside (style, AI output only)</div><p class="blurb">Xavi's aside as a 🎧 &quot;from the wings&quot; drawer, left open so you don't miss a question.</p><code>(OOC: aside — X)</code></li>
+      <li><div class="name">CB · Cue — standby slip (with legend)</div><p class="blurb">A ● STANDBY drawer with the cue and its reason. Tap it for what it means.</p><code>CUE&gt; icon|what's coming|why now|what it means</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Cue — standby slip</div><p class="blurb">A ● STANDBY slip with nothing to open.</p><code>CUE&gt; icon|what's coming|why now|</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Cue — catch-all (malformed lines)</div><p class="blurb">Shows cue lines with the wrong number of fields as a plain STANDBY line.</p><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Xavi — curtain note (style) — newest reply</div><p class="blurb">Xavi's 🎧 curtain drawer, open on the newest reply.</p><code>&lt;xavi&gt;note&lt;/xavi&gt;</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Xavi — curtain note (style) — older replies, folded</div><p class="blurb">The curtain drawer on older replies, folded. With CALLBOARD Suite installed, the previous one folds as soon as you send.</p><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Shell — The Program — newest reply</div><p class="blurb">🎟️ The Program as a drawer with the paper program inside, open on the newest reply.</p><code>[[PROGRAM]] … [[/PROGRAM]]</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB · Shell — The Program — older replies, folded</div><p class="blurb">The Program on older replies, folded.</p><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB LAB · Your OOC note</div><p class="blurb">Your own OOC note, shown as a 🎬 &quot;Note to Xavi&quot; card.</p><code>(OOC: note) in your message</code><div class="badges"><span>Also runs on your messages</span></div></li>
+    </ul>
+    </div>
+    <div class="grp">
+    <h3 class="group">More from Sola</h3>
+    <p class="group-intro">New in v0.11, adapted from Sola V4 Flame. Each switch is off to start.</p>
+    <ul class="scripts">
+      <li><div class="name">CB LAB · Scene header — sky chosen by the model</div><p class="blurb">A sky banner when a scene opens, with the time, the place in capitals, and a line of atmosphere. Here the model picks the sky.</p><code>&lt;scene_header location=&quot;…&quot; time=&quot;…&quot; atmosphere=&quot;…&quot; sky=&quot;dusk&quot; /&gt;</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB LAB · Scene header — noir (rain, storm, fog)</div><p class="blurb">A noir sky with falling rain.</p><code>atmosphere with rain, storm, or fog</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB LAB · Scene header — night by the clock</div><p class="blurb">A night sky with stars and a crescent moon, from the time.</p><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB LAB · Scene header — dusk by the clock</div><p class="blurb">A dusk sky, from the time.</p><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB LAB · Scene header — dawn by the clock</div><p class="blurb">A dawn sky, from the time.</p><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB LAB · Scene header — midday by the clock</div><p class="blurb">A daytime sky for noon and the afternoon.</p><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB LAB · Scene header — morning by the clock</div><p class="blurb">A daytime sky for the morning.</p><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB LAB · Scene header — day (fallback)</div><p class="blurb">A daytime sky when the time doesn't say.</p><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB LAB · Voice tone</div><p class="blurb">Soft and italic, heavy and sharp, quivering, or deliberate words. Works inside Colored Dialogue, so each speaker keeps their color.</p><code>&lt;whisper&gt;, &lt;bite&gt;, &lt;tremble&gt;, &lt;steady&gt;</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB LAB · Gradient line</div><p class="blurb">A line that glows in a two-color gradient, for confessions, oaths, and closing images.</p><code>&lt;dusk&gt;, &lt;solstice&gt;, &lt;eclipse&gt;, &lt;wildwood&gt;, &lt;hearth&gt;, &lt;mistveil&gt;</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB LAB · Letter (sealed)</div><p class="blurb">A letter sealed with red wax. Tap to break the seal and read it on lined paper.</p><code>&lt;letter from=&quot;…&quot;&gt;text&lt;/letter&gt;</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB LAB · Terminal</div><p class="blurb">A glowing terminal screen with a blinking cursor.</p><code>&lt;terminal title=&quot;…&quot;&gt;text&lt;/terminal&gt;</code><div class="badges"><span>Also runs on your messages</span></div></li>
+      <li><div class="name">CB LAB · Thought Cabinet — drawer</div><p class="blurb">Xavi pulls one character backstage for five quick questions, shown as a folded 💭 drawer. Nobody in the story knows it happened.</p><code>&lt;cabinet char=&quot;Name&quot;&gt; … &lt;/cabinet&gt;</code></li>
+      <li><div class="name">CB LAB · Thought Cabinet — question</div><p class="blurb">One question and the character's answer.</p><code>Q&gt; question|answer</code></li>
+      <li><div class="name">CB LAB · Thought Cabinet — unspoken</div><p class="blurb">The last answer: what they'd say if nobody could hear.</p><code>QU&gt; question|answer</code></li>
+      <li><div class="name">CB LAB · Thought Cabinet — join rows</div><p class="blurb">Removes the gaps between the cabinet's rows.</p></li>
     </ul>
     </div>
     <div class="grp">
@@ -582,6 +627,7 @@
       <li><div class="name">CB LAB · Context saver — old cue legends</div><p class="blurb">Older cue lines keep their name and reason but drop the long legend.</p><div class="badges"><span>Only changes what the model sees</span></div></li>
       <li><div class="name">CB LAB · Context saver — old HTML styles</div><p class="blurb">Leaves &lt;style&gt; blocks three or more messages old out of the prompt. The artifacts' text stays.</p><div class="badges"><span>Only changes what the model sees</span></div></li>
       <li><div class="name">CB LAB · Context saver — old dice slips</div><p class="blurb">Leaves older 🎲 slips out of the prompt. The newest stays.</p><div class="badges"><span>Only changes what the model sees</span></div></li>
+      <li><div class="name">CB LAB · Context saver — old Thought Cabinets</div><p class="blurb">Leaves Thought Cabinets three or more messages old out of the prompt.</p><div class="badges"><span>Only changes what the model sees</span></div></li>
     </ul>
     </div>
     <div class="grp">
@@ -600,10 +646,6 @@
     <h3 class="group">Cue Calls and The Program</h3>
     <p class="group-intro">New in v1.4: Xavi tells you what's about to appear, and what's lit tonight.</p>
     <ul class="scripts">
-      <li><div class="name">CB · Cue — standby slip (with legend)</div><p class="blurb">A gold ● STANDBY slip above whatever's about to appear, with a &quot;What it means&quot; legend. Xavi includes the legend the first time each kind of element shows up.</p><code>CUE&gt; icon|what's coming|why now|what it means</code><div class="badges"><span>Also runs on your messages</span></div></li>
-      <li><div class="name">CB · Cue — standby slip</div><p class="blurb">The same STANDBY slip without the legend, for elements you've already seen.</p><code>CUE&gt; icon|what's coming|why now|</code><div class="badges"><span>Also runs on your messages</span></div></li>
-      <li><div class="name">CB · Cue — catch-all (malformed lines)</div><p class="blurb">Catches cue lines with the wrong number of fields and shows them as a plain STANDBY line.</p><div class="badges"><span>Also runs on your messages</span></div></li>
-      <li><div class="name">CB · Shell — The Program</div><p class="blurb">The theatre-program card listing everything that's lit. It appears on the first reply of a chat, and whenever you send [PROGRAM].</p><code>[[PROGRAM]] … [[/PROGRAM]]</code><div class="badges"><span>Also runs on your messages</span></div></li>
       <li><div class="name">CB · Program row — title</div><p class="blurb">The program's title: tonight's production in a phrase.</p><code>PG&gt; title|tonight's production</code><div class="badges"><span>Also runs on your messages</span></div></li>
       <li><div class="name">CB · Program row — cast line</div><p class="blurb">The line under the title: the setting wing, mode, and Xavi's patter and mood.</p><code>PG&gt; cast|wing · mode · patter and mood</code><div class="badges"><span>Also runs on your messages</span></div></li>
       <li><div class="name">CB · Program row — act</div><p class="blurb">One lit module per line: what sets it off (CUE) and what you'll see.</p><code>PG&gt; act|icon|module|what sets it off|what you'll see</code><div class="badges"><span>Also runs on your messages</span></div></li>
@@ -615,13 +657,10 @@
     <h3 class="group">Xavi</h3>
     <p class="group-intro">Your stage manager's notes and asides.</p>
     <ul class="scripts">
-      <li><div class="name">CB · Callboard — style think foldout</div><p class="blurb">Shows Xavi's reasoning as a 🎧 &quot;Xavi at the board&quot; fold-out.</p><code>&lt;think&gt;…&lt;/think&gt;</code><div class="badges"><span>Also runs on your messages</span></div></li>
       <li><div class="name">CB · Callboard — hide think from prompt</div><p class="blurb">Leaves Xavi's &lt;think&gt; notes out of what's sent back to the model on later turns, to save tokens. What you see doesn't change.</p><div class="badges"><span>Only changes what the model sees</span><span>Also runs on your messages</span></div></li>
       <li><div class="name">CB · Callboard — think foldout (missing opener)</div><p class="blurb">Some models close their reasoning with &lt;/think&gt; but never open it. This folds that reasoning into Xavi's fold-out anyway.</p><code>…&lt;/think&gt;</code></li>
       <li><div class="name">CB · Callboard — hide think from prompt (missing opener)</div><p class="blurb">Keeps that unopened reasoning out of what's sent back to the model on later turns.</p><div class="badges"><span>Only changes what the model sees</span></div></li>
-      <li><div class="name">CB · Xavi — curtain note (style)</div><p class="blurb">Xavi's curtain note: a 🎧 card under the reply.</p><code>&lt;xavi&gt;note&lt;/xavi&gt;</code><div class="badges"><span>Also runs on your messages</span></div></li>
       <li><div class="name">CB · Xavi — curtain note (hide from prompt)</div><p class="blurb">Leaves Xavi's curtain notes out of what's sent back to the model, so they cost no tokens later.</p><div class="badges"><span>Only changes what the model sees</span><span>Also runs on your messages</span></div></li>
-      <li><div class="name">CB · Xavi — OOC aside (style, AI output only)</div><p class="blurb">Styles Xavi's (OOC: …) asides as a &quot;from the wings&quot; note signed — X. It only touches the AI's replies, so your own OOC stays plain.</p><code>(OOC: aside)</code></li>
     </ul>
     </div>
     <div class="grp">

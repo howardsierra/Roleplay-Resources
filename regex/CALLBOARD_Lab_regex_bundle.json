@@ -198,7 +198,7 @@
         "id": "d57ab419-c6b2-4675-bbdd-44747d1901a1",
         "scriptName": "CB · Callboard — style think foldout",
         "findRegex": "/<think>([\\s\\S]*?)<\\/think>/g",
-        "replaceString": "<details style=\"margin:6px 0;border:1px solid #2a2233;border-radius:10px;background:#140f1a;\"><summary style=\"cursor:pointer;padding:8px 12px;color:#c9a6ff;font-size:12px;letter-spacing:1px;\">🎧 Xavi at the board</summary><div style=\"padding:4px 14px 12px;color:#a99bbf;font-size:12px;line-height:1.55;font-style:italic;white-space:pre-wrap;\">$1</div></details>",
+        "replaceString": "<details class=\"cbh-drawer cbh-x cbh-x-think\"><summary>🎧 Xavi at the board</summary><div class=\"cbh-xbody\">$1</div></details>",
         "trimStrings": [],
         "placement": [
             1,
@@ -598,6 +598,78 @@
         "substituteRegex": 0,
         "minDepth": null,
         "maxDepth": null,
+        "id": "842c4145-2c4a-429d-b63a-ec57de36442e",
+        "scriptName": "CB · Console — Board row — Heart check",
+        "findRegex": "/^HT(?:&gt;|>)\\s*([^|\\n]+?)\\s*\\|\\s*([^|\\n]+?)\\s*\\|\\s*([^|\\n]+?)\\s*\\|\\s*([^|\\n]+?)\\s*\\|\\s*([^|\\n]+?)\\s*\\s*\\|?\\s*$/gm",
+        "replaceString": "<div class=\"cbh-heart\"><span class=\"cbh-name\">$1</span><div class=\"cbh-fac\"><span class=\"cbh-k\">🎭 ego</span>$2</div><div class=\"cbh-fac\"><span class=\"cbh-k\">⚡ nerve</span>$3</div><div class=\"cbh-fac\"><span class=\"cbh-k\">🫀 body</span>$4</div><div class=\"cbh-fac\"><span class=\"cbh-k\">🌙 psyche</span>$5</div></div><!--cbh-->"
+    },
+    {
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null,
+        "id": "09fcec85-4f18-4dce-a98d-ce761ac67ba5",
+        "scriptName": "CB · Console — Board row — Wardrobe",
+        "findRegex": "/^WR(?:&gt;|>)\\s*([^|\\n]+?)\\s*\\|\\s*([^|\\n]+?)\\s*(?:\\|\\s*([^|\\n]*?))?\\s*\\|?\\s*$/gm",
+        "replaceString": "<div class=\"cbh-tile cbh-ward\"><span class=\"cbh-name\">$1</span><span class=\"cbh-v\">$2</span><span class=\"cbh-ward-c\">$3</span></div><!--cbh-->"
+    },
+    {
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null,
+        "id": "c359e02f-7e31-4d57-b0db-1bf52d7866f5",
+        "scriptName": "CB · Console — Board row — Xavi's notebook",
+        "findRegex": "/^NB(?:&gt;|>)\\s*([a-zA-Z]+)\\s*\\|\\s*([^|\\n]+?)\\s*\\s*\\|?\\s*$/gm",
+        "replaceString": "<div class=\"cbh-nb cbh-nb-$1\"><span class=\"cbh-k\">$1</span><span>$2</span></div><!--cbh-->"
+    },
+    {
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null,
+        "id": "9250eb2d-094c-40c0-acc7-f0cb8d69dc6f",
+        "scriptName": "CB · Console — Board row — catch-all for Lab boards (malformed lines)",
+        "findRegex": "/^(?:HT|WR|NB)(?:&gt;|>)\\s*([^\\n]+?)\\s*$/gm",
+        "replaceString": "<div class=\"cbh-odd\">$1</div><!--cbh-->"
+    },
+    {
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null,
         "id": "76bde1e7-4587-404f-8413-2b6fe4a0b502",
         "scriptName": "CB · Console — Tracker shell",
         "findRegex": "/\\[\\[TRK\\]\\]\\s*([\\s\\S]*?)\\s*\\[\\[\\/TRK\\]\\]/g",
@@ -692,6 +764,60 @@
         "scriptName": "CB · Console — Board shell — Codex",
         "findRegex": "/\\[\\[CODEX\\]\\]\\s*([\\s\\S]*?)\\s*\\[\\[\\/CODEX\\]\\]/g",
         "replaceString": "<details class=\"cbh-drawer cbh-d-codex\"><summary>📓 Codex</summary><div class=\"cbh-dbody\">$1</div></details><!--cbh-->"
+    },
+    {
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null,
+        "id": "55515419-2321-46b8-9c70-589b7b5ff652",
+        "scriptName": "CB · Console — Board shell — Heart check",
+        "findRegex": "/\\[\\[HEART\\]\\]\\s*([\\s\\S]*?)\\s*\\[\\[\\/HEART\\]\\]/g",
+        "replaceString": "<details class=\"cbh-drawer cbh-d-heart\"><summary>🫀 Heart check</summary><div class=\"cbh-dbody\">$1</div></details><!--cbh-->"
+    },
+    {
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null,
+        "id": "b5ce35ea-3eaf-4232-bec1-72efd052c0b6",
+        "scriptName": "CB · Console — Board shell — Wardrobe",
+        "findRegex": "/\\[\\[WARDROBE\\]\\]\\s*([\\s\\S]*?)\\s*\\[\\[\\/WARDROBE\\]\\]/g",
+        "replaceString": "<details class=\"cbh-drawer cbh-d-wardrobe\"><summary>🧥 Wardrobe</summary><div class=\"cbh-dbody\">$1</div></details><!--cbh-->"
+    },
+    {
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null,
+        "id": "20c05783-f920-414e-b4c0-d0398fc53e3c",
+        "scriptName": "CB · Console — Board shell — Xavi's notebook",
+        "findRegex": "/\\[\\[NOTES\\]\\]\\s*([\\s\\S]*?)\\s*\\[\\[\\/NOTES\\]\\]/g",
+        "replaceString": "<details class=\"cbh-drawer cbh-d-notes\"><summary>📓 Xavi's notebook</summary><div class=\"cbh-dbody\">$1</div></details><!--cbh-->"
     },
     {
         "trimStrings": [],
@@ -2713,7 +2839,7 @@
         "id": "fa8449cf-bbdd-49bd-a414-ce337b2f4b75",
         "scriptName": "CB · Cue — standby slip (with legend)",
         "findRegex": "/^CUE(?:&gt;|>)[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*$/gmi",
-        "replaceString": "<details open style=\"margin:12px 0 8px;border:1px solid #3d3122;border-left:3px solid #e8b04a;border-radius:0 10px 10px 0;background:linear-gradient(90deg,rgba(232,176,74,.11),rgba(232,176,74,.02));font-size:12.5px;\"><summary style=\"cursor:pointer;padding:7px 12px;color:#eadfca;display:flex;align-items:center;gap:8px;flex-wrap:wrap;\"><span style=\"font-size:9.5px;letter-spacing:3px;font-weight:700;color:#e8b04a;\">● STANDBY</span><span>$1 <b>$2</b></span><span style=\"color:#a99c87;font-style:italic;\">$3</span></summary><div style=\"padding:0 14px 10px;color:#d3c6ae;line-height:1.55;\"><span style=\"font-size:9.5px;letter-spacing:2px;font-weight:700;color:#e8b04a;\">WHAT IT MEANS · </span>$4</div></details>",
+        "replaceString": "<details class=\"cbh-drawer cbh-x cbh-x-cue\"><summary><span class=\"cbh-x-sb\">● STANDBY</span><span class=\"cbh-x-what\">$1 <b>$2</b></span><span class=\"cbh-x-why\">$3</span></summary><div class=\"cbh-xbody\"><span class=\"cbh-k\">what it means</span>$4</div></details>",
         "trimStrings": [],
         "placement": [
             1,
@@ -2731,7 +2857,7 @@
         "id": "d94ef766-9ccc-4409-9777-58035a076ad9",
         "scriptName": "CB · Cue — standby slip",
         "findRegex": "/^CUE(?:&gt;|>)[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*([^|\\n]+?)[ \\t]*(?:\\|[ \\t]*)?$/gmi",
-        "replaceString": "<div style=\"margin:12px 0 8px;padding:6px 12px;border:1px solid #3d3122;border-left:3px solid #e8b04a;border-radius:0 10px 10px 0;background:linear-gradient(90deg,rgba(232,176,74,.09),transparent);font-size:12.5px;color:#eadfca;display:flex;align-items:center;gap:8px;flex-wrap:wrap;\"><span style=\"font-size:9.5px;letter-spacing:3px;font-weight:700;color:#e8b04a;\">● STANDBY</span><span>$1 <b>$2</b></span><span style=\"color:#a99c87;font-style:italic;\">$3</span></div>",
+        "replaceString": "<div class=\"cbh-drawer cbh-x cbh-x-cue cbh-x-flat\"><div class=\"cbh-x-row\"><span class=\"cbh-x-sb\">● STANDBY</span><span class=\"cbh-x-what\">$1 <b>$2</b></span><span class=\"cbh-x-why\">$3</span></div></div>",
         "trimStrings": [],
         "placement": [
             1,
@@ -2749,7 +2875,7 @@
         "id": "5f9aa1ad-68ad-4e2a-9fc8-86c12388389b",
         "scriptName": "CB · Cue — catch-all (malformed lines)",
         "findRegex": "/^CUE(?:&gt;|>)[ \\t]*([^\\n]+?)[ \\t]*$/gm",
-        "replaceString": "<div style=\"margin:10px 0 6px;padding:5px 12px;border-left:3px solid #e8b04a;font-size:12px;color:#cdbfa8;opacity:.85;\"><span style=\"font-size:9.5px;letter-spacing:3px;font-weight:700;color:#e8b04a;\">● STANDBY </span>$1</div>",
+        "replaceString": "<div class=\"cbh-drawer cbh-x cbh-x-cue cbh-x-flat\"><div class=\"cbh-x-row\"><span class=\"cbh-x-sb\">● STANDBY</span><span class=\"cbh-x-what\">$1</span></div></div>",
         "trimStrings": [],
         "placement": [
             1,
@@ -3070,10 +3196,10 @@
         "maxDepth": null
     },
     {
-        "id": "1901fb19-3dd1-4606-9dbb-cf83b29fc806",
-        "scriptName": "CB · Shell — The Program",
+        "id": "719a36dd-5783-4752-a971-31bfe66ab7c8",
+        "scriptName": "CB · Shell — The Program — newest reply",
         "findRegex": "/\\[\\[PROGRAM\\]\\]\\s*([\\s\\S]*?)\\s*\\[\\[\\/PROGRAM\\]\\]/g",
-        "replaceString": "<div style=\"clear:both;max-width:400px;margin:14px auto 18px;background:#fbf8ef;border:1px solid #cfc6ae;box-shadow:0 8px 26px rgba(0,0,0,.45);font-family:'Helvetica Neue',Arial,sans-serif;color:#1a1a1a;\"><div style=\"background:#f3c623;padding:9px 16px 7px;border-bottom:3px solid #1a1a1a;\"><div style=\"font-family:Georgia,serif;font-weight:900;font-size:25px;letter-spacing:1px;line-height:1;color:#1a1a1a;\">THE PROGRAM</div><div style=\"font-size:9px;letter-spacing:3px;color:#1a1a1a;margin-top:4px;\">THE CALLBOARD THEATRE · TONIGHT'S PERFORMANCE</div></div>$1<div style=\"text-align:center;font-size:9px;letter-spacing:3px;color:#8a826f;padding:8px;background:#f1ecdd;\">SEND [PROGRAM] ANY TIME TO SEE THIS AGAIN</div></div>",
+        "replaceString": "<details class=\"cbh-drawer cbh-x cbh-x-program cbh-fold\" open><summary>🎟️ The Program</summary><div class=\"cbh-xbody\"><div style=\"clear:both;max-width:400px;margin:14px auto 18px;background:#fbf8ef;border:1px solid #cfc6ae;box-shadow:0 8px 26px rgba(0,0,0,.45);font-family:'Helvetica Neue',Arial,sans-serif;color:#1a1a1a;\"><div style=\"background:#f3c623;padding:9px 16px 7px;border-bottom:3px solid #1a1a1a;\"><div style=\"font-family:Georgia,serif;font-weight:900;font-size:25px;letter-spacing:1px;line-height:1;color:#1a1a1a;\">THE PROGRAM</div><div style=\"font-size:9px;letter-spacing:3px;color:#1a1a1a;margin-top:4px;\">THE CALLBOARD THEATRE · TONIGHT'S PERFORMANCE</div></div>$1<div style=\"text-align:center;font-size:9px;letter-spacing:3px;color:#8a826f;padding:8px;background:#f1ecdd;\">SEND [PROGRAM] ANY TIME TO SEE THIS AGAIN</div></div></div></details>",
         "trimStrings": [],
         "placement": [
             1,
@@ -3085,6 +3211,24 @@
         "runOnEdit": true,
         "substituteRegex": 0,
         "minDepth": null,
+        "maxDepth": 0
+    },
+    {
+        "id": "1901fb19-3dd1-4606-9dbb-cf83b29fc806",
+        "scriptName": "CB · Shell — The Program — older replies, folded",
+        "findRegex": "/\\[\\[PROGRAM\\]\\]\\s*([\\s\\S]*?)\\s*\\[\\[\\/PROGRAM\\]\\]/g",
+        "replaceString": "<details class=\"cbh-drawer cbh-x cbh-x-program cbh-fold\"><summary>🎟️ The Program</summary><div class=\"cbh-xbody\"><div style=\"clear:both;max-width:400px;margin:14px auto 18px;background:#fbf8ef;border:1px solid #cfc6ae;box-shadow:0 8px 26px rgba(0,0,0,.45);font-family:'Helvetica Neue',Arial,sans-serif;color:#1a1a1a;\"><div style=\"background:#f3c623;padding:9px 16px 7px;border-bottom:3px solid #1a1a1a;\"><div style=\"font-family:Georgia,serif;font-weight:900;font-size:25px;letter-spacing:1px;line-height:1;color:#1a1a1a;\">THE PROGRAM</div><div style=\"font-size:9px;letter-spacing:3px;color:#1a1a1a;margin-top:4px;\">THE CALLBOARD THEATRE · TONIGHT'S PERFORMANCE</div></div>$1<div style=\"text-align:center;font-size:9px;letter-spacing:3px;color:#8a826f;padding:8px;background:#f1ecdd;\">SEND [PROGRAM] ANY TIME TO SEE THIS AGAIN</div></div></div></details>",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": 1,
         "maxDepth": null
     },
     {
@@ -3271,7 +3415,7 @@
         "id": "e9d71a93-9852-4bd5-9579-8561b8a554a0",
         "scriptName": "CB · Xavi — OOC aside (style, AI output only)",
         "findRegex": "/\\(\\s*OOC:\\s*([\\s\\S]*?)(?:\\s*[—–-]\\s*X\\.?)?\\s*\\)(?=\\s*(?:\\n|$))/g",
-        "replaceString": "<div style=\"margin:14px 0 6px;padding:10px 14px;border:1px solid #2b2436;border-left:3px solid #c9a6ff;border-radius:0 12px 12px 0;background:linear-gradient(90deg,rgba(201,166,255,.08),transparent);\"><div style=\"font-size:10px;letter-spacing:3px;color:#c9a6ff;text-transform:uppercase;margin-bottom:4px;\">🎧 Xavi · from the wings</div><div style=\"color:#cfc3e6;font-size:13px;font-style:italic;line-height:1.55;\">$1</div><div style=\"text-align:right;color:#c9a6ff;font-size:11px;letter-spacing:2px;margin-top:6px;\">— X</div></div>",
+        "replaceString": "<details class=\"cbh-drawer cbh-x cbh-x-ooc\" open><summary>🎧 Xavi · from the wings</summary><div class=\"cbh-xbody\">$1<span class=\"cbh-x-sig\">— X</span></div></details>",
         "trimStrings": [],
         "placement": [
             2
@@ -3285,10 +3429,10 @@
         "maxDepth": null
     },
     {
-        "id": "95adf7c3-7603-4494-b191-2de2dc4b4d97",
-        "scriptName": "CB · Xavi — curtain note (style)",
+        "id": "6e33ca77-7634-4798-9b81-bec2650f1e98",
+        "scriptName": "CB · Xavi — curtain note (style) — newest reply",
         "findRegex": "/<xavi>([\\s\\S]*?)<\\/xavi>/g",
-        "replaceString": "<div style=\"margin:16px 0 4px;padding:10px 14px;border:1px solid #2b2436;border-left:3px solid #c9a6ff;border-radius:0 12px 12px 0;background:linear-gradient(90deg,rgba(201,166,255,.08),transparent);\"><div style=\"font-size:10px;letter-spacing:3px;color:#c9a6ff;text-transform:uppercase;margin-bottom:4px;\">🎧 Xavi · curtain</div><div style=\"color:#cfc3e6;font-size:13px;font-style:italic;line-height:1.55;white-space:pre-wrap;\">$1</div></div>",
+        "replaceString": "<details class=\"cbh-drawer cbh-x cbh-x-curtain cbh-fold\" open><summary>🎧 Xavi · curtain</summary><div class=\"cbh-xbody\">$1</div></details>",
         "trimStrings": [],
         "placement": [
             1,
@@ -3300,6 +3444,24 @@
         "runOnEdit": true,
         "substituteRegex": 0,
         "minDepth": null,
+        "maxDepth": 0
+    },
+    {
+        "id": "95adf7c3-7603-4494-b191-2de2dc4b4d97",
+        "scriptName": "CB · Xavi — curtain note (style) — older replies, folded",
+        "findRegex": "/<xavi>([\\s\\S]*?)<\\/xavi>/g",
+        "replaceString": "<details class=\"cbh-drawer cbh-x cbh-x-curtain cbh-fold\"><summary>🎧 Xavi · curtain</summary><div class=\"cbh-xbody\">$1</div></details>",
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": 1,
         "maxDepth": null
     },
     {
@@ -3374,6 +3536,91 @@
     {
         "trimStrings": [],
         "placement": [
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null,
+        "id": "cf91de7b-9e42-4385-81bb-f021c9b43211",
+        "scriptName": "CB LAB · Thought Cabinet — question",
+        "findRegex": "/^Q(?:&gt;|>)[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*([^\\n]+?)[ \\t]*$/gm",
+        "replaceString": "<div class=\"cbh-cab-row\"><span class=\"cbh-cab-q\">🎧 $1</span><span class=\"cbh-cab-a\">$2</span></div>"
+    },
+    {
+        "trimStrings": [],
+        "placement": [
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null,
+        "id": "697df5f0-bcd2-4056-8f4a-42f99c4eb113",
+        "scriptName": "CB LAB · Thought Cabinet — unspoken",
+        "findRegex": "/^QU(?:&gt;|>)[ \\t]*([^|\\n]+?)[ \\t]*\\|[ \\t]*([^\\n]+?)[ \\t]*$/gm",
+        "replaceString": "<div class=\"cbh-cab-row cbh-cab-unspoken\"><span class=\"cbh-cab-q\">🎧 $1</span><span class=\"cbh-k\">unspoken</span><span class=\"cbh-cab-a\">$2</span></div>"
+    },
+    {
+        "trimStrings": [],
+        "placement": [
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null,
+        "id": "c2179068-d180-4ecd-9de1-42a04dacc772",
+        "scriptName": "CB LAB · Thought Cabinet — join rows",
+        "findRegex": "/(<div class=\"cbh-cab-row[^>]*>[\\s\\S]*?<\\/span><\\/div>)\\s+(?=<div class=\"cbh-cab-row)/g",
+        "replaceString": "$1"
+    },
+    {
+        "trimStrings": [],
+        "placement": [
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null,
+        "id": "3117f894-f9c0-419d-bb78-f7251357cade",
+        "scriptName": "CB LAB · Thought Cabinet — drawer",
+        "findRegex": "/<cabinet\\b(?=[^>]*?\\b(?:char|name)\\s*=\\s*\"([^\"]*)\"|)[^>]*>\\s*([\\s\\S]*?)\\s*<\\/cabinet\\s*>/gi",
+        "replaceString": "<details class=\"cbh-drawer cbh-x cbh-x-cabinet\"><summary>💭 Thought Cabinet<span class=\"cbh-x-what\">$1</span><span class=\"cbh-x-why\">backstage with Xavi</span></summary><div class=\"cbh-xbody cbh-cab\">$2</div></details>"
+    },
+    {
+        "trimStrings": [],
+        "placement": [
+            1
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null,
+        "id": "b3fc74cd-acaa-428c-a0f4-99995feaa5fb",
+        "scriptName": "CB LAB · Your OOC note",
+        "findRegex": "/\\(\\(?\\s*OOC\\s*:\\s*([^()]+?)\\s*\\)\\)?/gi",
+        "replaceString": "<div class=\"cbh-drawer cbh-x cbh-x-note cbh-x-flat\"><div class=\"cbh-x-row\"><span class=\"cbh-x-sb\">🎬 NOTE TO XAVI</span><span class=\"cbh-x-what\">$1</span></div></div>"
+    },
+    {
+        "trimStrings": [],
+        "placement": [
             1,
             2
         ],
@@ -3387,7 +3634,7 @@
         "id": "ca13105d-406c-43a7-9c69-69cf5714e48b",
         "scriptName": "CB · Console — stylesheet (keep after every console script)",
         "findRegex": "/^(?=[\\s\\S]*class=\"cbh)([\\s\\S]*)$/",
-        "replaceString": "$1\n\n<style>.cbh,.cbh-drawer{--cbh-bg:linear-gradient(160deg,#171221,#1e1830);--cbh-bg2:rgba(255,255,255,.035);--cbh-line:#2b2436;--cbh-ink:#e9e2f5;--cbh-dim:#9a8fb0;--cbh-acc:#c9a86a;--cbh-acc2:#c9a6ff;--cbh-meter:linear-gradient(90deg,#ff5d8f,#c9a6ff);--cbh-heat:linear-gradient(90deg,#e8b04a,#ff5d6f);--cbh-font:inherit;color:var(--cbh-ink);font-family:var(--cbh-font);}.cbh{margin:10px 0 14px;border:1px solid var(--cbh-line);border-radius:16px;background:var(--cbh-bg);color:var(--cbh-ink);font-family:var(--cbh-font);box-shadow:0 6px 22px rgba(0,0,0,.35);overflow:hidden;}.cbh summary{list-style:none;cursor:pointer;}.cbh summary::-webkit-details-marker{display:none;}.cbh>summary{display:flex;flex-wrap:wrap;align-items:center;gap:6px 7px;padding:9px 12px;}.cbh-led{width:8px;height:8px;border-radius:50%;background:var(--cbh-acc2);box-shadow:0 0 8px var(--cbh-acc2);}.cbh-title{font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--cbh-acc);margin-right:2px;}.cbh-chip{max-width:100%;padding:2px 9px;border:1px solid var(--cbh-line);border-radius:99px;background:var(--cbh-bg2);font-size:11.5px;line-height:1.5;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}.cbh-chip:empty{display:none;}.cbh-chip-place::before{content:\"📍 \";}.cbh-chip-mood::before{content:\"✦ \";color:var(--cbh-acc);}.cbh-chip-aff::before{content:\"💞 \";}.cbh-chip-num{color:var(--cbh-acc2);font-weight:700;font-variant-numeric:tabular-nums;}.cbh-hint{font-size:10px;color:var(--cbh-dim);}.cbh[open] .cbh-hint{display:none;}.cbh-chev{margin-left:auto;font-size:11px;color:var(--cbh-dim);transition:transform .2s;}.cbh[open]>summary .cbh-chev{transform:rotate(180deg);}.cbh-body{display:flex;flex-direction:column;gap:8px;padding:0 10px 10px;}.cbh-drawer{border:1px solid var(--cbh-line);border-radius:12px;background:var(--cbh-bg2);overflow:hidden;}.cbh-drawer>summary{display:flex;align-items:center;gap:8px;padding:8px 12px;font-size:10.5px;letter-spacing:2.5px;text-transform:uppercase;color:var(--cbh-acc2);}.cbh-drawer>summary::after{content:\"▾\";margin-left:auto;color:var(--cbh-dim);transition:transform .2s;}.cbh-drawer[open]>summary::after{transform:rotate(180deg);}.cbh-dbody{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));align-items:start;gap:8px;padding:2px 12px 12px;}.cbh-tile{padding:7px 10px;border:1px solid var(--cbh-line);border-radius:10px;}.cbh-k{display:block;font-size:9.5px;letter-spacing:2px;text-transform:uppercase;color:var(--cbh-acc);}.cbh-v{font-size:13px;line-height:1.4;}.cbh-meter{grid-column:1/-1;padding:7px 10px;border:1px solid var(--cbh-line);border-radius:10px;}.cbh-mrow{display:flex;justify-content:space-between;align-items:baseline;gap:8px;}.cbh-num{font-size:12px;font-weight:700;color:var(--cbh-acc2);font-variant-numeric:tabular-nums;}.cbh-track{display:block;flex:1;height:7px;margin:4px 0;border-radius:99px;background:rgba(127,127,127,.22);overflow:hidden;}.cbh-track>i{display:block;height:100%;border-radius:99px;background:var(--cbh-meter);}.cbh-heat>i{background:var(--cbh-heat);}.cbh-why{font-size:11px;font-style:italic;color:var(--cbh-dim);}.cbh-why:empty{display:none;}.cbh-pips{display:flex;gap:3px;margin:5px 0 3px;}.cbh-pips>i{flex:1;height:5px;border-radius:3px;background:rgba(127,127,127,.22);}.cbh-lv-1>i:nth-child(-n+1){background:var(--cbh-heat);}.cbh-lv-2>i:nth-child(-n+2){background:var(--cbh-heat);}.cbh-lv-3>i:nth-child(-n+3){background:var(--cbh-heat);}.cbh-lv-4>i:nth-child(-n+4){background:var(--cbh-heat);}.cbh-lv-5>i:nth-child(-n+5){background:var(--cbh-heat);}.cbh-card{border:1px solid var(--cbh-line);border-radius:10px;background:var(--cbh-bg2);transition:border-color .2s;}.cbh-card[open]{border-color:var(--cbh-acc2);}.cbh-card>summary{display:flex;flex-direction:column;gap:4px;padding:7px 10px;}.cbh-name{font-size:13px;font-weight:700;line-height:1.3;}.cbh-sub{font-size:11px;color:var(--cbh-dim);}.cbh-line{display:flex;flex-wrap:wrap;align-items:center;gap:6px 7px;}.cbh-line .cbh-track{flex:1 1 64px;min-width:64px;margin:0;}.cbh-tag{display:inline-block;padding:1px 7px;border:1px solid var(--cbh-line);border-radius:99px;font-size:10.5px;color:var(--cbh-dim);white-space:nowrap;}.cbh-more{padding:0 10px 9px;font-size:12px;line-height:1.45;}.cbh-more .cbh-k{display:inline;margin-right:6px;}.cbh-hp-hale,.cbh-hp-Hale{color:#7fd38a;border-color:#7fd38a;}.cbh-hp-hurt,.cbh-hp-Hurt{color:#e8b04a;border-color:#e8b04a;}.cbh-hp-grave,.cbh-hp-Grave{color:#ff6f7d;border-color:#ff6f7d;}.cbh-en-high,.cbh-en-High{color:#7fd38a;}.cbh-en-low,.cbh-en-spent,.cbh-en-Low,.cbh-en-Spent{color:#ff9f8a;}.cbh-kind-weapon .cbh-name::before,.cbh-kind-Weapon .cbh-name::before{content:\"🗡️ \";}.cbh-kind-tool .cbh-name::before,.cbh-kind-Tool .cbh-name::before{content:\"🔧 \";}.cbh-kind-coin .cbh-name::before,.cbh-kind-Coin .cbh-name::before{content:\"🪙 \";}.cbh-kind-keepsake .cbh-name::before,.cbh-kind-Keepsake .cbh-name::before{content:\"💠 \";}.cbh-kind-quest .cbh-name::before,.cbh-kind-Quest .cbh-name::before{content:\"📜 \";}.cbh-cat-lore .cbh-name::before,.cbh-cat-Lore .cbh-name::before{content:\"📖 \";}.cbh-cat-faction .cbh-name::before,.cbh-cat-Faction .cbh-name::before{content:\"🏛️ \";}.cbh-cat-rule .cbh-name::before,.cbh-cat-Rule .cbh-name::before{content:\"⚖️ \";}.cbh-cat-clue .cbh-name::before,.cbh-cat-Clue .cbh-name::before{content:\"🔎 \";}.cbh-cat-mystery .cbh-name::before,.cbh-cat-Mystery .cbh-name::before{content:\"❓ \";}.cbh-odd{grid-column:1/-1;padding:5px 2px;border-bottom:1px dashed var(--cbh-line);font-size:11.5px;color:var(--cbh-dim);}@media (max-width:480px){.cbh-dbody{grid-template-columns:1fr 1fr;}}</style>"
+        "replaceString": "$1\n\n<style>.cbh,.cbh-drawer{--cbh-bg:linear-gradient(160deg,#171221,#1e1830);--cbh-bg2:rgba(255,255,255,.035);--cbh-line:#2b2436;--cbh-ink:#e9e2f5;--cbh-dim:#9a8fb0;--cbh-acc:#c9a86a;--cbh-acc2:#c9a6ff;--cbh-meter:linear-gradient(90deg,#ff5d8f,#c9a6ff);--cbh-heat:linear-gradient(90deg,#e8b04a,#ff5d6f);--cbh-font:inherit;color:var(--cbh-ink);font-family:var(--cbh-font);}.cbh{margin:10px 0 14px;border:1px solid var(--cbh-line);border-radius:16px;background:var(--cbh-bg);color:var(--cbh-ink);font-family:var(--cbh-font);box-shadow:0 6px 22px rgba(0,0,0,.35);overflow:hidden;}.cbh summary{list-style:none;cursor:pointer;}.cbh summary::-webkit-details-marker{display:none;}.cbh>summary{display:flex;flex-wrap:wrap;align-items:center;gap:6px 7px;padding:9px 12px;}.cbh-led{width:8px;height:8px;border-radius:50%;background:var(--cbh-acc2);box-shadow:0 0 8px var(--cbh-acc2);}.cbh-title{font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--cbh-acc);margin-right:2px;}.cbh-chip{max-width:100%;padding:2px 9px;border:1px solid var(--cbh-line);border-radius:99px;background:var(--cbh-bg2);font-size:11.5px;line-height:1.5;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}.cbh-chip:empty{display:none;}.cbh-chip-place::before{content:\"📍 \";}.cbh-chip-mood::before{content:\"✦ \";color:var(--cbh-acc);}.cbh-chip-aff::before{content:\"💞 \";}.cbh-chip-num{color:var(--cbh-acc2);font-weight:700;font-variant-numeric:tabular-nums;}.cbh-hint{font-size:10px;color:var(--cbh-dim);}.cbh[open] .cbh-hint{display:none;}.cbh-chev{margin-left:auto;font-size:11px;color:var(--cbh-dim);transition:transform .2s;}.cbh[open]>summary .cbh-chev{transform:rotate(180deg);}.cbh-body{display:flex;flex-direction:column;gap:8px;padding:0 10px 10px;}.cbh-drawer{border:1px solid var(--cbh-line);border-radius:12px;background:var(--cbh-bg2);overflow:hidden;}.cbh-drawer>summary{display:flex;align-items:center;gap:8px;padding:8px 12px;font-size:10.5px;letter-spacing:2.5px;text-transform:uppercase;color:var(--cbh-acc2);}.cbh-drawer>summary::after{content:\"▾\";margin-left:auto;color:var(--cbh-dim);transition:transform .2s;}.cbh-drawer[open]>summary::after{transform:rotate(180deg);}.cbh-dbody{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));align-items:start;gap:8px;padding:2px 12px 12px;}.cbh-tile{padding:7px 10px;border:1px solid var(--cbh-line);border-radius:10px;}.cbh-k{display:block;font-size:9.5px;letter-spacing:2px;text-transform:uppercase;color:var(--cbh-acc);}.cbh-v{font-size:13px;line-height:1.4;}.cbh-meter{grid-column:1/-1;padding:7px 10px;border:1px solid var(--cbh-line);border-radius:10px;}.cbh-mrow{display:flex;justify-content:space-between;align-items:baseline;gap:8px;}.cbh-num{font-size:12px;font-weight:700;color:var(--cbh-acc2);font-variant-numeric:tabular-nums;}.cbh-track{display:block;flex:1;height:7px;margin:4px 0;border-radius:99px;background:rgba(127,127,127,.22);overflow:hidden;}.cbh-track>i{display:block;height:100%;border-radius:99px;background:var(--cbh-meter);}.cbh-heat>i{background:var(--cbh-heat);}.cbh-why{font-size:11px;font-style:italic;color:var(--cbh-dim);}.cbh-why:empty{display:none;}.cbh-pips{display:flex;gap:3px;margin:5px 0 3px;}.cbh-pips>i{flex:1;height:5px;border-radius:3px;background:rgba(127,127,127,.22);}.cbh-lv-1>i:nth-child(-n+1){background:var(--cbh-heat);}.cbh-lv-2>i:nth-child(-n+2){background:var(--cbh-heat);}.cbh-lv-3>i:nth-child(-n+3){background:var(--cbh-heat);}.cbh-lv-4>i:nth-child(-n+4){background:var(--cbh-heat);}.cbh-lv-5>i:nth-child(-n+5){background:var(--cbh-heat);}.cbh-card{border:1px solid var(--cbh-line);border-radius:10px;background:var(--cbh-bg2);transition:border-color .2s;}.cbh-card[open]{border-color:var(--cbh-acc2);}.cbh-card>summary{display:flex;flex-direction:column;gap:4px;padding:7px 10px;}.cbh-name{font-size:13px;font-weight:700;line-height:1.3;}.cbh-sub{font-size:11px;color:var(--cbh-dim);}.cbh-line{display:flex;flex-wrap:wrap;align-items:center;gap:6px 7px;}.cbh-line .cbh-track{flex:1 1 64px;min-width:64px;margin:0;}.cbh-tag{display:inline-block;padding:1px 7px;border:1px solid var(--cbh-line);border-radius:99px;font-size:10.5px;color:var(--cbh-dim);white-space:nowrap;}.cbh-more{padding:0 10px 9px;font-size:12px;line-height:1.45;}.cbh-more .cbh-k{display:inline;margin-right:6px;}.cbh-hp-hale,.cbh-hp-Hale{color:#7fd38a;border-color:#7fd38a;}.cbh-hp-hurt,.cbh-hp-Hurt{color:#e8b04a;border-color:#e8b04a;}.cbh-hp-grave,.cbh-hp-Grave{color:#ff6f7d;border-color:#ff6f7d;}.cbh-en-high,.cbh-en-High{color:#7fd38a;}.cbh-en-low,.cbh-en-spent,.cbh-en-Low,.cbh-en-Spent{color:#ff9f8a;}.cbh-kind-weapon .cbh-name::before,.cbh-kind-Weapon .cbh-name::before{content:\"🗡️ \";}.cbh-kind-tool .cbh-name::before,.cbh-kind-Tool .cbh-name::before{content:\"🔧 \";}.cbh-kind-coin .cbh-name::before,.cbh-kind-Coin .cbh-name::before{content:\"🪙 \";}.cbh-kind-keepsake .cbh-name::before,.cbh-kind-Keepsake .cbh-name::before{content:\"💠 \";}.cbh-kind-quest .cbh-name::before,.cbh-kind-Quest .cbh-name::before{content:\"📜 \";}.cbh-cat-lore .cbh-name::before,.cbh-cat-Lore .cbh-name::before{content:\"📖 \";}.cbh-cat-faction .cbh-name::before,.cbh-cat-Faction .cbh-name::before{content:\"🏛️ \";}.cbh-cat-rule .cbh-name::before,.cbh-cat-Rule .cbh-name::before{content:\"⚖️ \";}.cbh-cat-clue .cbh-name::before,.cbh-cat-Clue .cbh-name::before{content:\"🔎 \";}.cbh-cat-mystery .cbh-name::before,.cbh-cat-Mystery .cbh-name::before{content:\"❓ \";}.cbh-odd{grid-column:1/-1;padding:5px 2px;border-bottom:1px dashed var(--cbh-line);font-size:11.5px;color:var(--cbh-dim);}@media (max-width:480px){.cbh-dbody{grid-template-columns:1fr 1fr;}}.cbh-x{margin:12px 0 8px;font-size:13px;}.cbh-x>summary{flex-wrap:wrap;}.cbh-xbody{padding:2px 14px 12px;line-height:1.55;white-space:pre-wrap;}.cbh-x-think .cbh-xbody,.cbh-x-curtain .cbh-xbody,.cbh-x-ooc .cbh-xbody{font-style:italic;color:var(--cbh-dim);}.cbh-x-think .cbh-xbody{font-size:12px;}.cbh-x-ooc,.cbh-x-curtain{border-left:3px solid var(--cbh-acc2);}.cbh-x-sig{display:block;text-align:right;font-style:normal;letter-spacing:2px;font-size:11px;color:var(--cbh-acc2);}.cbh-x-cue{border-left:3px solid var(--cbh-acc);}.cbh-x-cue>summary,.cbh-x-row{text-transform:none;letter-spacing:0;font-size:12.5px;color:var(--cbh-ink);}.cbh-x-row{display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding:7px 12px;}.cbh-x-sb{font-size:9.5px;letter-spacing:3px;font-weight:700;color:var(--cbh-acc);}.cbh-x-why{font-style:italic;color:var(--cbh-dim);}.cbh-x-cue .cbh-xbody{white-space:normal;}.cbh-x-cue .cbh-k{display:inline;margin-right:6px;}.cbh-x-program .cbh-xbody{white-space:normal;padding:0 8px 8px;}.cbh-x-program .cbh-xbody>div{margin:6px auto 4px !important;}.cbh-x-cabinet{border-left:3px solid var(--cbh-acc2);}.cbh-x-cabinet>summary .cbh-x-what{color:var(--cbh-ink);letter-spacing:1px;text-transform:none;font-size:12.5px;font-weight:700;}.cbh-x-cabinet>summary .cbh-x-why{text-transform:none;letter-spacing:0;font-size:11.5px;}.cbh-cab{display:flex;flex-direction:column;gap:7px;white-space:normal;font-style:normal;}.cbh-cab-row{display:flex;flex-direction:column;gap:2px;padding:7px 10px;border:1px solid var(--cbh-line);border-radius:10px;}.cbh-cab-q{font-size:11.5px;font-style:italic;color:var(--cbh-acc2);}.cbh-cab-a{font-size:13px;line-height:1.45;color:var(--cbh-ink);}.cbh-cab-unspoken{border-color:var(--cbh-acc);background:var(--cbh-bg2);}.cbh-cab-unspoken .cbh-cab-a{font-style:italic;}.cbh-x-note{border-left:3px solid var(--cbh-acc);}.cbh-x-note .cbh-x-what{font-style:italic;}.cbh-heart{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:7px 12px;padding:8px 10px;border:1px solid var(--cbh-line);border-radius:10px;}.cbh-heart>.cbh-name{grid-column:1/-1;}.cbh-fac{font-size:12px;line-height:1.4;}.cbh-fac .cbh-k{margin-bottom:1px;}.cbh-ward{display:flex;flex-direction:column;gap:3px;}.cbh-ward .cbh-v{font-size:12.5px;}.cbh-ward-c{font-size:11.5px;font-style:italic;color:var(--cbh-dim);}.cbh-ward-c:empty{display:none;}.cbh-nb{grid-column:1/-1;display:flex;gap:8px;align-items:baseline;padding:5px 2px;border-bottom:1px dashed var(--cbh-line);font-size:12.5px;line-height:1.4;}.cbh-nb .cbh-k{flex:0 0 96px;white-space:nowrap;}.cbh-nb-thread .cbh-k::before,.cbh-nb-Thread .cbh-k::before{content:\"🧵 \";}.cbh-nb-seed .cbh-k::before,.cbh-nb-Seed .cbh-k::before{content:\"🌱 \";}.cbh-nb-motive .cbh-k::before,.cbh-nb-Motive .cbh-k::before{content:\"🗝️ \";}.cbh-nb-horizon .cbh-k::before,.cbh-nb-Horizon .cbh-k::before{content:\"⏳ \";}</style>"
     },
     {
         "trimStrings": [],
@@ -3690,10 +3937,226 @@
         "substituteRegex": 0,
         "minDepth": null,
         "maxDepth": null,
+        "id": "bfc101b0-73f2-446d-9c9e-9bffce12894e",
+        "scriptName": "CB LAB · Scene header — sky chosen by the model",
+        "findRegex": "/<scene_header\\b(?=[^>]*?\\bsky\\s*=\\s*\"?(dawn|day|dusk|night|noir)\\b)(?=[^>]*?\\blocation\\s*=\\s*\"([^\"]*)\"|)(?=[^>]*?\\btime\\s*=\\s*\"([^\"]*)\"|)(?=[^>]*?\\b(?:atmosphere|weather|mood)\\s*=\\s*\"([^\"]*)\"|)[^>]*>/gi",
+        "replaceString": "<div class=\"cbx-sh cbx-sky-$1\"><span class=\"cbx-sh-art\"><span class=\"cbx-sh-fx\"></span><span class=\"cbx-sh-orb\"></span><span class=\"cbx-sh-orb2\"></span></span><span class=\"cbx-sh-text\"><span class=\"cbx-sh-time\">$3</span><span class=\"cbx-sh-loc\">$2</span><span class=\"cbx-sh-atm\">$4</span></span></div>"
+    },
+    {
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null,
+        "id": "5fe95613-dab9-4366-8652-8939eb271065",
+        "scriptName": "CB LAB · Scene header — noir (rain, storm, fog)",
+        "findRegex": "/<scene_header\\b(?![^>]*?\\bsky\\s*=)(?=[^>]*?\\b(?:time|atmosphere|weather|mood)\\s*=\\s*\"[^\"]*?\\b(?:rain\\w*|storm\\w*|fog\\w*|thunder\\w*|drizzl\\w*|downpour|sleet|smog|overcast|mist)\\b)(?=[^>]*?\\blocation\\s*=\\s*\"([^\"]*)\"|)(?=[^>]*?\\btime\\s*=\\s*\"([^\"]*)\"|)(?=[^>]*?\\b(?:atmosphere|weather|mood)\\s*=\\s*\"([^\"]*)\"|)[^>]*>/gi",
+        "replaceString": "<div class=\"cbx-sh cbx-sky-noir\"><span class=\"cbx-sh-art\"><span class=\"cbx-sh-fx\"></span><span class=\"cbx-sh-orb\"></span><span class=\"cbx-sh-orb2\"></span></span><span class=\"cbx-sh-text\"><span class=\"cbx-sh-time\">$2</span><span class=\"cbx-sh-loc\">$1</span><span class=\"cbx-sh-atm\">$3</span></span></div>"
+    },
+    {
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null,
+        "id": "5c471032-4a04-4805-a902-b8e813623e4d",
+        "scriptName": "CB LAB · Scene header — night by the clock",
+        "findRegex": "/<scene_header\\b(?![^>]*?\\bsky\\s*=)(?=[^>]*?\\btime\\s*=\\s*\"[^\"]*?(?:\\b(?:night|midnight|nighttime|late evening|small hours|moonrise)\\b|\\b(?:1[01]|[89]):\\d\\d\\s*PM\\b|\\b(?:12|[1-4]):\\d\\d\\s*AM\\b))(?=[^>]*?\\blocation\\s*=\\s*\"([^\"]*)\"|)(?=[^>]*?\\btime\\s*=\\s*\"([^\"]*)\"|)(?=[^>]*?\\b(?:atmosphere|weather|mood)\\s*=\\s*\"([^\"]*)\"|)[^>]*>/gi",
+        "replaceString": "<div class=\"cbx-sh cbx-sky-night\"><span class=\"cbx-sh-art\"><span class=\"cbx-sh-fx\"></span><span class=\"cbx-sh-orb\"></span><span class=\"cbx-sh-orb2\"></span></span><span class=\"cbx-sh-text\"><span class=\"cbx-sh-time\">$2</span><span class=\"cbx-sh-loc\">$1</span><span class=\"cbx-sh-atm\">$3</span></span></div>"
+    },
+    {
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null,
+        "id": "6f020bdb-8f63-43a5-a727-10f8a4449b23",
+        "scriptName": "CB LAB · Scene header — dusk by the clock",
+        "findRegex": "/<scene_header\\b(?![^>]*?\\bsky\\s*=)(?=[^>]*?\\btime\\s*=\\s*\"[^\"]*?(?:\\b(?:dusk|sunset|twilight|evening|nightfall)\\b|\\b[5-7]:\\d\\d\\s*PM\\b))(?=[^>]*?\\blocation\\s*=\\s*\"([^\"]*)\"|)(?=[^>]*?\\btime\\s*=\\s*\"([^\"]*)\"|)(?=[^>]*?\\b(?:atmosphere|weather|mood)\\s*=\\s*\"([^\"]*)\"|)[^>]*>/gi",
+        "replaceString": "<div class=\"cbx-sh cbx-sky-dusk\"><span class=\"cbx-sh-art\"><span class=\"cbx-sh-fx\"></span><span class=\"cbx-sh-orb\"></span><span class=\"cbx-sh-orb2\"></span></span><span class=\"cbx-sh-text\"><span class=\"cbx-sh-time\">$2</span><span class=\"cbx-sh-loc\">$1</span><span class=\"cbx-sh-atm\">$3</span></span></div>"
+    },
+    {
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null,
+        "id": "d1d954ed-409a-41a3-a4a7-76bbb3ba7981",
+        "scriptName": "CB LAB · Scene header — dawn by the clock",
+        "findRegex": "/<scene_header\\b(?![^>]*?\\bsky\\s*=)(?=[^>]*?\\btime\\s*=\\s*\"[^\"]*?(?:\\b(?:dawn|sunrise|daybreak|first light|early morning)\\b|\\b[5-6]:\\d\\d\\s*AM\\b))(?=[^>]*?\\blocation\\s*=\\s*\"([^\"]*)\"|)(?=[^>]*?\\btime\\s*=\\s*\"([^\"]*)\"|)(?=[^>]*?\\b(?:atmosphere|weather|mood)\\s*=\\s*\"([^\"]*)\"|)[^>]*>/gi",
+        "replaceString": "<div class=\"cbx-sh cbx-sky-dawn\"><span class=\"cbx-sh-art\"><span class=\"cbx-sh-fx\"></span><span class=\"cbx-sh-orb\"></span><span class=\"cbx-sh-orb2\"></span></span><span class=\"cbx-sh-text\"><span class=\"cbx-sh-time\">$2</span><span class=\"cbx-sh-loc\">$1</span><span class=\"cbx-sh-atm\">$3</span></span></div>"
+    },
+    {
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null,
+        "id": "fdcc86a8-9899-4401-8e34-83b2ab6bf902",
+        "scriptName": "CB LAB · Scene header — midday by the clock",
+        "findRegex": "/<scene_header\\b(?![^>]*?\\bsky\\s*=)(?=[^>]*?\\btime\\s*=\\s*\"[^\"]*?(?:\\b(?:noon|midday|afternoon)\\b|\\b12:\\d\\d\\s*PM\\b|\\b[1-4]:\\d\\d\\s*PM\\b))(?=[^>]*?\\blocation\\s*=\\s*\"([^\"]*)\"|)(?=[^>]*?\\btime\\s*=\\s*\"([^\"]*)\"|)(?=[^>]*?\\b(?:atmosphere|weather|mood)\\s*=\\s*\"([^\"]*)\"|)[^>]*>/gi",
+        "replaceString": "<div class=\"cbx-sh cbx-sky-day\"><span class=\"cbx-sh-art\"><span class=\"cbx-sh-fx\"></span><span class=\"cbx-sh-orb\"></span><span class=\"cbx-sh-orb2\"></span></span><span class=\"cbx-sh-text\"><span class=\"cbx-sh-time\">$2</span><span class=\"cbx-sh-loc\">$1</span><span class=\"cbx-sh-atm\">$3</span></span></div>"
+    },
+    {
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null,
+        "id": "0b0e00b0-464b-48df-b8e3-512160485fb5",
+        "scriptName": "CB LAB · Scene header — morning by the clock",
+        "findRegex": "/<scene_header\\b(?![^>]*?\\bsky\\s*=)(?=[^>]*?\\btime\\s*=\\s*\"[^\"]*?(?:\\b(?:morning|forenoon)\\b|\\b(?:[7-9]|1[01]):\\d\\d\\s*AM\\b))(?=[^>]*?\\blocation\\s*=\\s*\"([^\"]*)\"|)(?=[^>]*?\\btime\\s*=\\s*\"([^\"]*)\"|)(?=[^>]*?\\b(?:atmosphere|weather|mood)\\s*=\\s*\"([^\"]*)\"|)[^>]*>/gi",
+        "replaceString": "<div class=\"cbx-sh cbx-sky-day\"><span class=\"cbx-sh-art\"><span class=\"cbx-sh-fx\"></span><span class=\"cbx-sh-orb\"></span><span class=\"cbx-sh-orb2\"></span></span><span class=\"cbx-sh-text\"><span class=\"cbx-sh-time\">$2</span><span class=\"cbx-sh-loc\">$1</span><span class=\"cbx-sh-atm\">$3</span></span></div>"
+    },
+    {
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null,
+        "id": "674d233d-b2c2-4703-b514-578451c6cc9b",
+        "scriptName": "CB LAB · Scene header — day (fallback)",
+        "findRegex": "/<scene_header\\b(?=[^>]*?\\blocation\\s*=\\s*\"([^\"]*)\"|)(?=[^>]*?\\btime\\s*=\\s*\"([^\"]*)\"|)(?=[^>]*?\\b(?:atmosphere|weather|mood)\\s*=\\s*\"([^\"]*)\"|)[^>]*>/gi",
+        "replaceString": "<div class=\"cbx-sh cbx-sky-day\"><span class=\"cbx-sh-art\"><span class=\"cbx-sh-fx\"></span><span class=\"cbx-sh-orb\"></span><span class=\"cbx-sh-orb2\"></span></span><span class=\"cbx-sh-text\"><span class=\"cbx-sh-time\">$2</span><span class=\"cbx-sh-loc\">$1</span><span class=\"cbx-sh-atm\">$3</span></span></div>"
+    },
+    {
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null,
+        "id": "4bc5a9d8-35d1-413e-b061-5159e7ad4cc7",
+        "scriptName": "CB LAB · Voice tone",
+        "findRegex": "/<(whisper|whispering|bite|tremble|trembling|steady)\\s*>([\\s\\S]*?)<\\/\\1\\s*>/gi",
+        "replaceString": "<span class=\"cbx-t cbx-t-$1\">$2</span>"
+    },
+    {
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null,
+        "id": "38f0fae3-4040-4e53-a51c-c20ac28b7f62",
+        "scriptName": "CB LAB · Gradient line",
+        "findRegex": "/<(dusk|solstice|eclipse|wildwood|hearth|mistveil)\\s*>([\\s\\S]*?)<\\/\\1\\s*>/gi",
+        "replaceString": "<span class=\"cbx-g cbx-g-$1\">$2</span>"
+    },
+    {
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null,
+        "id": "3485a71a-9d92-4392-bd2e-52ae4ff9c243",
+        "scriptName": "CB LAB · Letter (sealed)",
+        "findRegex": "/<letter\\b(?=[^>]*?\\bfrom\\s*=\\s*\"([^\"]*)\"|)[^>]*>\\s*([\\s\\S]*?)\\s*<\\/letter\\s*>/gi",
+        "replaceString": "<details class=\"cbx-letter\"><summary><span class=\"cbx-seal\"></span><span class=\"cbx-lt-head\"><span class=\"cbx-lt-k\">A letter</span><span class=\"cbx-lt-from\">$1</span></span><span class=\"cbx-lt-hint\">tap to break the seal</span></summary><div class=\"cbx-lt-paper\">$2</div></details>"
+    },
+    {
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null,
+        "id": "900fd1b1-e4b7-48af-bb48-f0f0c66bf68d",
+        "scriptName": "CB LAB · Terminal",
+        "findRegex": "/<terminal\\b(?=[^>]*?\\btitle\\s*=\\s*\"([^\"]*)\"|)[^>]*>\\s*([\\s\\S]*?)\\s*<\\/terminal\\s*>/gi",
+        "replaceString": "<div class=\"cbx-term\"><div class=\"cbx-term-bar\"><span></span><span></span><span></span><b>$1</b></div><div class=\"cbx-term-body\">$2<span class=\"cbx-cursor\"></span></div></div>"
+    },
+    {
+        "trimStrings": [],
+        "placement": [
+            1,
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": true,
+        "promptOnly": false,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": null,
+        "maxDepth": null,
         "id": "1d28ba6f-089b-4c55-89f3-0e7d997cc1a7",
         "scriptName": "CB LAB · Effects stylesheet (keep last of the LAB effects)",
         "findRegex": "/^(?=[\\s\\S]*class=\"cbx-)([\\s\\S]*)$/",
-        "replaceString": "$1\n\n<style>.cbx-pop{position:relative;cursor:pointer;outline:none;-webkit-tap-highlight-color:transparent;}.cbx-trig{border-bottom:1.5px dotted var(--cbx-acc);padding-bottom:1px;}.cbx-pop:is(:hover,:focus,:focus-within)>.cbx-trig{color:var(--cbx-acc);}.cbx-card{display:none;}.cbx-pop:is(:hover,:focus,:focus-within)>.cbx-card{display:block;margin:6px 0 8px;padding:8px 12px;border-left:3px solid var(--cbx-acc);border-radius:8px;background:rgba(22,15,28,.94);color:#efe6d8;font-size:.9em;font-style:italic;font-weight:400;line-height:1.45;text-align:left;white-space:normal;box-shadow:0 4px 14px rgba(0,0,0,.35);}.cbx-badge{display:block;margin-bottom:2px;font-style:normal;font-size:.72em;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--cbx-acc);}.cbx-sub{--cbx-acc:#c9a6ff;}.cbx-tell{--cbx-acc:#ff9f8a;}.cbx-lore{--cbx-acc:#e0b46c;}.cbx-trans{--cbx-acc:#8fb4ff;}.cbx-retract{cursor:pointer;outline:none;font-style:italic;filter:blur(3.5px);opacity:.8;border-bottom:1.5px dotted #c9a6ff;transition:filter .4s,opacity .4s;}.cbx-retract:is(:hover,:focus){filter:none;opacity:1;}.cbx-k{display:inline-block;}.cbx-heavy{font-weight:900;font-size:1.15em;letter-spacing:.03em;}.cbx-stretch{display:inline;letter-spacing:.28em;font-weight:300;opacity:.85;}.cbx-tilt{transform:rotate(-3.5deg);font-style:italic;margin:0 2px;}.cbx-crush{font-weight:800;letter-spacing:-.05em;transform:scaleX(.9);}.cbx-fracture{transform:skew(-6deg);letter-spacing:.12em;font-weight:700;}.cbx-echo{display:inline;opacity:.6;letter-spacing:.1em;text-shadow:0 0 6px currentColor;}.cbx-shake{animation:cbx-shake .35s linear infinite;}.cbx-glitch{animation:cbx-glitch 1.2s steps(2) infinite;}.cbx-pulse,.cbx-thump{animation:cbx-pulse 1.4s ease-in-out infinite;}.cbx-ember,.cbx-breathe{animation:cbx-ember 2.6s ease-in-out infinite;}.cbx-drift,.cbx-float{opacity:.85;animation:cbx-drift 3.5s ease-in-out infinite;}@keyframes cbx-shake{0%,100%{transform:translate(0,0)}25%{transform:translate(-1.2px,.8px) rotate(-.6deg)}50%{transform:translate(1.2px,-.8px)}75%{transform:translate(-.8px,-.6px) rotate(.6deg)}}@keyframes cbx-glitch{0%,100%{text-shadow:1.5px 0 rgba(255,95,109,.8),-1.5px 0 rgba(111,208,255,.8);transform:skew(0)}50%{text-shadow:-2px 0 rgba(255,95,109,.9),2px 0 rgba(111,208,255,.9);transform:skew(-3deg) translateX(-1px)}}@keyframes cbx-pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.08)}}@keyframes cbx-ember{0%,100%{text-shadow:0 0 4px rgba(255,140,60,.35)}50%{text-shadow:0 0 10px rgba(255,140,60,.9),0 0 18px rgba(255,90,40,.5)}}@keyframes cbx-drift{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}@media (prefers-reduced-motion:reduce){.cbx-k{animation:none!important}}</style>"
+        "replaceString": "$1\n\n<style>.cbx-pop{position:relative;cursor:pointer;outline:none;-webkit-tap-highlight-color:transparent;}.cbx-trig{border-bottom:1.5px dotted var(--cbx-acc);padding-bottom:1px;}.cbx-pop:is(:hover,:focus,:focus-within)>.cbx-trig{color:var(--cbx-acc);}.cbx-card{display:none;}.cbx-pop:is(:hover,:focus,:focus-within)>.cbx-card{display:block;margin:6px 0 8px;padding:8px 12px;border-left:3px solid var(--cbx-acc);border-radius:8px;background:rgba(22,15,28,.94);color:#efe6d8;font-size:.9em;font-style:italic;font-weight:400;line-height:1.45;text-align:left;white-space:normal;box-shadow:0 4px 14px rgba(0,0,0,.35);}.cbx-badge{display:block;margin-bottom:2px;font-style:normal;font-size:.72em;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--cbx-acc);}.cbx-sub{--cbx-acc:#c9a6ff;}.cbx-tell{--cbx-acc:#ff9f8a;}.cbx-lore{--cbx-acc:#e0b46c;}.cbx-trans{--cbx-acc:#8fb4ff;}.cbx-retract{cursor:pointer;outline:none;font-style:italic;filter:blur(3.5px);opacity:.8;border-bottom:1.5px dotted #c9a6ff;transition:filter .4s,opacity .4s;}.cbx-retract:is(:hover,:focus){filter:none;opacity:1;}.cbx-k{display:inline-block;}.cbx-heavy{font-weight:900;font-size:1.15em;letter-spacing:.03em;}.cbx-stretch{display:inline;letter-spacing:.28em;font-weight:300;opacity:.85;}.cbx-tilt{transform:rotate(-3.5deg);font-style:italic;margin:0 2px;}.cbx-crush{font-weight:800;letter-spacing:-.05em;transform:scaleX(.9);}.cbx-fracture{transform:skew(-6deg);letter-spacing:.12em;font-weight:700;}.cbx-echo{display:inline;opacity:.6;letter-spacing:.1em;text-shadow:0 0 6px currentColor;}.cbx-shake{animation:cbx-shake .35s linear infinite;}.cbx-glitch{animation:cbx-glitch 1.2s steps(2) infinite;}.cbx-pulse,.cbx-thump{animation:cbx-pulse 1.4s ease-in-out infinite;}.cbx-ember,.cbx-breathe{animation:cbx-ember 2.6s ease-in-out infinite;}.cbx-drift,.cbx-float{opacity:.85;animation:cbx-drift 3.5s ease-in-out infinite;}@keyframes cbx-shake{0%,100%{transform:translate(0,0)}25%{transform:translate(-1.2px,.8px) rotate(-.6deg)}50%{transform:translate(1.2px,-.8px)}75%{transform:translate(-.8px,-.6px) rotate(.6deg)}}@keyframes cbx-glitch{0%,100%{text-shadow:1.5px 0 rgba(255,95,109,.8),-1.5px 0 rgba(111,208,255,.8);transform:skew(0)}50%{text-shadow:-2px 0 rgba(255,95,109,.9),2px 0 rgba(111,208,255,.9);transform:skew(-3deg) translateX(-1px)}}@keyframes cbx-pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.08)}}@keyframes cbx-ember{0%,100%{text-shadow:0 0 4px rgba(255,140,60,.35)}50%{text-shadow:0 0 10px rgba(255,140,60,.9),0 0 18px rgba(255,90,40,.5)}}@keyframes cbx-drift{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}@media (prefers-reduced-motion:reduce){.cbx-k{animation:none!important}}.cbx-sh{position:relative;overflow:hidden;display:flex;align-items:flex-end;min-height:132px;margin:4px 0 18px;border-radius:16px;border:1px solid rgba(255,255,255,.14);background:var(--sky);color:#fff;box-shadow:0 10px 28px rgba(0,0,0,.4);}.cbx-sh-art{position:absolute;inset:0;pointer-events:none;}.cbx-sh-fx{position:absolute;inset:0;background:var(--fx,none);}.cbx-sh-orb{position:absolute;right:9%;top:18px;width:62px;height:62px;border-radius:50%;background:var(--orb);box-shadow:0 0 42px var(--glow);}.cbx-sh-orb2{position:absolute;display:none;border-radius:50%;}.cbx-sh-text{position:relative;display:flex;flex-direction:column;gap:2px;width:100%;padding:28px 16px 13px;background:linear-gradient(0deg,rgba(8,6,14,.68),transparent);}.cbx-sh-time{font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--tint,#ffe1b0);}.cbx-sh-loc{font-family:Georgia,\"Times New Roman\",serif;font-size:21px;font-weight:700;line-height:1.2;letter-spacing:.4px;text-shadow:0 2px 10px rgba(0,0,0,.55);}.cbx-sh-atm{font-size:12px;font-style:italic;opacity:.82;}.cbx-sh-atm:empty,.cbx-sh-time:empty{display:none;}[class*=\"cbx-sky-dawn\" i]{--sky:linear-gradient(180deg,#2a2347 0%,#6f4479 42%,#dd8279 74%,#f6c48e 100%);--orb:radial-gradient(circle,#fff6e0,#ffc98a 60%,#ff9a7a);--glow:rgba(255,190,140,.7);--tint:#ffd9c2;--fx:radial-gradient(2.5px 2.5px at 22% 26%,#fff 50%,transparent 55%),radial-gradient(60% 40% at 50% 100%,rgba(255,200,150,.35),transparent);}[class*=\"cbx-sky-dawn\" i] .cbx-sh-orb{top:auto;bottom:-20px;width:84px;height:84px;}[class*=\"cbx-sky-day\" i]{--sky:linear-gradient(180deg,#2c6aa8 0%,#6fa9db 60%,#bfe0f4 100%);--orb:radial-gradient(circle,#fffdf0,#ffe07a 55%,#f5b031);--glow:rgba(255,220,120,.85);--tint:#fff1c9;--fx:repeating-conic-gradient(from 0deg at 87% 30%,rgba(255,244,200,.16) 0 5deg,transparent 5deg 16deg);}[class*=\"cbx-sky-dusk\" i]{--sky:linear-gradient(180deg,#1b1740 0%,#55306a 40%,#c0566b 72%,#f0a060 100%);--orb:radial-gradient(circle,#ffd29a,#ff9a55 55%,#d9572f);--glow:rgba(255,140,80,.7);--tint:#ffc9a6;--fx:linear-gradient(180deg,transparent 60%,rgba(40,10,40,.35));}[class*=\"cbx-sky-dusk\" i] .cbx-sh-orb{top:auto;bottom:16px;}[class*=\"cbx-sky-dusk\" i] .cbx-sh-orb2{display:block;right:calc(9% + 34px);bottom:30px;width:46px;height:46px;background:radial-gradient(circle,rgba(143,155,255,.75),rgba(85,60,160,.4));mix-blend-mode:screen;}[class*=\"cbx-sky-night\" i]{--sky:linear-gradient(180deg,#060918 0%,#12183a 60%,#222a55 100%);--orb:transparent;--glow:rgba(242,236,214,.25);--tint:#c9d4ff;--fx:radial-gradient(1.4px 1.4px at 8% 18%,#fff 50%,transparent 52%),radial-gradient(1.4px 1.4px at 17% 42%,#fff 50%,transparent 52%),radial-gradient(1.4px 1.4px at 26% 12%,#fff 50%,transparent 52%),radial-gradient(1.4px 1.4px at 34% 30%,#fff 50%,transparent 52%),radial-gradient(1.4px 1.4px at 45% 8%,#fff 50%,transparent 52%),radial-gradient(1.4px 1.4px at 52% 36%,#fff 50%,transparent 52%),radial-gradient(1.4px 1.4px at 61% 20%,#fff 50%,transparent 52%),radial-gradient(1.4px 1.4px at 70% 44%,#fff 50%,transparent 52%),radial-gradient(1.4px 1.4px at 77% 10%,#fff 50%,transparent 52%),radial-gradient(1.4px 1.4px at 86% 28%,#fff 50%,transparent 52%),radial-gradient(1.4px 1.4px at 93% 16%,#fff 50%,transparent 52%),radial-gradient(1.4px 1.4px at 12% 58%,#fff 50%,transparent 52%),radial-gradient(1.4px 1.4px at 40% 52%,#fff 50%,transparent 52%),radial-gradient(1.4px 1.4px at 66% 60%,#fff 50%,transparent 52%);}[class*=\"cbx-sky-night\" i] .cbx-sh-orb{width:52px;height:52px;box-shadow:inset -13px 7px 0 0 #f2ecd6,0 0 30px rgba(242,236,214,.18);}[class*=\"cbx-sky-night\" i] .cbx-sh-fx{animation:cbx-twinkle 4s ease-in-out infinite;}[class*=\"cbx-sky-noir\" i]{--sky:linear-gradient(180deg,#121419 0%,#232731 60%,#373c48 100%);--orb:radial-gradient(circle,rgba(225,230,240,.38),rgba(225,230,240,.08) 62%,transparent 70%);--glow:rgba(200,210,230,.15);--tint:#c3cad8;--fx:repeating-linear-gradient(104deg,rgba(205,215,235,.16) 0 1px,transparent 1px 9px);}[class*=\"cbx-sky-noir\" i] .cbx-sh-fx{background-size:200% 200%;animation:cbx-rain .9s linear infinite;}@keyframes cbx-twinkle{0%,100%{opacity:1}50%{opacity:.55}}@keyframes cbx-rain{from{background-position:0 0}to{background-position:-18px 60px}}@media (max-width:480px){.cbx-sh{min-height:104px;}.cbx-sh-loc{font-size:17px;}.cbx-sh-orb{width:44px;height:44px;}}[class*=\"cbx-t-whisper\" i]{font-size:.9em;font-style:italic;letter-spacing:.03em;opacity:.78;}[class*=\"cbx-t-bite\" i]{font-weight:800;letter-spacing:.01em;text-shadow:0 0 1px currentColor;}[class*=\"cbx-t-trembl\" i]{font-style:italic;animation:cbx-quiver .18s linear infinite;}[class*=\"cbx-t-steady\" i]{font-weight:600;letter-spacing:.06em;}@keyframes cbx-quiver{0%,100%{text-shadow:.6px 0 currentColor}50%{text-shadow:-.6px .4px currentColor}}.cbx-g{background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent;color:transparent;-webkit-box-decoration-break:clone;box-decoration-break:clone;}[class*=\"cbx-g-dusk\" i]{background-image:linear-gradient(100deg,#f3b74b,#8f9bff);}[class*=\"cbx-g-solstice\" i]{background-image:linear-gradient(100deg,#ffc46b,#ff6f61);}[class*=\"cbx-g-eclipse\" i]{background-image:linear-gradient(100deg,#c9d1e6,#5d78d8);}[class*=\"cbx-g-wildwood\" i]{background-image:linear-gradient(100deg,#b9c98a,#4f9a74);}[class*=\"cbx-g-hearth\" i]{background-image:linear-gradient(100deg,#f0a060,#c4513c);}[class*=\"cbx-g-mistveil\" i]{background-image:linear-gradient(100deg,#c7b3ec,#e6eef4);}.cbx-g *{color:inherit !important;-webkit-text-fill-color:transparent !important;}.cbx-letter{max-width:460px;margin:14px auto;border-radius:10px;background:linear-gradient(160deg,#f6ecd6,#ead9b6);color:#3a2618;border:1px solid #cbb48c;box-shadow:0 6px 20px rgba(0,0,0,.35);font-family:Georgia,\"Times New Roman\",serif;text-shadow:none;}.cbx-letter>summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:12px;padding:12px 14px;}.cbx-letter>summary::-webkit-details-marker{display:none;}.cbx-seal{flex:0 0 34px;height:34px;border-radius:50%;background:radial-gradient(circle at 38% 34%,#e2575b,#a3212c 60%,#6e1019);box-shadow:0 2px 4px rgba(0,0,0,.35),inset 0 0 0 4px rgba(0,0,0,.12);transition:transform .3s,opacity .3s;}.cbx-letter[open] .cbx-seal{transform:rotate(-24deg) scale(.82);opacity:.55;}.cbx-lt-head{display:flex;flex-direction:column;min-width:0;}.cbx-lt-k{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#8a6a45;}.cbx-lt-from{font-size:15px;font-style:italic;}.cbx-lt-from:not(:empty)::before{content:\"from \";font-style:normal;color:#8a6a45;}.cbx-lt-hint{margin-left:auto;font-size:11px;font-style:italic;color:#8a6a45;}.cbx-letter[open] .cbx-lt-hint{display:none;}.cbx-lt-paper{margin:0 12px 12px;padding:14px 18px;border-top:1px dashed #c4a97c;white-space:normal;font-size:14.5px;line-height:1.6;background:repeating-linear-gradient(180deg,transparent 0 23px,rgba(150,110,60,.12) 23px 24px);}.cbx-lt-paper p{margin:0 0 .7em;}.cbx-lt-paper p:last-child{margin:0;}.cbx-term{max-width:520px;margin:14px auto;border-radius:10px;overflow:hidden;background:#07100b;border:1px solid rgba(120,255,170,.25);box-shadow:0 8px 24px rgba(0,0,0,.5),0 0 18px rgba(80,255,150,.08);text-shadow:none;}.cbx-term-bar{display:flex;align-items:center;gap:6px;padding:7px 12px;background:rgba(120,255,170,.07);border-bottom:1px solid rgba(120,255,170,.16);}.cbx-term-bar>span{width:9px;height:9px;border-radius:50%;background:#ff6159;}.cbx-term-bar>span:nth-child(2){background:#ffbd2e;}.cbx-term-bar>span:nth-child(3){background:#28c941;}.cbx-term-bar>b{margin-left:8px;font:700 11px ui-monospace,Menlo,Consolas,monospace;letter-spacing:1.5px;text-transform:uppercase;color:#7fe0a3;}.cbx-term-body{padding:12px 14px;white-space:pre-wrap;font:13px/1.55 ui-monospace,Menlo,Consolas,monospace;color:#9ff5bf;text-shadow:0 0 6px rgba(120,255,170,.45);background:repeating-linear-gradient(180deg,rgba(255,255,255,.025) 0 1px,transparent 1px 3px);}.cbx-cursor{display:inline-block;width:8px;height:1.05em;margin-left:2px;vertical-align:-2px;background:#9ff5bf;animation:cbx-blink 1s steps(1) infinite;}@keyframes cbx-blink{50%{opacity:0}}@media (prefers-reduced-motion:reduce){.cbx-sh-fx,.cbx-cursor,[class*=\"cbx-t-trembl\" i]{animation:none !important;}}</style>"
     },
     {
         "trimStrings": [],
@@ -3761,6 +4224,23 @@
         "id": "99f5a7ee-fe58-4e6d-8709-f24405d0e552",
         "scriptName": "CB LAB · Context saver — old dice slips",
         "findRegex": "/^[ \\t]*DICE(?:&gt;|>)[^\\n]*\\n?/gm",
+        "replaceString": ""
+    },
+    {
+        "trimStrings": [],
+        "placement": [
+            2
+        ],
+        "disabled": false,
+        "markdownOnly": false,
+        "promptOnly": true,
+        "runOnEdit": true,
+        "substituteRegex": 0,
+        "minDepth": 3,
+        "maxDepth": null,
+        "id": "d7ee1a1d-28f7-4e14-861b-ff91c5607cdb",
+        "scriptName": "CB LAB · Context saver — old Thought Cabinets",
+        "findRegex": "/\\s*<cabinet\\b[^>]*>[\\s\\S]*?<\\/cabinet\\s*>/gi",
         "replaceString": ""
     }
 ]

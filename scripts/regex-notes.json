@@ -1340,7 +1340,7 @@
     ]
   },
   "callboard-lab": {
-    "intro": "The Lab is CALLBOARD Full plus experiments. Its tracker and boards are drawn as one Board Console, and it adds on-screen effects, New Faces cards, Chance Dice, and context savers. Everything else works exactly like CALLBOARD, below.",
+    "intro": "The Lab is CALLBOARD Full plus experiments. Its tracker and boards are drawn as one Board Console, Xavi's notes and the Program become drawers in the same look, and it adds on-screen effects, scene headers, letters and terminals, the Thought Cabinet, New Faces cards, Chance Dice, and context savers. Everything else works exactly like CALLBOARD, below.",
     "groups": [
       {
         "title": "Board Console",
@@ -1462,6 +1462,41 @@
             "blurb": "Shows board lines with the wrong number of fields as plain text."
           },
           {
+            "name": "CB · Console — Board shell — Heart check",
+            "syntax": "[[HEART]] … [[/HEART]]",
+            "blurb": "The 🫀 Heart check drawer, for the Heart Check switch."
+          },
+          {
+            "name": "CB · Console — Board row — Heart check",
+            "syntax": "HT> name|ego|nerve|body|psyche",
+            "blurb": "A strained character's 🎭 ego, ⚡ nerve, 🫀 body, and 🌙 psyche."
+          },
+          {
+            "name": "CB · Console — Board shell — Wardrobe",
+            "syntax": "[[WARDROBE]] … [[/WARDROBE]]",
+            "blurb": "The 🧥 Wardrobe drawer, for the Wardrobe switch."
+          },
+          {
+            "name": "CB · Console — Board row — Wardrobe",
+            "syntax": "WR> name|outfit|condition",
+            "blurb": "What someone is wearing and what state it's in, so clothes don't vanish or change on their own."
+          },
+          {
+            "name": "CB · Console — Board shell — Xavi's notebook",
+            "syntax": "[[NOTES]] … [[/NOTES]]",
+            "blurb": "The 📓 Xavi's notebook drawer: his private continuity."
+          },
+          {
+            "name": "CB · Console — Board row — Xavi's notebook",
+            "syntax": "NB> thread|… · NB> seed|… · NB> motive|… · NB> horizon|…",
+            "blurb": "One of Xavi's open 🧵 threads, 🌱 seeds, 🗝️ motives, or ⏳ horizons."
+          },
+          {
+            "name": "CB · Console — Board row — catch-all for Lab boards (malformed lines)",
+            "syntax": "",
+            "blurb": "Shows Heart check, Wardrobe, or notebook lines with the wrong number of fields as plain text."
+          },
+          {
             "name": "CB · Console — join rows and drawers",
             "syntax": "",
             "blurb": "Removes the gaps between the console's rows and drawers."
@@ -1470,6 +1505,148 @@
             "name": "CB · Console — stylesheet (keep after every console script)",
             "syntax": "",
             "blurb": "Adds the console's look, in the skin you pick in CALLBOARD Suite (Console, Minimal, Parchment, Neon, or Auto by wing). Keep it after every other console script."
+          }
+        ]
+      },
+      {
+        "title": "Xavi's drawers",
+        "intro": "Xavi's own pieces in the console's look; they change with the skin too. The model writes exactly what it did before.",
+        "scripts": [
+          {
+            "name": "CB · Callboard — style think foldout",
+            "syntax": "<think>…</think>",
+            "blurb": "Xavi's plan as a 🎧 \"Xavi at the board\" drawer, folded. Tap to read."
+          },
+          {
+            "name": "CB · Xavi — OOC aside (style, AI output only)",
+            "syntax": "(OOC: aside — X)",
+            "blurb": "Xavi's aside as a 🎧 \"from the wings\" drawer, left open so you don't miss a question."
+          },
+          {
+            "name": "CB · Cue — standby slip (with legend)",
+            "syntax": "CUE> icon|what's coming|why now|what it means",
+            "blurb": "A ● STANDBY drawer with the cue and its reason. Tap it for what it means."
+          },
+          {
+            "name": "CB · Cue — standby slip",
+            "syntax": "CUE> icon|what's coming|why now|",
+            "blurb": "A ● STANDBY slip with nothing to open."
+          },
+          {
+            "name": "CB · Cue — catch-all (malformed lines)",
+            "syntax": "",
+            "blurb": "Shows cue lines with the wrong number of fields as a plain STANDBY line."
+          },
+          {
+            "name": "CB · Xavi — curtain note (style) — newest reply",
+            "syntax": "<xavi>note</xavi>",
+            "blurb": "Xavi's 🎧 curtain drawer, open on the newest reply."
+          },
+          {
+            "name": "CB · Xavi — curtain note (style) — older replies, folded",
+            "syntax": "",
+            "blurb": "The curtain drawer on older replies, folded. With CALLBOARD Suite installed, the previous one folds as soon as you send."
+          },
+          {
+            "name": "CB · Shell — The Program — newest reply",
+            "syntax": "[[PROGRAM]] … [[/PROGRAM]]",
+            "blurb": "🎟️ The Program as a drawer with the paper program inside, open on the newest reply."
+          },
+          {
+            "name": "CB · Shell — The Program — older replies, folded",
+            "syntax": "",
+            "blurb": "The Program on older replies, folded."
+          },
+          {
+            "name": "CB LAB · Your OOC note",
+            "syntax": "(OOC: note) in your message",
+            "blurb": "Your own OOC note, shown as a 🎬 \"Note to Xavi\" card."
+          }
+        ]
+      },
+      {
+        "title": "More from Sola",
+        "intro": "New in v0.11, adapted from Sola V4 Flame. Each switch is off to start.",
+        "scripts": [
+          {
+            "name": "CB LAB · Scene header — sky chosen by the model",
+            "syntax": "<scene_header location=\"…\" time=\"…\" atmosphere=\"…\" sky=\"dusk\" />",
+            "blurb": "A sky banner when a scene opens, with the time, the place in capitals, and a line of atmosphere. Here the model picks the sky."
+          },
+          {
+            "name": "CB LAB · Scene header — noir (rain, storm, fog)",
+            "syntax": "atmosphere with rain, storm, or fog",
+            "blurb": "A noir sky with falling rain."
+          },
+          {
+            "name": "CB LAB · Scene header — night by the clock",
+            "syntax": "",
+            "blurb": "A night sky with stars and a crescent moon, from the time."
+          },
+          {
+            "name": "CB LAB · Scene header — dusk by the clock",
+            "syntax": "",
+            "blurb": "A dusk sky, from the time."
+          },
+          {
+            "name": "CB LAB · Scene header — dawn by the clock",
+            "syntax": "",
+            "blurb": "A dawn sky, from the time."
+          },
+          {
+            "name": "CB LAB · Scene header — midday by the clock",
+            "syntax": "",
+            "blurb": "A daytime sky for noon and the afternoon."
+          },
+          {
+            "name": "CB LAB · Scene header — morning by the clock",
+            "syntax": "",
+            "blurb": "A daytime sky for the morning."
+          },
+          {
+            "name": "CB LAB · Scene header — day (fallback)",
+            "syntax": "",
+            "blurb": "A daytime sky when the time doesn't say."
+          },
+          {
+            "name": "CB LAB · Voice tone",
+            "syntax": "<whisper>, <bite>, <tremble>, <steady>",
+            "blurb": "Soft and italic, heavy and sharp, quivering, or deliberate words. Works inside Colored Dialogue, so each speaker keeps their color."
+          },
+          {
+            "name": "CB LAB · Gradient line",
+            "syntax": "<dusk>, <solstice>, <eclipse>, <wildwood>, <hearth>, <mistveil>",
+            "blurb": "A line that glows in a two-color gradient, for confessions, oaths, and closing images."
+          },
+          {
+            "name": "CB LAB · Letter (sealed)",
+            "syntax": "<letter from=\"…\">text</letter>",
+            "blurb": "A letter sealed with red wax. Tap to break the seal and read it on lined paper."
+          },
+          {
+            "name": "CB LAB · Terminal",
+            "syntax": "<terminal title=\"…\">text</terminal>",
+            "blurb": "A glowing terminal screen with a blinking cursor."
+          },
+          {
+            "name": "CB LAB · Thought Cabinet — drawer",
+            "syntax": "<cabinet char=\"Name\"> … </cabinet>",
+            "blurb": "Xavi pulls one character backstage for five quick questions, shown as a folded 💭 drawer. Nobody in the story knows it happened."
+          },
+          {
+            "name": "CB LAB · Thought Cabinet — question",
+            "syntax": "Q> question|answer",
+            "blurb": "One question and the character's answer."
+          },
+          {
+            "name": "CB LAB · Thought Cabinet — unspoken",
+            "syntax": "QU> question|answer",
+            "blurb": "The last answer: what they'd say if nobody could hear."
+          },
+          {
+            "name": "CB LAB · Thought Cabinet — join rows",
+            "syntax": "",
+            "blurb": "Removes the gaps between the cabinet's rows."
           }
         ]
       },
@@ -1593,6 +1770,11 @@
             "name": "CB LAB · Context saver — old dice slips",
             "syntax": "",
             "blurb": "Leaves older 🎲 slips out of the prompt. The newest stays."
+          },
+          {
+            "name": "CB LAB · Context saver — old Thought Cabinets",
+            "syntax": "",
+            "blurb": "Leaves Thought Cabinets three or more messages old out of the prompt."
           }
         ]
       },
@@ -1637,26 +1819,6 @@
         "intro": "New in v1.4: Xavi tells you what's about to appear, and what's lit tonight.",
         "scripts": [
           {
-            "name": "CB · Cue — standby slip (with legend)",
-            "syntax": "CUE> icon|what's coming|why now|what it means",
-            "blurb": "A gold ● STANDBY slip above whatever's about to appear, with a \"What it means\" legend. Xavi includes the legend the first time each kind of element shows up."
-          },
-          {
-            "name": "CB · Cue — standby slip",
-            "syntax": "CUE> icon|what's coming|why now|",
-            "blurb": "The same STANDBY slip without the legend, for elements you've already seen."
-          },
-          {
-            "name": "CB · Cue — catch-all (malformed lines)",
-            "syntax": "",
-            "blurb": "Catches cue lines with the wrong number of fields and shows them as a plain STANDBY line."
-          },
-          {
-            "name": "CB · Shell — The Program",
-            "syntax": "[[PROGRAM]] … [[/PROGRAM]]",
-            "blurb": "The theatre-program card listing everything that's lit. It appears on the first reply of a chat, and whenever you send [PROGRAM]."
-          },
-          {
             "name": "CB · Program row — title",
             "syntax": "PG> title|tonight's production",
             "blurb": "The program's title: tonight's production in a phrase."
@@ -1688,11 +1850,6 @@
         "intro": "Your stage manager's notes and asides.",
         "scripts": [
           {
-            "name": "CB · Callboard — style think foldout",
-            "syntax": "<think>…</think>",
-            "blurb": "Shows Xavi's reasoning as a 🎧 \"Xavi at the board\" fold-out."
-          },
-          {
             "name": "CB · Callboard — hide think from prompt",
             "syntax": "",
             "blurb": "Leaves Xavi's <think> notes out of what's sent back to the model on later turns, to save tokens. What you see doesn't change."
@@ -1708,19 +1865,9 @@
             "blurb": "Keeps that unopened reasoning out of what's sent back to the model on later turns."
           },
           {
-            "name": "CB · Xavi — curtain note (style)",
-            "syntax": "<xavi>note</xavi>",
-            "blurb": "Xavi's curtain note: a 🎧 card under the reply."
-          },
-          {
             "name": "CB · Xavi — curtain note (hide from prompt)",
             "syntax": "",
             "blurb": "Leaves Xavi's curtain notes out of what's sent back to the model, so they cost no tokens later."
-          },
-          {
-            "name": "CB · Xavi — OOC aside (style, AI output only)",
-            "syntax": "(OOC: aside)",
-            "blurb": "Styles Xavi's (OOC: …) asides as a \"from the wings\" note signed — X. It only touches the AI's replies, so your own OOC stays plain."
           }
         ]
       },
