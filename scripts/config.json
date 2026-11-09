@@ -98,6 +98,10 @@
       "file": "manifest.json"
     },
     {
+      "repo": "summary-books",
+      "file": "manifest.json"
+    },
+    {
       "repo": "SillyTavern-Offstage",
       "file": "manifest.json"
     },
